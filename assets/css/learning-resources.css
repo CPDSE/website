@@ -292,6 +292,34 @@ html { overflow-x: clip; }
   gap: 0.85rem;
 }
 
+.cpdse-learn__card.is-hidden-row {
+  display: none;
+}
+
+.cpdse-learn__row-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: transparent;
+  border: 1px solid rgba(60, 94, 62, 0.3);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.cpdse-learn__row-more:hover {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--offwhite);
+}
+
 /* ── Resource card ────────────────────────────────────── */
 .cpdse-learn__card {
   background: var(--soft);
