@@ -171,8 +171,14 @@
         || (state.level === 'All' && (r.level || '').includes('All'));
 
       /* ---- Per-category row limiting ---- */
+      // Tracks categories the user has explicitly expanded; cleared on each render()
+      const expandedCategories = new Set();
+
       const applyRowLimits = () => {
         catsEl.querySelectorAll('.cpdse-learn__category').forEach(section => {
+          // Don't re-collapse a category the user intentionally opened
+          if (expandedCategories.has(section.id)) return;
+
           const grid = section.querySelector('.cpdse-learn__grid');
           if (!grid) return;
           const cards = Array.from(grid.querySelectorAll('.cpdse-learn__card'));
@@ -195,6 +201,7 @@
           btn.className = 'cpdse-learn__row-more';
           btn.textContent = `Show ${hidden.length} more`;
           btn.addEventListener('click', () => {
+            expandedCategories.add(section.id); // remember: user expanded this
             hidden.forEach(c => c.classList.remove('is-hidden-row'));
             btn.remove();
           });
@@ -203,6 +210,7 @@
       };
 
       const render = () => {
+        expandedCategories.clear(); // filter change → start fresh, collapse everything
         let totalVisible = 0;
         const sectionsHtml = categories.map(cat => {
           const inCat = resources.filter(r => r.category === cat.id
@@ -292,17 +300,18 @@
         });
       });
 
-      // Reapply row limits when the container width changes (column count may shift)
+      // Reapply row limits when the container width changes (column count may shift).
+      // Only touches non-expanded categories so user-opened rows stay open.
       if (window.ResizeObserver) {
         let resizeTimer;
         new ResizeObserver(() => {
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(() => {
-            // Only reapply if there are currently expanded grids — avoids interfering
-            // with user-expanded rows on resize (they'll re-collapse, which is acceptable
-            // since column count genuinely changed)
-            catsEl.querySelectorAll('.cpdse-learn__row-more').forEach(b => b.remove());
-            catsEl.querySelectorAll('.cpdse-learn__card.is-hidden-row').forEach(c => c.classList.remove('is-hidden-row'));
+            catsEl.querySelectorAll('.cpdse-learn__category').forEach(section => {
+              if (expandedCategories.has(section.id)) return;
+              section.querySelectorAll('.cpdse-learn__row-more').forEach(b => b.remove());
+              section.querySelectorAll('.cpdse-learn__card.is-hidden-row').forEach(c => c.classList.remove('is-hidden-row'));
+            });
             applyRowLimits();
           }, 150);
         }).observe(catsEl);
