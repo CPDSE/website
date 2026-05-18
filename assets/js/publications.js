@@ -223,6 +223,65 @@
                  aria-label="Search publications" />
         </label>`;
 
+      /* ---- Pagination ---- */
+      let currentPage = 0;
+      let cardsPerPage = 9; // updated after first layout measurement (3 cols × 3 rows)
+
+      // Insert pagination container after the grid once
+      const pagerEl = document.createElement('div');
+      pagerEl.className = 'cpdse-pubs__pagination';
+      grid.insertAdjacentElement('afterend', pagerEl);
+
+      const applyPage = (cards) => {
+        const total = cards.length;
+        const totalPages = Math.ceil(total / cardsPerPage);
+        // Clamp current page in case cardsPerPage or total changed
+        currentPage = Math.min(currentPage, Math.max(0, totalPages - 1));
+        const start = currentPage * cardsPerPage;
+        const end   = start + cardsPerPage;
+
+        cards.forEach((card, i) => {
+          card.classList.toggle('is-paged-out', i < start || i >= end);
+        });
+
+        if (totalPages <= 1) {
+          pagerEl.innerHTML = '';
+          return;
+        }
+        pagerEl.innerHTML = `
+          <button type="button" class="cpdse-pubs__page-btn" data-dir="-1"${currentPage === 0 ? ' disabled' : ''}>← Previous</button>
+          <span class="cpdse-pubs__page-info">Page ${currentPage + 1} of ${totalPages}</span>
+          <button type="button" class="cpdse-pubs__page-btn" data-dir="1"${currentPage >= totalPages - 1 ? ' disabled' : ''}>Next →</button>`;
+      };
+
+      pagerEl.addEventListener('click', e => {
+        const btn = e.target.closest('[data-dir]');
+        if (!btn || btn.disabled) return;
+        currentPage += parseInt(btn.dataset.dir, 10);
+        const cards = Array.from(grid.querySelectorAll('.cpdse-pubs__card'));
+        applyPage(cards);
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // Re-measure columns on resize and re-paginate
+      if (window.ResizeObserver) {
+        let resizeTimer;
+        new ResizeObserver(() => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            const cards = Array.from(grid.querySelectorAll('.cpdse-pubs__card'));
+            if (cards.length === 0) return;
+            // Temporarily show all to measure layout
+            cards.forEach(c => c.classList.remove('is-paged-out'));
+            const firstTop = cards[0].offsetTop;
+            let cols = 0;
+            for (const c of cards) { if (c.offsetTop === firstTop) cols++; else break; }
+            cardsPerPage = Math.max(1, cols) * 3;
+            applyPage(cards);
+          }, 150);
+        }).observe(grid);
+      }
+
       /* ---- Filter state ---- */
       const state = { author: null, topic: null, q: '' };
 
@@ -239,7 +298,9 @@
         activeEl.innerHTML = chips.join('');
       };
 
-      const render = () => {
+      const render = (resetPage = true) => {
+        if (resetPage) currentPage = 0;
+
         const visible = papers.filter(p => {
           if (state.author && !(p.cpdseAuthors || []).includes(state.author)) return false;
           if (state.topic && !(p.topics || []).some(t => t.name === state.topic)) return false;
@@ -260,9 +321,23 @@
 
         if (visible.length === 0) {
           grid.innerHTML = `<p class="cpdse-pubs__empty">No papers match this filter combination.</p>`;
+          pagerEl.innerHTML = '';
           return;
         }
+
+        // Render all matching cards, then paginate after layout
         grid.innerHTML = visible.map(cardHtml).join('');
+        requestAnimationFrame(() => {
+          const cards = Array.from(grid.querySelectorAll('.cpdse-pubs__card'));
+          // Measure column count from first row
+          if (cards.length > 0) {
+            const firstTop = cards[0].offsetTop;
+            let cols = 0;
+            for (const c of cards) { if (c.offsetTop === firstTop) cols++; else break; }
+            cardsPerPage = Math.max(1, cols) * 3;
+          }
+          applyPage(cards);
+        });
       };
 
       // Wire interactions
