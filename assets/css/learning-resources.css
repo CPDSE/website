@@ -321,6 +321,10 @@ html { overflow-x: clip; }
 }
 
 /* ── Resource card ────────────────────────────────────── */
+.cpdse-learn__grid .cpdse-learn__card {
+  text-decoration: none;
+}
+
 .cpdse-learn__card {
   background: var(--soft);
   border-radius: 14px;
