@@ -170,6 +170,38 @@
         || (r.level || '').includes(state.level)
         || (state.level === 'All' && (r.level || '').includes('All'));
 
+      /* ---- Per-category row limiting ---- */
+      const applyRowLimits = () => {
+        catsEl.querySelectorAll('.cpdse-learn__category').forEach(section => {
+          const grid = section.querySelector('.cpdse-learn__grid');
+          if (!grid) return;
+          const cards = Array.from(grid.querySelectorAll('.cpdse-learn__card'));
+          if (cards.length <= 1) return;
+
+          // All cards whose top matches the first card are in row 1
+          const firstRowTop = cards[0].offsetTop;
+          let firstRowCount = 0;
+          for (const c of cards) {
+            if (c.offsetTop === firstRowTop) firstRowCount++;
+            else break;
+          }
+          if (firstRowCount >= cards.length) return; // already fits in one row
+
+          const hidden = cards.slice(firstRowCount);
+          hidden.forEach(c => c.classList.add('is-hidden-row'));
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cpdse-learn__row-more';
+          btn.textContent = `Show ${hidden.length} more`;
+          btn.addEventListener('click', () => {
+            hidden.forEach(c => c.classList.remove('is-hidden-row'));
+            btn.remove();
+          });
+          grid.after(btn);
+        });
+      };
+
       const render = () => {
         let totalVisible = 0;
         const sectionsHtml = categories.map(cat => {
@@ -189,6 +221,7 @@
 
         countEl && (countEl.textContent = totalVisible.toLocaleString());
         catsEl.innerHTML = sectionsHtml || `<p class="cpdse-learn__empty">No resources match these filters. Try widening the language or level.</p>`;
+        requestAnimationFrame(applyRowLimits);
 
         // Active filters summary
         const activeBits = [];
@@ -247,12 +280,33 @@
         requestAnimationFrame(() => {
           const target = document.getElementById(`res-${id}`);
           if (!target) return;
+          // Expand the category if the target card was hidden in an overflow row
+          if (target.classList.contains('is-hidden-row')) {
+            const grid = target.closest('.cpdse-learn__grid');
+            grid?.parentElement?.querySelector('.cpdse-learn__row-more')?.click();
+          }
           target.scrollIntoView({ behavior: 'smooth', block: 'center' });
           target.style.transition = 'box-shadow 600ms ease';
           target.style.boxShadow = '0 0 0 3px var(--accent), 0 18px 36px rgba(60,94,62,0.16)';
           setTimeout(() => { target.style.boxShadow = ''; }, 1800);
         });
       });
+
+      // Reapply row limits when the container width changes (column count may shift)
+      if (window.ResizeObserver) {
+        let resizeTimer;
+        new ResizeObserver(() => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            // Only reapply if there are currently expanded grids — avoids interfering
+            // with user-expanded rows on resize (they'll re-collapse, which is acceptable
+            // since column count genuinely changed)
+            catsEl.querySelectorAll('.cpdse-learn__row-more').forEach(b => b.remove());
+            catsEl.querySelectorAll('.cpdse-learn__card.is-hidden-row').forEach(c => c.classList.remove('is-hidden-row'));
+            applyRowLimits();
+          }, 150);
+        }).observe(catsEl);
+      }
 
       // First render
       render();
