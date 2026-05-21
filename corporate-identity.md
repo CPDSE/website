@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: corporate-identity
 title: Corporate Identity
 hero_label: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
