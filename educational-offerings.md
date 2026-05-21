@@ -11,7 +11,7 @@ offerings:
     card_title: Convergence Talks
     description: "Regular 30-minute talks on topics at the intersection of pharmaceutical science and data science. Free to attend — join us in person or follow along online."
     link_text: "View upcoming talks →"
-    link_url: /PagesCMS/news-events/
+    link_url: /news-events/
     external: false
 
   - icon: code
@@ -19,7 +19,7 @@ offerings:
     card_title: Pharma Code Club
     description: "A collaborative space for students at SDU or KU to practice and advance data science skills. All levels welcome — no prior experience required."
     link_text: "About the Code Club →"
-    link_url: /PagesCMS/codeclub/
+    link_url: /codeclub/
     external: false
 
   - icon: book
