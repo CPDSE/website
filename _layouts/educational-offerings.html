@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/educational-offerings.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/convtalks.css' | relative_url }}">
 
 <header class="page-hero">
@@ -12,22 +13,24 @@ layout: default
   </div>
 </header>
 
-<main class="page-body">
-  <ul class="offerings-grid" role="list">
-    {% for offering in page.offerings %}
-    {% capture icon_path %}icons/{{ offering.icon }}.svg{% endcapture %}
-    <li class="offering-card">
-      <div class="offering-card__icon" aria-hidden="true">
-        {% include {{ icon_path }} %}
-      </div>
-      <span class="offering-card__label">{{ offering.label }}</span>
-      <h2 class="offering-card__title">{{ offering.card_title }}</h2>
-      <p class="offering-card__desc">{{ offering.description }}</p>
-      <a class="offering-card__link" href="{{ offering.link_url }}"{% if offering.external %} target="_blank" rel="noopener"{% endif %}>{{ offering.link_text }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</main>
+<section class="eo-section">
+  <div class="container">
+    <ul class="offerings-grid" role="list">
+      {% for offering in page.offerings %}
+      {% capture icon_path %}icons/{{ offering.icon }}.svg{% endcapture %}
+      <li class="offering-card">
+        <div class="offering-card__icon" aria-hidden="true">
+          {% include {{ icon_path }} %}
+        </div>
+        <span class="offering-card__label">{{ offering.label }}</span>
+        <h2 class="offering-card__title">{{ offering.card_title }}</h2>
+        <p class="offering-card__desc">{{ offering.description }}</p>
+        <a class="offering-card__link" href="{{ offering.link_url | relative_url }}"{% if offering.external %} target="_blank" rel="noopener"{% endif %}>{{ offering.link_text }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
 {% assign talks_past = site.data.convergence_talks.past %}
 {% assign talks_upcoming = site.data.convergence_talks.upcoming %}
