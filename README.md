@@ -22,6 +22,8 @@ permalink: /your-url/         # what comes after cpdse.dk/
 ---
 ```
 
+**URL naming rule:** always use a flat, single-level permalink — `cpdse.dk/page-name/` — never a nested path like `cpdse.dk/section/page-name/`. Even if the `.md` file lives in a subfolder (e.g. `education/`), the permalink should still be `/page-name/`.
+
 ---
 
 ## Content sections
@@ -48,6 +50,8 @@ sections:
 ### Stats banner
 
 A row of large numbers with labels — counts up animatedly when scrolled into view. Works best on a `forest-green` section.
+
+![Example stats banner](docs/example-stats.png)
 
 ```yaml
   - color: forest-green
