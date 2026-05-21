@@ -48,14 +48,6 @@ content:
       - { name: title, label: Page Title, type: string }
       - { name: body, label: Body Content, type: rich-text }
 
-  - name: who-are-we
-    label: Who Are We
-    type: file
-    path: who-are-we.md
-    fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: body, label: Body Content, type: rich-text }
-
   - name: research-units
     label: Research Units
     type: file
