@@ -46,36 +46,17 @@ layout: default
   <div class="about-inner fade-in">
     <div class="about-visual">
       <div class="about-viz" id="pharma-live-viz">
-        <div class="about-viz-chart-wrap">
-          <svg class="about-viz-sunburst" id="medstat-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet"
-               role="img" aria-label="Sunburst diagram of Danish medicine use by DDD intensity"></svg>
-          <div class="about-viz-center-label" id="medstat-center-label" aria-hidden="true">
-            <div class="about-viz-center-name" id="medstat-center-name">All Drug Groups</div>
+        <div class="sankey-controls">
+          <span class="about-viz-hint" style="margin:0;text-align:left;">Drug use by setting &amp; age group · DDD</span>
+          <div class="sankey-year-btns" id="sankey-years">
+            <button class="sankey-yr-btn is-active" data-year="2025">2025</button>
+            <button class="sankey-yr-btn" data-year="2024">2024</button>
+            <button class="sankey-yr-btn" data-year="2023">2023</button>
           </div>
         </div>
-
-        <div class="about-viz-breadcrumb" id="medstat-breadcrumb"></div>
-
-        <div class="about-viz-info">
-          <div class="about-viz-stat-box">
-            <div class="about-viz-stat-label">VIEWING</div>
-            <div class="about-viz-stat-value" id="medstat-stat-name">All Drug Groups</div>
-          </div>
-          <div class="about-viz-stat-box">
-            <div class="about-viz-stat-label">DEFINED DAILY DOSES (M)</div>
-            <div class="about-viz-stat-value" id="medstat-stat-ddd">&mdash;</div>
-          </div>
-          <div class="about-viz-stat-box">
-            <div class="about-viz-stat-label">SHARE OF TOTAL</div>
-            <div class="about-viz-stat-value" id="medstat-stat-share">&mdash;</div>
-          </div>
-        </div>
-
-        <div class="about-viz-hint">Click any segment to zoom in · Click center to zoom out</div>
-        <div class="about-viz-hint">SOURCE: <a href="https://www.medstat.dk/" target="_blank" rel="noopener">MEDSTAT.DK</a> · ATC CLASSIFICATION · 2025</div>
-
-        <div class="about-viz-tooltip" id="medstat-tooltip" aria-live="polite"></div>
-        <div class="about-viz-updated"></div>
+        <svg id="sankey-svg" aria-label="Sankey diagram of Danish drug use by setting and age group"></svg>
+        <p class="sankey-tooltip" id="sankey-tooltip"></p>
+        <div class="about-viz-hint">Hover any flow for details · <a href="https://www.medstat.dk/" target="_blank" rel="noopener">SOURCE: MEDSTAT.DK</a> · ATC CLASSIFICATION</div>
       </div>
     </div>
     <div class="about-text">
@@ -276,6 +257,8 @@ layout: default
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <script>
   // ─── OUR VISION TIMELINE — auto-looping carousel ──────────────────────────
   (() => {
@@ -316,398 +299,133 @@ layout: default
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
   })();
 
-  // ─── ABOUT VIZ: MEDSTAT SUNBURST ───────────────────────────────────────────
-  const pharmaViz = document.getElementById('pharma-live-viz');
-  if (pharmaViz) {
-    const svgEl = pharmaViz.querySelector('#medstat-svg');
-    const tooltipEl = pharmaViz.querySelector('#medstat-tooltip');
-    const breadcrumbEl = pharmaViz.querySelector('#medstat-breadcrumb');
-    const centerNameEl = pharmaViz.querySelector('#medstat-center-name');
-    const statNameEl = pharmaViz.querySelector('#medstat-stat-name');
-    const statDddEl = pharmaViz.querySelector('#medstat-stat-ddd');
-    const statShareEl = pharmaViz.querySelector('#medstat-stat-share');
-    const updatedEl = pharmaViz.querySelector('.about-viz-updated');
+  // ─── ABOUT VIZ: MEDSTAT SANKEY ─────────────────────────────────────────────
+  (function () {
+    if (typeof d3 === 'undefined' || typeof d3.sankey === 'undefined') return;
+
     const snapshotUrl = '{{ "/assets/data/medstat_hierarchy_snapshot.json" | relative_url }}';
-    const NS = 'http://www.w3.org/2000/svg';
-    const W = 600;
-    const H = 600;
-    const CX = 300;
-    const CY = 300;
-    const GAP_INNER = 48;
-    const RING_W = 105;
-    const DURATION = 480;
-    const PALETTE = ['#A9BBAA', '#D6C17C', '#e15759', '#76b7b2', '#59a14f', '#edc948', '#b07aa1', '#ff9da7', '#9c755f', '#bab0ac'];
 
-    let snapshotData = null;
-    let activeYear = '2025';
-    let yearRoot = null;
-    let currentRoot = null;
-    let ancestorStack = [];
-    let globalTotal = 0;
-    let animating = false;
-
-    const sumTree = (node) => {
-      if (!node) return 0;
-      const own = Number(node.value) || 0;
-      if (!node.children?.length) return own;
-      const sum = node.children.reduce((acc, child) => acc + sumTree(child), 0);
-      node.value = sum > 0 ? sum : own;
-      return node.value;
+    const COLORS = {
+      setting:  ['#3C5E3E', '#5A7A5C'],
+      category: ['#D6C17C', '#C8A855', '#BA9445', '#AC8035', '#9E6E25', '#905C15'],
+      age:      ['#A9BBAA', '#8DA49F', '#728D94']
     };
 
-    const assignColors = (root) => {
-      if (!root?.children?.length) return;
-      root.children.forEach((child, index) => {
-        child.color = PALETTE[index % PALETTE.length];
-      });
+    function sumLeaves(node) {
+      if (!node.children || !node.children.length) return Number(node.value) || 0;
+      return node.children.reduce(function (s, c) { return s + sumLeaves(c); }, 0);
+    }
 
-      const walk = (node, inheritedColor) => {
-        const color = node.color || inheritedColor || PALETTE[9];
-        node.color = color;
-        if (!node.children?.length) return;
-        node.children.forEach((child) => walk(child, color));
-      };
+    function buildGraph(yearRoot) {
+      var nodes = [], links = [], idx = {};
+      var cnt = { setting: 0, category: 0, age: 0 };
 
-      root.children.forEach((child) => walk(child, child.color));
-    };
-
-    const fmt = (n) => Number(n || 0).toLocaleString('da-DK');
-
-    const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-
-    const resolveColor = (node, root, depth) => {
-      if (depth === 1) return node.color || node._parent?.color || PALETTE[9];
-      const ancestor = root === yearRoot ? node._parent : root;
-      return ancestor?.color || PALETTE[9];
-    };
-
-    const arcPath = (r1, r2, startAngle, endAngle) => {
-      const sweep = Math.max(endAngle - startAngle, 0.0001);
-      const safeEnd = startAngle + sweep;
-      const largeArc = sweep > Math.PI ? 1 : 0;
-      const x1 = CX + r1 * Math.cos(startAngle);
-      const y1 = CY + r1 * Math.sin(startAngle);
-      const x2 = CX + r2 * Math.cos(startAngle);
-      const y2 = CY + r2 * Math.sin(startAngle);
-      const x3 = CX + r2 * Math.cos(safeEnd);
-      const y3 = CY + r2 * Math.sin(safeEnd);
-      const x4 = CX + r1 * Math.cos(safeEnd);
-      const y4 = CY + r1 * Math.sin(safeEnd);
-      return `M${x1} ${y1} A${r1} ${r1} 0 ${largeArc} 1 ${x4} ${y4} L${x3} ${y3} A${r2} ${r2} 0 ${largeArc} 0 ${x2} ${y2}Z`;
-    };
-
-    const collectItems = (root) => {
-      const items = [];
-      const walk = (node, depth, sa, ea, parent) => {
-        node._parent = parent;
-        if (depth > 0) items.push({ node, depth, sa, ea });
-        if (node.children?.length && depth < 2) {
-          const total = Math.max(node.children.reduce((s, c) => s + (Number(c.value) || 0), 0), 1);
-          let a = sa;
-          node.children.forEach((child) => {
-            const sw = ((Number(child.value) || 0) / total) * (ea - sa);
-            walk(child, depth + 1, a, a + sw, node);
-            a += sw;
-          });
-        }
-      };
-      walk(root, 0, -Math.PI / 2, 3 * Math.PI / 2, null);
-      return items;
-    };
-
-    const maybeLabel = (node, depth, r1, r2, sa, ea) => {
-      const sweep = ea - sa;
-      if (sweep <= 0.18) return null;
-      const mid = (sa + ea) / 2;
-      const labelR = r1 + (r2 - r1) * 0.52;
-      const text = document.createElementNS(NS, 'text');
-      text.setAttribute('x', String(CX + labelR * Math.cos(mid)));
-      text.setAttribute('y', String(CY + labelR * Math.sin(mid)));
-      text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('dominant-baseline', 'central');
-      text.setAttribute('fill', '#F9F9F9');
-      text.setAttribute('font-size', sweep > 0.5 ? '9.5' : '8');
-      text.setAttribute('font-family', 'DM Mono, monospace');
-      text.setAttribute('pointer-events', 'none');
-      text.setAttribute('opacity', '0.85');
-      const label = node.name.split(' · ')[0];
-      text.textContent = label.length > 12 ? `${label.slice(0, 11)}...` : label;
-      return text;
-    };
-
-    const showTooltip = (event, node) => {
-      if (!tooltipEl) return;
-      const share = globalTotal > 0 ? ((Number(node.value || 0) / globalTotal) * 100).toFixed(1) : '0.0';
-      tooltipEl.innerHTML = `<strong>${node.name}</strong><em>${fmt(node.value)} DDD · ${share}% of total</em>`;
-      tooltipEl.style.opacity = '1';
-      tooltipEl.style.left = `${event.clientX + 8}px`;
-      tooltipEl.style.top = `${event.clientY - 6}px`;
-    };
-
-    const hideTooltip = () => {
-      if (tooltipEl) tooltipEl.style.opacity = '0';
-    };
-
-    const attachHover = (path, node, depth) => {
-      path.addEventListener('mouseenter', (event) => {
-        if (animating) return;
-        path.setAttribute('opacity', '1');
-        showTooltip(event, node);
-      });
-      path.addEventListener('mousemove', (event) => {
-        if (!tooltipEl) return;
-        tooltipEl.style.left = `${event.clientX + 8}px`;
-        tooltipEl.style.top = `${event.clientY - 6}px`;
-      });
-      path.addEventListener('mouseleave', () => {
-        path.setAttribute('opacity', depth === 1 ? '0.92' : '0.58');
-        hideTooltip();
-      });
-    };
-
-    const updateBreadcrumb = () => {
-      if (!breadcrumbEl) return;
-      breadcrumbEl.innerHTML = '';
-      const trail = [...ancestorStack, currentRoot];
-      trail.forEach((node, i) => {
-        const sp = document.createElement('span');
-        sp.textContent = node.name.split(' · ')[0];
-        if (i < trail.length - 1) {
-          sp.addEventListener('click', () => {
-            if (animating) return;
-            while (ancestorStack.length > i) ancestorStack.pop();
-            updateUI(node);
-            animateTo(node);
-          });
-        } else {
-          sp.classList.add('current');
-        }
-        breadcrumbEl.appendChild(sp);
-        if (i < trail.length - 1) {
-          const sep = document.createElement('span');
-          sep.className = 'sep';
-          sep.textContent = ' › ';
-          breadcrumbEl.appendChild(sep);
-        }
-      });
-    };
-
-    const updateStats = (node) => {
-      if (statNameEl) statNameEl.textContent = node.name.split(' · ')[0];
-      if (statDddEl) statDddEl.textContent = `${fmt(node.value)}`;
-      if (statShareEl) statShareEl.textContent = node === yearRoot ? '100%' : `${((Number(node.value || 0) / Math.max(globalTotal, 1)) * 100).toFixed(1)}%`;
-    };
-
-    const updateUI = (node) => {
-      if (centerNameEl) centerNameEl.textContent = node.name;
-      updateBreadcrumb();
-      updateStats(node);
-    };
-
-    const renderStatic = (root) => {
-      if (!svgEl) return;
-      svgEl.innerHTML = '';
-      svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      const items = collectItems(root);
-
-      items.forEach(({ node, depth, sa, ea }) => {
-        const r1 = GAP_INNER + (depth - 1) * RING_W;
-        const r2 = r1 + RING_W - 3;
-        const path = document.createElementNS(NS, 'path');
-        path.setAttribute('d', arcPath(r1, r2, sa, ea));
-        path.setAttribute('fill', resolveColor(node, root, depth));
-        path.setAttribute('opacity', depth === 1 ? '0.92' : '0.58');
-        path.style.cursor = node.children?.length ? 'pointer' : 'default';
-        attachHover(path, node, depth);
-        path.addEventListener('click', () => handleClick(node));
-        svgEl.appendChild(path);
-
-        const text = maybeLabel(node, depth, r1, r2, sa, ea);
-        if (text) svgEl.appendChild(text);
-      });
-
-      const center = document.createElementNS(NS, 'circle');
-      center.setAttribute('cx', String(CX));
-      center.setAttribute('cy', String(CY));
-      center.setAttribute('r', String(GAP_INNER));
-      center.setAttribute('class', 'sunburst-root');
-      center.style.cursor = ancestorStack.length ? 'pointer' : 'default';
-      if (ancestorStack.length) center.addEventListener('click', goBack);
-      svgEl.appendChild(center);
-
-      updateUI(root);
-      if (updatedEl) {
-        updatedEl.textContent = '';
+      function addNode(name, group) {
+        if (name in idx) return idx[name];
+        var color = COLORS[group][cnt[group]++] || '#888';
+        idx[name] = nodes.length;
+        nodes.push({ name: name, group: group, color: color });
+        return idx[name];
       }
-    };
 
-    const animateTo = (nextRoot) => {
-      if (!svgEl || animating) return;
-      animating = true;
-      hideTooltip();
-
-      const prevItems = collectItems(currentRoot);
-      const nextItems = collectItems(nextRoot);
-      const prevMap = new Map(prevItems.map((it) => [it.node, it]));
-      const nextMap = new Map(nextItems.map((it) => [it.node, it]));
-      const allNodes = new Set([...prevMap.keys(), ...nextMap.keys()]);
-      const tweens = [];
-
-      allNodes.forEach((node) => {
-        const prev = prevMap.get(node);
-        const next = nextMap.get(node);
-        const depthFrom = prev ? prev.depth : (next ? next.depth : 1);
-        const depthTo = next ? next.depth : (prev ? prev.depth : 1);
-        const r1From = GAP_INNER + (depthFrom - 1) * RING_W;
-        const r2From = r1From + RING_W - 3;
-        const r1To = GAP_INNER + (depthTo - 1) * RING_W;
-        const r2To = r1To + RING_W - 3;
-
-        let saFrom;
-        let eaFrom;
-        let saTo;
-        let eaTo;
-        let opFrom;
-        let opTo;
-        const baseOp = depthTo === 1 ? 0.92 : 0.58;
-
-        if (prev && next) {
-          saFrom = prev.sa;
-          eaFrom = prev.ea;
-          saTo = next.sa;
-          eaTo = next.ea;
-          opFrom = depthFrom === 1 ? 0.92 : 0.58;
-          opTo = baseOp;
-        } else if (!prev && next) {
-          const parentNext = next.node._parent;
-          if (parentNext && nextMap.get(parentNext)) {
-            const pm = nextMap.get(parentNext);
-            const mid = (pm.sa + pm.ea) / 2;
-            saFrom = mid;
-            eaFrom = mid;
-          } else {
-            const mid = (next.sa + next.ea) / 2;
-            saFrom = mid;
-            eaFrom = mid;
-          }
-          saTo = next.sa;
-          eaTo = next.ea;
-          opFrom = 0;
-          opTo = baseOp;
-        } else {
-          const mid = (prev.sa + prev.ea) / 2;
-          saFrom = prev.sa;
-          eaFrom = prev.ea;
-          saTo = mid;
-          eaTo = mid;
-          opFrom = depthFrom === 1 ? 0.92 : 0.58;
-          opTo = 0;
-        }
-
-        tweens.push({
-          node,
-          saFrom,
-          eaFrom,
-          saTo,
-          eaTo,
-          r1From,
-          r2From,
-          r1To,
-          r2To,
-          opFrom,
-          opTo,
-          color: resolveColor(node, nextRoot, depthTo)
+      yearRoot.children.forEach(function (setting) {
+        var si = addNode(setting.name, 'setting');
+        setting.children.forEach(function (cat) {
+          var ci = addNode(cat.name, 'category');
+          links.push({ source: si, target: ci, value: Math.max(1, sumLeaves(cat)) });
+          cat.children.forEach(function (age) {
+            var ai = addNode(age.name, 'age');
+            links.push({ source: ci, target: ai, value: Math.max(1, sumLeaves(age)) });
+          });
         });
       });
+      return { nodes: nodes, links: links };
+    }
 
+    function render(graph) {
+      var svgEl = document.getElementById('sankey-svg');
+      if (!svgEl) return;
+      var wrap = svgEl.closest('.about-viz');
+      var W = (wrap ? wrap.clientWidth : 460) || 460;
+      var H = 340;
+      var m = { top: 12, right: 140, bottom: 12, left: 118 };
+
+      svgEl.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svgEl.style.cssText = 'width:100%;height:' + H + 'px;overflow:visible;display:block;';
       svgEl.innerHTML = '';
-      const pathEls = new Map();
-      tweens.forEach((tw) => {
-        const path = document.createElementNS(NS, 'path');
-        path.setAttribute('fill', tw.color);
-        svgEl.appendChild(path);
-        pathEls.set(tw.node, path);
+
+      var sk = d3.sankey()
+        .nodeWidth(15)
+        .nodePadding(11)
+        .extent([[m.left, m.top], [W - m.right, H - m.bottom]])
+        .nodeSort(null);
+
+      var layout = sk({
+        nodes: graph.nodes.map(function (d) { return Object.assign({}, d); }),
+        links: graph.links.map(function (d) { return Object.assign({}, d); })
       });
 
-      const center = document.createElementNS(NS, 'circle');
-      center.setAttribute('cx', String(CX));
-      center.setAttribute('cy', String(CY));
-      center.setAttribute('r', String(GAP_INNER));
-      center.setAttribute('class', 'sunburst-root');
-      svgEl.appendChild(center);
+      var svg = d3.select(svgEl);
+      var tip = document.getElementById('sankey-tooltip');
 
-      const start = performance.now();
-      const frame = (now) => {
-        const raw = Math.min((now - start) / DURATION, 1);
-        const t = easeInOutCubic(raw);
-        tweens.forEach((tw) => {
-          const path = pathEls.get(tw.node);
-          const r1 = tw.r1From + (tw.r1To - tw.r1From) * t;
-          const r2 = tw.r2From + (tw.r2To - tw.r2From) * t;
-          const sa = tw.saFrom + (tw.saTo - tw.saFrom) * t;
-          const ea = tw.eaFrom + (tw.eaTo - tw.eaFrom) * t;
-          const op = tw.opFrom + (tw.opTo - tw.opFrom) * t;
-          path.setAttribute('d', arcPath(r1, r2, sa, ea));
-          path.setAttribute('opacity', String(op));
-        });
+      svg.append('g').attr('fill', 'none')
+        .selectAll('path').data(layout.links).join('path')
+          .attr('d', d3.sankeyLinkHorizontal())
+          .attr('stroke', function (d) { return d.source.color; })
+          .attr('stroke-width', function (d) { return Math.max(1.5, d.width); })
+          .attr('opacity', 0.28)
+          .on('mouseenter', function (event, d) {
+            d3.select(this).attr('opacity', 0.62);
+            if (tip) {
+              tip.textContent = d.source.name.split(' (')[0] + ' → ' + d.target.name + ': ' + d.value + ' DDD';
+              tip.style.opacity = '1';
+            }
+          })
+          .on('mouseleave', function () {
+            d3.select(this).attr('opacity', 0.28);
+            if (tip) tip.style.opacity = '0';
+          });
 
-        if (raw < 1) {
-          requestAnimationFrame(frame);
-        } else {
-          animating = false;
-          currentRoot = nextRoot;
-          renderStatic(nextRoot);
-        }
-      };
+      svg.append('g').selectAll('rect').data(layout.nodes).join('rect')
+        .attr('x', function (d) { return d.x0; })
+        .attr('y', function (d) { return d.y0; })
+        .attr('width', function (d) { return d.x1 - d.x0; })
+        .attr('height', function (d) { return Math.max(1, d.y1 - d.y0); })
+        .attr('fill', function (d) { return d.color; })
+        .attr('rx', 3);
 
-      requestAnimationFrame(frame);
-    };
+      svg.append('g')
+        .style('font', '9.5px "DM Mono",monospace')
+        .style('fill', 'rgba(249,249,249,0.82)')
+        .selectAll('text').data(layout.nodes).join('text')
+          .attr('x', function (d) { return d.x0 < W / 2 ? d.x1 + 7 : d.x0 - 7; })
+          .attr('y', function (d) { return (d.y0 + d.y1) / 2; })
+          .attr('dy', '0.35em')
+          .attr('text-anchor', function (d) { return d.x0 < W / 2 ? 'start' : 'end'; })
+          .text(function (d) {
+            var n = d.name.replace(/ \(ATC[^)]*\)/g, '').replace('/Anesthesia', '');
+            return n.length > 19 ? n.slice(0, 18) + '…' : n;
+          });
+    }
 
-    const handleClick = (node) => {
-      if (animating || !node.children?.length) return;
-      ancestorStack.push(currentRoot);
-      updateUI(node);
-      animateTo(node);
-    };
+    var allData = null;
 
-    const goBack = () => {
-      if (animating || ancestorStack.length === 0) return;
-      const prev = ancestorStack.pop();
-      updateUI(prev);
-      animateTo(prev);
-    };
+    function showYear(year) {
+      if (!allData || !allData.years || !allData.years[year]) return;
+      render(buildGraph(allData.years[year]));
+    }
 
-    const getYearRoot = () => {
-      const root = snapshotData?.years?.[activeYear];
-      if (root) return root;
-      const first = Object.keys(snapshotData?.years || {})[0];
-      if (!first) return null;
-      activeYear = first;
-      return snapshotData.years[first];
-    };
-
-    const initYear = () => {
-      yearRoot = getYearRoot();
-      if (!yearRoot) return;
-      sumTree(yearRoot);
-      assignColors(yearRoot);
-      globalTotal = Number(yearRoot.value) || 0;
-      currentRoot = yearRoot;
-      ancestorStack = [];
-      renderStatic(currentRoot);
-    };
+    document.querySelectorAll('.sankey-yr-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.sankey-yr-btn').forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        showYear(btn.dataset.year);
+      });
+    });
 
     fetch(snapshotUrl, { cache: 'no-store' })
-      .then((response) => {
-        if (!response.ok) throw new Error('Snapshot fetch failed');
-        return response.json();
-      })
-      .then((data) => {
-        snapshotData = data;
-        initYear();
-      })
-      .catch(() => {
-        if (updatedEl) updatedEl.textContent = '';
-      });
-  }
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) { allData = d; showYear('2025'); })
+      .catch(function () {});
+  })();
 </script>
