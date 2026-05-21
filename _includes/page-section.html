@@ -1,0 +1,95 @@
+{% comment %}
+  Renders one section from the page.sections array.
+
+  Usage (from a layout):
+    {% for section in page.sections %}
+      {% include page-section.html section=section %}
+    {% endfor %}
+
+  Section fields (all optional except colour):
+    color      : soft-white | ivory | mint-gray | warm-sand |
+                 forest-green | sage-green | charcoal-gray
+    label      : small eyebrow text above the title
+    title      : section heading
+
+  Layout type (choose one):
+    content    : plain Markdown body text
+    cards      : list of { icon, title, content }
+    columns    : list of exactly two { content } blocks
+    stats      : list of { number, label, detail }
+    image      : { src, alt, position: left|right } + content
+{% endcomment %}
+
+{% assign s = include.section %}
+{% assign color = s.color | default: 'soft-white' %}
+
+<section class="page-section page-section--{{ color }}">
+  <div class="container">
+
+    {% if s.label or s.title %}
+    <header class="page-section__header">
+      {% if s.label %}<span class="page-section__label">{{ s.label }}</span>{% endif %}
+      {% if s.title %}<h2 class="page-section__title">{{ s.title }}</h2>{% endif %}
+    </header>
+    {% endif %}
+
+    {% if s.cards %}
+    <!-- ── Cards ── -->
+    <div class="page-section__cards">
+      {% for card in s.cards %}
+      <div class="page-section__card">
+        {% if card.icon %}
+        <div class="page-section__card-icon" aria-hidden="true">
+          {% capture icon_path %}icons/{{ card.icon }}.svg{% endcapture %}
+          {% include {{ icon_path }} %}
+        </div>
+        {% endif %}
+        {% if card.title %}<h3 class="page-section__card-title">{{ card.title }}</h3>{% endif %}
+        {% if card.content %}<p class="page-section__card-body">{{ card.content }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elsif s.columns %}
+    <!-- ── Two columns ── -->
+    <div class="page-section__columns">
+      {% for col in s.columns %}
+      <div class="page-section__column">
+        {{ col.content | markdownify }}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elsif s.stats %}
+    <!-- ── Stats strip ── -->
+    <div class="page-section__stats">
+      {% for stat in s.stats %}
+      <div class="page-section__stat">
+        <span class="page-section__stat-number" data-count="{{ stat.number }}">{{ stat.number }}</span>
+        <span class="page-section__stat-label">{{ stat.label }}</span>
+        {% if stat.detail %}<span class="page-section__stat-detail">{{ stat.detail }}</span>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elsif s.image %}
+    <!-- ── Image + text ── -->
+    {% assign img_pos = s.image.position | default: 'left' %}
+    <div class="page-section__image-text page-section__image-text--{{ img_pos }}">
+      <div class="page-section__image-wrap">
+        <img src="{{ s.image.src | relative_url }}" alt="{{ s.image.alt | default: '' }}">
+      </div>
+      <div class="page-section__image-body">
+        {{ s.content | markdownify }}
+      </div>
+    </div>
+
+    {% else %}
+    <!-- ── Plain content ── -->
+    <div class="page-section__content">
+      {{ s.content | markdownify }}
+    </div>
+    {% endif %}
+
+  </div>
+</section>

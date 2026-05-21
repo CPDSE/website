@@ -1,0 +1,246 @@
+/* CPDSE — Sectioned page layout system
+ *
+ * Provides background-colour variants and layout types for the
+ * sectioned-page layout. Editors choose a colour and layout type
+ * in YAML front matter; no HTML required.
+ *
+ * Section colours:
+ *   soft-white | ivory | mint-gray | warm-sand
+ *   forest-green | sage-green | charcoal-gray
+ *
+ * Section layout types (within a section):
+ *   (default) plain markdown content
+ *   cards     — card grid with optional icon, title, body
+ *   columns   — two-column text split
+ *   stats     — stat strip (number + label + optional detail)
+ *   image     — image + text pair (image left or right)
+ * ---------------------------------------------------------------- */
+
+/* ── Base section ────────────────────────────────────────────── */
+.page-section {
+  padding: var(--space-lg) 0;
+}
+.page-section + .page-section {
+  /* no extra gap — backgrounds create the visual rhythm */
+}
+
+/* ── Colour variants ─────────────────────────────────────────── */
+.page-section--soft-white   { background: var(--color-soft-white);    color: var(--ink); }
+.page-section--ivory        { background: var(--color-ivory);          color: var(--ink); }
+.page-section--mint-gray    { background: var(--color-mint-gray);      color: var(--ink); }
+.page-section--warm-sand    { background: var(--color-warm-sand);      color: var(--ink); }
+.page-section--forest-green { background: var(--color-forest-green);   color: #F9F9F9; }
+.page-section--sage-green   { background: var(--color-sage-green);     color: #F9F9F9; }
+.page-section--charcoal-gray{ background: var(--color-charcoal-gray);  color: #F9F9F9; }
+
+/* Light text adjustments for dark sections */
+.page-section--forest-green h1,
+.page-section--forest-green h2,
+.page-section--forest-green h3,
+.page-section--forest-green h4,
+.page-section--sage-green h1,
+.page-section--sage-green h2,
+.page-section--sage-green h3,
+.page-section--sage-green h4,
+.page-section--charcoal-gray h1,
+.page-section--charcoal-gray h2,
+.page-section--charcoal-gray h3,
+.page-section--charcoal-gray h4 {
+  color: var(--color-antique-gold);
+}
+
+.page-section--forest-green a,
+.page-section--sage-green a,
+.page-section--charcoal-gray a {
+  color: var(--color-warm-sand);
+}
+
+/* ── Section header (optional label + title) ─────────────────── */
+.page-section__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.page-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+/* ── Plain content ───────────────────────────────────────────── */
+.page-section__content {
+  max-width: 72ch;
+}
+.page-section__content h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); margin: 1.5rem 0 0.5rem; line-height: 1.2; }
+.page-section__content h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; margin: 1.2rem 0 0.4rem; }
+.page-section__content p  { margin: 0.75rem 0; line-height: 1.7; }
+.page-section__content ul,
+.page-section__content ol { margin: 0.75rem 0 0.75rem 1.4rem; line-height: 1.7; }
+.page-section__content li { margin-bottom: 0.3rem; }
+
+/* ── Cards layout ────────────────────────────────────────────── */
+.page-section__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.page-section__card {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  padding: 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* Dark-background card variant */
+.page-section--forest-green .page-section__card,
+.page-section--sage-green   .page-section__card,
+.page-section--charcoal-gray .page-section__card {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.page-section__card-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-forest-green);
+  flex-shrink: 0;
+}
+.page-section--forest-green .page-section__card-icon,
+.page-section--sage-green   .page-section__card-icon,
+.page-section--charcoal-gray .page-section__card-icon {
+  color: var(--color-antique-gold);
+}
+
+.page-section__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.page-section__card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-forest-green);
+  margin: 0;
+}
+.page-section--forest-green .page-section__card-title,
+.page-section--sage-green   .page-section__card-title,
+.page-section--charcoal-gray .page-section__card-title {
+  color: var(--color-antique-gold);
+}
+
+.page-section__card-body {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.88;
+  margin: 0;
+}
+
+/* ── Two-column layout ───────────────────────────────────────── */
+.page-section__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .page-section__columns { grid-template-columns: 1fr; }
+}
+
+.page-section__column h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.8rem); margin-bottom: 0.75rem; line-height: 1.2; }
+.page-section__column h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.page-section__column p  { margin: 0.6rem 0; line-height: 1.7; font-size: 0.95rem; }
+.page-section__column ul,
+.page-section__column ol { margin: 0.6rem 0 0.6rem 1.3rem; line-height: 1.7; font-size: 0.95rem; }
+
+/* ── Stats strip layout ──────────────────────────────────────── */
+.page-section__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.page-section__stat {
+  padding: 1rem;
+}
+
+.page-section__stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1;
+  display: block;
+  color: var(--color-antique-gold);
+}
+.page-section--soft-white .page-section__stat-number,
+.page-section--ivory      .page-section__stat-number,
+.page-section--mint-gray  .page-section__stat-number,
+.page-section--warm-sand  .page-section__stat-number {
+  color: var(--color-forest-green);
+}
+
+.page-section__stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.4rem;
+  opacity: 0.85;
+}
+
+.page-section__stat-detail {
+  font-size: 0.82rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ── Image + text layout ─────────────────────────────────────── */
+.page-section__image-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+.page-section__image-text--right .page-section__image-wrap {
+  order: 2;
+}
+@media (max-width: 720px) {
+  .page-section__image-text { grid-template-columns: 1fr; }
+  .page-section__image-text--right .page-section__image-wrap { order: 0; }
+}
+
+.page-section__image-wrap img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.page-section__image-body h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.8rem); margin-bottom: 0.75rem; line-height: 1.2; }
+.page-section__image-body h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.page-section__image-body p  { margin: 0.6rem 0; line-height: 1.7; }
+.page-section__image-body ul,
+.page-section__image-body ol { margin: 0.6rem 0 0.6rem 1.3rem; line-height: 1.7; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .page-section { padding: var(--space-md) 0; }
+  .page-section__cards { grid-template-columns: 1fr; }
+  .page-section__stats  { grid-template-columns: repeat(2, 1fr); }
+}

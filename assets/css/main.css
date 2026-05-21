@@ -12,6 +12,20 @@
   --muted:      #8a9490;
   --border:     #d4cfc4;
 
+  /* ── CPDSE brand palette ── */
+  --color-forest-green:  #3C5E3E;
+  --color-sage-green:    #5F7D61;
+  --color-mint-gray:     #A9BBAA;
+  --color-antique-gold:  #D6C17C;
+  --color-warm-sand:     #E4D7A1;
+  --color-ivory:         #F6F1DC;
+  --color-charcoal-gray: #333333;
+  --color-soft-white:    #F9F9F9;
+
+  /* Keep legacy aliases pointing at same values */
+  --ivory: #F6F1DC;
+  --sage:  #5F7D61;
+
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body:    Verdana, system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', 'Consolas', 'Menlo', monospace;
