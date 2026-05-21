@@ -1,50 +1,62 @@
 ---
-layout: sectioned-page
+layout: about
 title: About CPDSE
 hero_label: Who are we
 description: Today's transformation towards data-driven solutions is highly dependent on talents with the necessary skills. CPDSE is dedicated to developing research-based education for the future workforce of drug experts, spanning bachelor, master, PhD and life-long learning levels. The Center for Pharmaceutical Data Science Education is a close collaboration between UCPH and SDU. The goal of the center is to advance Danish education within pharmaceutical sciences through integration of data science.
 permalink: /about/
 
-sections:
-  - color: ivory
-    label: Our Purpose
-    title: Vision & Mission
-    cards:
-      - icon: vision
-        title: Vision
-        content: Data science is an integral core capability in life science workers and organisations.
-      - icon: mission
-        title: Mission
-        content: "To educate the workforce of pharmaceutical data science professionals and researchers. Therefore, the center develops education for people to be 'data and drugs' bilinguals."
+vision_mission:
+  - num: "01"
+    label: "Vision"
+    statement: "Data science is an integral core capability in life science workers and organisations."
+    body: "A future where pharmaceutical scientists and researchers don't borrow data skills from elsewhere — they own them. Where data literacy is as fundamental to the field as chemistry, biology, or pharmacology."
+    variant: light
+  - num: "02"
+    label: "Mission"
+    statement: "To educate the workforce of pharmaceutical data science professionals and researchers."
+    body: "Therefore, the <strong>center</strong> will develop research-based education for the future workforce of <strong>'data and drugs'</strong> bilinguals — spanning bachelor, master, PhD and life-long learning levels."
+    variant: forest
 
-  - color: mint-gray
-    label: What We Do
-    title: Our Activities
-    cards:
-      - icon: community
-        title: Community
-        content: We build a strong and open community for pharmaceutical data science.
-      - icon: infrastructure
-        title: Infrastructure
-        content: We develop and deploy low-friction infrastructure that enables and empowers non-expert data science.
-      - icon: curriculum
-        title: Curriculum reform
-        content: We upgrade and reform pharma courses, and design new courses to integrate data science throughout.
-      - icon: teaching
-        title: Direct teaching
-        content: "We contribute directly to teaching at BA, MS, PhD and life-long learning levels."
-      - icon: networks
-        title: Networks
-        content: We connect and develop national and international networks in pharma data science and data science education.
+activities:
+  - icon: community
+    title: Community
+    content: We build a strong and open community for pharmaceutical data science.
+  - icon: infrastructure
+    title: Infrastructure
+    content: We develop and deploy low-friction infrastructure that empowers non-expert data science.
+  - icon: curriculum
+    title: Curriculum reform
+    content: We upgrade and reform pharma-courses, and design new courses that integrate data science.
+  - icon: teaching
+    title: Direct teaching
+    content: We contribute directly to teaching at BA, MS, PhD and life-long learning levels.
+  - icon: networks
+    title: Networks
+    content: We connect and develop national and international networks in pharma data science and data science education.
+
+principles:
+  - title: "Evolutionary purpose, wholeness & co-leadership"
+    body: "The center's purpose is a living thing that evolves with the team, with everyone sharing responsibility and leadership."
+  - title: "Radical transparency"
+    body: "Information is openly shared across the CPDSE by default, fostering trust and enabling everyone to make better decisions."
+  - title: "Decision by consent"
+    body: "Decisions are made by those closest to the work. They seek advice from others before acting — ensuring broad input without requiring full consensus."
+  - title: "Good enough for now, safe enough to try"
+    body: "We embrace iterative progress. Get a working version out quickly to test and learn, rather than waiting for a perfect final product."
+  - title: "Time-boxed & iterative work"
+    body: "All work has an expiration date. Clear deadlines prevent projects from stalling and encourage continuous improvement through new iterations."
+  - title: "Embrace differences in time commitment"
+    body: "Team members have varying levels of availability. We structure work so everyone can contribute meaningfully, regardless of their time commitment."
 ---
 
-<section class="section section-circles">
+<section class="section section-circles" style="background: var(--color-ivory);">
   <div class="container">
     <div class="circles-layout fade-in">
       <div class="section-header" style="margin-bottom:var(--space-md);">
         <span class="section-label">CPDSE Circles</span>
-        <h2>The circles that drive CPDSE</h2>
-        <p>CPDSE is organized in connected circles. Hover each bubble to see a short description.</p>
+        <h2>Curious about the circles and the people who run them?</h2>
+        <p>CPDSE is organised into six interlocking circles. Each owns a slice of the work and reports out into the wider center.</p>
+        <a href="{{ '/people/' | relative_url }}" class="btn btn-primary" style="margin-top:1.25rem; display:inline-block;">View People</a>
       </div>
 
       <div class="circles-cluster" id="circles-cluster" aria-label="CPDSE circles overview">

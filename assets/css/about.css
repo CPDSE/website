@@ -1,0 +1,424 @@
+/* CPDSE — About page
+   ----------------------------------------------------------------------
+   Styles for the three content sections in the About layout:
+     cn-*       shared section scaffolding (eyebrow, h2, lead, header wrapper)
+     vm-*       Vision & Mission cards
+     activity-* Five lines of work
+     nwow-*     New Ways of Working banner + principle cards
+   Loaded only on /about/ via _layouts/about.html. */
+
+.cpdse-about {
+  --forest: var(--color-forest-green, #3C5E3E);
+  --gold:   var(--accent, #D6C17C);
+  --sand:   var(--color-warm-sand, #E4D7A1);
+  --ivory:  var(--color-ivory, #F6F1DC);
+  --soft:   var(--color-soft-white, #F9F9F9);
+  --hair:   var(--border, #d4cfc4);
+}
+
+/* ── Section scaffolding ────────────────────────────────────── */
+.cn-section {
+  padding: var(--space-lg) 0;
+}
+
+.cn-section--ivory {
+  background: var(--color-ivory, #F6F1DC);
+}
+
+.cn-inner {
+  max-width: var(--max-w, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ── Shared section header ──────────────────────────────────── */
+.cn-header {
+  margin-bottom: var(--space-md);
+}
+
+.cn-header--centered {
+  text-align: center;
+}
+
+.cn-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-forest-green, #3C5E3E);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.cn-eyebrow::before {
+  content: '// ';
+}
+
+.cn-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.15;
+  max-width: 22ch;
+  color: var(--color-forest-green, #3C5E3E);
+  margin: 0 0 0.75rem;
+}
+
+.cn-header--centered .cn-h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cn-h2 em {
+  color: var(--accent, #D6C17C);
+  font-style: italic;
+}
+
+.cn-lead {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--muted, #8a9490);
+  max-width: 70ch;
+  margin: 0;
+}
+
+.cn-header--centered .cn-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Vision & Mission ───────────────────────────────────────── */
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: var(--space-md);
+}
+
+.vm-card {
+  padding: 2.2rem 2rem 2rem;
+  min-height: 320px;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.vm-card--light {
+  background: var(--color-soft-white, #F9F9F9);
+  border: 1px solid var(--border, #d4cfc4);
+}
+
+.vm-card--forest {
+  background: var(--color-forest-green, #3C5E3E);
+  border: 1px solid var(--color-forest-green, #3C5E3E);
+  color: var(--color-soft-white, #F9F9F9);
+}
+
+.vm-card-mark {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  pointer-events: none;
+  user-select: none;
+  color: var(--accent, #D6C17C);
+  opacity: 0.25;
+}
+
+.vm-card--forest .vm-card-mark {
+  opacity: 0.35;
+}
+
+.vm-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent, #D6C17C);
+  margin-bottom: 1.4rem;
+}
+
+.vm-card--forest .vm-label {
+  color: var(--color-warm-sand, #E4D7A1);
+}
+
+.vm-label-num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.vm-h {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.4vw, 2.05rem);
+  line-height: 1.2;
+  font-weight: 400;
+  max-width: 22ch;
+  color: var(--color-forest-green, #3C5E3E);
+  margin: 0 0 1rem;
+}
+
+.vm-card--forest .vm-h {
+  color: var(--color-soft-white, #F9F9F9);
+}
+
+.vm-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 44ch;
+  color: var(--ink, #0f1a14);
+  margin: 0;
+}
+
+.vm-card--forest .vm-body {
+  color: rgba(249,249,249,0.84);
+}
+
+.vm-body strong {
+  font-weight: 700;
+  color: var(--color-forest-green, #3C5E3E);
+}
+
+.vm-card--forest .vm-body strong {
+  color: var(--accent, #D6C17C);
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .vm-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Activities ─────────────────────────────────────────────── */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: var(--space-md);
+}
+
+.activity {
+  background: var(--color-soft-white, #F9F9F9);
+  border: 1px solid var(--border, #d4cfc4);
+  border-radius: 12px;
+  padding: 1.5rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.activity:hover {
+  transform: translateY(-2px);
+  border-color: rgba(60,94,62,0.32);
+  box-shadow: 0 16px 28px -20px rgba(60,94,62,0.3);
+}
+
+.activity-num {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  color: var(--accent, #D6C17C);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.activity-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-ivory, #F6F1DC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-forest-green, #3C5E3E);
+  margin-bottom: 1rem;
+}
+
+.activity-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.activity h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--color-forest-green, #3C5E3E);
+  margin: 0 0 0.6rem;
+}
+
+.activity p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--muted, #8a9490);
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .activity-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .activity-grid { grid-template-columns: 1fr; }
+}
+
+/* ── New Ways of Working ────────────────────────────────────── */
+.nwow-banner {
+  background: var(--color-warm-sand, #E4D7A1);
+  border: 1px solid rgba(60,94,62,0.18);
+  border-radius: 999px;
+  padding: 1.4rem 2rem;
+  max-width: 880px;
+  margin: var(--space-md) auto;
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ink, #0f1a14);
+}
+
+.nwow-banner strong {
+  font-weight: 700;
+  color: var(--color-forest-green, #3C5E3E);
+}
+
+.nwow-salt {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-forest-green, #3C5E3E);
+  background: var(--color-ivory, #F6F1DC);
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  vertical-align: 0.05em;
+}
+
+.nwow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem 1.6rem;
+  margin-top: var(--space-md);
+}
+
+.nwow-card {
+  padding: 1.7rem 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.18s ease;
+  overflow: hidden;
+}
+
+.nwow-card:hover {
+  transform: translateY(-3px);
+}
+
+.nwow-card--filled {
+  background: var(--color-forest-green, #3C5E3E);
+  color: var(--color-soft-white, #F9F9F9);
+  border-radius: 28px 28px 28px 4px;
+  box-shadow: 0 18px 36px -22px rgba(15,26,20,0.45);
+}
+
+.nwow-card--outline {
+  background: var(--color-warm-sand, #E4D7A1);
+  color: var(--ink, #0f1a14);
+  border: 1px solid rgba(60,94,62,0.22);
+  border-radius: 4px 28px 28px 28px;
+}
+
+.nwow-card--filled::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  width: 22px;
+  height: 14px;
+  border-left: 1.5px solid rgba(214,193,124,0.45);
+  border-top: 1.5px solid rgba(214,193,124,0.45);
+  border-top-left-radius: 10px;
+  pointer-events: none;
+}
+
+.nwow-card--outline::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  width: 22px;
+  height: 14px;
+  border-right: 1.5px solid rgba(60,94,62,0.35);
+  border-bottom: 1.5px solid rgba(60,94,62,0.35);
+  border-bottom-right-radius: 10px;
+  pointer-events: none;
+}
+
+.nwow-num {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.55rem;
+  display: block;
+}
+
+.nwow-card--filled .nwow-num {
+  color: var(--accent, #D6C17C);
+  opacity: 0.85;
+}
+
+.nwow-card--outline .nwow-num {
+  color: var(--color-forest-green, #3C5E3E);
+  opacity: 0.55;
+}
+
+.nwow-card h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0 0 0.85rem;
+}
+
+.nwow-card--filled h3 {
+  color: var(--color-warm-sand, #E4D7A1);
+}
+
+.nwow-card--outline h3 {
+  color: var(--color-forest-green, #3C5E3E);
+}
+
+.nwow-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.nwow-card--filled p {
+  color: rgba(249,249,249,0.85);
+}
+
+.nwow-card--outline p {
+  color: rgba(26,32,27,0.78);
+}
+
+@media (max-width: 980px) {
+  .nwow-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nwow-grid { grid-template-columns: 1fr; }
+  .nwow-banner { border-radius: 18px; padding: 1.2rem 1.4rem; }
+}

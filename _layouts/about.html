@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
+
 <header class="page-hero">
   <div class="container">
     {% if page.hero_label %}<span class="hero-label">{{ page.hero_label }}</span>{% endif %}
@@ -10,44 +12,91 @@ layout: default
   </div>
 </header>
 
-<main class="page-body">
-  <section class="about-dark-section">
-  <div class="about-vision-mission">
-    {% for card in page.vision_mission %}
-    {% capture icon_path %}icons/{{ card.icon }}.svg{% endcapture %}
-    <div class="about-vm-card">
-      <div class="about-vm-icon" aria-hidden="true">
-        {% include {{ icon_path }} %}
+<main class="page-body cpdse-about">
+
+  <!-- ══ VISION & MISSION ══════════════════════════════════ -->
+  <section class="cn-section">
+    <div class="cn-inner">
+
+      <div class="cn-header">
+        <span class="cn-eyebrow">Purpose</span>
+        <h2 class="cn-h2">Vision &amp; Mission</h2>
+        <p class="cn-lead">Two statements that frame everything CPDSE does — one describes the future we want to see, the other the work we have committed to in order to get there.</p>
       </div>
-      <div class="about-vm-text">
-        <span class="about-vm-label">{{ card.label }}</span>
-        <p>{{ card.text }}</p>
+
+      <div class="vm-grid">
+        {% for vm in page.vision_mission %}
+        <div class="vm-card vm-card--{{ vm.variant }}">
+          <span class="vm-card-mark" aria-hidden="true">"</span>
+          <div class="vm-label">
+            <span class="vm-label-num">{{ vm.num }}</span>
+            <span>— {{ vm.label }}</span>
+          </div>
+          <p class="vm-h">{{ vm.statement }}</p>
+          <p class="vm-body">{{ vm.body }}</p>
+        </div>
+        {% endfor %}
       </div>
+
     </div>
-    {% endfor %}
-  </div>
   </section>
 
-  <section class="about-activities section-circles">
-    <div class="about-activities-inner">
-      <div class="about-activities-header">
-        <span class="hero-label">What we do</span>
-        <h2>Our activities</h2>
+  <!-- ══ WHAT WE DO ════════════════════════════════════════ -->
+  <section class="cn-section cn-section--ivory">
+    <div class="cn-inner">
+
+      <div class="cn-header">
+        <span class="cn-eyebrow">What we do</span>
+        <h2 class="cn-h2">Five lines of <em>active work</em></h2>
+        <p class="cn-lead">The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions.</p>
       </div>
-      <ul class="about-activities-list">
+
+      <div class="activity-grid">
         {% for activity in page.activities %}
         {% capture icon_path %}icons/{{ activity.icon }}.svg{% endcapture %}
-        <li class="about-activity">
-          <div class="about-activity-icon" aria-hidden="true">
+        {% capture idx %}{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}{% endcapture %}
+        <div class="activity">
+          <span class="activity-num">{{ idx }}</span>
+          <div class="activity-icon" aria-hidden="true">
             {% include {{ icon_path }} %}
           </div>
-          <div>
-            <strong>{{ activity.name }}</strong>
-            <p>{{ activity.description }}</p>
-          </div>
-        </li>
+          <h3>{{ activity.title }}</h3>
+          <p>{{ activity.content }}</p>
+        </div>
         {% endfor %}
-      </ul>
+      </div>
+
     </div>
   </section>
+
+  <!-- ══ NEW WAYS OF WORKING ═══════════════════════════════ -->
+  <section class="cn-section">
+    <div class="cn-inner">
+
+      <div class="cn-header cn-header--centered">
+        <span class="cn-eyebrow">How we work</span>
+        <h2 class="cn-h2">The <em>New Ways of Working</em> philosophy</h2>
+      </div>
+
+      <div class="nwow-banner">
+        Our center's philosophy is rooted in the principles of the <strong>New Ways of Working</strong> movement. We take values and inspiration from sociocracy, agile, lean, and teal — sometimes referred to as <span class="nwow-salt">SALT</span>
+      </div>
+
+      <div class="nwow-grid">
+        {% for principle in page.principles %}
+        {% assign mod = forloop.index | modulo: 2 %}
+        {% capture pnum %}{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}{% endcapture %}
+        <div class="nwow-card {% if mod == 1 %}nwow-card--filled{% else %}nwow-card--outline{% endif %}">
+          <span class="nwow-num">Principle {{ pnum }}</span>
+          <h3>{{ principle.title }}</h3>
+          <p>{{ principle.body }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  {{ content }}
+
 </main>

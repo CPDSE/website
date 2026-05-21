@@ -63,7 +63,7 @@ html { overflow-x: clip; }
   padding-inline: var(--space-md);
 }
 .cpdse-eco { background: var(--ivory); }
-.cpdse-dir { background: var(--soft); }
+.cpdse-dir { background: var(--color-ivory, #F6F1DC); }
 
 /* Inner containers re-use the parent width and center any narrower
    max-width inside. */
