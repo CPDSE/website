@@ -114,7 +114,7 @@
   .convtalks-grid { grid-template-columns: 1fr; }
 }
 .convtalks__panel {
-  background: #FFFFFF;
+  background: var(--color-soft-white);
   border-radius: 16px;
   padding: 1.5rem 1.5rem;
   border: 1px solid rgba(60,94,62,0.14);
@@ -267,7 +267,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  background: #FFFFFF;
+  background: var(--color-soft-white);
   border-radius: 16px;
   padding: 0.5rem 1.5rem;
   border: 1px solid rgba(60,94,62,0.14);
