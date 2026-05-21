@@ -170,12 +170,24 @@
 .page-section__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
+  gap: 0;
   text-align: center;
 }
 
 .page-section__stat {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
+}
+
+/* Vertical dividers between stats on dark backgrounds */
+.page-section--forest-green .page-section__stat,
+.page-section--sage-green   .page-section__stat,
+.page-section--charcoal-gray .page-section__stat {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+.page-section--forest-green .page-section__stat:last-child,
+.page-section--sage-green   .page-section__stat:last-child,
+.page-section--charcoal-gray .page-section__stat:last-child {
+  border-right: none;
 }
 
 .page-section__stat-number {
@@ -242,5 +254,5 @@
 @media (max-width: 640px) {
   .page-section { padding: var(--space-md) 0; }
   .page-section__cards { grid-template-columns: 1fr; }
-  .page-section__stats  { grid-template-columns: repeat(2, 1fr); }
+  .page-section__stats  { grid-template-columns: repeat(2, 1fr); gap: 0; }
 }
