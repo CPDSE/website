@@ -93,7 +93,7 @@
 }
 
 .page-section__card {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(249, 249, 249, 0.55);
   border-radius: 16px;
   padding: 1.5rem 1.4rem;
   display: flex;
@@ -107,7 +107,7 @@
 .page-section--forest-green .page-section__card,
 .page-section--sage-green   .page-section__card,
 .page-section--charcoal-gray .page-section__card {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(249, 249, 249, 0.12);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -182,7 +182,7 @@
 .page-section--forest-green .page-section__stat,
 .page-section--sage-green   .page-section__stat,
 .page-section--charcoal-gray .page-section__stat {
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-right: 1px solid rgba(249, 249, 249, 0.18);
 }
 .page-section--forest-green .page-section__stat:last-child,
 .page-section--sage-green   .page-section__stat:last-child,
