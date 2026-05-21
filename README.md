@@ -87,6 +87,22 @@ If Markdown formatting is not enough, custom HTML can be included in the `conten
 
 ---
 
+### Two columns
+
+A two-column layout, for example to place two blocks of text side by side.
+
+```yaml
+  - color: soft-white
+    title: Two perspectives
+    columns:
+      - content: |
+          **At UCPH** we focus on drug design and formulation.
+      - content: |
+          **At SDU** we work on epidemiology and statistics.
+```
+
+---
+
 ### Cards
 
 Cards always have rounded corners. They can be arranged in 2 or 3 columns.
@@ -104,24 +120,6 @@ Cards always have rounded corners. They can be arranged in 2 or 3 columns.
         content: Body text for the first card.
       - title: Second Card
         content: Body text for the second card.
-```
-
----
-
-### Two columns
-
-A two-column layout, for example to place two blocks of text side by side.
-
-![Example two-column layout](docs/example-two-col.png)
-
-```yaml
-  - color: soft-white
-    title: Two perspectives
-    columns:
-      - content: |
-          **At UCPH** we focus on drug design and formulation.
-      - content: |
-          **At SDU** we work on epidemiology and statistics.
 ```
 
 ---
