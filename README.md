@@ -49,6 +49,8 @@ sections:
 
 A row of large numbers with labels — counts up animatedly when scrolled into view. Works best on a `forest-green` section.
 
+![Example stats banner](docs/example-stats.png)
+
 ```yaml
   - color: forest-green
     stats:
