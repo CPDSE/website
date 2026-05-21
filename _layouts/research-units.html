@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/research-units.css' | relative_url }}">
+
 <header class="page-hero">
   <div class="container">
     {% if page.hero_label %}<span class="hero-label">{{ page.hero_label }}</span>{% endif %}
@@ -10,30 +12,76 @@ layout: default
   </div>
 </header>
 
-<main class="page-body">
-  <section class="research-departments-section">
-    <div class="research-departments-inner">
-      <h2>Department Cards</h2>
-      <div class="research-department-grid">
-        {% for dept in page.departments %}
-        <a class="research-department-card" href="{{ dept.url }}" target="_blank" rel="noopener">
-          <span class="research-department-card__uni">{{ dept.uni }}</span>
-          <h3>{{ dept.name }}</h3>
-          <span class="research-department-card__cta">Visit department website →</span>
+<!-- ── SECTION 1: DEPARTMENTS ───────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="ru-header">
+      <span class="ru-eyebrow">Seven departments, one centre</span>
+      <h2 class="ru-headline">The departments behind the work</h2>
+    </div>
+    <div class="ru-dept-grid">
+      {% for dept in page.departments %}
+        {% assign uni_lower = dept.uni | downcase %}
+        <a class="ru-dept-card" href="{{ dept.url }}" target="_blank" rel="noopener">
+          <span class="ru-dept-badge ru-dept-badge--{{ uni_lower }}">{{ dept.uni }}</span>
+          <h3 class="ru-dept-name">{{ dept.name }}</h3>
+          {% if dept.description %}<p class="ru-dept-desc">{{ dept.description }}</p>{% endif %}
+          <span class="ru-dept-cta">Visit department →</span>
         </a>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="research-focus-strip">
-    <div class="research-focus-inner">
-      <h2>What We Work On</h2>
-      <ul>
-        {% for item in page.focus_areas %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
+<!-- ── SECTION 2: GROUP LEADERS ─────────────────────────────── -->
+<section class="section ru-ivory">
+  <div class="container">
+    <div class="ru-header">
+      <span class="ru-eyebrow">Group leaders</span>
+      <h2 class="ru-headline">The researchers behind the work</h2>
+      <p class="ru-lead">{{ page.leaders_intro | default: "Seven group leaders anchor CPDSE's research agenda — spanning drug design, pharmacy, computer science, science education, and statistics." }}</p>
     </div>
-  </section>
-</main>
+    <div class="ru-leaders-grid">
+      {% for leader in page.group_leaders %}
+        {% assign uni_lower = leader.uni | downcase %}
+        <div class="ru-leader-card">
+          <div class="ru-leader-top">
+            <div class="ru-leader-avatar">{{ leader.initials }}</div>
+            <div class="ru-leader-meta">
+              <p class="ru-leader-name">{{ leader.name }}</p>
+              <p class="ru-leader-dept">{{ leader.department }}</p>
+              <span class="ru-leader-uni ru-leader-uni--{{ uni_lower }}">{{ leader.uni }}</span>
+            </div>
+          </div>
+          {% if leader.quote %}
+            <p class="ru-leader-quote">{{ leader.quote }}</p>
+          {% endif %}
+          {% if leader.url %}
+            <a class="ru-leader-link" href="{{ leader.url }}" target="_blank" rel="noopener">Group website →</a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3: PHD STUDENTS ──────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="ru-header">
+      <span class="ru-eyebrow">PhD students</span>
+      <h2 class="ru-headline">The next bilinguals</h2>
+      <p class="ru-lead">{{ page.phd_intro | default: "CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science." }}</p>
+    </div>
+    <div class="ru-phd-grid">
+      {% for student in page.phd_students %}
+        <div class="ru-phd-card">
+          <span class="ru-phd-number">{{ student.number }}</span>
+          <p class="ru-phd-name">{{ student.name }}</p>
+          <p class="ru-phd-supervisor">Supervisor <strong>{{ student.supervisor }}</strong></p>
+          <p class="ru-phd-project">{{ student.project }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
