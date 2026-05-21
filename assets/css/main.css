@@ -521,7 +521,7 @@ a { color: inherit; }
   margin: 0 auto;
   padding: 0 var(--space-md);
   display: flex;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   align-items: center;
 }
 .about-text {
