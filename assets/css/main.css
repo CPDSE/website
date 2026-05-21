@@ -829,7 +829,6 @@ a { color: inherit; }
   .hero-logo-mark {
     width: min(100%, 380px);
   }
-  .timeline-tabs {
 }
 
 @media (max-width: 768px) {
