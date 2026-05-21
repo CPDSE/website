@@ -1,23 +1,102 @@
 {% comment %}
-  Renders one section from the page.sections array.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CPDSE — Content section renderer
+  Called by sectioned-page.html for every item in page.sections
 
-  Usage (from a layout):
-    {% for section in page.sections %}
-      {% include page-section.html section=section %}
-    {% endfor %}
+  EDITOR REFERENCE — all available keywords
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  Section fields (all optional except colour):
-    color      : soft-white | ivory | mint-gray | warm-sand |
-                 forest-green | sage-green | charcoal-gray
-    label      : small eyebrow text above the title
-    title      : section heading
+  EVERY SECTION
+  ─────────────
+  color      Background colour of the section band.
+             soft-white (default) | ivory | forest-green
 
-  Layout type (choose one):
-    content    : plain Markdown body text
-    cards      : list of { icon, title, content }
-    columns    : list of exactly two { content } blocks
-    stats      : list of { number, label, detail }
-    image      : { src, alt, position: left|right } + content
+  title      Large headline displayed at the top of the section.
+  intro      Smaller lead paragraph shown beneath the title.
+
+  ─────────────────────────────────────────────────────────
+  LAYOUT TYPES  (choose one per section)
+  ─────────────────────────────────────────────────────────
+
+  1. PLAIN TEXT  (default — just write content:)
+     ──────────
+     content: |
+       Write **markdown** here. Supports paragraphs, lists, links.
+
+     Example:
+       - color: soft-white
+         title: Our approach
+         content: |
+           We believe data science belongs inside pharmaceutical
+           education — not bolted on top of it.
+
+  ─────────────────────────────────────────────────────────
+
+  2. CARDS
+     ─────
+     cards:              Required — list of card objects.
+     card_columns: 2     Columns: 2 | 3 (default: 3)
+     card_color: ivory   Card background: soft-white | ivory (default: soft-white)
+
+     Each card:
+       title:   Card headline
+       content: Card body text
+
+     Example:
+       - color: ivory
+         title: What we offer
+         card_columns: 3
+         card_color: ivory
+         cards:
+           - title: Workshops
+             content: Hands-on sessions for all levels.
+           - title: Consulting
+             content: One-on-one data science support.
+           - title: Materials
+             content: Open teaching resources on GitHub.
+
+  ─────────────────────────────────────────────────────────
+
+  3. TWO COLUMNS — text + text
+     ─────────────────────────
+     columns:
+       - content: |
+           Left column text (markdown).
+       - content: |
+           Right column text (markdown).
+
+     Example:
+       - color: soft-white
+         title: Two perspectives
+         columns:
+           - content: |
+               **At UCPH** we focus on drug design and formulation.
+           - content: |
+               **At SDU** we work on epidemiology and statistics.
+
+  ─────────────────────────────────────────────────────────
+
+  4. IMAGE + TEXT
+     ─────────────
+     image:
+       src:      /assets/images/filename.jpg   (required)
+       alt:      Descriptive alt text           (required)
+       position: left | right                  (default: left)
+     content: |
+       Text that appears beside the image (markdown).
+
+     Example:
+       - color: soft-white
+         title: The team
+         image:
+           src: /assets/images/team.jpg
+           alt: CPDSE team photo
+           position: right
+         content: |
+           We are a cross-institutional group of researchers,
+           educators, and data scientists.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 {% endcomment %}
 
 {% assign s = include.section %}
@@ -26,24 +105,20 @@
 <section class="page-section page-section--{{ color }}">
   <div class="container">
 
-    {% if s.label or s.title %}
+    {% if s.title or s.intro %}
     <header class="page-section__header">
-      {% if s.label %}<span class="page-section__label">{{ s.label }}</span>{% endif %}
       {% if s.title %}<h2 class="page-section__title">{{ s.title }}</h2>{% endif %}
+      {% if s.intro %}<p class="page-section__intro">{{ s.intro }}</p>{% endif %}
     </header>
     {% endif %}
 
     {% if s.cards %}
     <!-- ── Cards ── -->
-    <div class="page-section__cards">
+    {% assign cols = s.card_columns | default: 3 %}
+    {% assign card_color = s.card_color | default: 'soft-white' %}
+    <div class="page-section__cards page-section__cards--{{ cols }}col page-section__cards--{{ card_color }}">
       {% for card in s.cards %}
       <div class="page-section__card">
-        {% if card.icon %}
-        <div class="page-section__card-icon" aria-hidden="true">
-          {% capture icon_path %}icons/{{ card.icon }}.svg{% endcapture %}
-          {% include {{ icon_path }} %}
-        </div>
-        {% endif %}
         {% if card.title %}<h3 class="page-section__card-title">{{ card.title }}</h3>{% endif %}
         {% if card.content %}<p class="page-section__card-body">{{ card.content }}</p>{% endif %}
       </div>
@@ -56,18 +131,6 @@
       {% for col in s.columns %}
       <div class="page-section__column">
         {{ col.content | markdownify }}
-      </div>
-      {% endfor %}
-    </div>
-
-    {% elsif s.stats %}
-    <!-- ── Stats strip ── -->
-    <div class="page-section__stats">
-      {% for stat in s.stats %}
-      <div class="page-section__stat">
-        <span class="page-section__stat-number" data-count="{{ stat.number }}">{{ stat.number }}</span>
-        <span class="page-section__stat-label">{{ stat.label }}</span>
-        {% if stat.detail %}<span class="page-section__stat-detail">{{ stat.detail }}</span>{% endif %}
       </div>
       {% endfor %}
     </div>
