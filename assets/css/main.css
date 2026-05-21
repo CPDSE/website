@@ -896,8 +896,7 @@ a { color: inherit; }
 .section-circles .circle-desc {
   color: inherit;
 }
-.section-community .section-header p,
-.section-circles:not(.section-community) .section-header p {
+.section-community .section-header p {
   color: rgba(15,26,20,0.7);
 }
 .section-green {
@@ -1275,6 +1274,14 @@ a { color: inherit; }
   flex-wrap: wrap;
   padding-top: var(--space-md);
   border-top: 1px solid rgba(15, 26, 20, 0.1);
+}
+.section-audience .btn-ghost {
+  color: var(--color-forest-green);
+  border-color: var(--color-forest-green);
+}
+.section-audience .btn-ghost:hover {
+  background: rgba(60, 94, 62, 0.07);
+  border-color: var(--color-forest-green);
 }
 
 @media (max-width: 900px) {
