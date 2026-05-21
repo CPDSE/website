@@ -15,6 +15,10 @@ layout: default
 
 <section class="eo-section">
   <div class="container">
+    <header class="page-section__header">
+      <h2 class="page-section__title">What We Offer</h2>
+      <p class="page-section__intro">From regular talks to open learning materials — everything CPDSE produces is freely accessible to students, researchers, and practitioners at every level.</p>
+    </header>
     <ul class="offerings-grid" role="list">
       {% for offering in page.offerings %}
       {% capture icon_path %}icons/{{ offering.icon }}.svg{% endcapture %}
@@ -45,8 +49,8 @@ layout: default
 <section class="section convtalks" id="convergencetalks" aria-labelledby="convtalks-title">
   <div class="container">
     <div class="convtalks__intro fade-in">
-      <span class="hero-label">ConvergenceTalks</span>
-      <h2 id="convtalks-title">Friday talks where pharma meets data science.</h2>
+      <p class="convtalks__eyebrow">ConvergenceTalks</p>
+      <h2 id="convtalks-title" class="page-section__title">Friday talks where pharma meets data science.</h2>
       <p class="convtalks__lede">A bi-weekly 30-minute talk series — Fridays at 9:00&ndash;9:30 — bringing researchers, clinicians, and industry voices together around the intersection of pharmaceutical science and data science. Free to attend, in person or online.</p>
     </div>
 
@@ -73,16 +77,6 @@ layout: default
       </div>
     </div>
 
-    <div class="convtalks__topics-band fade-in">
-      <p class="convtalks__eyebrow">Topics across the series</p>
-      <div class="convtalks__topics" role="group" aria-label="Topics covered">
-        {% for topic in topic_names %}
-        {% assign topic_clean = topic | strip %}
-        {% assign topic_count = talks_past | where_exp: "talk", "talk.tags contains topic_clean" | size %}
-        <span class="convtalks__topic">{{ topic_clean }} <span class="convtalks__topic-count">{{ topic_count }}</span></span>
-        {% endfor %}
-      </div>
-    </div>
 
     <div class="convtalks-grid fade-in">
       <div class="convtalks__panel convtalks__upcoming">
