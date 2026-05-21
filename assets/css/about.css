@@ -7,9 +7,6 @@
      nwow-*     New Ways of Working banner + principle cards
    Loaded only on /about/ via _layouts/about.html. */
 
-html { overflow-x: clip; }
-@supports not (overflow-x: clip) { html { overflow-x: hidden; } }
-
 .cpdse-about {
   --forest: var(--color-forest-green, #3C5E3E);
   --gold:   var(--accent, #D6C17C);
@@ -19,33 +16,11 @@ html { overflow-x: clip; }
   --hair:   var(--border, #d4cfc4);
 }
 
-/* Break out of .page-body's default child width constraint so the
-   coloured section bands can stretch edge-to-edge. */
-.page-body > .cpdse-about {
-  max-width: none;
-  width: 100%;
-  margin-top: calc(-1 * var(--space-lg));
-  margin-bottom: calc(-1 * var(--space-lg));
-}
-
-/* ── Section scaffolding ────────────────────────────────────── */
-/* Each section is a full-viewport-width band; the inner container
-   re-centres the content at max 1200px with side padding. */
-.cn-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding-block: var(--space-lg);
-  padding-inline: var(--space-md);
-}
-
-.cn-section--ivory {
+/* Ivory background for the Activities section band.
+   Sections use the homepage's .section + .container pattern so they
+   are naturally full-width — no breakout hacks needed. */
+.cn-ivory {
   background: var(--color-ivory, #F6F1DC);
-}
-
-.cn-inner {
-  width: 100%;
-  max-width: var(--max-w, 1200px);
-  margin: 0 auto;
 }
 
 /* ── Shared section header ──────────────────────────────────── */
