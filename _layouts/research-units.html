@@ -41,11 +41,11 @@ layout: default
       <h2 class="ru-headline">The researchers behind the work</h2>
       <p class="ru-lead">{{ page.leaders_intro | default: "Seven group leaders anchor CPDSE's research agenda — spanning drug design, pharmacy, computer science, science education, and statistics." }}</p>
     </div>
-    <div class="ru-leaders-grid">
+    <div class="ru-leaders-table">
       {% for leader in page.group_leaders %}
         {% assign uni_lower = leader.uni | downcase %}
-        <div class="ru-leader-card">
-          <div class="ru-leader-top">
+        <div class="ru-leader-row">
+          <div class="ru-leader-left">
             <div class="ru-leader-avatar">{{ leader.initials }}</div>
             <div class="ru-leader-meta">
               <p class="ru-leader-name">{{ leader.name }}</p>
@@ -53,12 +53,10 @@ layout: default
               <span class="ru-leader-uni ru-leader-uni--{{ uni_lower }}">{{ leader.uni }}</span>
             </div>
           </div>
-          {% if leader.quote %}
-            <p class="ru-leader-quote">{{ leader.quote }}</p>
-          {% endif %}
-          {% if leader.url %}
-            <a class="ru-leader-link" href="{{ leader.url }}" target="_blank" rel="noopener">Group website →</a>
-          {% endif %}
+          <div class="ru-leader-right">
+            {% if leader.quote %}<p class="ru-leader-quote">{{ leader.quote }}</p>{% endif %}
+            {% if leader.url %}<a class="ru-leader-link" href="{{ leader.url }}" target="_blank" rel="noopener">Group website →</a>{% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
