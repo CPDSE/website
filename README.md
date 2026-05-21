@@ -1,45 +1,53 @@
-# Website
-New version of the CPDSE website using Jekyll.
+# CPDSE Website Guide
+
+Website design & how to update content.
 
 ---
 
-## Editing pages
+## Hero
 
-Pages are edited as `.md` files. The top of each file contains **front matter** — a block of keywords between `---` lines that controls the page layout and content. No HTML is needed.
+The hero is the top area of each page. It has a gradient and subtle pattern in the background.
 
-### Page hero
+![Example hero section](docs/example-hero.png)
 
-Every page has a hero section at the top. These keywords are the same for all pages:
+To update the hero content, look for the following lines in the `.md` file of the page you want to edit:
 
 ```yaml
 ---
-title: Page Title              # large headline in the hero
-hero_label: Research           # small label above the headline (e.g. the section name)
-description: One or two sentences shown beneath the headline.
-permalink: /your-url/          # the URL of the page
+layout: sectioned-page        # name of the layout file
+title: Page Title             # the big headline
+hero_label: Research          # small label above the headline
+description: Descriptive text shown below the title.
+permalink: /your-url/         # what comes after cpdse.dk/
 ---
 ```
 
 ---
 
-### Content sections (`layout: sectioned-page`)
+## Content sections
 
-Pages that use `layout: sectioned-page` can define any number of sections in their front matter. Each section is one item in the `sections:` list.
+The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** (`#F9F9F9`) and **Ivory Gold Tint** (`#F6F1DC`) are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green** (`#3C5E3E`).
+
+![Example page with alternating sections](docs/example-sections.png)
+
+There are different types of standard content: single column, two-column, cards, and image + text. Individual solutions can also be implemented in HTML.
+
+To work with the standard elements, open the `.md` file of the page you want to edit and add a `sections:` list. Each item in the list is one section.
 
 **Every section can have:**
 
 ```yaml
 sections:
-  - color: soft-white          # section background: soft-white | ivory | forest-green
-    title: Section Headline    # large heading at the top of the section
+  - color: soft-white          # soft-white | ivory | forest-green
+    title: Section Headline
     intro: Lead paragraph shown beneath the title in a smaller, muted style.
 ```
 
 ---
 
-#### Plain text
+### Single column
 
-A single column of text, capped at a readable width.
+Standard single column layout. Text is always left-aligned.
 
 ```yaml
   - color: soft-white
@@ -53,11 +61,15 @@ A single column of text, capped at a readable width.
       - Item two
 ```
 
+If Markdown formatting is not enough, custom HTML can be included in the `content:` block.
+
 ---
 
-#### Cards
+### Cards
 
-A grid of cards. Control the number of columns and the card background colour.
+Cards always have rounded corners. They can be arranged in 2 or 3 columns.
+
+![Example card layout](docs/example-cards.png)
 
 ```yaml
   - color: ivory
@@ -74,9 +86,11 @@ A grid of cards. Control the number of columns and the card background colour.
 
 ---
 
-#### Two text columns
+### Two columns
 
-Splits the content area into two equal columns.
+A two-column layout, for example to place two blocks of text side by side.
+
+![Example two-column layout](docs/example-two-col.png)
 
 ```yaml
   - color: soft-white
@@ -90,9 +104,11 @@ Splits the content area into two equal columns.
 
 ---
 
-#### Image + text
+### Image + text
 
 Places an image alongside a block of text. The image can go on the left or right.
+
+![Example image and text layout](docs/example-image-text.png)
 
 ```yaml
   - color: soft-white
