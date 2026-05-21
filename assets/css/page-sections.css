@@ -213,6 +213,14 @@
   margin-top: 0.4rem;
   opacity: 0.85;
 }
+/* Ensure label is readable on dark backgrounds regardless of .stat-label
+   colour from main.css (specificity 0,1,0 there; 0,2,0 here wins) */
+.page-section--forest-green .page-section__stat-label,
+.page-section--sage-green   .page-section__stat-label,
+.page-section--charcoal-gray .page-section__stat-label {
+  color: #F9F9F9;
+  opacity: 0.82;
+}
 
 .page-section__stat-detail {
   font-size: 0.82rem;

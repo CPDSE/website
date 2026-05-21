@@ -562,12 +562,12 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 400;
-  color: var(--offwhite);
+  color: var(--color-forest-green);
   line-height: 1.25;
   margin-bottom: 0.45rem;
 }
 .about-viz-source {
-  color: rgba(249,249,249,0.7);
+  color: rgba(15,26,20,0.6);
   font-size: 0.82rem;
   margin-bottom: 1rem;
 }
@@ -579,7 +579,7 @@ a { color: inherit; }
 .about-viz-note {
   margin-bottom: 0.9rem;
   font-size: 0.76rem;
-  color: rgba(249,249,249,0.7);
+  color: rgba(15,26,20,0.6);
 }
 .about-viz-years {
   display: flex;
@@ -588,9 +588,9 @@ a { color: inherit; }
   margin-bottom: 0.8rem;
 }
 .about-viz-year-btn {
-  border: 1px solid rgba(249,249,249,0.28);
-  background: rgba(249,249,249,0.04);
-  color: rgba(249,249,249,0.84);
+  border: 1px solid rgba(15,26,20,0.22);
+  background: rgba(15,26,20,0.04);
+  color: rgba(15,26,20,0.75);
   border-radius: 999px;
   padding: 0.28rem 0.72rem;
   font-family: var(--font-mono);
@@ -601,8 +601,8 @@ a { color: inherit; }
 }
 .about-viz-year-btn.is-active {
   border-color: rgba(214,193,124,0.85);
-  background: rgba(214,193,124,0.18);
-  color: rgba(249,249,249,0.95);
+  background: rgba(214,193,124,0.22);
+  color: rgba(15,26,20,0.9);
 }
 .about-viz {
   --bg: #0d1117;
@@ -634,7 +634,7 @@ a { color: inherit; }
 }
 .about-viz-breadcrumb span:hover { opacity: 0.7; }
 .about-viz-breadcrumb .sep { color: var(--border); cursor: default; }
-.about-viz-breadcrumb span.current { color: var(--text); cursor: default; }
+.about-viz-breadcrumb span.current { color: var(--ink); cursor: default; }
 
 .about-viz-chart-wrap {
   position: relative;
@@ -719,7 +719,7 @@ a { color: inherit; }
   width: 100%;
   text-align: center;
   font-size: 0.63rem;
-  color: rgba(249,249,249,0.55);
+  color: rgba(15,26,20,0.45);
   letter-spacing: 0.06em;
   padding: 0.45rem 0 0.1rem;
 }
@@ -742,7 +742,7 @@ a { color: inherit; }
 .about-viz-stat-label {
   font-family: var(--font-mono);
   font-size: 0.63rem;
-  color: rgba(249,249,249,0.55);
+  color: rgba(15,26,20,0.5);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -768,7 +768,7 @@ a { color: inherit; }
 
 .about-viz-updated {
   font-size: 0.72rem;
-  color: rgba(249,249,249,0.72);
+  color: rgba(15,26,20,0.5);
   text-align: center;
   margin-top: 0.35rem;
 }
