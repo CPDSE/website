@@ -819,212 +819,6 @@ a { color: inherit; }
   box-shadow: 0 18px 36px rgba(15,26,20,0.22);
 }
 
-.section-journey {
-  background: #3C5E3E;
-}
-.section-journey .timeline-section {
-  margin: 0 auto;
-}
-.section-journey .section-label {
-  color: var(--accent);
-}
-.section-journey h2 {
-  color: var(--offwhite);
-}
-.section-journey .section-header p {
-  color: rgba(249,249,249,0.72);
-}
-
-/* ─── TIMELINE ─────────────────────────────────────────────── */
-.timeline-section {
-  max-width: 1200px;
-  margin: var(--space-lg) auto 0;
-  padding: 0 var(--space-md);
-}
-.timeline-tabs-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-/* Visual timeline line with year markers */
-.timeline-tabs {
-  position: relative;
-  --track-start: 0px;
-  --track-width: 100%;
-  --timeline-progress: 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-  padding: 0;
-}
-.timeline-tabs::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: var(--track-start);
-  width: var(--track-width);
-  height: 3px;
-  background: rgba(246,241,220,0.28);
-  z-index: 0;
-}
-.timeline-tabs::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: var(--track-start);
-  width: var(--timeline-progress);
-  height: 3px;
-  background: linear-gradient(90deg, #D6C17C 0%, #E4D7A1 100%);
-  z-index: 0;
-  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.timeline-tab {
-  position: relative;
-  z-index: 1;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0;
-  background: none;
-  border: none;
-  color: rgba(249,249,249,0.82);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  transition: color 0.28s ease, font-weight 0.28s ease;
-}
-.timeline-year {
-  display: block;
-  color: inherit;
-}
-.timeline-subtitle {
-  display: block;
-  margin-top: -0.15rem;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.timeline-tab::before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  margin-top: 15px;
-  border-radius: 50%;
-  background: rgba(246,241,220,0.16);
-  border: 2px solid rgba(246,241,220,0.65);
-  transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.timeline-tab:hover::before {
-  background: rgba(246,241,220,0.28);
-  border-color: #F6F1DC;
-}
-.timeline-tab.active::before {
-  background: #D6C17C;
-  border-color: #D6C17C;
-  width: 24px;
-  height: 24px;
-  margin-top: 12px;
-  box-shadow: 0 0 0 4px rgba(214, 193, 124, 0.28);
-}
-.timeline-tab.active {
-  color: #F6F1DC;
-  font-weight: 600;
-}
-.timeline-content {
-  position: relative;
-  margin-top: 0.3rem;
-  width: var(--track-width, 100%);
-  max-width: 100%;
-  margin-left: var(--track-start, 0px);
-}
-.timeline-item {
-  display: none;
-  padding: 2.5rem;
-  background: rgba(249,249,249,0.07);
-  border: 2px solid #D6C17C;
-  border-radius: 10px;
-  will-change: transform, opacity;
-}
-.timeline-item.active {
-  display: block;
-}
-.timeline-content.slide-next .timeline-item.active {
-  animation: timelineSlideFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.timeline-content.slide-prev .timeline-item.active {
-  animation: timelineSlideFromLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes timelineSlideFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(42px) scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-@keyframes timelineSlideFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-42px) scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-.timeline-item h4 {
-  font-size: 1rem;
-  color: #D6C17C;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.timeline-item p {
-  color: rgba(249,249,249,0.8);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.88rem;
-}
-.timeline-item ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1.25rem;
-}
-.timeline-item li {
-  padding: 0.5rem 0 0.5rem 1.75rem;
-  position: relative;
-  color: rgba(249,249,249,0.8);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-.timeline-item li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #D6C17C;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
 
 @media (max-width: 768px) {
   .hero-main {
@@ -1038,43 +832,8 @@ a { color: inherit; }
     width: min(100%, 380px);
   }
   .timeline-tabs {
-    padding: 0;
-    gap: 0;
-  }
-  .timeline-tabs::before {
-    display: none;
-  }
-  .timeline-tabs::after {
-    display: none;
-  }
-  .timeline-tab {
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #D6C17C;
-  }
-  .timeline-subtitle {
-    display: none;
-  }
-  .timeline-tab::before {
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-  }
-  .timeline-content {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0.6rem;
-  }
-  .timeline-item {
-    padding: 1.5rem;
-  }
-  .timeline-item h4 {
-    font-size: 1.4rem;
-  }
 }
+
 @media (max-width: 768px) {
   .about-inner { grid-template-columns: 1fr; }
   .about-visual { display: block; margin-top: var(--space-sm); }
@@ -3511,5 +3270,214 @@ a { color: inherit; }
   .about-content-block h3,
   .location-card h3 {
     font-size: 1.2rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   OUR VISION SECTION
+   Append to assets/css/main.css. Uses existing CPDSE tokens
+   (--green, --accent, --offwhite, --font-display, --font-mono,
+    --max-w, --space-md, --space-lg).
+   ───────────────────────────────────────────────────────────── */
+
+.vision-section {
+  background: var(--green);
+  color: var(--offwhite);
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+.vision-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+.vision-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+/* ── Eyebrow label (mono uppercase, gold, // prefix) ───────── */
+.vision-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.vision-label::before {
+  content: '// ';
+  opacity: 0.55;
+}
+
+/* ── Mission quote (left column) ───────────────────────────── */
+.vision-quote {
+  max-width: 28ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: 400;
+  color: var(--offwhite);
+  letter-spacing: -0.01em;
+}
+.vision-quote em {
+  color: var(--accent);
+  font-style: italic;
+}
+.vision-cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E4D7A1;
+}
+.vision-cite::before {
+  content: '— ';
+  opacity: 0.6;
+}
+
+/* ── Timeline (right column) ───────────────────────────────── */
+.vision-timeline-wrap {
+  position: relative;
+  min-height: 500px;
+}
+.vision-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.vision-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 1.1rem;
+  padding: 0.55rem 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Vertical connecting line between dots */
+.vision-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 22px;
+  bottom: -2px;
+  width: 1px;
+  background: rgba(214, 193, 124, 0.32);
+}
+.vision-timeline-item:last-child::before {
+  display: none;
+}
+/* The dot */
+.vision-timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 2px solid rgba(214, 193, 124, 0.5);
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.vision-timeline-item:hover .vision-timeline-dot {
+  transform: scale(1.15);
+}
+
+/* Year/phase label */
+.vision-timeline-year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(214, 193, 124, 0.55);
+  margin-bottom: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+/* Milestone title */
+.vision-timeline-content h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(249, 249, 249, 0.55);
+  line-height: 1.25;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Description — collapsed by default, expands on active */
+.vision-timeline-content p {
+  color: rgba(249, 249, 249, 0.78);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 42ch;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 0.45s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+
+/* ── Active milestone ──────────────────────────────────────── */
+.vision-timeline-item.is-active .vision-timeline-content h4 {
+  color: var(--offwhite);
+  font-size: 1.25rem;
+}
+.vision-timeline-item.is-active .vision-timeline-year {
+  color: var(--accent);
+}
+.vision-timeline-item.is-active .vision-timeline-content p {
+  max-height: 220px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+.vision-timeline-item.is-active .vision-timeline-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  animation: vision-pulse 2s ease-out infinite;
+}
+
+@keyframes vision-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(214, 193, 124, 0.55); }
+  80%  { box-shadow: 0 0 0 10px rgba(214, 193, 124, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(214, 193, 124, 0); }
+}
+
+/* Marks the most recent milestone as the persistent "now" */
+.vision-timeline-item--now .vision-timeline-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .vision-timeline-wrap {
+    min-height: 420px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .vision-timeline-item.is-active .vision-timeline-dot {
+    animation: none;
+  }
+  .vision-timeline-content h4,
+  .vision-timeline-content p,
+  .vision-timeline-year,
+  .vision-timeline-dot {
+    transition: none;
   }
 }

@@ -1,0 +1,29 @@
+# Save this as `_data/milestones.yml` in the repo root.
+# Each entry is one milestone in chronological order.
+# Set `is_now: true` on the most-recent milestone — it gets the filled
+# gold dot and gold heading by default. Only one milestone should be flagged.
+
+- year: "2023 · Vision"
+  title: "The vision condenses"
+  description: "UCPH, SDU, foundations and stakeholders develop the vision and establish the frames."
+
+- year: "2024 · Grant"
+  title: "Grant awarded"
+  description: "Collaboration agreements finalised. Centre Leader role announced."
+
+- year: "2025 · Season 1"
+  title: "Idea to mobilisation"
+  description: "Centre leader and coordinator mobilise. Members take ownership of circles."
+
+- year: "2025 · Retreat"
+  title: "First CPDSE retreat"
+  description: "25 active CPDSE members evaluated Season 1 and planned Season 2."
+
+- year: "2025 · Season 2"
+  title: "Acting outwards"
+  description: "Gradual shift from owning plans to acting and impacting outwards."
+
+- year: "Today"
+  title: "Perseverance & clarity"
+  description: "Project maturity, upstaffing, clearer allocation of data scientists across courses."
+  is_now: true
