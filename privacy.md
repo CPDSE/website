@@ -38,9 +38,6 @@ sections:
 
       If you register for a CPDSE event — such as a ConvergenceTalk — we process your name, email address, and institutional affiliation in order to administer the event. The legal basis is performance of an agreement (Article 6(1)(b) GDPR). We retain registration data for one year after the event.
 
-      **Mailing list**
-
-      If you subscribe to CPDSE updates or newsletters, we process your email address on the basis of your freely given consent (Article 6(1)(a) GDPR). You may withdraw your consent at any time by clicking the unsubscribe link in any email or by contacting us directly. Withdrawal of consent does not affect the lawfulness of processing carried out before withdrawal.
 
   - color: soft-white
     title: Sharing and Transfers
