@@ -46,14 +46,7 @@ layout: default
   <div class="about-inner fade-in">
     <div class="about-visual">
       <div class="about-viz" id="pharma-live-viz">
-        <div class="sankey-controls">
-          <span class="about-viz-hint" style="margin:0;text-align:left;">Drug use by setting &amp; age group · DDD</span>
-          <div class="sankey-year-btns" id="sankey-years">
-            <button class="sankey-yr-btn is-active" data-year="2025">2025</button>
-            <button class="sankey-yr-btn" data-year="2024">2024</button>
-            <button class="sankey-yr-btn" data-year="2023">2023</button>
-          </div>
-        </div>
+        <div class="about-viz-hint" style="margin:0 0 0.5rem;text-align:left;">Drug use by setting &amp; age group · DDD · 2025</div>
         <svg id="sankey-svg" aria-label="Sankey diagram of Danish drug use by setting and age group"></svg>
         <p class="sankey-tooltip" id="sankey-tooltip"></p>
         <div class="about-viz-hint">Hover any flow for details · <a href="https://www.medstat.dk/" target="_blank" rel="noopener">SOURCE: MEDSTAT.DK</a> · ATC CLASSIFICATION</div>
@@ -408,24 +401,11 @@ layout: default
           });
     }
 
-    var allData = null;
-
-    function showYear(year) {
-      if (!allData || !allData.years || !allData.years[year]) return;
-      render(buildGraph(allData.years[year]));
-    }
-
-    document.querySelectorAll('.sankey-yr-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.sankey-yr-btn').forEach(function (b) { b.classList.remove('is-active'); });
-        btn.classList.add('is-active');
-        showYear(btn.dataset.year);
-      });
-    });
-
     fetch(snapshotUrl, { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-      .then(function (d) { allData = d; showYear('2025'); })
+      .then(function (d) {
+        if (d.years && d.years['2025']) render(buildGraph(d.years['2025']));
+      })
       .catch(function () {});
   })();
 </script>
