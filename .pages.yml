@@ -49,7 +49,7 @@ content:
       - { name: body, label: Body Content, type: rich-text }
 
   - name: research-units
-    label: Research Units
+    label: Research Environment
     type: file
     path: research-units.md
     fields:
