@@ -96,21 +96,7 @@
      with formal time on the centre) and "Season participants" (ring 2 —
      the broader community of affiliated researchers and contributors who
      drive or co-drive deliverables this season). */
-  const renderRingTiles = (people) => {
-    if (!ringsMount) return;
-    const named = people.filter(p => !p.placeholder);
-    const staff = named.filter(p => p.ring === 0 || p.ring === 1).length;
-    const participants = named.filter(p => p.ring === 2).length;
-    ringsMount.innerHTML = `
-      <div class="cpdse-rings__tile">
-        <p class="cpdse-rings__tile-label">CPDSE staff</p>
-        <p class="cpdse-rings__tile-count">${staff}</p>
-      </div>
-      <div class="cpdse-rings__tile">
-        <p class="cpdse-rings__tile-label">Season participants</p>
-        <p class="cpdse-rings__tile-count">${participants}</p>
-      </div>`;
-  };
+  const renderRingTiles = (_people) => { /* stat tiles removed */ };
 
   /* ---------- Render: radial ecosystem viz ---------- */
   const renderViz = (people) => {
