@@ -9,9 +9,9 @@
 
 .cpdse-pubs {
   --gold:        var(--accent, #D6C17C);
-  --ivory:       #F9F9F9;
+  --ivory:       #F6F1DC;
   --sage:        #5F7D61;
-  --soft:        var(--paper, #F6F1DC);
+  --soft:        var(--paper, #F9F9F9);
   --forest:      var(--green, #3C5E3E);
   --transition:  cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-card: 0 10px 30px rgba(60, 94, 62, 0.10), inset 0 0 0 1px rgba(214, 193, 124, 0.25);
