@@ -30,17 +30,15 @@ nav:
         url: /educational-offerings/
       - title: Learning Resources
         url: /education/learning-resources/
+      - title: Student Code Club
+        url: /codeclub/
       - title: Educational Git
         url: https://github.com/CPDSE-EDUX
         external: true
-      - title: Student Code Club
-        url: /codeclub/
   - title: Research
     children:
       - title: Research Units
         url: /research-units/
-      - title: Publications
-        url: /research/publications/
       - title: Research Git
         url: https://github.com/CPDSE
         external: true
