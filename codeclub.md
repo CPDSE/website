@@ -24,3 +24,10 @@ Any student at the University of Copenhagen or the University of Southern Denmar
 All our teaching materials are available openly on GitHub. Feel free to explore, learn, and contribute.
 
 [Browse on GitHub →](https://github.com/CPDSE-EDUX)
+
+## Find Your Club
+
+We run sessions at both partner universities — find the one closest to you:
+
+- [SDU Pharma Code Club →](/codeclub-sdu/) — Pharma Data Hub, Odense
+- [KU Pharma Student Coding Club →](/codeclub-ku/) — Building 21, Copenhagen
