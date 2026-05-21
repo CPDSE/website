@@ -91,14 +91,14 @@ layout: default
 </section>
 
 <!-- ANNOUNCEMENTS -->
-<section class="section section-alt section-announcements" style="background: linear-gradient(135deg, #3C5E3E 0%, #A9BBAA 100%);">
+<section class="section section-announcements">
   <div class="container">
     <div class="section-header fade-in" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
       <div>
         <span class="section-label">Latest</span>
         <h2>News &amp; Events</h2>
       </div>
-      <a href="{{ '/news-events/' | relative_url }}" class="btn btn-ghost" style="border-color:var(--offwhite); color:var(--offwhite);">View all →</a>
+      <a href="{{ '/news-events/' | relative_url }}" class="btn btn-ghost">View all →</a>
     </div>
 
     <div class="announcements-grid fade-in-stagger">
@@ -163,6 +163,9 @@ layout: default
 <section class="section section-circles section-community">
   <div class="container">
     <div class="community-layout fade-in">
+      <div class="community-visual">
+        <img src="{{ '/assets/team.jpg' | relative_url }}" alt="CPDSE community group photo" class="community-img">
+      </div>
       <div class="community-text">
         <div class="section-header" style="margin-bottom:var(--space-md);">
           <span class="section-label">{{ page.community_label | default: "Community" }}</span>
@@ -182,9 +185,6 @@ layout: default
           <a href="{{ '/who-are-we/' | relative_url }}" class="btn btn-primary">Meet the team</a>
           <a href="{{ site.socials.linkedin }}" target="_blank" rel="noopener" class="btn btn-ghost">Follow us</a>
         </div>
-      </div>
-      <div class="community-visual">
-        <img src="{{ '/assets/team.jpg' | relative_url }}" alt="CPDSE community group photo" class="community-img">
       </div>
     </div>
   </div>

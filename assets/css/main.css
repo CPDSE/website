@@ -306,15 +306,16 @@ a { color: inherit; }
   pointer-events: none;
 }
 .section-announcements {
+  background: var(--color-ivory);
   position: relative;
   overflow: hidden;
-  color: var(--offwhite);
+  color: var(--ink);
 }
 .section-announcements .section-label {
-  color: var(--accent);
+  color: var(--color-forest-green);
 }
 .section-announcements h2 {
-  color: var(--offwhite);
+  color: var(--color-forest-green);
 }
 .section-announcements .announcement-card {
   background: var(--offwhite);
@@ -349,7 +350,7 @@ a { color: inherit; }
   color: var(--accent);
 }
 .section-announcements .section-header p {
-  color: var(--accent) !important;
+  color: rgba(15,26,20,0.65);
 }
 .section-announcements::before {
   content: '';
@@ -357,10 +358,7 @@ a { color: inherit; }
   inset: 0;
   z-index: 1;
   background-image:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(214,193,124,0.10) 0%, transparent 70%),
-    radial-gradient(circle, rgba(249,249,249,0.07) 1px, transparent 1px);
-  background-size: auto, 28px 28px;
-  background-position: 0 0, 0 0;
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(214,193,124,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .section-announcements > * {
@@ -780,7 +778,8 @@ a { color: inherit; }
 
 /* ─── COMMUNITY / JOURNEY ─────────────────────────────────── */
 .section-community {
-  background: linear-gradient(135deg, #3C5E3E 0%, #A9BBAA 100%);
+  background: var(--color-soft-white);
+  color: var(--ink);
 }
 .community-layout {
   display: flex;
@@ -792,7 +791,7 @@ a { color: inherit; }
   flex: 1 1 0;
 }
 .community-copy {
-  color: rgba(249,249,249,0.75);
+  color: rgba(15,26,20,0.72);
   line-height: 1.75;
   max-width: 60ch;
 }
@@ -805,8 +804,7 @@ a { color: inherit; }
 .community-visual {
   display: flex;
   flex: 0 0 46%;
-  justify-content: flex-end;
-  margin-left: auto;
+  justify-content: flex-start;
   min-width: 320px;
 }
 .community-img {
@@ -815,8 +813,8 @@ a { color: inherit; }
   min-height: 340px;
   object-fit: cover;
   border-radius: 18px;
-  border: 1px solid rgba(249,249,249,0.22);
-  box-shadow: 0 18px 36px rgba(15,26,20,0.22);
+  border: 1px solid rgba(15,26,20,0.1);
+  box-shadow: 0 18px 36px rgba(15,26,20,0.1);
 }
 
 
@@ -889,7 +887,7 @@ a { color: inherit; }
 }
 .section-community .section-header p,
 .section-circles:not(.section-community) .section-header p {
-  color: rgba(249,249,249,0.7);
+  color: rgba(15,26,20,0.7);
 }
 .section-green {
   background: var(--green);
