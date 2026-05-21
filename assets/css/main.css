@@ -3342,7 +3342,10 @@ a { color: inherit; }
 /* ── Timeline (right column) ───────────────────────────────── */
 .vision-timeline-wrap {
   position: relative;
-  min-height: 500px;
+  /* Fixed height + overflow:hidden so expanding/collapsing descriptions
+     never change the section height and cause layout reflow. */
+  height: 520px;
+  overflow: hidden;
 }
 .vision-timeline {
   list-style: none;
@@ -3462,7 +3465,7 @@ a { color: inherit; }
     gap: 2.5rem;
   }
   .vision-timeline-wrap {
-    min-height: 420px;
+    height: 460px;
   }
 }
 
