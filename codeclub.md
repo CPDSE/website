@@ -29,5 +29,5 @@ All our teaching materials are available openly on GitHub. Feel free to explore,
 
 We run sessions at both partner universities — find the one closest to you:
 
-- [SDU Pharma Code Club →](/codeclub-sdu/) — Pharma Data Hub, Odense
-- [KU Pharma Student Coding Club →](/codeclub-ku/) — Building 21, Copenhagen
+- [SDU Pharma Code Club →]({{ '/codeclub-sdu/' | relative_url }}) — Pharma Data Hub, Odense
+- [KU Pharma Student Coding Club →]({{ '/codeclub-ku/' | relative_url }}) — Building 21, Copenhagen

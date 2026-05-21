@@ -2,31 +2,58 @@
 layout: page
 title: SDU Pharma Code Club
 hero_label: Education
-description: Learn new data science skills together at the SDU Pharma Data Hub — all levels welcome, from complete beginner to pro.
+description: Bring your laptop and join our Code Club at the SDU Pharma Data Hub — all levels welcome, from complete beginner to pro.
 permalink: /codeclub-sdu/
 ---
 
-Join us at the SDU Pharma Code Club for hands-on coding sessions in a friendly, collaborative environment. Bring your laptop — refreshments are on us.
+<img src="https://www.cpdse.dk/wp-content/uploads/2026/02/Youre-a-Wiz-Student-Sticker.png" alt="You're a wiz student" style="float:right; width:180px; margin: 0 0 1.5rem 2rem;">
+
+Bring your laptop and join our Code Club at the SDU Pharma Data Hub! All levels are welcome, from complete beginner to pro. We'll have a hygge time with cake and code.
+
+Questions? Write us at [codingclub@cpdse.dk](mailto:codingclub@cpdse.dk)
+
+---
+
+## Next Meeting
+
+*We'd like to get to know each other, explore a few examples together, and enjoy some cake.*
+
+**When:** 16.03. 14:00–16:00  
+**Where:** Ø10-506-2 — [Pharma Data Hub](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cb992423b7d0540c9a84c)
+
+<iframe src="https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cb992423b7d0540c9a84c?embedded=true" width="100%" height="300" style="border:none;border-radius:8px;display:block;margin:1rem 0;" allowfullscreen loading="lazy"></iframe>
+
+**Please sign up** so we know how many snacks to order: [Sign up here →](https://pollunit.com/en/polls/gzawyfxllpdlqour8dozfq)
+
+- Registration is not binding
+- You can still sign up after the deadline, but we may have already ordered snacks
+- You are welcome to join even without registering
+
+---
 
 ## What to Expect
 
-We gather regularly to learn new data science skills together through:
+You bring a laptop — we bring snacks!
 
-- **Coding challenges** to sharpen your skills
-- **Project support** to help you with your own work
-- **Tips and tricks** from peers and mentors
-- **Collaborative idea development** — you never know where a session might lead
+We meet regularly to learn new data science skills together. All levels welcome, from beginner to pro. Together we:
 
-Not sure where to start? Have a look at [ClickRx on GitHub](https://github.com/CPDSE-EDUX) — an R-based game built by club members that shows coding can be genuinely fun.
+- Tackle coding challenges together
+- Support each other's data analysis projects
+- Discover new coding tips & tricks
+- Bring in our own ideas
 
-## Who Can Join
+---
 
-Any student at SDU with an interest in data and programming — regardless of your level. Complete beginners are just as welcome as experienced coders.
+## Thinking R Cannot Be Fun?
 
-## Location
+You can even make games in R! Check out the code for ClickRx on [GitHub](https://github.com/CPDSE/ClickRx) — or play it right here:
 
-**Pharma Data Hub** — Ø10-506-2, SDU Odense
+<iframe id="clickerrx-frame" src="https://sarahmit.github.io/ClickRx/" style="width:100%;border:none;display:block;border-radius:12px;min-height:500px;" scrolling="no" title="ClickerRx"></iframe>
 
-## Registration
-
-Registration is not binding — you are welcome to drop in without signing up in advance. Keep an eye on our announcements for upcoming session dates.
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.iframeHeight) {
+    document.getElementById('clickerrx-frame').style.height = e.data.iframeHeight + 'px';
+  }
+});
+</script>
