@@ -45,6 +45,28 @@ sections:
 
 ---
 
+### Stats banner
+
+A row of large numbers with labels — counts up animatedly when scrolled into view. Works best on a `forest-green` section.
+
+```yaml
+  - color: forest-green
+    stats:
+      - number: 60
+        suffix: "+"
+        label: People
+      - number: 7
+        label: Departments
+      - number: 2
+        label: Universities
+      - number: 1
+        label: Mission
+```
+
+`suffix` is optional — use it for `+`, `%`, `×`, etc.
+
+---
+
 ### Single column
 
 Standard single column layout. Text is always left-aligned.

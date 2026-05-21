@@ -51,8 +51,7 @@
       });
     }, { threshold: [0.25, 0.6] });
 
-    const statsStrip = document.querySelector('.stats-panel-wrap, .stats-strip');
-    if (statsStrip) statsObserver.observe(statsStrip);
+    document.querySelectorAll('.stats-panel-wrap, .stats-strip').forEach(el => statsObserver.observe(el));
 
     // Nav becomes solid shortly after scrolling starts
     const siteNav = document.querySelector('.site-nav');

@@ -18,6 +18,34 @@
   LAYOUT TYPES  (choose one per section)
   ─────────────────────────────────────────────────────────
 
+  0. STATS BANNER
+     ─────────────
+     stats:              Required — list of stat objects.
+
+     Each stat:
+       number:   The number to display (animated count-up on scroll).
+       suffix:   Optional suffix appended to the number, e.g. "+"
+       label:    Short label shown below the number.
+
+     Tip: works best with color: forest-green.
+
+     Example:
+       - color: forest-green
+         stats:
+           - number: 60
+             suffix: "+"
+             label: People
+           - number: 7
+             label: Departments
+           - number: 2
+             label: Universities
+           - number: 1
+             label: Mission
+
+  ─────────────────────────────────────────────────────────
+  LAYOUT TYPES  (choose one per section)
+  ─────────────────────────────────────────────────────────
+
   1. PLAIN TEXT  (default — just write content:)
      ──────────
      content: |
@@ -112,7 +140,18 @@
     </header>
     {% endif %}
 
-    {% if s.cards %}
+    {% if s.stats %}
+    <!-- ── Stats banner ── -->
+    <div class="page-section__stats stats-strip">
+      {% for stat in s.stats %}
+      <div class="page-section__stat">
+        <span class="page-section__stat-number stat-number" data-count="{{ stat.number }}"{% if stat.suffix %} data-suffix="{{ stat.suffix }}"{% endif %}>{{ stat.number }}{{ stat.suffix }}</span>
+        <span class="page-section__stat-label stat-label">{{ stat.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elsif s.cards %}
     <!-- ── Cards ── -->
     {% assign cols = s.card_columns | default: 3 %}
     {% assign card_color = s.card_color | default: 'soft-white' %}
