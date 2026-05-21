@@ -37,8 +37,8 @@ nav:
         external: true
   - title: Research
     children:
-      - title: Research Units
-        url: /research-units/
+      - title: Researchers & Units
+        url: /researchers-units/
       - title: Research Git
         url: https://github.com/CPDSE
         external: true
