@@ -47,9 +47,23 @@ layout: default
 </section>
 
 <!-- ════════════════════════════════════════════════════════
-     2. LOGOS (ivory)
+     2. CTA STRIP (ivory)
      ════════════════════════════════════════════════════════ -->
-<section class="section cn-ivory" id="logos">
+<section class="cta-strip">
+  <div class="container">
+    <h2>Download the full <em>CPDSE logo package</em></h2>
+    <p>One ZIP file with every lock-up in PNG, SVG, and EPS — in all four approved colourways (Forest Green, Antique Gold, Black, White). Drop it into your slides, posters, or co-authored manuscripts.</p>
+    <div class="cta-strip-ctas">
+      <a href="{{ page.download_button.file | default: '/assets/logos/cpdse-logo-package.zip' | relative_url }}"
+         class="btn btn-primary" download>↓ Download logos (ZIP)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     3. LOGOS (offwhite)
+     ════════════════════════════════════════════════════════ -->
+<section class="section" id="logos">
   <div class="container">
     <div class="ci-header">
       <span class="ci-eyebrow">01 — Logos</span>
@@ -179,9 +193,9 @@ layout: default
 </section>
 
 <!-- ════════════════════════════════════════════════════════
-     3. TYPOGRAPHY (offwhite)
+     4. TYPOGRAPHY (ivory)
      ════════════════════════════════════════════════════════ -->
-<section class="section" id="type">
+<section class="section cn-ivory" id="type">
   <div class="container">
     <div class="ci-header">
       <span class="ci-eyebrow">02 — Typography</span>
@@ -222,9 +236,9 @@ layout: default
 </section>
 
 <!-- ════════════════════════════════════════════════════════
-     4. COLOUR PALETTE (ivory)
+     5. COLOUR PALETTE (offwhite)
      ════════════════════════════════════════════════════════ -->
-<section class="section cn-ivory" id="colour">
+<section class="section" id="colour">
   <div class="container">
     <div class="ci-header">
       <span class="ci-eyebrow">03 — Colour palette</span>
@@ -343,9 +357,9 @@ layout: default
 </section>
 
 <!-- ════════════════════════════════════════════════════════
-     5. APPROVED PAIRINGS (offwhite)
+     6. APPROVED PAIRINGS (ivory)
      ════════════════════════════════════════════════════════ -->
-<section class="section">
+<section class="section cn-ivory">
   <div class="container">
     <div class="ci-header">
       <span class="ci-eyebrow">Approved pairings</span>
@@ -396,21 +410,6 @@ layout: default
           <span class="pairing-meta-detail">#A9BBAA · #F6F1DC</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════
-     6. CTA STRIP (ivory)
-     ════════════════════════════════════════════════════════ -->
-<section class="cta-strip">
-  <div class="container">
-    <h2>Download the full <em>CPDSE logo package</em></h2>
-    <p>One ZIP file with every lock-up in PNG, SVG, and EPS — in all four approved colourways (Forest Green, Antique Gold, Black, White). Drop it into your slides, posters, or co-authored manuscripts.</p>
-    <div class="cta-strip-ctas">
-      <a href="{{ page.download_button.file | default: '/assets/logos/cpdse-logo-package.zip' | relative_url }}"
-         class="btn btn-primary" download>↓ Download logos (ZIP)</a>
-      <a href="{{ '/about/' | relative_url }}" class="btn btn-ghost">About CPDSE →</a>
     </div>
   </div>
 </section>
