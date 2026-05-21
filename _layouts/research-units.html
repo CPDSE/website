@@ -37,10 +37,15 @@ layout: default
   <div class="container">
     <div class="ru-header">
       <h2 class="ru-headline">Group Leaders</h2>
-      <p class="ru-lead">{{ page.leaders_intro | default: "Seven group leaders anchor CPDSE's research agenda — spanning drug design, pharmacy, computer science, science education, and statistics." }}</p>
+      <p class="ru-lead">{{ page.leaders_intro | default: "Nine group leaders anchor CPDSE's research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education." }}</p>
     </div>
     <div class="ru-leaders-table">
+      {% assign current_group = '' %}
       {% for leader in page.group_leaders %}
+        {% if leader.group and leader.group != current_group %}
+          {% assign current_group = leader.group %}
+          <h3 class="ru-leader-group-heading">{{ leader.group }}</h3>
+        {% endif %}
         {% assign uni_lower = leader.uni | downcase %}
         <div class="ru-leader-row">
           <div class="ru-leader-left">

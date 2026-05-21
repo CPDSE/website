@@ -29,4 +29,20 @@ offerings:
     link_text: "Browse on GitHub →"
     link_url: https://github.com/CPDSE-EDUX
     external: true
+
+  - icon: curriculum
+    label: "Quick Reference"
+    card_title: Cheat Sheets
+    description: "Concise, printable reference cards covering essential data science and pharmaceutical concepts — Python, R, statistics, and more. Made by CPDSE for students and practitioners."
+    link_text: "View cheat sheets →"
+    link_url: https://github.com/CPDSE-EDUX/CheatSheets
+    external: true
+
+  - icon: teaching
+    label: "R · Pharma Examples"
+    card_title: R Documentation
+    description: "Worked R examples across pharmacometrics, pharmacovigilance, and drug data science — documented and annotated for learners at all levels."
+    link_text: "Open R docs →"
+    link_url: https://cpdse-edux.github.io/R_documentation/
+    external: true
 ---

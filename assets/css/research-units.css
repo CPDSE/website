@@ -106,6 +106,21 @@
 }
 
 /* ══ SECTION 2 — GROUP LEADERS (directory table) ════════════════ */
+.ru-leader-group-heading {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-forest-green, #3C5E3E);
+  opacity: 0.6;
+  margin: 2.5rem 0 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border, #E7E2D1);
+}
+.ru-leader-group-heading:first-child {
+  margin-top: 0;
+}
+
 .ru-leaders-table {
   border-top: 1px solid var(--border, #E7E2D1);
   width: 100%;
