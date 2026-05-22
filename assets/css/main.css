@@ -3337,7 +3337,7 @@ a { color: inherit; }
 .vision-timeline {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 14px; /* left breathing room so dots aren't clipped by overflow:hidden */
   display: flex;
   flex-direction: column;
 }
