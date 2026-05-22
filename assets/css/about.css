@@ -90,7 +90,7 @@
 .vm-card {
   padding: 2.2rem 2rem 2rem;
   min-height: 320px;
-  border-radius: 16px;
+  border-radius: 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -199,7 +199,7 @@
 .activity {
   background: var(--color-soft-white, #F9F9F9);
   border: 1px solid var(--border, #d4cfc4);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 1.5rem 1.3rem 1.4rem;
   display: flex;
   flex-direction: column;
@@ -321,7 +321,7 @@
 .nwow-card--outline {
   background: var(--color-ivory, #F6F1DC);
   border: 1px solid var(--border, #E7E2D1);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .nwow-num {
@@ -357,5 +357,5 @@
 
 @media (max-width: 640px) {
   .nwow-grid { grid-template-columns: 1fr; }
-  .nwow-banner { border-radius: 18px; padding: 1.2rem 1.4rem; }
+  .nwow-banner { border-radius: 0; padding: 1.2rem 1.4rem; }
 }
