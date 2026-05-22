@@ -20,7 +20,6 @@ sections:
       To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
 
   - color: sage-green
-    eyebrow: What we do
     title: "Five lines of active work"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."
     card_columns: 3
@@ -37,7 +36,6 @@ sections:
         content: We connect and develop national and international networks in pharma data science and data science education.
 
   - color: soft-white
-    eyebrow: Philosophy
     title: "The New Ways of Working philosophy"
     intro: "Our center's philosophy is rooted in the principles of the New Ways of Working movement -- taking values and inspiration from sociocracy, agile, lean, and teal."
     card_columns: 2
