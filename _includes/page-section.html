@@ -243,9 +243,11 @@
     {% elsif s.image %}
     <!-- ── Image + text ── -->
     {% assign img_pos = s.image.position | default: 'left' %}
+    {% assign img_src = s.image.src %}
+    {% unless img_src contains '://' %}{% assign img_src = img_src | relative_url %}{% endunless %}
     <div class="page-section__image-text page-section__image-text--{{ img_pos }}">
       <div class="page-section__image-wrap">
-        <img src="{{ s.image.src | relative_url }}" alt="{{ s.image.alt | default: '' }}">
+        <img src="{{ img_src }}" alt="{{ s.image.alt | default: '' }}">
       </div>
       <div class="page-section__image-body">
         {{ s.content | markdownify }}
