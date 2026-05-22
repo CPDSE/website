@@ -6,14 +6,14 @@ eyebrow: Latest from CPDSE
 description: See the latest news and upcoming events from CPDSE.
 
 sections:
-  color: sage-green
-  title: Convergence Talks
-  content: |
-    A bi-weekly 30-minute talk series — Fridays at 9:00–9:30 — bringing researchers, clinicians, and industry voices together around the intersection of pharmaceutical science and data science. Free to attend, in person or online.
-    ## Interested in giving a talk?
-    "We're always looking for speakers — academic, clinical, or industry — whose work sits somewhere on the pharma × data-science axis. Reach out and we'll find a date that works."
-  link_text: "Email Jeppe Hartmann"
-  link_url: "mailto:jeppe.hartmann@sund.ku.dk?subject=ConvergenceTalk%20speaker%20proposal"
+    - color: sage-green
+      title: Convergence Talks
+      content: |
+        A bi-weekly 30-minute talk series — Fridays at 9:00–9:30 — bringing researchers, clinicians, and industry voices together around the intersection of pharmaceutical science and data science. Free to attend, in person or online.
+        ## Interested in giving a talk?
+        "We're always looking for speakers — academic, clinical, or industry — whose work sits somewhere on the pharma × data-science axis. Reach out and we'll find a date that works."
+      link_text: "Email Jeppe Hartmann"
+      link_url: "mailto:jeppe.hartmann@sund.ku.dk?subject=ConvergenceTalk%20speaker%20proposal"
 
 past_talks:
   - date: 2026-04-24
