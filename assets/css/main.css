@@ -21,7 +21,7 @@
   --color-antique-gold:    #D6C17C;
   --color-warm-sand:       #E4D7A1;
   --color-ivory-gold-tint: #F6F1DC;
-  --color-ivory:           #A9BBAA; /* legacy — now maps to mint-gray */
+  --color-ivory:           #F6F1DC;
   --color-charcoal-gray:   #333333;
   --color-charcoal:        #333333;
   --color-soft-white:      #F9F9F9;
@@ -310,7 +310,7 @@ a { color: inherit; }
   pointer-events: none;
 }
 .section-announcements {
-  background: var(--color-ivory);
+  background: var(--color-mint-gray, #A9BBAA);
   position: relative;
   overflow: hidden;
   color: var(--color-charcoal, #333333);
@@ -912,7 +912,7 @@ a { color: inherit; }
   --muted: #F9F9F9;
 }
 .section-audience {
-  background: var(--color-ivory);
+  background: var(--color-mint-gray, #A9BBAA);
   color: var(--color-charcoal, #333333);
 }
 
