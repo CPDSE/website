@@ -13,7 +13,7 @@ sections:
       alt: CPDSE community members collaborating
       position: right
     content: |
-      ## Vision
+      # Vision
       Data science is an integral core capability in life science workers and organisations.
 
       # Mission
