@@ -890,7 +890,8 @@ a { color: inherit; }
 .section-circles h2 {
   color: var(--color-warm-sand, #E4D7A1);
 }
-.section-circles p {
+.section-circles p,
+.section-circles .section-header p {
   color: rgba(249, 249, 249, 0.8);
 }
 .section-circles .circle-title {
