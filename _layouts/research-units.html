@@ -13,11 +13,12 @@ layout: default
 </header>
 
 <!-- ── SECTION 1: DEPARTMENTS ───────────────────────────────── -->
-<section class="section ru-sage">
+<section class="page-section page-section--sage-green">
   <div class="container">
-    <div class="ru-header">
-      <h2 class="ru-headline">Cooperating Departments</h2>
-    </div>
+    <header class="page-section__header">
+      {% if page.departments_eyebrow %}<p class="page-section__eyebrow">{{ page.departments_eyebrow }}</p>{% endif %}
+      <h2 class="page-section__title">{{ page.departments_title }}</h2>
+    </header>
     <div class="ru-dept-grid">
       {% for dept in page.departments %}
         {% assign uni_lower = dept.uni | downcase %}
@@ -33,12 +34,13 @@ layout: default
 </section>
 
 <!-- ── SECTION 2: GROUP LEADERS ─────────────────────────────── -->
-<section class="section ru-soft-white">
+<section class="page-section page-section--soft-white">
   <div class="container">
-    <div class="ru-header">
-      <h2 class="ru-headline">Group Leaders</h2>
-      <p class="ru-lead">{{ page.leaders_intro | default: "Nine group leaders anchor CPDSE's research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education." }}</p>
-    </div>
+    <header class="page-section__header">
+      {% if page.leaders_eyebrow %}<p class="page-section__eyebrow">{{ page.leaders_eyebrow }}</p>{% endif %}
+      <h2 class="page-section__title">{{ page.leaders_title }}</h2>
+      {% if page.leaders_intro %}<p class="page-section__intro">{{ page.leaders_intro }}</p>{% endif %}
+    </header>
     <div class="ru-leaders-table">
       {% assign current_group = '' %}
       {% for leader in page.group_leaders %}
@@ -67,12 +69,13 @@ layout: default
 </section>
 
 <!-- ── SECTION 3: PHD STUDENTS ──────────────────────────────── -->
-<section class="section ru-sage">
+<section class="page-section page-section--sage-green">
   <div class="container">
-    <div class="ru-header">
-      <h2 class="ru-headline">Funded PhD Students</h2>
-      <p class="ru-lead">{{ page.phd_intro | default: "CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science." }}</p>
-    </div>
+    <header class="page-section__header">
+      {% if page.phd_eyebrow %}<p class="page-section__eyebrow">{{ page.phd_eyebrow }}</p>{% endif %}
+      <h2 class="page-section__title">{{ page.phd_title }}</h2>
+      {% if page.phd_intro %}<p class="page-section__intro">{{ page.phd_intro }}</p>{% endif %}
+    </header>
     <div class="ru-phd-grid">
       {% for student in page.phd_students %}
         <div class="ru-phd-card">

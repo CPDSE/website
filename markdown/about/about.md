@@ -63,7 +63,7 @@ sections:
 ---
 
 
-<section class="section section-circles" style="background: var(--color-ivory);">
+<section class="section section-circles" style="background: #5F7D61;">
   <div class="container">
     <div class="circles-layout fade-in">
       <div class="section-header" style="margin-bottom:var(--space-md);">

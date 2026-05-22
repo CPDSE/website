@@ -5,6 +5,14 @@ eyebrow: Research
 description: CPDSE brings together research units from the University of Copenhagen and the University of Southern Denmark, each contributing unique expertise to pharmaceutical data science.
 permalink: /researchers-units/
 
+departments_title: Cooperating Departments
+
+leaders_title: Group Leaders
+leaders_intro: Nine group leaders anchor CPDSE's research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
+
+phd_title: Funded PhD Students
+phd_intro: CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science.
+
 departments:
   - uni: UCPH
     name: Department of Drug Design and Pharmacology
