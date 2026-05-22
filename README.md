@@ -28,7 +28,14 @@ permalink: /your-url/         # what comes after cpdse.dk/
 
 ## Content sections
 
-The content below the hero is divided into sections. Each section has a separate background colour. **Soft White**, **Sage Green**, and **Forest Green** are the standard options.
+The content below the hero is divided into sections. Each section has a separate background colour. Four approved colour pairings are available:
+
+| Background | Headlines / eyebrows | Body text |
+|---|---|---|
+| **Soft White** `soft-white` | Forest Green | Charcoal |
+| **Mint Gray** `mint-gray` | Ivory Gold Tint | Charcoal |
+| **Sage Green** `sage-green` | Warm Sand | Soft White |
+| **Forest Green** `forest-green` | Antique Gold | Soft White |
 
 To add content, open the page's `.md` file and add a `sections:` list after the frontmatter `---`. Each item in the list becomes one full-width section band.
 
@@ -38,7 +45,7 @@ All three header fields are optional. Omit any you don't need.
 
 ```yaml
 sections:
-  - color: soft-white          # soft-white | sage-green | forest-green
+  - color: soft-white          # soft-white | mint-gray | sage-green | forest-green
     eyebrow: Philosophy        # small all-caps label above the title
     title: Section Headline    # large headline
     intro: Lead paragraph shown beneath the title in a smaller, muted style.
