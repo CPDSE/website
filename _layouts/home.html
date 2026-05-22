@@ -6,9 +6,9 @@ layout: default
 <section class="hero">
   <div class="hero-main">
     <div class="hero-inner">
-      <span class="hero-label">{{ page.eyebrow | default: "Center for Pharmaceutical Data Science Education" }}</span>
-      <h1>{{ page.hero_headline | default: "Pharma is full of data,<br>but not <em>data science.</em>" }}</h1>
-      <p class="hero-sub">{{ page.hero_sub | default: "We are here to change that — educating the next generation of drug experts who speak both data and drugs." }}</p>
+      <span class="hero-label">{{ page.eyebrow }}</span>
+      <h1>{{ page.hero_headline }}</h1>
+      <p class="hero-sub">{{ page.hero_sub }}</p>
       <div class="hero-ctas">
         <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn more</a>
         <a href="{{ '/news-events/' | relative_url }}" class="btn btn-ghost">View news &amp; events</a>
@@ -53,8 +53,8 @@ layout: default
       </div>
     </div>
     <div class="about-text">
-      <span class="section-label" style="color:var(--color-forest-green)">{{ page.about_label | default: "About CPDSE" }}</span>
-      <h2>{{ page.about_headline | default: "Pharmaceutical sciences,<br>boosted by data science" }}</h2>
+      <span class="section-label" style="color:var(--color-forest-green)">{{ page.about_label }}</span>
+      <h2>{{ page.about_headline }}</h2>
       {% for para in page.about_body %}<p>{{ para }}</p>{% endfor %}
       <div class="about-ctas">
         <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn more</a>
@@ -139,19 +139,11 @@ layout: default
       </div>
       <div class="community-text">
         <div class="section-header" style="margin-bottom:var(--space-md);">
-          <span class="section-label">{{ page.community_label | default: "Community" }}</span>
-          <h2>{{ page.community_headline | default: "Who are we" }}</h2>
-          {% if page.community_body %}
-            <p>{{ page.community_body[0] }}</p>
-          {% else %}
-            <p>CPDSE is a cross-institutional community of students, researchers, educators, data scientists, pharmacists and collaborators working together to strengthen pharmaceutical data science education.</p>
-          {% endif %}
+          <span class="section-label">{{ page.community_label }}</span>
+          <h2>{{ page.community_headline }}</h2>
+          <p>{{ page.community_body[0] }}</p>
         </div>
-        {% if page.community_body %}
-          {% for para in page.community_body offset: 1 %}<p class="community-copy">{{ para }}</p>{% endfor %}
-        {% else %}
-          <p class="community-copy">We grow through shared projects, workshops, retreats, teaching development and everyday collaboration across UCPH and SDU. What makes the center valuable is not only the formal structure, but the people in it: a community that exchanges ideas, builds capacity and helps each other move from plans to practice.</p>
-        {% endif %}
+        {% for para in page.community_body offset: 1 %}<p class="community-copy">{{ para }}</p>{% endfor %}
         <div class="community-ctas">
           <a href="{{ '/people/' | relative_url }}" class="btn btn-primary">Meet the team</a>
           <a href="{{ site.socials.linkedin }}" target="_blank" rel="noopener" class="btn btn-ghost">Follow us</a>
@@ -165,9 +157,9 @@ layout: default
 <section class="section section-audience">
   <div class="container">
     <div class="audience-intro fade-in">
-      <span class="section-label">{{ page.audience_label | default: "Who we serve" }}</span>
-      <h2>{{ page.audience_headline | default: "Educate <em>data &amp; drug</em> bilinguals !!!" }}</h2>
-      <p>{{ page.audience_intro | default: "We aim to upskill and educate people that understand and can apply the right data science across the breadth of the pharmaceutical value chain." }}</p>
+      <span class="section-label">{{ page.audience_label }}</span>
+      <h2>{{ page.audience_headline }}</h2>
+      <p>{{ page.audience_intro }}</p>
     </div>
     <div class="audience-grid fade-in-stagger">
       {% if page.audience_cards %}
