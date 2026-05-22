@@ -76,6 +76,7 @@
 .page-section__content {
   max-width: 72ch;
 }
+.page-section__content h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.5rem); color: var(--color-forest-green, #3C5E3E); margin: 1.5rem 0 0.5rem; line-height: 1.15; }
 .page-section__content h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--color-forest-green, #3C5E3E); margin: 1.5rem 0 0.5rem; line-height: 1.2; }
 .page-section__content h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; color: var(--color-forest-green, #3C5E3E); margin: 1.2rem 0 0.4rem; }
 .page-section__content p  { margin: 0.75rem 0; line-height: 1.7; }
