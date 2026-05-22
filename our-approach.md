@@ -6,7 +6,7 @@ description: How CPDSE thinks about data science education in pharmaceutical sci
 
 sections:
 
-  - color: ivory
+  - color: soft-white
     eyebrow: "Why data science for pharmacists"
     title: "You don't need to become a programmer. You need to speak both languages."
     intro: "Pharmaceutical science generates more data than ever — from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly, without waiting for a specialist, are at a fundamental advantage. CPDSE exists to close that gap."
@@ -26,7 +26,7 @@ sections:
       - title: Free & open tools
         content: Python, R, Julia — industry-standard, actively maintained, and free. No licence fees, no vendor lock-in.
 
-  - color: forest-green
+  - color: ivory
     content: |
       > The goal is not to replace the statistician or the programmer — it's to stop being entirely dependent on them.
 
