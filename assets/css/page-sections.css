@@ -4,7 +4,7 @@
  * No HTML required. See _includes/page-section.html for reference.
  *
  * Section background colors:
- *   soft-white (default) | ivory | forest-green
+ *   soft-white (default) | ivory | sage-green | forest-green
  *
  * Layout types (choose one per section):
  *   (default)  plain markdown content
@@ -21,13 +21,18 @@
 /* ── Colour variants ──────────────────────────────────────────── */
 .page-section--soft-white   { background: var(--color-soft-white, #F9F9F9); }
 .page-section--ivory        { background: var(--color-ivory, #F6F1DC); }
-.page-section--mint-gray    { background: var(--color-mint-gray, #A9BBAA); }
+.page-section--sage-green   { background: var(--color-sage-green, #5F7D61); color: #F9F9F9; --muted: rgba(249,249,249,0.75); }
 .page-section--forest-green { background: var(--color-forest-green, #3C5E3E); color: #F9F9F9; --muted: #F9F9F9; }
+
+.page-section--sage-green h2,
+.page-section--sage-green h3,
+.page-section--sage-green h4 { color: #F9F9F9; }
 
 .page-section--forest-green h2,
 .page-section--forest-green h3,
 .page-section--forest-green h4 { color: var(--color-antique-gold, #D6C17C); }
 
+.page-section--sage-green a   { color: rgba(249,249,249,0.85); }
 .page-section--forest-green a { color: var(--color-warm-sand, #E4D7A1); }
 
 /* ── Section header ───────────────────────────────────────────── */
@@ -44,6 +49,10 @@
   opacity: 0.65;
   margin: 0 0 0.6rem;
 }
+.page-section--sage-green .page-section__eyebrow {
+  color: #F9F9F9;
+  opacity: 0.75;
+}
 .page-section--forest-green .page-section__eyebrow {
   color: var(--color-antique-gold, #D6C17C);
   opacity: 0.85;
@@ -57,6 +66,7 @@
   color: var(--color-forest-green, #3C5E3E);
   margin: 0 0 0.6rem;
 }
+.page-section--sage-green .page-section__title   { color: #F9F9F9; }
 .page-section--forest-green .page-section__title {
   color: var(--color-antique-gold, #D6C17C);
 }
@@ -68,6 +78,7 @@
   max-width: 68ch;
   margin: 0;
 }
+.page-section--sage-green .page-section__intro   { color: rgba(249,249,249,0.85); }
 .page-section--forest-green .page-section__intro {
   color: rgba(249,249,249,0.75);
 }
@@ -112,6 +123,16 @@
 /* Card background colors */
 .page-section__cards--soft-white .page-section__card { background: var(--color-soft-white, #F9F9F9); }
 .page-section__cards--ivory      .page-section__card { background: var(--color-ivory, #F6F1DC); }
+
+/* Cards on sage-green section */
+.page-section--sage-green .page-section__card {
+  background: rgba(249,249,249,0.12);
+  border-color: rgba(249,249,249,0.2);
+}
+.page-section--sage-green .page-section__card-title { color: #F9F9F9; }
+.page-section--sage-green .page-section__card-body  { color: rgba(249,249,249,0.8); }
+.page-section--sage-green .page-section__card-num   { color: rgba(249,249,249,0.55); }
+.page-section--sage-green .page-section__card-link  { color: rgba(249,249,249,0.9); }
 
 /* Cards on forest-green section */
 .page-section--forest-green .page-section__card {

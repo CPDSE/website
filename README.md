@@ -38,7 +38,7 @@ All three header fields are optional. Omit any you don't need.
 
 ```yaml
 sections:
-  - color: soft-white          # soft-white | mint-gray | forest-green
+  - color: soft-white          # soft-white | sage-green | forest-green
     eyebrow: Philosophy        # small all-caps label above the title
     title: Section Headline    # large headline
     intro: Lead paragraph shown beneath the title in a smaller, muted style.
@@ -84,7 +84,7 @@ Two blocks of text placed side by side.
 Cards arranged in a grid. The `cards:` key is required; everything else is optional.
 
 ```yaml
-  - color: mint-gray
+  - color: sage-green
     title: What we offer
     card_columns: 3            # 2 | 3  (default: 3)
     card_color: soft-white     # soft-white | ivory  (default: soft-white)

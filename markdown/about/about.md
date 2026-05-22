@@ -19,7 +19,7 @@ sections:
       # Mission
       To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
 
-  - color: mint-gray
+  - color: sage-green
     eyebrow: What we do
     title: "Five lines of active work"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."

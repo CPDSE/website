@@ -51,7 +51,7 @@ sections:
 
       No other transfers of personal data to countries outside the EU/EEA take place.
 
-  - color: mint-gray
+  - color: sage-green
     title: Your Rights
     intro: Under the GDPR you have the following rights in relation to any personal data we hold about you. Requests can be sent to cpdse@ku.dk or directly to the UCPH Data Protection Officer at dpo@ku.dk. We will respond within one month.
     card_columns: 3

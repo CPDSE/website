@@ -25,7 +25,7 @@ sections:
       - title: Free & open tools
         content: "Python, R, Julia — industry-standard, actively maintained, and free. No licence fees, no vendor lock-in."
 
-  - color: mint-gray
+  - color: sage-green
     content: |
       > The goal is not to replace the statistician or the programmer — it's to stop being entirely dependent on them.
 
@@ -50,7 +50,7 @@ sections:
       - num: "7"
         title: "Visualization & Presentation"
 
-  - color: mint-gray
+  - color: sage-green
     eyebrow: "How to teach it"
     title: "Learning by doing, not by watching."
     intro: "Lectures about data science don't produce data scientists. CPDSE teaching formats are built around practice — small tasks, real datasets, and immediate feedback. Students learn by running code, not reading about it."

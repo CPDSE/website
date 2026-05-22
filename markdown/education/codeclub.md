@@ -15,7 +15,7 @@ sections:
       - **Consultations** to help you tackle specific challenges in your studies or research
       - **A welcoming space** to ask questions, get unstuck, and learn from peers
 
-  - color: mint-gray
+  - color: sage-green
     title: Who Can Join
     content: |
       Any student at the University of Copenhagen or the University of Southern Denmark interested in data science — regardless of your background or skill level.
