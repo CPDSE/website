@@ -6,13 +6,10 @@ description: CPDSE is a joint initiative between UCPH and SDU that integrates da
 permalink: /about/
 
 vision_mission:
-  - color: soft-white
-    title: Title 1
-    content: |
-      Regular paragraph text here. Supports **bold**, *italic*,
-    title: Title 2
-    content: |
-      Regular paragraph text here. Supports **bold**, *italic*,
+  - title: Vision
+    content: "Data science is an integral core capability in life science workers and organisations."
+  - title: Mission
+    content: "To educate the workforce of pharmaceutical data science professionals and researchers. Therefore, the center will develop research-based education for the future workforce of ‘data and drugs’ bilinguals – spanning bachelor, master, PhD and life-long learning levels."
 
 
 activities:
