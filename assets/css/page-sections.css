@@ -3,8 +3,12 @@
  * Editors control everything from YAML front matter in .md files.
  * No HTML required. See _includes/page-section.html for reference.
  *
- * Section background colors:
- *   soft-white (default) | ivory | sage-green | forest-green
+ * Section background colors (with headline pairing):
+ *   soft-white   → forest green headlines, charcoal text
+ *   mint-gray    → ivory gold tint headlines, charcoal text
+ *   sage-green   → warm sand headlines, soft-white text
+ *   forest-green → antique gold headlines, soft-white text
+ *   ivory        (legacy, same rules as soft-white)
  *
  * Layout types (choose one per section):
  *   (default)  plain markdown content
@@ -19,10 +23,23 @@
 }
 
 /* ── Colour variants ──────────────────────────────────────────── */
-.page-section--soft-white   { background: var(--color-soft-white, #F9F9F9); }
-.page-section--ivory        { background: var(--color-ivory, #F6F1DC); }
-.page-section--sage-green   { background: var(--color-sage-green, #5F7D61); color: #F9F9F9; --muted: rgba(249,249,249,0.75); }
-.page-section--forest-green { background: var(--color-forest-green, #3C5E3E); color: #F9F9F9; --muted: #F9F9F9; }
+/* Light backgrounds — charcoal body text */
+.page-section--soft-white   { background: var(--color-soft-white, #F9F9F9); color: var(--color-charcoal, #333333); }
+.page-section--ivory        { background: var(--color-ivory, #F6F1DC); color: var(--color-charcoal, #333333); }
+.page-section--mint-gray    { background: var(--color-mint-gray, #A9BBAA); color: var(--color-charcoal, #333333); }
+
+/* Dark backgrounds — soft-white body text */
+.page-section--sage-green   { background: var(--color-sage-green, #5F7D61); color: var(--color-soft-white, #F9F9F9); --muted: rgba(249,249,249,0.75); }
+.page-section--forest-green { background: var(--color-forest-green, #3C5E3E); color: var(--color-soft-white, #F9F9F9); --muted: #F9F9F9; }
+
+/* Headline + eyebrow pairings */
+.page-section--soft-white h2,
+.page-section--soft-white h3,
+.page-section--soft-white h4 { color: var(--color-forest-green, #3C5E3E); }
+
+.page-section--mint-gray h2,
+.page-section--mint-gray h3,
+.page-section--mint-gray h4 { color: var(--color-ivory-gold-tint, #F6F1DC); }
 
 .page-section--sage-green h2,
 .page-section--sage-green h3,
@@ -33,6 +50,7 @@
 .page-section--forest-green h4 { color: var(--color-antique-gold, #D6C17C); }
 
 .page-section--sage-green a   { color: rgba(249,249,249,0.85); }
+.page-section--mint-gray a    { color: var(--color-forest-green, #3C5E3E); }
 .page-section--forest-green a { color: var(--color-warm-sand, #E4D7A1); }
 
 .page-section--sage-green   .btn-primary,
@@ -52,6 +70,10 @@
   opacity: 0.65;
   margin: 0 0 0.6rem;
 }
+.page-section--mint-gray .page-section__eyebrow {
+  color: var(--color-ivory-gold-tint, #F6F1DC);
+  opacity: 0.85;
+}
 .page-section--sage-green .page-section__eyebrow {
   color: var(--color-warm-sand, #E4D7A1);
   opacity: 0.85;
@@ -69,10 +91,9 @@
   color: var(--color-forest-green, #3C5E3E);
   margin: 0 0 0.6rem;
 }
+.page-section--mint-gray .page-section__title    { color: var(--color-ivory-gold-tint, #F6F1DC); }
 .page-section--sage-green .page-section__title   { color: var(--color-warm-sand, #E4D7A1); }
-.page-section--forest-green .page-section__title {
-  color: var(--color-antique-gold, #D6C17C);
-}
+.page-section--forest-green .page-section__title { color: var(--color-antique-gold, #D6C17C); }
 
 .page-section__intro {
   font-size: 1rem;
@@ -81,10 +102,9 @@
   max-width: 68ch;
   margin: 0;
 }
+.page-section--mint-gray .page-section__intro    { color: var(--color-charcoal, #333333); opacity: 0.8; }
 .page-section--sage-green .page-section__intro   { color: rgba(249,249,249,0.85); }
-.page-section--forest-green .page-section__intro {
-  color: rgba(249,249,249,0.75);
-}
+.page-section--forest-green .page-section__intro { color: rgba(249,249,249,0.75); }
 
 /* ── Plain content ────────────────────────────────────────────── */
 .page-section__content {
@@ -98,6 +118,10 @@
 .page-section__content ol { margin: 0.75rem 0 0.75rem 1.4rem; line-height: 1.7; }
 .page-section__content li { margin-bottom: 0.3rem; }
 
+.page-section--mint-gray .page-section__content h1,
+.page-section--mint-gray .page-section__content h2,
+.page-section--mint-gray .page-section__content h3,
+.page-section--mint-gray .page-section__content h4 { color: var(--color-ivory-gold-tint, #F6F1DC); }
 .page-section--sage-green .page-section__content h1,
 .page-section--sage-green .page-section__content h2,
 .page-section--sage-green .page-section__content h3,
@@ -135,6 +159,14 @@
 /* Card background colors */
 .page-section__cards--soft-white .page-section__card { background: var(--color-soft-white, #F9F9F9); }
 .page-section__cards--ivory      .page-section__card { background: var(--color-ivory, #F6F1DC); }
+
+/* Cards on mint-gray section */
+.page-section--mint-gray .page-section__card {
+  background: rgba(249,249,249,0.45);
+  border-color: rgba(51,51,51,0.15);
+}
+.page-section--mint-gray .page-section__card-title  { color: var(--color-forest-green, #3C5E3E); }
+.page-section--mint-gray .page-section__card-body   { color: var(--color-charcoal, #333333); }
 
 /* Cards on sage-green section */
 .page-section--sage-green .page-section__card {
