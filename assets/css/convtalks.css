@@ -45,7 +45,7 @@
   background: var(--color-soft-white, #F9F9F9);
   border-radius: 10px;
   padding: 1rem 1.25rem;
-  border: 1px solid var(--border, #E7E2D1);
+  border: 1px solid var(--card-border, #D9D9D9);
 }
 .convtalks-stat .stat-number {
   font-family: var(--font-display);
@@ -91,7 +91,7 @@
   color: var(--green);
   padding: 0.55rem 0.95rem;
   border-radius: 9999px;
-  border: 1px solid var(--border, #E7E2D1);
+  border: 1px solid var(--card-border, #D9D9D9);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -185,7 +185,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   background: var(--color-soft-white, #F9F9F9);
-  border: 1px solid var(--border, #E7E2D1);
+  border: 1px solid var(--card-border, #D9D9D9);
   color: var(--green);
   padding: 0.22rem 0.55rem;
   border-radius: 6px;

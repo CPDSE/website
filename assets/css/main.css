@@ -11,6 +11,7 @@
   --accent:     #D6C17C;
   --muted:      #8a9490;
   --border:     #d4cfc4;
+  --card-border: #D9D9D9;   /* neutral grey outline for cards on soft-white */
 
   /* ── CPDSE brand palette ── */
   --color-forest-green:  #3C5E3E;
