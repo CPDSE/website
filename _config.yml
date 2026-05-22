@@ -28,6 +28,8 @@ nav:
     children:
       - title: Educational Offerings
         url: /educational-offerings/
+      - title: Our Approach
+        url: /our-approach/
       - title: Learning Resources
         url: /learning-resources/
       - title: Student Code Club

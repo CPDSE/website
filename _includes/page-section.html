@@ -11,6 +11,7 @@
   color      Background colour of the section band.
              soft-white (default) | ivory | forest-green
 
+  eyebrow    Small all-caps label shown above the title (optional).
   title      Large headline displayed at the top of the section.
   intro      Smaller lead paragraph shown beneath the title.
 
@@ -133,8 +134,9 @@
 <section class="page-section page-section--{{ color }}">
   <div class="container">
 
-    {% if s.title or s.intro %}
+    {% if s.eyebrow or s.title or s.intro %}
     <header class="page-section__header">
+      {% if s.eyebrow %}<p class="page-section__eyebrow">{{ s.eyebrow }}</p>{% endif %}
       {% if s.title %}<h2 class="page-section__title">{{ s.title }}</h2>{% endif %}
       {% if s.intro %}<p class="page-section__intro">{{ s.intro }}</p>{% endif %}
     </header>
@@ -159,7 +161,7 @@
       {% for card in s.cards %}
       <div class="page-section__card">
         {% if card.title %}<h3 class="page-section__card-title">{{ card.title }}</h3>{% endif %}
-        {% if card.content %}<p class="page-section__card-body">{{ card.content }}</p>{% endif %}
+        {% if card.content %}<div class="page-section__card-body">{{ card.content | markdownify }}</div>{% endif %}
       </div>
       {% endfor %}
     </div>
