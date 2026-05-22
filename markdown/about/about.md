@@ -8,17 +8,15 @@ permalink: /about/
 sections:
 
   - color: soft-white
-    eyebrow: Vision & Mission
-    title: "What we aim for"
     image:
       src: /assets/images/Episode_Meeting.png
       alt: CPDSE community members collaborating
       position: right
     content: |
-      ## Vision
+      # Vision
       Data science is an integral core capability in life science workers and organisations.
 
-      ## Mission
+      # Mission
       To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
 
   - color: mint-gray
