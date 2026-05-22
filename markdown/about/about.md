@@ -9,16 +9,16 @@ sections:
 
   - color: soft-white
     eyebrow: Vision & Mission
-    title: "Two statements that frame everything CPDSE does"
+    title: "What we aim for"
     image:
       src: /assets/images/Episode_Meeting.png
       alt: CPDSE community members collaborating
       position: right
     content: |
-      ### Vision
+      ## Vision
       Data science is an integral core capability in life science workers and organisations.
 
-      ### Mission
+      ## Mission
       To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
 
   - color: ivory
@@ -29,19 +29,19 @@ sections:
     cards:
       - icon: community
         title: Community
-        body: We build a strong and open community for pharmaceutical data science.
+        content: We build a strong and open community for pharmaceutical data science.
       - icon: infrastructure
         title: Infrastructure
-        body: We develop and deploy low-friction infrastructure that empowers non-expert data science.
+        content: We develop and deploy low-friction infrastructure that empowers non-expert data science.
       - icon: curriculum
         title: Curriculum reform
-        body: We upgrade and reform pharma-courses, and design new courses that integrate data science.
+        content: We upgrade and reform pharma-courses, and design new courses that integrate data science.
       - icon: teaching
         title: Direct teaching
-        body: We contribute directly to teaching at BA, MS, PhD and life-long learning levels.
+        content: We contribute directly to teaching at BA, MS, PhD and life-long learning levels.
       - icon: networks
         title: Networks
-        body: We connect and develop national and international networks in pharma data science and data science education.
+        content: We connect and develop national and international networks in pharma data science and data science education.
 
   - color: soft-white
     eyebrow: Philosophy
@@ -52,22 +52,22 @@ sections:
     cards:
       - num: "Principle 01"
         title: "Evolutionary purpose, wholeness & co-leadership"
-        body: "The center's purpose is a living thing that evolves with the team, with everyone sharing responsibility and leadership."
+        content: "The center's purpose is a living thing that evolves with the team, with everyone sharing responsibility and leadership."
       - num: "Principle 02"
         title: "Radical transparency"
-        body: "Information is openly shared across the CPDSE by default, fostering trust and enabling everyone to make better decisions."
+        content: "Information is openly shared across the CPDSE by default, fostering trust and enabling everyone to make better decisions."
       - num: "Principle 03"
         title: "Decision by consent"
-        body: "Decisions are made by those closest to the work. They seek advice from others before acting -- ensuring broad input without requiring full consensus."
+        content: "Decisions are made by those closest to the work. They seek advice from others before acting -- ensuring broad input without requiring full consensus."
       - num: "Principle 04"
         title: "Good enough for now, safe enough to try"
-        body: "We embrace iterative progress. Get a working version out quickly to test and learn, rather than waiting for a perfect final product."
+        content: "We embrace iterative progress. Get a working version out quickly to test and learn, rather than waiting for a perfect final product."
       - num: "Principle 05"
         title: "Time-boxed & iterative work"
-        body: "All work has an expiration date. Clear deadlines prevent projects from stalling and encourage continuous improvement through new iterations."
+        content: "All work has an expiration date. Clear deadlines prevent projects from stalling and encourage continuous improvement through new iterations."
       - num: "Principle 06"
         title: "Embrace differences in time commitment"
-        body: "Team members have varying levels of availability. We structure work so everyone can contribute meaningfully, regardless of their time commitment."
+        content: "Team members have varying levels of availability. We structure work so everyone can contribute meaningfully, regardless of their time commitment."
 ---
 
 

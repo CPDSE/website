@@ -69,10 +69,13 @@
      card_style: alternating   Odd cards get a filled (forest-green) background.
 
      Each card:
-       title:   Card headline
-       content: Card body text  (alias: body)
-       icon:    SVG icon name from _includes/icons/ (without .svg)
-       num:     Small number label shown above the title (e.g. "01")
+       title:     Card headline
+       content:   Card body text
+       icon:      SVG icon name from _includes/icons/ (without .svg)
+       num:       Small number label shown above the title (e.g. "01")
+       link_text: Label for an optional call-to-action link at the bottom of the card
+       link_url:  URL for the link
+       link_external: true — opens in new tab
 
      Example:
        - color: ivory
@@ -163,7 +166,7 @@
     {% assign card_style = s.card_style | default: '' %}
     <div class="page-section__cards page-section__cards--{{ cols }}col page-section__cards--{{ card_color }}">
       {% for card in s.cards %}
-      {% assign card_text = card.content | default: card.body %}
+
       {% assign filled_class = '' %}
       {% if card_style == 'alternating' %}{% assign mod = forloop.index | modulo: 2 %}{% if mod == 1 %}{% assign filled_class = ' page-section__card--filled' %}{% endif %}{% endif %}
       <div class="page-section__card{{ filled_class }}">
@@ -175,7 +178,8 @@
         </div>
         {% endif %}
         {% if card.title %}<h3 class="page-section__card-title">{{ card.title }}</h3>{% endif %}
-        {% if card_text %}<div class="page-section__card-body">{{ card_text | markdownify }}</div>{% endif %}
+        {% if card.content %}<div class="page-section__card-body">{{ card.content | markdownify }}</div>{% endif %}
+        {% if card.link_text %}<a class="page-section__card-link" href="{{ card.link_url | relative_url }}"{% if card.link_external %} target="_blank" rel="noopener"{% endif %}>{{ card.link_text }}</a>{% endif %}
       </div>
       {% endfor %}
     </div>
