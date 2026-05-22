@@ -104,7 +104,7 @@ html { overflow-x: clip; }
 }
 .cpdse-rings__tile {
   padding: 0.85rem 1rem;
-  border-radius: 12px;
+  border-radius: 0;
   background: rgba(60, 94, 62, 0.04);
   border: 1px solid rgba(60, 94, 62, 0.18);
 }
@@ -296,7 +296,7 @@ html { overflow-x: clip; }
   max-width: 32rem;
   margin: 0;
   background: var(--soft);
-  border-radius: 18px 18px 0 0;
+  border-radius: 0;
   padding: 1.75rem;
   box-shadow: 0 30px 80px rgba(60, 94, 62, 0.5);
   animation: drawer-up 380ms var(--transition) both;
@@ -304,7 +304,7 @@ html { overflow-x: clip; }
   overflow-y: auto;
 }
 @media (min-width: 768px) {
-  .eco-drawer__card { margin: 1rem; border-radius: 18px; }
+  .eco-drawer__card { margin: 1rem; border-radius: 0; }
 }
 @keyframes drawer-up {
   from { opacity: 0; transform: translateY(28px); }
@@ -458,7 +458,7 @@ html { overflow-x: clip; }
 
 .dir__card {
   background: var(--soft);
-  border-radius: 16px;
+  border-radius: 0;
   padding: 1.25rem;
   text-align: left;
   border: 0;

@@ -35,7 +35,7 @@ html { overflow-x: clip; }
   padding-block: var(--space-lg);
   padding-inline: var(--space-md);
 }
-.cpdse-pubs__band--ivory { background: var(--ivory); }
+.cpdse-pubs__band--ivory { background: var(--color-mint-gray, #A9BBAA); }
 .cpdse-pubs__band--stats { padding-block: calc(var(--space-md) + 0.5rem); }
 
 .cpdse-pubs__inner {
@@ -81,7 +81,7 @@ html { overflow-x: clip; }
 }
 .cpdse-pubs__stat {
   background: var(--soft);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 0.85rem 1rem;
   border: 1px solid rgba(60,94,62,0.18);
 }
@@ -161,7 +161,7 @@ html { overflow-x: clip; }
   gap: 0.7rem;
   padding: 0.65rem 0.85rem;
   background: var(--soft);
-  border-radius: 12px;
+  border-radius: 0;
   border: 0;
   cursor: pointer;
   text-align: left;
@@ -315,7 +315,7 @@ html { overflow-x: clip; }
 
 .cpdse-pubs__card {
   background: var(--soft);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 1.25rem 1.35rem;
   text-align: left;
   box-shadow: var(--shadow-card);
@@ -341,7 +341,7 @@ html { overflow-x: clip; }
   color: var(--sage);
 }
 .cpdse-pubs__card-year {
-  background: var(--ivory);
+  background: var(--color-mint-gray, #A9BBAA);
   color: var(--forest);
   padding: 0.18rem 0.55rem;
   border-radius: 9999px;

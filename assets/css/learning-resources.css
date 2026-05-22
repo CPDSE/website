@@ -28,7 +28,7 @@ html { overflow-x: clip; }
   padding-block: var(--space-lg);
   padding-inline: var(--space-md);
 }
-.cpdse-learn__band--ivory { background: var(--ivory); }
+.cpdse-learn__band--ivory { background: var(--color-mint-gray, #A9BBAA); }
 .cpdse-learn__band--stats { padding-block: calc(var(--space-md) + 0.5rem); }
 
 .cpdse-learn__inner {
@@ -72,7 +72,7 @@ html { overflow-x: clip; }
 }
 .cpdse-learn__stat {
   background: var(--soft);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 0.85rem 1rem;
   border: 1px solid rgba(60,94,62,0.18);
 }
@@ -114,7 +114,7 @@ html { overflow-x: clip; }
 }
 .cpdse-learn__path {
   background: var(--soft);
-  border-radius: 16px;
+  border-radius: 0;
   padding: 1.5rem 1.5rem 1.25rem;
   box-shadow: var(--shadow-card);
   display: flex;
@@ -327,7 +327,7 @@ html { overflow-x: clip; }
 
 .cpdse-learn__card {
   background: var(--soft);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 1.1rem 1.25rem 1.15rem;
   text-decoration: none;
   color: inherit;

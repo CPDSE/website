@@ -19,12 +19,12 @@
   --color-mint-gray:     #A9BBAA;
   --color-antique-gold:  #D6C17C;
   --color-warm-sand:     #E4D7A1;
-  --color-ivory:         #F6F1DC;
+  --color-ivory:         #A9BBAA; /* was #F6F1DC — replaced by mint-gray */
   --color-charcoal-gray: #333333;
   --color-soft-white:    #F9F9F9;
 
   /* Keep legacy aliases pointing at same values */
-  --ivory: #F6F1DC;
+  --ivory: #A9BBAA;
   --sage:  #5F7D61;
 
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -468,7 +468,7 @@ a { color: inherit; }
 }
 .stats-panel {
   background: #D6C17C;
-  border-radius: 20px;
+  border-radius: 0;
   padding: var(--space-md) var(--space-sm);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -987,7 +987,7 @@ a { color: inherit; }
 .announcement-card {
   background: rgba(249,249,249,0.02);
   border: 1px dashed rgba(249,249,249,0.2);
-  border-radius: 10px;
+  border-radius: 0;
   padding: var(--space-md);
   text-decoration: none;
   color: var(--offwhite);
@@ -1098,7 +1098,7 @@ a { color: inherit; }
 .circle-bubble--3 { left: 53%; top: 18%; width: 25%; background: #5F7D61; color: var(--offwhite); }
 .circle-bubble--4 { left: 20%; top: 49%; width: 25%; background: #A9BBAA; color: #0f1a14; }
 .circle-bubble--5 { left: 60%; top: 48%; width: 25%; background: #E4D7A1; color: #0f1a14; }
-.circle-bubble--6 { left: 41%; top: 62%; width: 25%; background: #F6F1DC; color: #0f1a14; }
+.circle-bubble--6 { left: 41%; top: 62%; width: 25%; background: #A9BBAA; color: #0f1a14; }
 
 .circle-ghosts {
   position: absolute;
@@ -1193,7 +1193,7 @@ a { color: inherit; }
 .audience-card {
   background: var(--color-soft-white);
   border: 1px solid rgba(15, 26, 20, 0.12);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 1.5rem 1.4rem;
   display: flex;
   flex-direction: column;
