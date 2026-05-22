@@ -28,7 +28,7 @@ permalink: /your-url/         # what comes after cpdse.dk/
 
 ## Content sections
 
-The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** and **Mint Gray** are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green**.
+The content below the hero is divided into sections. Each section has a separate background colour. **Soft White**, **Sage Green**, and **Forest Green** are the standard options.
 
 To add content, open the page's `.md` file and add a `sections:` list after the frontmatter `---`. Each item in the list becomes one full-width section band.
 
