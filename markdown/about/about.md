@@ -21,7 +21,7 @@ sections:
 
   - color: mint-gray
     eyebrow: What we do
-    title: "Five lines of *active work*"
+    title: "Five lines of active work"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."
     card_columns: 3
     cards:
@@ -38,7 +38,7 @@ sections:
 
   - color: soft-white
     eyebrow: Philosophy
-    title: "The *New Ways of Working* philosophy"
+    title: "The New Ways of Working philosophy"
     intro: "Our center's philosophy is rooted in the principles of the New Ways of Working movement -- taking values and inspiration from sociocracy, agile, lean, and teal."
     card_columns: 2
     cards:

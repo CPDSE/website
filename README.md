@@ -10,13 +10,13 @@ The hero is the top area of each page. It has a gradient and subtle pattern in t
 
 ![Example hero section](docs/example-hero.png)
 
-To update the hero content, look for the following lines in the `.md` file of the page you want to edit:
+To update the hero, edit the frontmatter at the top of the page's `.md` file:
 
 ```yaml
 ---
-layout: sectioned-page        # name of the layout file
+layout: sectioned-page        # always sectioned-page for standard pages
+eyebrow: Research             # small all-caps label above the headline (optional)
 title: Page Title             # the big headline
-eyebrow: Research          # small label above the headline
 description: Descriptive text shown below the title.
 permalink: /your-url/         # what comes after cpdse.dk/
 ---
@@ -28,76 +28,48 @@ permalink: /your-url/         # what comes after cpdse.dk/
 
 ## Content sections
 
-The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** (`#F9F9F9`) and **Mint Gray** (`#A9BBAA`) are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green** (`#3C5E3E`).
+The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** and **Mint Gray** are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green**.
 
-![Example page with alternating sections](docs/example-sections.png)
+To add content, open the page's `.md` file and add a `sections:` list after the frontmatter `---`. Each item in the list becomes one full-width section band.
 
-There are different types of standard content: single column, two-column, cards, and image + text. Individual solutions can also be implemented in HTML.
+### Section header fields
 
-To work with the standard elements, open the `.md` file of the page you want to edit and add a `sections:` list. Each item in the list is one section.
-
-**Every section can have:**
+All three header fields are optional. Omit any you don't need.
 
 ```yaml
 sections:
-  - color: soft-white          # soft-white | ivory | forest-green
-    title: Section Headline
+  - color: soft-white          # soft-white | mint-gray | forest-green
+    eyebrow: Philosophy        # small all-caps label above the title
+    title: Section Headline    # large headline
     intro: Lead paragraph shown beneath the title in a smaller, muted style.
 ```
 
----
-
-### Stats banner
-
-A row of large numbers with labels — counts up animatedly when scrolled into view. Works best on a `forest-green` section.
-
-![Example stats banner](docs/example-stats.png)
-
-```yaml
-  - color: forest-green
-    stats:
-      - number: 60
-        suffix: "+"
-        label: People
-      - number: 7
-        label: Departments
-      - number: 2
-        label: Universities
-      - number: 1
-        label: Mission
-```
-
-`suffix` is optional — use it for `+`, `%`, `×`, etc.
+Each section then contains exactly one layout type, described below.
 
 ---
 
-### Single column
+### Layout 1 — Plain text
 
-Standard single column layout. Text is always left-aligned.
+A single column of markdown content. Supports paragraphs, **bold**, *italic*, [links](https://example.com), and bullet lists. Custom HTML is also accepted.
 
 ```yaml
   - color: soft-white
     title: Our Approach
-    intro: Optional lead sentence.
     content: |
-      Regular paragraph text here. Supports **bold**, *italic*,
-      [links](https://example.com), and bullet lists.
+      Regular paragraph text here.
 
       - Item one
       - Item two
 ```
 
-If Markdown formatting is not enough, custom HTML can be included in the `content:` block.
-
 ---
 
-### Two columns
+### Layout 2 — Two columns
 
-A two-column layout, for example to place two blocks of text side by side.
+Two blocks of text placed side by side.
 
 ```yaml
   - color: soft-white
-    title: Two perspectives
     columns:
       - content: |
           **At UCPH** we focus on drug design and formulation.
@@ -107,43 +79,61 @@ A two-column layout, for example to place two blocks of text side by side.
 
 ---
 
-### Cards
+### Layout 3 — Cards
 
-Cards always have rounded corners. They can be arranged in 2 or 3 columns.
-
-![Example card layout](docs/example-cards.png)
+Cards arranged in a grid. The `cards:` key is required; everything else is optional.
 
 ```yaml
-  - color: ivory
+  - color: mint-gray
     title: What we offer
-    intro: Optional lead sentence.
-    card_columns: 2            # 2 | 3
-    card_color: soft-white     # soft-white | ivory
+    card_columns: 3            # 2 | 3  (default: 3)
+    card_color: soft-white     # soft-white | ivory  (default: soft-white)
+    card_style: alternating    # odd cards get a filled forest-green background
     cards:
-      - title: First Card
-        content: Body text for the first card.
-      - title: Second Card
+      - icon: community        # SVG icon name from _includes/icons/ (no .svg)
+        num: "01"              # small label shown above the title
+        title: First Card
+        content: Body text for this card.
+        link_text: Learn more  # optional call-to-action link
+        link_url: /some-page/
+        link_external: true    # opens in new tab
+      - title: Second Card     # icon, num, link_text are all optional
         content: Body text for the second card.
+```
+
+All card fields except `title` and `content` are optional. Cards without an `icon:` simply render without one.
+
+---
+
+### Layout 4 — Image + text
+
+An image placed alongside a block of text.
+
+```yaml
+  - color: soft-white
+    image:
+      src: /assets/images/team.jpg
+      alt: CPDSE team photo
+      position: right          # left | right  (default: left)
+    content: |
+      We are a cross-institutional group of researchers,
+      educators, and data scientists.
 ```
 
 ---
 
-### Image + text
+### Layout 5 — Stats banner
 
-Places an image alongside a block of text. The image can go on the left or right.
-
-![Example image and text layout](docs/example-image-text.png)
+A row of large animated numbers. Works best with `color: forest-green`.
 
 ```yaml
-  - color: soft-white
-    title: The team
-    image:
-      src: /assets/images/team.jpg
-      alt: CPDSE team photo
-      position: right          # left | right
-    content: |
-      We are a cross-institutional group of researchers,
-      educators, and data scientists.
+  - color: forest-green
+    stats:
+      - number: 60
+        suffix: "+"            # optional: +, %, ×, etc.
+        label: People
+      - number: 7
+        label: Departments
 ```
 
 ---
