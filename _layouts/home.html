@@ -167,12 +167,29 @@ layout: default
 <!-- AUDIENCE -->
 <section class="section section-audience">
   <div class="container">
-    <div class="audience-intro fade-in" style="color: var(--color-forest-green);">
-      <span class="section-label">Who we serve</span>
-      <h2>Educate <em>data &amp; drug</em> bilinguals</h2>
-      <p>We aim to upskill and educate people that understand and can apply the right data science across the breadth of the pharmaceutical value chain.</p>
+    <div class="audience-intro fade-in">
+      <span class="section-label">{{ page.audience_label | default: "Who we serve" }}</span>
+      <h2>{{ page.audience_headline | default: "Educate <em>data &amp; drug</em> bilinguals" }}</h2>
+      <p>{{ page.audience_intro | default: "We aim to upskill and educate people that understand and can apply the right data science across the breadth of the pharmaceutical value chain." }}</p>
     </div>
     <div class="audience-grid fade-in-stagger">
+      {% if page.audience_cards %}
+        {% for card in page.audience_cards %}
+        <div class="audience-card">
+          <div class="audience-card-head">
+            <span class="audience-category">{{ card.category }}</span>
+            <span class="audience-number">{{ card.number }}</span>
+          </div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.body }}</p>
+          {% if card.offers %}
+          <ul class="audience-offers">
+            {% for offer in card.offers %}<li>{{ offer }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
       <div class="audience-card">
         <div class="audience-card-head">
           <span class="audience-category">Students</span>
@@ -215,10 +232,17 @@ layout: default
           <li>Online resources &amp; tutorials</li>
         </ul>
       </div>
+      {% endif %}
     </div>
     <div class="audience-ctas">
+      {% if page.audience_ctas %}
+        {% for cta in page.audience_ctas %}
+          <a href="{{ cta.url }}"{% if cta.external %} target="_blank" rel="noopener"{% endif %} class="btn {% if forloop.first %}btn-primary{% else %}btn-ghost{% endif %}">{{ cta.label }}</a>
+        {% endfor %}
+      {% else %}
       <a href="https://github.com/CPDSE-EDUX" target="_blank" rel="noopener" class="btn btn-primary">Teaching Materials on GitHub</a>
       <a href="https://github.com/CPDSE" target="_blank" rel="noopener" class="btn btn-ghost">Research Materials on GitHub</a>
+      {% endif %}
     </div>
   </div>
 </section>

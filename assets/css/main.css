@@ -2373,7 +2373,7 @@ a { color: inherit; }
   background: var(--offwhite);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 1.75rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -2381,48 +2381,9 @@ a { color: inherit; }
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.offering-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--green);
-}
-
 .offering-card:hover {
   box-shadow: none;
   transform: translateY(-2px);
-}
-
-.offering-card__icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  background: var(--green-pale);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--green);
-  margin-bottom: 1rem;
-  flex-shrink: 0;
-}
-
-.offering-card__icon svg {
-  width: 1.15rem;
-  height: 1.15rem;
-}
-
-.offering-card__label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 0.45rem;
 }
 
 .offering-card__title {
@@ -2430,14 +2391,14 @@ a { color: inherit; }
   font-size: 1.35rem;
   font-weight: 400;
   color: var(--ink);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
   line-height: 1.25;
 }
 
 .offering-card__desc {
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: rgba(15,26,20,0.72);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(15,26,20,0.78);
   margin: 0;
   flex: 1;
 }
@@ -2446,7 +2407,7 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   font-family: var(--font-mono);
   font-size: 0.66rem;
   font-weight: 600;
