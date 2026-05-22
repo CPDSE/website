@@ -197,8 +197,8 @@
 
 /* ── Inline speak CTA (replaces dark panel) ────────── */
 .convtalks__speak {
-  background: var(--color-soft-white, #F9F9F9);
-  border: 1px solid var(--card-border, #D9D9D9);
+  background: var(--color-forest-green, #3C5E3E);
+  border: none;
   border-radius: 12px;
   padding: 1.5rem 1.75rem;
   margin: var(--space-md) 0;
@@ -207,18 +207,20 @@
 .convtalks__speak h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  color: var(--green);
+  color: var(--color-antique-gold, #D6C17C);
   font-weight: 400;
   margin: 0 0 0.5rem;
 }
 .convtalks__speak p {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--ink);
-  opacity: 0.8;
+  color: rgba(249, 249, 249, 0.85);
+  opacity: 1;
   margin: 0 0 1rem;
 }
 .convtalks__speak .convtalks__eyebrow {
+  color: var(--color-antique-gold, #D6C17C);
+  opacity: 0.85;
   margin-bottom: 0.4rem;
 }
 
@@ -235,15 +237,15 @@
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 999px;
-  background: var(--green);
-  color: var(--color-soft-white, #F9F9F9);
-  border: 1px solid var(--green);
+  background: var(--color-antique-gold, #D6C17C);
+  color: var(--color-forest-green, #3C5E3E);
+  border: 1px solid var(--color-antique-gold, #D6C17C);
   transition: all 0.18s ease;
   margin: 0.25rem 0 0;
 }
 .convtalks__cta-btn:hover {
-  background: #2d4d2f;
-  border-color: #2d4d2f;
+  background: var(--color-warm-sand, #E4D7A1);
+  border-color: var(--color-warm-sand, #E4D7A1);
   transform: translateY(-1px);
 }
 .convtalks__open-label {
