@@ -26,7 +26,7 @@
 
 .page-section--sage-green h2,
 .page-section--sage-green h3,
-.page-section--sage-green h4 { color: #F9F9F9; }
+.page-section--sage-green h4 { color: var(--color-warm-sand, #E4D7A1); }
 
 .page-section--forest-green h2,
 .page-section--forest-green h3,
