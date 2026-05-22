@@ -150,12 +150,12 @@
   font-size: 1rem;
   line-height: 1.65;
   max-width: 44ch;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   margin: 0;
 }
 
 .vm-feature__statement--forest .vm-feature__body {
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
 }
 
 .vm-feature__body strong {
@@ -283,7 +283,7 @@
   text-align: center;
   font-size: 0.98rem;
   line-height: 1.6;
-  color: var(--ink, #0f1a14);
+  color: var(--color-charcoal, #333333);
 }
 
 .nwow-banner strong {

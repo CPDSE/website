@@ -35,7 +35,7 @@ html { overflow-x: clip; }
   padding-block: var(--space-lg);
   padding-inline: var(--space-md);
 }
-.cpdse-pubs__band--ivory { background: var(--color-sage-green, #5F7D61); }
+.cpdse-pubs__band--ivory { background: var(--color-sage-green, #5F7D61); color: var(--color-soft-white, #F9F9F9); }
 .cpdse-pubs__band--stats { padding-block: calc(var(--space-md) + 0.5rem); }
 
 .cpdse-pubs__inner {
@@ -48,7 +48,7 @@ html { overflow-x: clip; }
   max-width: 60ch;
   font-size: 0.96rem;
   line-height: 1.55;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.85;
   margin: 0 0 1.5rem;
 }
@@ -289,13 +289,13 @@ html { overflow-x: clip; }
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   background: var(--soft);
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   border: 0;
   box-shadow: inset 0 0 0 1px var(--gold);
   outline: none;
 }
 .cpdse-pubs__filter-search { min-width: 240px; }
-.cpdse-pubs__filter-search::placeholder { color: var(--ink); opacity: 0.5; }
+.cpdse-pubs__filter-search::placeholder { color: var(--color-charcoal, #333333); opacity: 0.5; }
 
 /* Source-quality note */
 .cpdse-pubs__note {
@@ -381,7 +381,7 @@ html { overflow-x: clip; }
 .cpdse-pubs__card-authors {
   font-size: 0.85rem;
   line-height: 1.4;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.85;
   margin: 0;
 }
@@ -393,7 +393,7 @@ html { overflow-x: clip; }
 .cpdse-pubs__card-abstract {
   font-size: 0.84rem;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   margin: 0.2rem 0 0;
   opacity: 0.85;
   display: -webkit-box;

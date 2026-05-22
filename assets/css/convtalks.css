@@ -20,7 +20,7 @@
 .convtalks__lede {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.82;
   margin: 0;
 }
@@ -68,7 +68,7 @@
 .convtalks-stat .stat-sub {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.6;
   margin: 0.2rem 0 0;
 }
@@ -131,7 +131,7 @@
 .convtalks__panel p {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.82;
   margin: 0 0 0.75rem;
 }
@@ -168,7 +168,7 @@
 }
 .convtalks__meta {
   font-size: 0.85rem;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.72;
   margin: 0;
 }

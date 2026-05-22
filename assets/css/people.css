@@ -62,8 +62,8 @@ html { overflow-x: clip; }
   padding-block: var(--space-lg);
   padding-inline: var(--space-md);
 }
-.cpdse-eco { background: var(--color-sage-green, #5F7D61); }
-.cpdse-dir { background: var(--color-soft-white, #F9F9F9); }
+.cpdse-eco { background: var(--color-sage-green, #5F7D61); color: var(--color-soft-white, #F9F9F9); }
+.cpdse-dir { background: var(--color-soft-white, #F9F9F9); color: var(--color-charcoal, #333333); }
 
 /* Inner containers re-use the parent width and center any narrower
    max-width inside. */
@@ -263,7 +263,7 @@ html { overflow-x: clip; }
   margin: 1rem auto 0;
   text-align: center;
   font-size: 0.78rem;
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   opacity: 0.6;
   max-width: 480px;
 }
@@ -340,7 +340,7 @@ html { overflow-x: clip; }
   color: var(--forest);
   font-weight: 400;
 }
-.eco-drawer__title { font-size: 0.92rem; margin: 0 0 0.15rem; color: var(--ink); }
+.eco-drawer__title { font-size: 0.92rem; margin: 0 0 0.15rem; color: var(--color-charcoal, #333333); }
 .eco-drawer__affiliation { font-size: 0.8rem; opacity: 0.7; margin: 0; }
 
 .eco-drawer__field { margin-top: 1.1rem; }
@@ -353,7 +353,7 @@ html { overflow-x: clip; }
   opacity: 0.75;
   margin: 0 0 0.4rem;
 }
-.eco-drawer__field-text { font-size: 0.92rem; line-height: 1.5; margin: 0; color: var(--ink); }
+.eco-drawer__field-text { font-size: 0.92rem; line-height: 1.5; margin: 0; color: var(--color-charcoal, #333333); }
 
 .eco-drawer__circles { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .eco-drawer__circle-pill {
@@ -427,7 +427,7 @@ html { overflow-x: clip; }
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   background: var(--soft);
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   border: 0;
   box-shadow: inset 0 0 0 1px var(--gold);
   cursor: pointer;
@@ -438,13 +438,13 @@ html { overflow-x: clip; }
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   background: var(--soft);
-  color: var(--ink);
+  color: var(--color-charcoal, #333333);
   border: 0;
   box-shadow: inset 0 0 0 1px var(--gold);
   outline: none;
   min-width: 200px;
 }
-.dir__filter-search::placeholder { color: var(--ink); opacity: 0.5; }
+.dir__filter-search::placeholder { color: var(--color-charcoal, #333333); opacity: 0.5; }
 
 .dir__grid {
   display: grid;
