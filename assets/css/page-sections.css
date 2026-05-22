@@ -50,8 +50,8 @@
   margin: 0 0 0.6rem;
 }
 .page-section--sage-green .page-section__eyebrow {
-  color: #F9F9F9;
-  opacity: 0.75;
+  color: var(--color-warm-sand, #E4D7A1);
+  opacity: 0.85;
 }
 .page-section--forest-green .page-section__eyebrow {
   color: var(--color-antique-gold, #D6C17C);
@@ -66,7 +66,7 @@
   color: var(--color-forest-green, #3C5E3E);
   margin: 0 0 0.6rem;
 }
-.page-section--sage-green .page-section__title   { color: #F9F9F9; }
+.page-section--sage-green .page-section__title   { color: var(--color-warm-sand, #E4D7A1); }
 .page-section--forest-green .page-section__title {
   color: var(--color-antique-gold, #D6C17C);
 }
@@ -129,7 +129,7 @@
   background: rgba(249,249,249,0.12);
   border-color: rgba(249,249,249,0.2);
 }
-.page-section--sage-green .page-section__card-title { color: #F9F9F9; }
+.page-section--sage-green .page-section__card-title  { color: var(--color-warm-sand, #E4D7A1); }
 .page-section--sage-green .page-section__card-body  { color: rgba(249,249,249,0.8); }
 .page-section--sage-green .page-section__card-num   { color: rgba(249,249,249,0.55); }
 .page-section--sage-green .page-section__card-link  { color: rgba(249,249,249,0.9); }
