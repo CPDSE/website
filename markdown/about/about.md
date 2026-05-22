@@ -6,16 +6,14 @@ description: CPDSE is a joint initiative between UCPH and SDU that integrates da
 permalink: /about/
 
 vision_mission:
-  - num: "01"
-    label: "Vision"
-    statement: "Data science is an integral core capability in life science workers and organisations."
-    body: "A future where pharmaceutical scientists and researchers don't borrow data skills from elsewhere — they own them. Where data literacy is as fundamental to the field as chemistry, biology, or pharmacology."
-    variant: light
-  - num: "02"
-    label: "Mission"
-    statement: "To educate the workforce of pharmaceutical data science professionals and researchers."
-    body: "Therefore, the <strong>center</strong> will develop research-based education for the future workforce of <strong>'data and drugs'</strong> bilinguals — spanning bachelor, master, PhD and life-long learning levels."
-    variant: forest
+  - color: soft-white
+    title: Title 1
+    content: |
+      Regular paragraph text here. Supports **bold**, *italic*,
+    title: Title 2
+    content: |
+      Regular paragraph text here. Supports **bold**, *italic*,
+
 
 activities:
   - icon: community
