@@ -21,7 +21,7 @@
 /* ── Colour variants ──────────────────────────────────────────── */
 .page-section--soft-white   { background: var(--color-soft-white, #F9F9F9); }
 .page-section--ivory        { background: var(--color-ivory, #F6F1DC); }
-.page-section--forest-green { background: var(--color-forest-green, #3C5E3E); color: #F9F9F9; }
+.page-section--forest-green { background: var(--color-forest-green, #3C5E3E); color: #F9F9F9; --muted: #F9F9F9; }
 
 .page-section--forest-green h2,
 .page-section--forest-green h3,
