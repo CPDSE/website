@@ -28,7 +28,7 @@ permalink: /your-url/         # what comes after cpdse.dk/
 
 ## Content sections
 
-The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** (`#F9F9F9`) and **Ivory Gold Tint** (`#F6F1DC`) are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green** (`#3C5E3E`).
+The content below the hero is divided into sections. Each section has a separate background colour. Usually **Soft White** (`#F9F9F9`) and **Mint Gray** (`#A9BBAA`) are used in alternating order, beginning with Soft White. Highlight sections use **Forest Green** (`#3C5E3E`).
 
 ![Example page with alternating sections](docs/example-sections.png)
 
