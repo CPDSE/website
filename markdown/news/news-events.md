@@ -11,7 +11,6 @@ sections:
       content: |
         A bi-weekly 30-minute talk series — Fridays at 9:00–9:30 — bringing researchers, clinicians, and industry voices together around the intersection of pharmaceutical science and data science. Free to attend, in person or online.
     - color: forest-green
-      eyebrow: Get Involved
       title: Interested in giving a talk?
       content: |
         We're always looking for speakers — academic, clinical, or industry — whose work sits somewhere on the pharma × data-science axis. Reach out and we'll find a date that works.
