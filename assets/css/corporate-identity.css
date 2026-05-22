@@ -33,7 +33,9 @@
   line-height: 1.15;
   max-width: 24ch;
   color: var(--color-forest-green, #3C5E3E);
-  margin: 0 0 0.75rem;
+.swatch:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 .ci-h2 em { color: var(--accent, #D6C17C); font-style: italic; }
 
@@ -51,7 +53,7 @@
 /* ══ SECTION 1 — FOUNDATIONS ════════════════════════════════════ */
 .foundation-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  box-shadow: none;
   gap: 1rem;
 }
 
@@ -148,7 +150,7 @@
 }
 .logo-tile:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(60,94,62,0.12);
+  box-shadow: none;
 }
 
 .logo-canvas {
@@ -366,7 +368,7 @@
 }
 .swatch:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(60,94,62,0.12);
+  box-shadow: none;
 }
 
 .swatch-chip {

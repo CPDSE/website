@@ -103,7 +103,7 @@
   transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 .page-section__card:hover {
-  box-shadow: 0 6px 24px rgba(60,94,62,0.1);
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
@@ -163,7 +163,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  box-shadow: none;
 }
 
 .page-section__image-body h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--color-forest-green, #3C5E3E); margin-bottom: 0.75rem; line-height: 1.2; }
