@@ -23,8 +23,7 @@ stats:
 about_label: About CPDSE
 about_headline: "Pharmaceutical sciences,<br><em>boosted by data science</em>"
 about_body:
-  - "CPDSE is dedicated to developing research-based education for the future workforce of drug experts — spanning bachelor, master, PhD and life-long learning levels. Pharmaceutical scientists will become bilinguals speaking both \"data and drugs\"."
-  - We are 60+ people across seven university departments at two universities, with distinct strengths in pharmaceutical sciences, data science, and science education.
+  - "The Center for Pharmaceutical Data Science Education (CPDSE) is dedicated to developing research-based education for the future workforce of drug experts, spanning bachelor, master, PhD and life-long learning levels. Pharmaceutical scientists will become bilinguals speaking both “data and drugs”. CPDSE works closely with students, university teachers and researchers, as well as professionals from the pharmaceutical industry to ensure education that is relevant, collaborative, and aligned with real-world needs."
 
 # ── Community ─────────────────────────────────────────────────────────────────
 community_label: Community
