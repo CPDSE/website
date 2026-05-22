@@ -95,15 +95,15 @@
 
 .vm-feature__statement {
   position: relative;
-  padding: 1.8rem 1.9rem 1.7rem;
-  border: 1px solid var(--hair);
-  background: var(--soft);
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .vm-feature__statement--forest {
-  background: var(--forest);
-  border-color: var(--forest);
-  color: var(--soft);
+  background: none;
+  border-color: transparent;
+  color: inherit;
 }
 
 .vm-feature__meta {
@@ -128,7 +128,7 @@
 }
 
 .vm-feature__statement--forest .vm-feature__label {
-  color: var(--sand);
+  color: var(--gold);
 }
 
 .vm-feature__statement-text {
@@ -143,7 +143,7 @@
 }
 
 .vm-feature__statement--forest .vm-feature__statement-text {
-  color: var(--soft);
+  color: var(--forest);
 }
 
 .vm-feature__body {
@@ -155,7 +155,7 @@
 }
 
 .vm-feature__statement--forest .vm-feature__body {
-  color: rgba(249,249,249,0.84);
+  color: var(--ink);
 }
 
 .vm-feature__body strong {
@@ -164,7 +164,7 @@
 }
 
 .vm-feature__statement--forest .vm-feature__body strong {
-  color: var(--sand);
+  color: var(--forest);
 }
 
 .vm-feature__media {
