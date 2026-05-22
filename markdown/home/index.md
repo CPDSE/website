@@ -27,7 +27,7 @@ about_body:
 
 # ── Community ─────────────────────────────────────────────────────────────────
 community_label: Community
-community_headline: "A center built by <em>people</em>, not just programs"
+community_headline: "Who are we"
 community_body:
   - CPDSE is a cross-institutional community of students, researchers, educators, data scientists, pharmacists and collaborators working together to strengthen pharmaceutical data science education.
   - "We grow through shared projects, workshops, retreats, teaching development and everyday collaboration across UCPH and SDU. What makes the center valuable is not only the formal structure, but the people in it: a community that exchanges ideas, builds capacity and helps each other move from plans to practice."
