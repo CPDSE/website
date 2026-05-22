@@ -66,10 +66,13 @@
      cards:              Required — list of card objects.
      card_columns: 2     Columns: 2 | 3 (default: 3)
      card_color: ivory   Card background: soft-white | ivory (default: soft-white)
+     card_style: alternating   Odd cards get a filled (forest-green) background.
 
      Each card:
        title:   Card headline
-       content: Card body text
+       content: Card body text  (alias: body)
+       icon:    SVG icon name from _includes/icons/ (without .svg)
+       num:     Small number label shown above the title (e.g. "01")
 
      Example:
        - color: ivory
@@ -157,11 +160,22 @@
     <!-- ── Cards ── -->
     {% assign cols = s.card_columns | default: 3 %}
     {% assign card_color = s.card_color | default: 'soft-white' %}
+    {% assign card_style = s.card_style | default: '' %}
     <div class="page-section__cards page-section__cards--{{ cols }}col page-section__cards--{{ card_color }}">
       {% for card in s.cards %}
-      <div class="page-section__card">
+      {% assign card_text = card.content | default: card.body %}
+      {% assign filled_class = '' %}
+      {% if card_style == 'alternating' %}{% assign mod = forloop.index | modulo: 2 %}{% if mod == 1 %}{% assign filled_class = ' page-section__card--filled' %}{% endif %}{% endif %}
+      <div class="page-section__card{{ filled_class }}">
+        {% if card.num %}<span class="page-section__card-num">{{ card.num }}</span>{% endif %}
+        {% if card.icon %}
+        <div class="page-section__card-icon" aria-hidden="true">
+          {% capture icon_path %}icons/{{ card.icon }}.svg{% endcapture %}
+          {% include {{ icon_path }} %}
+        </div>
+        {% endif %}
         {% if card.title %}<h3 class="page-section__card-title">{{ card.title }}</h3>{% endif %}
-        {% if card.content %}<div class="page-section__card-body">{{ card.content | markdownify }}</div>{% endif %}
+        {% if card_text %}<div class="page-section__card-body">{{ card_text | markdownify }}</div>{% endif %}
       </div>
       {% endfor %}
     </div>

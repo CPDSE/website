@@ -135,6 +135,35 @@
 }
 .page-section--forest-green .page-section__card-body { color: rgba(249,249,249,0.75); }
 
+/* Filled (forest-green) card variant — used with card_style: alternating */
+.page-section__card--filled {
+  background: var(--color-forest-green, #3C5E3E);
+  border-color: var(--color-forest-green, #3C5E3E);
+  color: #F9F9F9;
+}
+.page-section__card--filled .page-section__card-title { color: var(--color-antique-gold, #D6C17C); }
+.page-section__card--filled .page-section__card-body  { color: rgba(249,249,249,0.8); }
+.page-section__card--filled .page-section__card-num   { color: rgba(249,249,249,0.5); }
+
+/* Card number badge */
+.page-section__card-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-forest-green, #3C5E3E);
+  opacity: 0.55;
+}
+
+/* Card icon */
+.page-section__card-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-forest-green, #3C5E3E);
+  margin-bottom: 0.25rem;
+}
+.page-section__card-icon svg { width: 100%; height: 100%; }
+
 /* ── Two-column layout ────────────────────────────────────────── */
 .page-section__columns {
   display: grid;
@@ -159,7 +188,7 @@
 .page-section__image-text--right .page-section__image-wrap { order: 2; }
 
 .page-section__image-wrap img {
-  border-radius: 12px;
+  border-radius: 0;
   width: 100%;
   height: auto;
   object-fit: cover;
