@@ -74,16 +74,7 @@ layout: default
   </div>
 </main>
 
-<section class="page-section page-section--sage-green">
-  <div class="page-section__inner">
-    <div class="page-section__content">
-      <span class="page-section__eyebrow">Speak at a future Friday</span>
-      <h2 class="page-section__title">{{ page.convtalks_cta_heading | default: "Interested in giving a talk?" }}</h2>
-      <p class="page-section__intro">{{ page.convtalks_cta_body }}</p>
-      <a class="convtalks__cta-btn" href="mailto:{{ page.convtalks_cta_email }}?subject={{ page.convtalks_cta_email_subject | url_encode }}">{{ page.convtalks_cta_label | default: "Get in touch" }}</a>
-    </div>
-  </div>
-</section>
+{% include page-section.html section=page.cta_section %}
 
 {% assign talks_past = page.past_talks %}
 {% assign total_talks = talks_past | size %}

@@ -210,6 +210,7 @@
     <!-- ── Plain content ── -->
     <div class="page-section__content">
       {{ s.content | markdownify }}
+      {% if s.link_text %}<a class="btn btn-primary" href="{{ s.link_url }}">{{ s.link_text }}</a>{% endif %}
     </div>
     {% endif %}
 
