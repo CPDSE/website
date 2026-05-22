@@ -1,7 +1,7 @@
----
+﻿---
 layout: research-units
 title: Researchers & Units
-hero_label: Research
+eyebrow: Research
 description: CPDSE brings together research units from the University of Copenhagen and the University of Southern Denmark, each contributing unique expertise to pharmaceutical data science.
 permalink: /researchers-units/
 

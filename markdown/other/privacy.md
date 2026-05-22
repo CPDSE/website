@@ -1,7 +1,7 @@
----
+﻿---
 layout: sectioned-page
 title: Privacy Policy
-hero_label: Legal
+eyebrow: Legal
 description: How CPDSE collects, uses, and protects your personal data — in accordance with the EU General Data Protection Regulation (GDPR) and the Danish Data Protection Act. Last updated 21 May 2026.
 permalink: /privacy/
 
@@ -51,7 +51,7 @@ sections:
 
       No other transfers of personal data to countries outside the EU/EEA take place.
 
-  - color: ivory
+  - color: mint-gray
     title: Your Rights
     intro: Under the GDPR you have the following rights in relation to any personal data we hold about you. Requests can be sent to cpdse@ku.dk or directly to the UCPH Data Protection Officer at dpo@ku.dk. We will respond within one month.
     card_columns: 3

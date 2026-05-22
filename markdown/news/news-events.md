@@ -1,8 +1,8 @@
----
+﻿---
 layout: news-events
 title: News & Events
 permalink: /news-events/
-hero_label: Latest from CPDSE
+eyebrow: Latest from CPDSE
 description: See the latest news and upcoming events from CPDSE.
 
 convtalks_title: Convergence Talks

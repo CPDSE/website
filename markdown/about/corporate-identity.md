@@ -1,7 +1,7 @@
----
+﻿---
 layout: corporate-identity
 title: Corporate Identity
-hero_label: About CPDSE
+eyebrow: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
 permalink: /corporate-identity/
 

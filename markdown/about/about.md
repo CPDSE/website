@@ -1,7 +1,7 @@
 ﻿---
 layout: sectioned-page
 title: About CPDSE
-hero_label: Who are we
+eyebrow: Who are we
 description: CPDSE is a joint initiative between UCPH and SDU that integrates data science into pharmaceutical education. It trains future drug experts across all academic levels through research-based programs.
 permalink: /about/
 
@@ -21,7 +21,7 @@ sections:
       ## Mission
       To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
 
-  - color: ivory
+  - color: mint-gray
     eyebrow: What we do
     title: "Five lines of *active work*"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."

@@ -1,7 +1,7 @@
----
+﻿---
 layout: page
 title: KU Pharma Student Coding Club
-hero_label: Education
+eyebrow: Education
 description: All levels welcome — from beginner to pro, we all learn together at the University of Copenhagen.
 permalink: /codeclub-ku/
 ---

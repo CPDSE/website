@@ -1,10 +1,10 @@
----
+﻿---
 layout: home
 title: Home
 permalink: /
 
 # ── Hero ──────────────────────────────────────────────────────────────────────
-hero_label: Center for Pharmaceutical Data Science Education
+eyebrow: Center for Pharmaceutical Data Science Education
 hero_headline: "Pharma is full of data,<br>but not <em>data science.</em>"
 hero_sub: We are here to change that — educating the next generation of drug experts who speak both data and drugs.
 

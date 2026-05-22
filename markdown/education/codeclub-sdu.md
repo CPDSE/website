@@ -1,7 +1,7 @@
----
+﻿---
 layout: page
 title: SDU Pharma Code Club
-hero_label: Education
+eyebrow: Education
 description: Bring your laptop and join our Code Club at the SDU Pharma Data Hub — all levels welcome, from complete beginner to pro.
 permalink: /codeclub-sdu/
 ---

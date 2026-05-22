@@ -1,7 +1,7 @@
----
+﻿---
 layout: sectioned-page
 title: Student Code Club
-hero_label: Education
+eyebrow: Education
 description: A safe and collaborative space to practice and advance your data science skills.
 permalink: /codeclub/
 
@@ -15,7 +15,7 @@ sections:
       - **Consultations** to help you tackle specific challenges in your studies or research
       - **A welcoming space** to ask questions, get unstuck, and learn from peers
 
-  - color: ivory
+  - color: mint-gray
     title: Who Can Join
     content: |
       Any student at the University of Copenhagen or the University of Southern Denmark interested in data science — regardless of your background or skill level.

@@ -16,7 +16,7 @@ To update the hero content, look for the following lines in the `.md` file of th
 ---
 layout: sectioned-page        # name of the layout file
 title: Page Title             # the big headline
-hero_label: Research          # small label above the headline
+eyebrow: Research          # small label above the headline
 description: Descriptive text shown below the title.
 permalink: /your-url/         # what comes after cpdse.dk/
 ---

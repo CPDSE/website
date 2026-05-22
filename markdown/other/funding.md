@@ -1,7 +1,7 @@
----
+﻿---
 layout: sectioned-page
 title: Funding
-hero_label: About CPDSE
+eyebrow: About CPDSE
 description: Our generous funders make CPDSE possible.
 permalink: /funding/
 
