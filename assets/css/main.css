@@ -884,13 +884,14 @@ a { color: inherit; }
   z-index: 2;
 }
 .section-circles .section-label {
-  color: var(--color-forest-green);
+  color: var(--color-warm-sand, #E4D7A1);
+  opacity: 0.85;
 }
 .section-circles h2 {
-  color: var(--color-forest-green);
+  color: var(--color-warm-sand, #E4D7A1);
 }
 .section-circles p {
-  color: rgba(15, 26, 20, 0.7);
+  color: rgba(249, 249, 249, 0.8);
 }
 .section-circles .circle-title {
   color: inherit;
