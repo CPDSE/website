@@ -1,0 +1,13 @@
+<iframe id="clickerrx-frame"
+        src="https://sarahmit.github.io/ClickRx/"
+        style="width:100%;border:none;display:block;border-radius:12px;min-height:500px;"
+        scrolling="no"
+        title="ClickerRx game built in R"></iframe>
+
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.iframeHeight) {
+    document.getElementById('clickerrx-frame').style.height = e.data.iframeHeight + 'px';
+  }
+});
+</script>

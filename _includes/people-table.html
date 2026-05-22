@@ -1,0 +1,25 @@
+{% assign leaders = include.section.group_leaders %}
+<div class="ru-leaders-table">
+  {% assign current_group = '' %}
+  {% for leader in leaders %}
+    {% if leader.group and leader.group != current_group %}
+      {% assign current_group = leader.group %}
+      <h3 class="ru-leader-group-heading">{{ leader.group }}</h3>
+    {% endif %}
+    {% assign uni_lower = leader.uni | downcase %}
+    <div class="ru-leader-row">
+      <div class="ru-leader-left">
+        <div class="ru-leader-avatar">{{ leader.initials }}</div>
+        <div class="ru-leader-meta">
+          <p class="ru-leader-name">{{ leader.name }}</p>
+          <p class="ru-leader-dept">{{ leader.department }}</p>
+          <span class="ru-leader-uni ru-leader-uni--{{ uni_lower }}">{{ leader.uni }}</span>
+        </div>
+      </div>
+      <div class="ru-leader-right">
+        {% if leader.quote %}<p class="ru-leader-quote">{{ leader.quote }}</p>{% endif %}
+        {% if leader.url %}<a class="ru-leader-link" href="{{ leader.url }}" target="_blank" rel="noopener">Group website →</a>{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

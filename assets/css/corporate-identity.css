@@ -7,23 +7,23 @@
      4. Colour palette    (ivory)
      5. Approved pairings (offwhite)
      6. CTA strip         (ivory)
-   Loaded only on /corporate-identity/ via _layouts/corporate-identity.html */
+   Loaded only on /corporate-identity/ via the css frontmatter key */
 
 /* ── Section sage-green modifier ───────────────────────────── */
-.cn-sage-green { background: var(--color-sage-green, #5F7D61); color: #F9F9F9; }
-.cn-sage-green .ci-h2 { color: var(--color-warm-sand, #E4D7A1); }
-.cn-sage-green .ci-eyebrow { color: var(--color-warm-sand, #E4D7A1); opacity: 0.85; }
-.cn-sage-green .ci-lead { color: rgba(249,249,249,0.8); }
-.cn-sage-green .palette-group-label,
-.cn-sage-green .role-count { color: rgba(249,249,249,0.7); }
-.cn-sage-green .logo-row-label { color: rgba(249,249,249,0.85); }
-.cn-sage-green .logo-row-count { color: rgba(249,249,249,0.6); }
-.cn-sage-green .logo-foot-name { color: #F9F9F9; }
-.cn-sage-green .logo-foot-color { color: rgba(249,249,249,0.65); }
-.cn-sage-green .logo-formats span { color: rgba(249,249,249,0.55); border-color: rgba(249,249,249,0.2); }
-.cn-sage-green .swatch-name { color: #F9F9F9; }
-.cn-sage-green .swatch-note { color: rgba(249,249,249,0.7); }
-.cn-sage-green .swatch-hex span { color: rgba(249,249,249,0.85); }
+.page-section--sage-green { background: var(--color-sage-green, #5F7D61); color: #F9F9F9; }
+.page-section--sage-green .ci-h2 { color: var(--color-warm-sand, #E4D7A1); }
+.page-section--sage-green .ci-eyebrow { color: var(--color-warm-sand, #E4D7A1); opacity: 0.85; }
+.page-section--sage-green .ci-lead { color: rgba(249,249,249,0.8); }
+.page-section--sage-green .palette-group-label,
+.page-section--sage-green .role-count { color: rgba(249,249,249,0.7); }
+.page-section--sage-green .logo-row-label { color: rgba(249,249,249,0.85); }
+.page-section--sage-green .logo-row-count { color: rgba(249,249,249,0.6); }
+.page-section--sage-green .logo-foot-name { color: #F9F9F9; }
+.page-section--sage-green .logo-foot-color { color: rgba(249,249,249,0.65); }
+.page-section--sage-green .logo-formats span { color: rgba(249,249,249,0.55); border-color: rgba(249,249,249,0.2); }
+.page-section--sage-green .swatch-name { color: #F9F9F9; }
+.page-section--sage-green .swatch-note { color: rgba(249,249,249,0.7); }
+.page-section--sage-green .swatch-hex span { color: rgba(249,249,249,0.85); }
 
 /* ── Shared header primitives (same pattern as About page) ───── */
 .ci-header { margin-bottom: var(--space-md); }
