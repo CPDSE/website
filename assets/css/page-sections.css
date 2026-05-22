@@ -235,6 +235,7 @@
   box-shadow: none;
 }
 
+.page-section__image-body h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.5rem); color: var(--color-forest-green, #3C5E3E); margin: 1.5rem 0 0.5rem; line-height: 1.15; }
 .page-section__image-body h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--color-forest-green, #3C5E3E); margin-bottom: 0.75rem; line-height: 1.2; }
 .page-section__image-body h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--color-forest-green, #3C5E3E); margin-bottom: 0.5rem; }
 .page-section__image-body p  { margin: 0.6rem 0; line-height: 1.7; }

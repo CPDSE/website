@@ -35,7 +35,7 @@ html { overflow-x: clip; }
   padding-block: var(--space-lg);
   padding-inline: var(--space-md);
 }
-.cpdse-pubs__band--ivory { background: var(--color-mint-gray, #A9BBAA); }
+.cpdse-pubs__band--ivory { background: var(--color-sage-green, #5F7D61); }
 .cpdse-pubs__band--stats { padding-block: calc(var(--space-md) + 0.5rem); }
 
 .cpdse-pubs__inner {
@@ -341,7 +341,7 @@ html { overflow-x: clip; }
   color: var(--sage);
 }
 .cpdse-pubs__card-year {
-  background: var(--color-mint-gray, #A9BBAA);
+  background: var(--color-sage-green, #5F7D61);
   color: var(--forest);
   padding: 0.18rem 0.55rem;
   border-radius: 9999px;

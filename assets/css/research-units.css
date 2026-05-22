@@ -4,7 +4,7 @@
    Loaded only on /research-units/ via _layouts/research-units.html */
 
 /* ── Shared section modifier ─────────────────────────────────── */
-.ru-ivory { background: var(--color-ivory, #F6F1DC); }
+.ru-ivory { background: var(--color-sage-green, #5F7D61); color: #F9F9F9; }
 
 /* ── Shared section header ───────────────────────────────────── */
 .ru-header {
