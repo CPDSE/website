@@ -74,6 +74,17 @@ layout: default
   </div>
 </main>
 
+<section class="page-section page-section--sage-green">
+  <div class="page-section__inner">
+    <div class="page-section__content">
+      <span class="page-section__eyebrow">Speak at a future Friday</span>
+      <h2 class="page-section__title">{{ page.convtalks_cta_heading | default: "Interested in giving a talk?" }}</h2>
+      <p class="page-section__intro">{{ page.convtalks_cta_body }}</p>
+      <a class="convtalks__cta-btn" href="mailto:{{ page.convtalks_cta_email }}?subject={{ page.convtalks_cta_email_subject | url_encode }}">{{ page.convtalks_cta_label | default: "Get in touch" }}</a>
+    </div>
+  </div>
+</section>
+
 {% assign talks_past = page.past_talks %}
 {% assign total_talks = talks_past | size %}
 
@@ -83,13 +94,6 @@ layout: default
     <div class="convtalks__intro fade-in">
       <h2 id="convtalks-title" class="convtalks__big-title">{{ page.convtalks_title | default: "Convergence Talks" }}</h2>
       <p class="convtalks__lede">{{ page.convtalks_lede }}</p>
-    </div>
-
-    <div class="convtalks__speak fade-in">
-      <p class="convtalks__eyebrow">Speak at a future Friday</p>
-      <h3>{{ page.convtalks_cta_heading | default: "Interested in giving a talk?" }}</h3>
-      <p>{{ page.convtalks_cta_body }}</p>
-      <a class="convtalks__cta-btn" href="mailto:{{ page.convtalks_cta_email }}?subject={{ page.convtalks_cta_email_subject | url_encode }}">{{ page.convtalks_cta_label | default: "Get in touch" }}</a>
     </div>
 
     <div class="convtalks__past fade-in">

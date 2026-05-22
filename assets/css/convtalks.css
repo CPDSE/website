@@ -2,7 +2,7 @@
    Reuses :root tokens defined in main.css (--green, --accent, --paper, …). */
 
 .convtalks {
-  background: var(--color-ivory, #F6F1DC);
+  background: var(--color-soft-white, #F9F9F9);
   padding: var(--space-lg) 0 var(--space-xl);
 }
 .convtalks__intro {
