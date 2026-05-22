@@ -74,7 +74,9 @@ layout: default
   </div>
 </main>
 
-{% include page-section.html section=page.cta_section %}
+{% for section in page.sections %}
+  {% include page-section.html section=section %}
+{% endfor %}
 
 {% assign talks_past = page.past_talks %}
 {% assign total_talks = talks_past | size %}
