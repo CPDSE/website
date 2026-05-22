@@ -3,7 +3,6 @@ layout: default
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/educational-offerings.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/convtalks.css' | relative_url }}">
 
 <header class="page-hero">
   <div class="container">
@@ -36,62 +35,3 @@ layout: default
   </div>
 </section>
 
-{% assign talks_past = site.data.convergence_talks.past %}
-{% assign total_talks = talks_past | size %}
-
-<section class="section convtalks" id="convergencetalks" aria-labelledby="convtalks-title">
-  <div class="container">
-
-    <div class="convtalks__intro fade-in">
-      <h2 id="convtalks-title" class="convtalks__big-title">Convergence Talks</h2>
-      <p class="convtalks__lede">A bi-weekly 30-minute talk series — Fridays at 9:00&ndash;9:30 — bringing researchers, clinicians, and industry voices together around the intersection of pharmaceutical science and data science. Free to attend, in person or online.</p>
-    </div>
-
-    <div class="convtalks__speak fade-in">
-      <p class="convtalks__eyebrow">Speak at a future Friday</p>
-      <h3>Interested in giving a talk?</h3>
-      <p>We're always looking for speakers — academic, clinical, or industry — whose work sits somewhere on the pharma &times; data-science axis. Reach out and we'll find a date that works.</p>
-      <a class="convtalks__cta-btn" href="mailto:jeppe.hartmann@sund.ku.dk?subject=ConvergenceTalk%20speaker%20proposal">Email Jeppe Hartmann</a>
-    </div>
-
-    <div class="convtalks__past fade-in">
-      <p class="convtalks__eyebrow">The archive</p>
-      <h3>Previous talks</h3>
-      <ol class="convtalks__past-list" id="convtalks-past-list" data-initial="7">
-        {% for talk in talks_past %}
-        <li class="convtalks__entry{% if forloop.index > 7 %} is-hidden{% endif %}">
-          <time class="convtalks__date" datetime="{{ talk.date | date: '%Y-%m-%d' }}">{{ talk.date | date: "%b %-d, %Y" }}</time>
-          <div class="convtalks__body">
-            <p class="convtalks__title">{{ talk.title }}</p>
-            <p class="convtalks__meta"><span class="convtalks__speaker">{{ talk.speakers }}</span> · <span class="convtalks__aff">{{ talk.affiliation }}</span></p>
-            {% if talk.tags and talk.tags.size > 0 %}
-            <div class="convtalks__chips">
-              {% if talk.cpdse %}<span class="convtalks__chip convtalks__chip--cpdse">CPDSE</span>{% endif %}
-              {% for tag in talk.tags %}<span class="convtalks__chip">{{ tag }}</span>{% endfor %}
-            </div>
-            {% endif %}
-          </div>
-        </li>
-        {% endfor %}
-      </ol>
-      {% if total_talks > 7 %}
-      <button type="button" class="convtalks__past-more" id="convtalks-past-more" aria-controls="convtalks-past-list">Show all {{ total_talks }} talks</button>
-      {% endif %}
-    </div>
-
-  </div>
-</section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var pastList = document.getElementById('convtalks-past-list');
-    var pastMore = document.getElementById('convtalks-past-more');
-    if (pastList && pastMore) {
-      pastMore.addEventListener('click', function () {
-        var hidden = pastList.querySelectorAll('.convtalks__entry.is-hidden');
-        hidden.forEach(function (el) { el.classList.remove('is-hidden'); });
-        pastMore.hidden = true;
-      });
-    }
-  });
-</script>
