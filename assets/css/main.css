@@ -468,7 +468,7 @@ a { color: inherit; }
 }
 .stats-panel {
   background: #D6C17C;
-  border-radius: 20px;
+  border-radius: 0;
   padding: var(--space-md) var(--space-sm);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -987,7 +987,7 @@ a { color: inherit; }
 .announcement-card {
   background: rgba(249,249,249,0.02);
   border: 1px dashed rgba(249,249,249,0.2);
-  border-radius: 10px;
+  border-radius: 0;
   padding: var(--space-md);
   text-decoration: none;
   color: var(--offwhite);
@@ -1193,7 +1193,7 @@ a { color: inherit; }
 .audience-card {
   background: var(--color-soft-white);
   border: 1px solid rgba(15, 26, 20, 0.12);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 1.5rem 1.4rem;
   display: flex;
   flex-direction: column;

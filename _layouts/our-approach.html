@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/page-sections.css' | relative_url }}">
+
+<header class="page-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  </div>
+</header>
+
+<!-- ── Section 1: Why data science for pharmacists ── -->
+<section class="page-section page-section--soft-white">
+  <div class="container">
+    <header class="page-section__header">
+      {% if page.section1_eyebrow %}<p class="page-section__eyebrow">{{ page.section1_eyebrow }}</p>{% endif %}
+      {% if page.section1_title %}<h2 class="page-section__title">{{ page.section1_title }}</h2>{% endif %}
+      {% if page.section1_intro %}<p class="page-section__intro">{{ page.section1_intro }}</p>{% endif %}
+    </header>
+    <div class="page-section__cards page-section__cards--3col page-section__cards--soft-white">
+      {% for card in page.why_cards %}
+      <div class="page-section__card">
+        <h3 class="page-section__card-title">{{ card.title }}</h3>
+        <div class="page-section__card-body">{{ card.content | markdownify }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 2: Blockquote ── -->
+<section class="page-section page-section--ivory">
+  <div class="container">
+    <div class="page-section__content">
+      <blockquote>{{ page.blockquote }}</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 3: What data science actually is ── -->
+<section class="page-section page-section--soft-white">
+  <div class="container">
+    <header class="page-section__header">
+      {% if page.section3_eyebrow %}<p class="page-section__eyebrow">{{ page.section3_eyebrow }}</p>{% endif %}
+      {% if page.section3_title %}<h2 class="page-section__title">{{ page.section3_title }}</h2>{% endif %}
+      {% if page.section3_intro %}<p class="page-section__intro">{{ page.section3_intro }}</p>{% endif %}
+    </header>
+    <div class="approach-pills">
+      {% for item in page.competencies %}
+      <span class="approach-pill approach-pill--n">
+        <span class="approach-pill__n">{{ forloop.index }}</span>{{ item }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 4: How to teach it ── -->
+<section class="page-section page-section--ivory">
+  <div class="container">
+    <header class="page-section__header">
+      {% if page.section4_eyebrow %}<p class="page-section__eyebrow">{{ page.section4_eyebrow }}</p>{% endif %}
+      {% if page.section4_title %}<h2 class="page-section__title">{{ page.section4_title }}</h2>{% endif %}
+      {% if page.section4_intro %}<p class="page-section__intro">{{ page.section4_intro }}</p>{% endif %}
+    </header>
+    <div class="page-section__cards page-section__cards--3col page-section__cards--soft-white">
+      {% for card in page.teach_cards %}
+      <div class="page-section__card">
+        <h3 class="page-section__card-title">{{ card.title }}</h3>
+        <div class="page-section__card-body">
+          <ul>
+            {% for bullet in card.bullets %}<li>{{ bullet }}</li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
