@@ -35,6 +35,9 @@
 .page-section--sage-green a   { color: rgba(249,249,249,0.85); }
 .page-section--forest-green a { color: var(--color-warm-sand, #E4D7A1); }
 
+.page-section--sage-green   .btn-primary,
+.page-section--forest-green .btn-primary { color: var(--color-forest-green, #3C5E3E) !important; }
+
 /* ── Section header ───────────────────────────────────────────── */
 .page-section__header {
   margin-bottom: var(--space-md, 2.5rem);
