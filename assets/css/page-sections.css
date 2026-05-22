@@ -95,6 +95,15 @@
 .page-section__content ol { margin: 0.75rem 0 0.75rem 1.4rem; line-height: 1.7; }
 .page-section__content li { margin-bottom: 0.3rem; }
 
+.page-section--sage-green .page-section__content h1,
+.page-section--sage-green .page-section__content h2,
+.page-section--sage-green .page-section__content h3,
+.page-section--sage-green .page-section__content h4 { color: var(--color-warm-sand, #E4D7A1); }
+.page-section--forest-green .page-section__content h1,
+.page-section--forest-green .page-section__content h2,
+.page-section--forest-green .page-section__content h3,
+.page-section--forest-green .page-section__content h4 { color: var(--color-antique-gold, #D6C17C); }
+
 /* ── Cards layout ─────────────────────────────────────────────── */
 .page-section__cards {
   display: grid;
