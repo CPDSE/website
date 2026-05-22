@@ -34,6 +34,20 @@
   margin-bottom: var(--space-md, 2.5rem);
 }
 
+.page-section__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-forest-green, #3C5E3E);
+  opacity: 0.65;
+  margin: 0 0 0.6rem;
+}
+.page-section--forest-green .page-section__eyebrow {
+  color: var(--color-antique-gold, #D6C17C);
+  opacity: 0.85;
+}
+
 .page-section__title {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 3vw, 2.5rem);
@@ -81,7 +95,7 @@
 
 .page-section__card {
   padding: 1.5rem;
-  border: 1px solid var(--border, #E7E2D1);
+  border: 1px solid var(--card-border, #D9D9D9);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -194,6 +208,75 @@
   .page-section__stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
 }
 
+/* ── Card body — markdown list support ────────────────────────── */
+.page-section__card-body ul,
+.page-section__card-body ol {
+  margin: 0.4rem 0 0 1.2rem;
+  padding: 0;
+  line-height: 1.65;
+}
+.page-section__card-body li {
+  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--muted, #8a9490);
+}
+.page-section--forest-green .page-section__card-body li {
+  color: rgba(249,249,249,0.72);
+}
+
+/* ── Blockquote in content sections ──────────────────────────── */
+.page-section__content blockquote,
+.page-section--forest-green .page-section__content blockquote {
+  border-left: 3px solid var(--color-antique-gold, #D6C17C);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.45;
+  color: inherit;
+  font-style: italic;
+}
+.page-section--forest-green .page-section__content blockquote {
+  color: var(--color-antique-gold, #D6C17C);
+}
+
+/* ── Competency pills ─────────────────────────────────────────── */
+.approach-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.approach-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.1rem;
+  border-radius: 9999px;
+  background: var(--color-soft-white, #F9F9F9);
+  border: 1px solid var(--card-border, #D9D9D9);
+  color: var(--color-forest-green, #3C5E3E);
+  white-space: nowrap;
+}
+.approach-pill--n { /* numbered variant */
+  gap: 0.55rem;
+}
+.approach-pill__n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--color-forest-green, #3C5E3E);
+  color: var(--color-antique-gold, #D6C17C);
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .page-section__cards--3col { grid-template-columns: repeat(2, 1fr); }
@@ -206,4 +289,5 @@
   .page-section__columns      { grid-template-columns: 1fr; }
   .page-section__image-text   { grid-template-columns: 1fr; }
   .page-section__image-text--right .page-section__image-wrap { order: 0; }
+  .approach-pill { font-size: 0.72rem; padding: 0.5rem 0.9rem; }
 }
