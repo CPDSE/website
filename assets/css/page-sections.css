@@ -196,11 +196,23 @@
   color: var(--color-antique-gold, #D6C17C);
 }
 
+/* Higher specificity to beat .stat-number { color: #3C5E3E } in main.css */
+.page-section--forest-green .page-section__stat-number,
+.page-section--forest-green .stat-number {
+  color: var(--color-antique-gold, #D6C17C);
+}
+
 .page-section__stat-label {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: rgba(249,249,249,0.75);
+}
+
+/* Higher specificity for labels too */
+.page-section--forest-green .page-section__stat-label,
+.page-section--forest-green .stat-label {
   color: rgba(249,249,249,0.75);
 }
 
