@@ -33,22 +33,7 @@ sections:
     eyebrow: "What data science actually is"
     title: "Not one skill. A combination of seven."
     intro: "Data science is often treated as synonymous with machine learning or coding. In reality it is a broad competency spanning ethics, mathematics, computing, data management, analysis, AI, and communication. Pharmaceutical scientists need literacy across all seven — not mastery of any single one."
-    card_columns: 3
-    cards:
-      - num: "1"
-        title: "Ethics · Legislation · Privacy"
-      - num: "2"
-        title: "Mathematics & Statistics"
-      - num: "3"
-        title: "Computing & Programming"
-      - num: "4"
-        title: "Data Acquisition & Management"
-      - num: "5"
-        title: "Exploration · Mining · Analysis"
-      - num: "6"
-        title: "Machine Learning & AI"
-      - num: "7"
-        title: "Visualization & Presentation"
+    include: competency-model.html
 
   - color: sage-green
     eyebrow: "How to teach it"

@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css" crossorigin="anonymous">
+
+<div class="competency-model">
+<style>
+.competency-model .competency-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  padding: 1.5rem 0 1rem;
+}
+.competency-model .pillar {
+  border: 1px solid rgba(15,26,20,0.12);
+  padding: 1rem 0.75rem;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  background: #fff;
+}
+.competency-model .pillar:hover { transform: translateY(-3px); border-color: rgba(15,26,20,0.3); }
+.competency-model .pillar-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.competency-model .pillar-title {
+  font-size: 0.72rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink, #0f1a14);
+}
+.competency-model .detail-panel {
+  border: 1px solid rgba(15,26,20,0.12);
+  background: #fff;
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+.competency-model .detail-panel.visible { display: block; }
+.competency-model .detail-header {
+  display: flex; align-items: center; gap: 12px;
+}
+.competency-model .detail-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.competency-model .detail-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-forest-green, #3C5E3E);
+}
+.competency-model .detail-desc {
+  font-size: 0.9rem;
+  color: var(--muted, rgba(15,26,20,0.6));
+  margin-top: 3px;
+  line-height: 1.55;
+}
+.competency-model .click-hint {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted, rgba(15,26,20,0.5));
+  padding-top: 0.5rem;
+}
+@media (max-width: 700px) {
+  .competency-model .competency-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .competency-model .competency-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>
+
+<p class="click-hint">Click a pillar to explore</p>
+
+<div class="competency-grid" id="competency-grid"></div>
+<div class="detail-panel" id="competency-detail"></div>
+
+<script>
+(function () {
+  var pillars = [
+    {
+      title: "Mathematics & Statistics",
+      icon: "ti-math-function",
+      color: "#E6F1FB", iconColor: "#0C447C", borderColor: "#378ADD",
+      desc: "Foundational quantitative reasoning, statistical inference, and mathematical modeling."
+    },
+    {
+      title: "Computing & Programming",
+      icon: "ti-terminal-2",
+      color: "#EEEDFE", iconColor: "#3C3489", borderColor: "#7F77DD",
+      desc: "Software development, scripting, and computational thinking for data workflows."
+    },
+    {
+      title: "Data Acquisition & Management",
+      icon: "ti-database",
+      color: "#E1F5EE", iconColor: "#085041", borderColor: "#1D9E75",
+      desc: "Collecting, storing, cleaning, and governing data at scale."
+    },
+    {
+      title: "Exploration, Mining & Analysis",
+      icon: "ti-telescope",
+      color: "#FAEEDA", iconColor: "#633806", borderColor: "#BA7517",
+      desc: "Uncovering patterns, anomalies, and insights from raw datasets."
+    },
+    {
+      title: "Visualization & Presentation",
+      icon: "ti-chart-bar",
+      color: "#FBEAF0", iconColor: "#72243E", borderColor: "#D4537E",
+      desc: "Designing compelling charts, dashboards, and data stories for diverse audiences."
+    },
+    {
+      title: "Machine Learning & AI",
+      icon: "ti-brain",
+      color: "#EEEDFE", iconColor: "#26215C", borderColor: "#534AB7",
+      desc: "Building, evaluating, and deploying predictive and generative models."
+    },
+    {
+      title: "Ethics, Legislation & Privacy",
+      icon: "ti-scale",
+      color: "#EAF3DE", iconColor: "#27500A", borderColor: "#639922",
+      desc: "Ensuring responsible, lawful, and transparent use of data and AI systems."
+    }
+  ];
+
+  var grid   = document.getElementById('competency-grid');
+  var detail = document.getElementById('competency-detail');
+  var active = null;
+
+  pillars.forEach(function (p, i) {
+    var card = document.createElement('div');
+    card.className = 'pillar';
+    card.innerHTML =
+      '<div class="pillar-icon" style="background:' + p.color + '">' +
+        '<i class="ti ' + p.icon + '" style="color:' + p.iconColor + '" aria-hidden="true"></i>' +
+      '</div>' +
+      '<div class="pillar-title">' + p.title + '</div>';
+
+    card.addEventListener('click', function () {
+      if (active === i) {
+        active = null;
+        detail.classList.remove('visible');
+        grid.querySelectorAll('.pillar').forEach(function (c) {
+          c.style.borderColor = '';
+          c.style.borderWidth = '';
+        });
+        return;
+      }
+      active = i;
+      grid.querySelectorAll('.pillar').forEach(function (c, j) {
+        c.style.borderColor = j === i ? p.borderColor : '';
+        c.style.borderWidth = j === i ? '1.5px' : '';
+      });
+      detail.classList.add('visible');
+      detail.style.borderColor = p.borderColor;
+      detail.innerHTML =
+        '<div class="detail-header">' +
+          '<div class="detail-icon" style="background:' + p.color + '">' +
+            '<i class="ti ' + p.icon + '" style="color:' + p.iconColor + '; font-size:26px" aria-hidden="true"></i>' +
+          '</div>' +
+          '<div>' +
+            '<div class="detail-title">' + p.title + '</div>' +
+            '<div class="detail-desc">' + p.desc + '</div>' +
+          '</div>' +
+        '</div>';
+    });
+
+    grid.appendChild(card);
+  });
+}());
+</script>
+</div>

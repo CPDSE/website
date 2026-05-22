@@ -206,6 +206,10 @@
       </div>
     </div>
 
+    {% elsif s.include %}
+    <!-- ── Raw include ── -->
+    {% include {{ s.include }} %}
+
     {% else %}
     <!-- ── Plain content ── -->
     <div class="page-section__content">
