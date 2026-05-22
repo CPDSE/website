@@ -139,18 +139,15 @@ group_leaders:
       epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
 
 phd_students:
-  - number: "01"
-    name: Placeholder Student A
+  - name: Placeholder Student A
     supervisor: Prof. Placeholder One
     project: Graph-based representations of drug–target interactions for off-target prediction
 
-  - number: "02"
-    name: Placeholder Student B
+  - name: Placeholder Student B
     supervisor: Prof. Placeholder Four
     project: Designing a longitudinal curriculum for statistical literacy in MSc Pharmacy
 
-  - number: "03"
-    name: Placeholder Student C
+  - name: Placeholder Student C
     supervisor: Prof. Placeholder Six
     project: Real-world evidence pipelines for adverse drug reaction surveillance in Danish registries
 ---
