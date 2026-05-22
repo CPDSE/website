@@ -158,7 +158,7 @@
 
 /* Card background colors */
 .page-section__cards--soft-white .page-section__card { background: var(--color-soft-white, #F9F9F9); }
-.page-section__cards--ivory      .page-section__card { background: var(--color-ivory, #F6F1DC); }
+.page-section__cards--ivory      .page-section__card { background: var(--color-soft-white, #F9F9F9); }
 
 /* Cards on mint-gray section */
 .page-section--mint-gray .page-section__card {

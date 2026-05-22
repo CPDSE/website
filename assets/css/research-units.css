@@ -48,7 +48,7 @@
   flex-direction: column;
   gap: 0.6rem;
   padding: 1.5rem;
-  background: var(--color-ivory, #F6F1DC);
+  background: var(--color-soft-white, #F9F9F9);
   border: 1px solid var(--border, #E7E2D1);
   border-radius: 0;
   text-decoration: none;
@@ -92,7 +92,8 @@
 .ru-dept-desc {
   font-size: 0.84rem;
   line-height: 1.55;
-  color: var(--muted, #8a9490);
+  color: var(--color-charcoal, #333333);
+  opacity: 0.78;
   margin: 0;
 }
 
@@ -233,7 +234,7 @@
 }
 
 .ru-phd-card {
-  background: var(--color-ivory, #F6F1DC);
+  background: var(--color-soft-white, #F9F9F9);
   border: 1px solid var(--border, #E7E2D1);
   border-radius: 0;
   padding: 1.5rem;
