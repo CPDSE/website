@@ -1,0 +1,10 @@
+{% assign students = include.section.phd_students %}
+<div class="ru-phd-grid">
+  {% for student in students %}
+    <div class="ru-phd-card">
+      <p class="ru-phd-name">{{ student.name }}</p>
+      <p class="ru-phd-supervisor">Supervisor <strong>{{ student.supervisor }}</strong></p>
+      <p class="ru-phd-project">{{ student.project }}</p>
+    </div>
+  {% endfor %}
+</div>

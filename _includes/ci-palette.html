@@ -1,0 +1,127 @@
+<div class="ci-header">
+  <h2 class="ci-h2">Colors</h2>
+  <p class="ci-lead">The palette splits into three groups: a green family carrying the scientific identity, a gold family adding warmth and approachability, and two neutrals for text and surface. Hover any swatch to copy its hex.</p>
+</div>
+
+<div class="palette-group">
+  <div class="palette-group-label">
+    <span>Greens — primary identity</span>
+    <span class="role-count">3 colours · growth · knowledge · depth</span>
+  </div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#3C5E3E;color:#D6C17C;">
+        <span class="swatch-chip-role">Primary dark</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Forest Green</span>
+        <span class="swatch-hex"><span>#3C5E3E</span><button class="copy-btn" data-copy="#3C5E3E">Copy</button></span>
+        <span class="swatch-note">Original brand green. Used for headers, the navigation band, and dark page sections.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#5F7D61;color:#E4D7A1;">
+        <span class="swatch-chip-role">Primary soft</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Sage Green</span>
+        <span class="swatch-hex"><span>#5F7D61</span><button class="copy-btn" data-copy="#5F7D61">Copy</button></span>
+        <span class="swatch-note">Softer, lighter version of Forest. Pairs with Warm Sand for the second-tier surface.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#A9BBAA;color:#F6F1DC;">
+        <span class="swatch-chip-role">Primary light</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Mint Gray</span>
+        <span class="swatch-hex"><span>#A9BBAA</span><button class="copy-btn" data-copy="#A9BBAA">Copy</button></span>
+        <span class="swatch-note">For backgrounds and subtle accents. Use for tags, dividers, and quiet panels.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="palette-group">
+  <div class="palette-group-label">
+    <span>Golds — warmth &amp; accent</span>
+    <span class="role-count">3 colours · openness · optimism · human touch</span>
+  </div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#D6C17C;color:#3C5E3E;">
+        <span class="swatch-chip-role">Accent deep</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Antique Gold</span>
+        <span class="swatch-hex"><span>#D6C17C</span><button class="copy-btn" data-copy="#D6C17C">Copy</button></span>
+        <span class="swatch-note">Original gold. The default accent — buttons, key links, highlight glyphs.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#E4D7A1;color:#5F7D61;">
+        <span class="swatch-chip-role">Accent soft</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Warm Sand</span>
+        <span class="swatch-hex"><span>#E4D7A1</span><button class="copy-btn" data-copy="#E4D7A1">Copy</button></span>
+        <span class="swatch-note">Softer version of Antique Gold, usable for highlights and large coloured surfaces.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#F6F1DC;color:#A9BBAA;border-bottom:1px solid var(--border);">
+        <span class="swatch-chip-role">Accent light</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Ivory Gold Tint</span>
+        <span class="swatch-hex"><span>#F6F1DC</span><button class="copy-btn" data-copy="#F6F1DC">Copy</button></span>
+        <span class="swatch-note">Very light version for backgrounds — section bands, card fills, the Code-Club hero.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="palette-group">
+  <div class="palette-group-label">
+    <span>Neutrals — text &amp; surface</span>
+    <span class="role-count">2 colours · contrast · breathing room</span>
+  </div>
+  <div class="swatch-row swatch-row-2">
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#333333;color:#F9F9F9;">
+        <span class="swatch-chip-role">Neutral dark</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Charcoal Gray</span>
+        <span class="swatch-hex"><span>#333333</span><button class="copy-btn" data-copy="#333333">Copy</button></span>
+        <span class="swatch-note">For body text and high-contrast UI. Use over Soft White and Ivory Gold Tint.</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-chip" style="background:#F9F9F9;color:#333333;border-bottom:1px solid var(--border);">
+        <span class="swatch-chip-role">Neutral light</span>
+      </div>
+      <div class="swatch-meta">
+        <span class="swatch-name">Soft White</span>
+        <span class="swatch-hex"><span>#F9F9F9</span><button class="copy-btn" data-copy="#F9F9F9">Copy</button></span>
+        <span class="swatch-note">Main page background. Subtly warm — never pure #FFFFFF.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', async function() {
+      var hex = btn.dataset.copy;
+      try { await navigator.clipboard.writeText(hex); } catch(_) {}
+      var orig = btn.textContent;
+      btn.textContent = 'Copied';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 1200);
+    });
+  });
+</script>

@@ -1,15 +1,29 @@
-﻿---
-layout: corporate-identity
+---
+layout: sectioned-page
 title: Corporate Identity
 eyebrow: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
 permalink: /corporate-identity/
+css: /assets/css/corporate-identity.css
 
-download_button:
-  text: Download CPDSE logos
-  file: /assets/logos/cpdse-logo-package.zip
+sections:
+  - color: soft-white
+    class: ci-download
+    include: ci-download.html
+    download_file: /assets/logos/cpdse-logo-package.zip
+
+  - color: sage-green
+    id: logos
+    include: ci-logos.html
+
+  - color: soft-white
+    id: type
+    include: ci-typography.html
+
+  - color: sage-green
+    id: colour
+    include: ci-palette.html
+
+  - color: soft-white
+    include: ci-pairings.html
 ---
-
-At CPDSE, our colours and logos reflect who we are and what we aim to build. The green tones represent growth, knowledge, and scientific depth, while the warm gold shades add openness, optimism, and a human touch. Together, they create a visual identity that helps us communicate our mission and community with clarity, consistency, and ambition.
-
-Download the official CPDSE logo package for digital and print use. The ZIP file includes PNG, SVG, and EPS versions in approved CPDSE colors.

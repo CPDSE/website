@@ -9,11 +9,16 @@
   EVERY SECTION
   ─────────────
   color      Background colour of the section band.
-             soft-white (default) | ivory | forest-green
+             soft-white (default) | ivory | sage-green | forest-green
 
   eyebrow    Small all-caps label shown above the title (optional).
   title      Large headline displayed at the top of the section.
   intro      Smaller lead paragraph shown beneath the title.
+
+  id         HTML id attribute on the <section> element (optional).
+             Useful for anchor links, e.g. id: logos → #logos.
+  class      Extra CSS class(es) added to the <section> (optional).
+             E.g. class: ci-download.
 
   ─────────────────────────────────────────────────────────
   LAYOUT TYPES  (choose one per section)
@@ -131,13 +136,54 @@
            We are a cross-institutional group of researchers,
            educators, and data scientists.
 
+  ─────────────────────────────────────────────────────────
+
+  5. EMBED (iframe)
+     ───────────────
+     embed:
+       src:      URL of the embed            (required)
+       height:   Pixel height                (default: 400)
+       title:    Accessible title for iframe (optional)
+     content: |
+       Optional text shown above the embed (markdown).
+
+     Example:
+       - color: soft-white
+         title: Location
+         embed:
+           src: https://www.openstreetmap.org/export/embed.html?...
+           height: 300
+           title: Map
+         content: |
+           Find us on the first floor.
+
+  ─────────────────────────────────────────────────────────
+
+  6. INCLUDE (HTML partial)
+     ──────────────────────
+     include: filename.html
+     content: |
+       Optional text shown above the include (markdown).
+
+     The include file receives the full section data as
+     `include.section`, so it can read any custom keys
+     you add alongside the include directive.
+
+     Example:
+       - color: ivory
+         title: Departments
+         include: department-grid.html
+         departments:
+           - name: Pharmacy
+             url: https://...
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 {% endcomment %}
 
 {% assign s = include.section %}
 {% assign color = s.color | default: 'soft-white' %}
 
-<section class="page-section page-section--{{ color }}">
+<section class="page-section page-section--{{ color }}{% if s.class %} {{ s.class }}{% endif %}"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="container">
 
     {% if s.eyebrow or s.title or s.intro %}
@@ -206,9 +252,24 @@
       </div>
     </div>
 
+    {% elsif s.embed %}
+    <!-- ── Embed ── -->
+    <div class="page-section__embed">
+      {% if s.content %}<div class="page-section__content">{{ s.content | markdownify }}</div>{% endif %}
+      <iframe src="{{ s.embed.src }}"
+              width="{{ s.embed.width | default: '100%' }}"
+              height="{{ s.embed.height | default: 400 }}"
+              style="border:none;border-radius:8px;display:block;margin:1rem 0;"
+              loading="lazy"
+              {% if s.embed.title %} title="{{ s.embed.title }}"{% endif %}
+              allowfullscreen></iframe>
+      {% if s.embed.caption %}<p class="page-section__embed-caption">{{ s.embed.caption }}</p>{% endif %}
+    </div>
+
     {% elsif s.include %}
-    <!-- ── Raw include ── -->
-    {% include {{ s.include }} %}
+    <!-- ── Include ── -->
+    {% if s.content %}<div class="page-section__content">{{ s.content | markdownify }}</div>{% endif %}
+    {% include {{ s.include }} section=s %}
 
     {% else %}
     <!-- ── Plain content ── -->

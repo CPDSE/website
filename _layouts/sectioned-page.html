@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% if page.css %}<link rel="stylesheet" href="{{ page.css | relative_url }}">{% endif %}
+
 <header class="page-hero">
   <div class="container">
     {% if page.eyebrow %}<span class="hero-label">{{ page.eyebrow }}</span>{% endif %}
