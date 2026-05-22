@@ -82,3 +82,4 @@ sections:
           - Work in teams on a shared analysis
           - Use Git for version control
           - Learn professional research workflows
+---
