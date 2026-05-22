@@ -89,6 +89,10 @@
   flex: 1;
 }
 
+/* Override page-section sage-green h3 cascade — cards have solid soft-white bg */
+.page-section--sage-green .ru-dept-name,
+.page-section--sage-green .ru-phd-name { color: var(--color-forest-green, #3C5E3E); }
+
 .ru-dept-desc {
   font-size: 0.84rem;
   line-height: 1.55;
