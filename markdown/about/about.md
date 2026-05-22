@@ -27,20 +27,15 @@ sections:
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."
     card_columns: 3
     cards:
-      - icon: community
-        title: Community
+      - title: Community
         content: We build a strong and open community for pharmaceutical data science.
-      - icon: infrastructure
-        title: Infrastructure
+      - title: Infrastructure
         content: We develop and deploy low-friction infrastructure that empowers non-expert data science.
-      - icon: curriculum
-        title: Curriculum reform
+      - title: Curriculum reform
         content: We upgrade and reform pharma-courses, and design new courses that integrate data science.
-      - icon: teaching
-        title: Direct teaching
+      - title: Direct teaching
         content: We contribute directly to teaching at BA, MS, PhD and life-long learning levels.
-      - icon: networks
-        title: Networks
+      - title: Networks
         content: We connect and develop national and international networks in pharma data science and data science education.
 
   - color: soft-white
@@ -48,7 +43,6 @@ sections:
     title: "The *New Ways of Working* philosophy"
     intro: "Our center's philosophy is rooted in the principles of the New Ways of Working movement -- taking values and inspiration from sociocracy, agile, lean, and teal."
     card_columns: 2
-    card_style: alternating
     cards:
       - num: "Principle 01"
         title: "Evolutionary purpose, wholeness & co-leadership"
