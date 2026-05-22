@@ -23,17 +23,23 @@ layout: default
         <p class="cn-lead">Two statements that frame everything CPDSE does — one describes the future we want to see, the other the work we have committed to in order to get there.</p>
       </div>
 
-      <div class="vm-grid">
-        {% for vm in page.vision_mission %}
-        <div class="vm-card vm-card--{{ vm.variant }}">
-          <span class="vm-card-mark" aria-hidden="true">"</span>
-          <div class="vm-label">
-            <span>{{ vm.label }}</span>
-          </div>
-          <p class="vm-h">{{ vm.statement }}</p>
-          <p class="vm-body">{{ vm.body }}</p>
+      <div class="vm-feature">
+        <div class="vm-feature__copy">
+          {% for vm in page.vision_mission %}
+          <article class="vm-feature__statement vm-feature__statement--{{ vm.variant }}">
+            <div class="vm-feature__meta">
+              <span class="vm-feature__num">{{ vm.num }}</span>
+              <span class="vm-feature__label">{{ vm.label }}</span>
+            </div>
+            <p class="vm-feature__statement-text">{{ vm.statement }}</p>
+            <p class="vm-feature__body">{{ vm.body }}</p>
+          </article>
+          {% endfor %}
         </div>
-        {% endfor %}
+
+        <figure class="vm-feature__media">
+          <img src="{{ '/assets/team.jpg' | relative_url }}" alt="CPDSE community members collaborating" class="vm-feature__img">
+        </figure>
       </div>
 
     </div>
