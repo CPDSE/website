@@ -7,6 +7,7 @@ permalink: /codeclub-sdu/
 
 sections:
   - color: soft-white
+    title: SDU Pharma Code Club
     image:
       src: /assets/images/Youre-a-Wiz-Student-Sticker.png
       alt: You're a wiz student
