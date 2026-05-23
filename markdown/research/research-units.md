@@ -7,7 +7,7 @@ permalink: /researchers-units/
 css: /assets/css/research-units.css
 
 sections:
-  - color: forest-green
+  - color: soft-white
     title: Cooperating Departments
     include: department-grid.html
     departments:
@@ -38,6 +38,23 @@ sections:
       - uni: SDU
         name: Department of Mathematics and Computer Science
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi
+
+  - color: sage-green
+    title: Funded PhD Students
+    intro: CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science.
+    include: phd-grid.html
+    phd_students:
+      - name: Placeholder Student A
+        supervisor: Prof. Placeholder One
+        project: Graph-based representations of drug–target interactions for off-target prediction
+
+      - name: Placeholder Student B
+        supervisor: Prof. Placeholder Four
+        project: Designing a longitudinal curriculum for statistical literacy in MSc Pharmacy
+
+      - name: Placeholder Student C
+        supervisor: Prof. Placeholder Six
+        project: Real-world evidence pipelines for adverse drug reaction surveillance in Danish registries
 
   - color: soft-white
     title: Group Leaders
@@ -139,21 +156,4 @@ sections:
           A specialist from the Department of Science Education. He researches the didactics
           of the laboratory, focusing on how students engage with scientific inquiry and the
           epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
-
-  - color: sage-green
-    title: Funded PhD Students
-    intro: CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science.
-    include: phd-grid.html
-    phd_students:
-      - name: Placeholder Student A
-        supervisor: Prof. Placeholder One
-        project: Graph-based representations of drug–target interactions for off-target prediction
-
-      - name: Placeholder Student B
-        supervisor: Prof. Placeholder Four
-        project: Designing a longitudinal curriculum for statistical literacy in MSc Pharmacy
-
-      - name: Placeholder Student C
-        supervisor: Prof. Placeholder Six
-        project: Real-world evidence pipelines for adverse drug reaction surveillance in Danish registries
 ---

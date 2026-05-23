@@ -46,18 +46,18 @@
 .ru-dept-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 0.5rem;
-  background: transparent;
-  border: none;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: var(--color-soft-white, #F9F9F9);
+  border: 1px solid var(--border, #E7E2D1);
   border-radius: 0;
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 .ru-dept-card:hover {
-  opacity: 0.8;
-  transform: translateY(-2px);
+  box-shadow: none;
+  transform: translateY(-3px);
 }
 
 .ru-dept-badge {
@@ -71,12 +71,12 @@
   align-self: flex-start;
 }
 .ru-dept-badge--ucph {
-  background: rgba(249,249,249,0.15);
-  color: var(--color-soft-white, #F9F9F9);
+  background: rgba(169,187,170,0.35);
+  color: var(--color-forest-green, #3C5E3E);
 }
 .ru-dept-badge--sdu {
-  background: rgba(214,193,124,0.25);
-  color: var(--color-warm-sand, #E4D7A1);
+  background: rgba(214,193,124,0.4);
+  color: #4a3d10;
 }
 
 .ru-dept-name {
@@ -84,13 +84,13 @@
   font-size: 0.98rem;
   font-weight: 400;
   line-height: 1.3;
-  color: var(--color-soft-white, #F9F9F9);
+  color: var(--color-forest-green, #3C5E3E);
   margin: 0;
   flex: 1;
 }
 
-/* Override page-section heading cascade inside dept/phd cards */
-.page-section--forest-green .ru-dept-name { color: var(--color-soft-white, #F9F9F9); }
+/* Override page-section heading cascade — cards have solid soft-white bg */
+.page-section--soft-white .ru-dept-name,
 .page-section--sage-green .ru-dept-name,
 .page-section--sage-green .ru-phd-name { color: var(--color-forest-green, #3C5E3E); }
 
@@ -106,10 +106,10 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
-  color: var(--color-warm-sand, #E4D7A1);
+  color: var(--color-forest-green, #3C5E3E);
   margin-top: auto;
   padding-top: 0.5rem;
-  border-top: 1px solid rgba(249,249,249,0.15);
+  border-top: 1px solid var(--border, #E7E2D1);
 }
 
 /* ══ SECTION 2 — GROUP LEADERS (directory table) ════════════════ */
