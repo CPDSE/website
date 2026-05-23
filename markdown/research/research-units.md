@@ -12,20 +12,20 @@ sections:
     include: department-grid.html
     departments:
       - uni: UCPH
-        name: Dept. of Drug Design and Pharmacology
-        url: https://drug.ku.dk/
-
-      - uni: UCPH
-        name: Dept. of Pharmacy
-        url: https://pharmacy.ku.dk/
-
-      - uni: UCPH
         name: Dept. of Computer Science
         url: https://di.ku.dk/english/
 
       - uni: UCPH
-        name: Dept. of Science Education
-        url: https://www.ind.ku.dk/english/
+        name: Dept. of Drug Design and Pharmacology
+        url: https://drug.ku.dk/
+
+      - uni: SDU
+        name: Dept. of Mathematics and Computer Science
+        url: https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi
+
+      - uni: UCPH
+        name: Dept. of Pharmacy
+        url: https://pharmacy.ku.dk/
 
       - uni: SDU
         name: Dept. of Physics, Chemistry and Pharmacy
@@ -35,9 +35,9 @@ sections:
         name: Dept. of Public Health
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/ist
 
-      - uni: SDU
-        name: Dept. of Mathematics and Computer Science
-        url: https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi
+      - uni: UCPH
+        name: Dept. of Science Education
+        url: https://www.ind.ku.dk/english/
 
   - color: sage-green
     title: Funded PhD Students
