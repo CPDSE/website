@@ -98,6 +98,11 @@ layout: default
             <p class="convtalks__title">{{ talk.title }}</p>
             <p class="convtalks__meta"><span class="convtalks__speaker">{{ talk.speakers }}</span> · <span class="convtalks__aff">{{ talk.affiliation }}</span></p>
             {% if talk.tags and talk.tags.size > 0 %}
+            <ul class="convtalks__tags">
+              {% for tag in talk.tags %}
+              <li class="convtalks__tag">{{ tag }}</li>
+              {% endfor %}
+            </ul>
             {% endif %}
           </div>
         </li>
