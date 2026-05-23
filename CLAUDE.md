@@ -1,0 +1,128 @@
+# CPDSE Website — Claude Guidelines
+
+This is a Jekyll static site deployed to GitHub Pages at `https://cpdse.github.io/website` (baseurl: `/website`). Content is edited through `.md` files; the layout and design system must not be changed without explicit instruction.
+
+---
+
+## Content editing — always use the MD files
+
+Every page has a `.md` source file. See `README.md` for the full table. **Never hardcode content into layout files, includes, or CSS.** The sections system in `_includes/page-section.html` reads YAML frontmatter and handles all rendering.
+
+---
+
+## Colour system — four approved pairings only
+
+| `color:` value | Background | Headlines & eyebrows | Body text |
+|---|---|---|---|
+| `soft-white` | `#F9F9F9` | Forest Green `#3C5E3E` | Charcoal `#333333` |
+| `mint-gray` | `#A9BBAA` | Ivory Gold Tint `#F6F1DC` | Charcoal `#333333` |
+| `sage-green` | `#5F7D61` | Warm Sand `#E4D7A1` | Soft White `#F9F9F9` |
+| `forest-green` | `#3C5E3E` | Antique Gold `#D6C17C` | Soft White `#F9F9F9` |
+
+**Never introduce a new background colour.** If a section needs a dark background, use `sage-green` or `forest-green`. If it needs a light background, use `soft-white` or `mint-gray`.
+
+Use CSS custom property tokens — never raw hex values in new rules:
+
+```
+--color-forest-green   --color-soft-white   --color-sage-green
+--color-mint-gray      --color-warm-sand    --color-antique-gold
+--color-ivory-gold-tint  --color-charcoal   --color-ivory
+--color-antique-gold   (also available as var(--accent))
+```
+
+---
+
+## Hero (page banner)
+
+- Background: dark green gradient (defined in `.page-hero` in `main.css`) — do not change
+- `h1` title: **antique gold** (`var(--accent, #D6C17C)`) — do not override to white
+- Eyebrow (`hero-label`): **antique gold** — already set globally, do not override
+- Description `<p>`: soft-white at reduced opacity — do not change
+
+Hero fields live in page frontmatter:
+
+```yaml
+title: Page Title       # antique gold h1
+eyebrow: Education      # antique gold all-caps label
+description: One line.  # soft-white paragraph
+```
+
+---
+
+## Cards
+
+- Card backgrounds: **always soft-white** (`#F9F9F9`) — use `card_color: soft-white`
+- Card titles: **always forest-green** — enforced by CSS
+- Card body text: charcoal
+- This applies even when cards are inside a dark section (`sage-green` or `forest-green`) — the CSS handles it correctly when `card_color: soft-white` is set
+
+---
+
+## Sections system
+
+All layout is controlled through `sections:` YAML. The six layout types are:
+
+1. **Plain text** — `content: |`
+2. **Two columns** — `columns:` list with two `content:` blocks
+3. **Cards** — `cards:` list; control columns with `card_columns: 2` or `3`
+4. **Image + text** — `image:` with `src:`, `alt:`, `position: left|right` plus `content:`
+5. **Stats banner** — `stats:` list; best on `forest-green`
+6. **HTML include** — `include: filename.html`; pass data via custom YAML keys
+
+Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
+
+---
+
+## CSS rules
+
+- **Always use the existing token variables** — never add raw hex colours to CSS
+- **Never use inline `style=` attributes** for colours — add a scoped CSS class instead
+- **Never change** `.page-hero`, `.page-section--*` base colour rules, or `:root` token values without explicit instruction
+- **Specificity pattern for overrides:** scope to the most specific context (e.g. `.page-section--sage-green .page-section__cards--soft-white .page-section__card-title`)
+
+---
+
+## Layouts
+
+- `layout: sectioned-page` — standard interior pages (hero + sections)
+- `layout: people` — People page (custom two-column hero with radial viz)
+- `layout: bare` — strips all site chrome (nav, hero, footer); only for KU Code Club
+- `layout: default` — base layout; rarely used directly
+
+---
+
+## File structure
+
+```
+markdown/          # all editable page content
+  about/           # About CPDSE, People, Corporate Identity
+  education/       # Educational Vision, Offers, Learning Resources, Code Clubs
+  news/            # News & Events page
+  research/        # Researchers & Units
+  contact/
+  home/
+  other/           # Funding, Privacy (not in nav)
+_posts/news/       # individual news posts (YYYY-MM-DD-slug.md)
+assets/
+  css/
+    main.css           # global styles — edit with care
+    page-sections.css  # sections system styles
+    people.css         # people page only
+    research-units.css # research units page only
+  data/
+    people.json        # people page data
+  images/            # site images
+_includes/           # HTML partials — edit only when the MD system cannot do the job
+_layouts/            # page layout templates — rarely need editing
+```
+
+---
+
+## What not to do
+
+- Do not add new colour values, fonts, or spacing tokens
+- Do not change permalink values without updating `_config.yml` nav URLs
+- Do not edit `_layouts/default.html`, `_layouts/sectioned-page.html`, or `_includes/nav.html` for content changes — use the MD files
+- Do not use `layout: bare` on any page except KU Code Club
+- Do not commit `.env` files, credentials, or large binaries
+- Do not push directly to `main` without checking the build passes on GitHub Pages
