@@ -15,10 +15,10 @@ stats:
     label: People
   - number: 7
     label: Departments
-  - number: 2
-    label: Universities
-  - number: 1
-    label: Mission
+  - number: 6
+    label: PhD Scholarships
+  - number: 7
+    label: Courses Upgrading
 
 # ── About intro ───────────────────────────────────────────────────────────────
 about_label: About CPDSE
