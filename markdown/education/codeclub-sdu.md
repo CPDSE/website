@@ -8,7 +8,7 @@ permalink: /codeclub-sdu/
 sections:
   - color: soft-white
     image:
-      src: https://www.cpdse.dk/wp-content/uploads/2026/02/Youre-a-Wiz-Student-Sticker.png
+      src: /assets/images/Youre-a-Wiz-Student-Sticker.png
       alt: You're a wiz student
       position: right
     content: |
