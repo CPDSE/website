@@ -7,43 +7,36 @@ permalink: /researchers-units/
 css: /assets/css/research-units.css
 
 sections:
-  - color: sage-green
+  - color: forest-green
     title: Cooperating Departments
     include: department-grid.html
     departments:
       - uni: UCPH
         name: Department of Drug Design and Pharmacology
-        description: Drug design, molecular pharmacology and target discovery.
         url: https://drug.ku.dk/
 
       - uni: UCPH
         name: Department of Pharmacy
-        description: Pharmaceutical sciences, formulation and biopharmaceutics.
         url: https://pharmacy.ku.dk/
 
       - uni: UCPH
         name: Department of Computer Science
-        description: Machine learning, algorithms and applied data science.
         url: https://di.ku.dk/english/
 
       - uni: UCPH
         name: Department of Science Education
-        description: How people learn data science in pharmaceutical contexts.
         url: https://www.ind.ku.dk/english/
 
       - uni: SDU
         name: Department of Physics, Chemistry and Pharmacy
-        description: Pharmaceutical chemistry, analytics and physical methods.
         url: https://www.sdu.dk/en/fkf
 
       - uni: SDU
         name: Department of Public Health
-        description: Pharmacoepidemiology, real-world evidence, registry science.
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/ist
 
       - uni: SDU
         name: Department of Mathematics and Computer Science
-        description: Statistics, modelling and computational pharmacology.
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi
 
   - color: soft-white
