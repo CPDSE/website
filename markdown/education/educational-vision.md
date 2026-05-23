@@ -25,9 +25,8 @@ sections:
       > Pharmacists doesn't need to replace programmers, but learn to speak both languages.
 
   - color: soft-white
-    eyebrow: "What data science actually is"
-    title: "Not one skill. A combination of seven."
-    intro: "Data science is often treated as synonymous with machine learning or coding. In reality it is a broad competency spanning ethics, mathematics, computing, data management, analysis, AI, and communication. Pharmaceutical scientists need literacy across all seven — not mastery of any single one."
+    title: "What data science actually is"
+    intro: "Data science is often treated as synonymous with machine learning or coding. In reality it is a broad competency spanning ethics, mathematics, computing, data management, analysis, AI, and communication."
     include: competency-model.html
     pillars:
       - title: "Mathematics & Statistics"
@@ -81,17 +80,17 @@ sections:
     cards:
       - title: Coding exercises
         content: |
-          - Python, R, or both
-          - Small, focused tasks
-          - Each building on the last
+          - Use R or Phthon
+          - Students analyze their own lab data
+          - Simulation of processes that are not covered in the lab
       - title: Lab reports in notebooks
         content: |
-          - Replace Word with Jupyter or Quarto
+          - Use Quarto
           - Integrate code, results, and interpretation
-          - Directly exportable and reproducible
+          - Directly exportable (HTML, PDF, WOrd) and reproducible
       - title: Interactive apps
         content: |
-          - Build Shiny or Streamlit apps
+          - Build interactive Shiny or Streamlit apps
           - Turn an analysis into a shareable tool
-          - No front-end experience needed
+          - Allows data exploration without coding
 ---
