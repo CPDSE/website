@@ -169,6 +169,10 @@
 .page-section--mint-gray .page-section__card-body   { color: var(--color-charcoal, #333333); }
 
 /* Soft-white cards explicitly on a dark section — override dark-section defaults */
+.page-section--sage-green   .page-section__cards--soft-white,
+.page-section--forest-green .page-section__cards--soft-white {
+  --muted: var(--color-charcoal, #333333); /* re-scope so li/muted text is visible on white cards */
+}
 .page-section--sage-green   .page-section__cards--soft-white .page-section__card,
 .page-section--forest-green .page-section__cards--soft-white .page-section__card {
   background: var(--color-soft-white, #F9F9F9);
