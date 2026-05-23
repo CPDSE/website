@@ -61,21 +61,10 @@ sections:
     intro: CPDSE's group leaders anchor the research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
     include: people-table.html
     group_leaders:
-      - initials: DG
-        name: David Gloriam
-        department: Computational Receptor Biology
-        uni: UCPH
-        group: Computational & Informatics
-        quote: >-
-          Professor of Computational Receptor Biology and a powerhouse in GPCR research.
-          He leads the development of world-renowned databases like GPCRdb and applies big
-          data science to uncover new drug targets and receptor signaling mechanisms.
-
       - initials: AK
         name: Albert Kooistra
         department: Data Science for Drug Design
         uni: UCPH
-        group: Computational & Informatics
         quote: >-
           Associate Professor specializing in Data Science for Drug Design. His work
           bridges structural bioinformatics and cheminformatics, focusing on AI/ML
@@ -86,39 +75,83 @@ sections:
         name: Alexander Hausser
         department: Drug-related Data Science
         uni: UCPH
-        group: Computational & Informatics
         quote: >-
           Associate Professor focusing on drug-related data science and pharmacogenomics.
           He integrates large-scale biomedical data — from genomics to clinical biobanks —
           to understand how genetic variability influences drug responses and personalized medicine.
 
-      - initials: JK
-        name: Jane Knöchel
-        department: Pharmaceutical Informatics
-        uni: UCPH
-        group: Computational & Informatics
-        quote: >-
-          Assistant Professor (Tenure Track) in Pharmaceutical Informatics. She utilizes
-          mathematical modeling and Quantitative Systems Pharmacology (QSP) to bridge
-          biological mechanisms with clinical outcomes, particularly for metabolic and
-          cardiovascular diseases.
-
       - initials: AM
         name: Anders Østergård Madsen
         department: Crystallography & Structural Chemistry
         uni: UCPH
-        group: Solid-State & Physical Science
         quote: >-
           Associate Professor and a leader in crystallography and structural chemistry.
           He applies deep learning and advanced algorithms to solve the phase problem in
           X-ray and electron diffraction, focusing on polymorphism and crystal stability
           in pharmaceuticals.
 
+      - initials: AP
+        name: Anton Pottegård
+        department: Clinical Pharmacology & Pharmacy
+        uni: SDU
+        quote: >-
+          Professor of pharmacoepidemiology at the Department of Public Health. He specializes
+          in analyzing registry data on drug use patterns and effects, investigating both known
+          and unknown effects of pharmaceutical treatments with a focus on rational drug use
+          and deprescribing.
+
+      - initials: DG
+        name: David Gloriam
+        department: Computational Receptor Biology
+        uni: UCPH
+        quote: >-
+          Professor of Computational Receptor Biology and a powerhouse in GPCR research.
+          He leads the development of world-renowned databases like GPCRdb and applies big
+          data science to uncover new drug targets and receptor signaling mechanisms.
+
+      - initials: HA
+        name: Hendra Augustian
+        department: Science Education
+        uni: UCPH
+        quote: >-
+          A specialist from the Department of Science Education. He researches the didactics
+          of the laboratory, focusing on how students engage with scientific inquiry and the
+          epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
+
+      - initials: JKo
+        name: Jacob Kongsted
+        department: Physics, Chemistry and Pharmacy
+        uni: SDU
+        quote: >-
+          Professor of Theoretical and Computational Chemistry. His research focuses on
+          computational methods for studying molecular properties, particularly photon
+          absorption phenomena and excited electronic states using density functional
+          theory approaches.
+
+      - initials: JK
+        name: Jane Knöchel
+        department: Pharmaceutical Informatics
+        uni: UCPH
+        quote: >-
+          Assistant Professor (Tenure Track) in Pharmaceutical Informatics. She utilizes
+          mathematical modeling and Quantitative Systems Pharmacology (QSP) to bridge
+          biological mechanisms with clinical outcomes, particularly for metabolic and
+          cardiovascular diseases.
+
+      - initials: JKu
+        name: Judith Kuntsche
+        department: Physics, Chemistry and Pharmacy
+        uni: SDU
+        quote: >-
+          Associate Professor specializing in the development and characterization of
+          lipid-based nanoparticulate drug delivery systems. Her work focuses on supercooled
+          smectic nanoparticles and liposomal formulations, exploring how colloidal systems
+          interact with biological membranes and their applications in pharmaceutical delivery.
+
       - initials: KB
         name: Karlis Berzins
         department: Pharmaceutical Solid Materials Science
         uni: UCPH
-        group: Solid-State & Physical Science
         quote: >-
           Specialist in the materials science of pharmaceutical solids. He uses advanced
           low-frequency Raman spectroscopy combined with multivariate chemometrics and
@@ -129,7 +162,6 @@ sections:
         name: Morten Andersen
         department: Pharmacovigilance
         uni: UCPH
-        group: Clinical & Educational
         quote: >-
           Professor of Pharmacovigilance and Head of the Pharmacovigilance Research Center.
           His research utilizes big healthcare data and real-world evidence from national
@@ -140,44 +172,9 @@ sections:
         name: Trine Meldgård Lund
         department: Pharmacometrics
         uni: UCPH
-        group: Clinical & Educational
         quote: >-
           Associate Professor and leader of the Pharmacometrics Group. She focuses on
           population PK/PD modeling and simulations to optimize dosing regimens, utilizing
           mathematical tools to understand variability in drug response across various
           therapeutic areas.
-
-      - initials: HA
-        name: Hendra Augustian
-        department: Science Education
-        uni: UCPH
-        group: Clinical & Educational
-        quote: >-
-          A specialist from the Department of Science Education. He researches the didactics
-          of the laboratory, focusing on how students engage with scientific inquiry and the
-          epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
-
-      - initials: AP
-        name: Anton Pottegaard
-        department: Clinical Pharmacology & Pharmacy
-        uni: SDU
-        group: Clinical & Educational
-        url: https://portal.findresearcher.sdu.dk/en/persons/apottegaard/
-        quote: >-
-
-      - initials: JKu
-        name: Judith Kuntsche
-        department: Clinical Pharmacology & Pharmacy
-        uni: SDU
-        group: Clinical & Educational
-        url: https://portal.findresearcher.sdu.dk/en/persons/kuntsche/
-        quote: >-
-
-      - initials: JKo
-        name: Jacob Kongsted
-        department: Physics, Chemistry and Pharmacy
-        uni: SDU
-        group: Computational & Informatics
-        url: https://portal.findresearcher.sdu.dk/da/persons/kongsted/
-        quote: >-
 ---
