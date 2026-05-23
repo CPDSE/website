@@ -3,10 +3,11 @@
   {% for dept in departments %}
     {% assign uni_lower = dept.uni | downcase %}
     <a class="ru-dept-card" href="{{ dept.url }}" target="_blank" rel="noopener">
-      <span class="ru-dept-badge ru-dept-badge--{{ uni_lower }}">{{ dept.uni }}</span>
+      <div class="ru-dept-card__header">
+        <span class="ru-dept-badge ru-dept-badge--{{ uni_lower }}">{{ dept.uni }}</span>
+        <span class="ru-dept-cta">Visit →</span>
+      </div>
       <h3 class="ru-dept-name">{{ dept.name }}</h3>
-      {% if dept.description %}<p class="ru-dept-desc">{{ dept.description }}</p>{% endif %}
-      <span class="ru-dept-cta">Visit department →</span>
     </a>
   {% endfor %}
 </div>
