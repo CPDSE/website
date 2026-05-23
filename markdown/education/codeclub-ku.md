@@ -1,5 +1,5 @@
 ﻿---
-layout: page
+layout: bare
 title: KU Pharma Student Coding Club
 eyebrow: Education
 description: All levels welcome — from beginner to pro, we all learn together at the University of Copenhagen.
