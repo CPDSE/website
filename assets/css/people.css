@@ -522,3 +522,57 @@ html { overflow-x: clip; }
   .cpdse-rings { grid-template-columns: 1fr; max-width: none; }
   .eco-viz { height: 560px; }
 }
+
+/* ── Two-column hero for people page ─────────────────── */
+.people-hero {
+  /* Solid forest-green instead of the default gradient */
+  background: var(--color-forest-green, #3C5E3E);
+}
+
+.people-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.people-hero-text h1 {
+  color: var(--color-antique-gold, #D6C17C);
+}
+
+.people-hero-text p,
+.people-hero-text li {
+  color: rgba(249, 249, 249, 0.85);
+  line-height: 1.7;
+}
+
+/* Ring tiles on dark background */
+.people-hero .cpdse-rings__tile {
+  background: rgba(249, 249, 249, 0.08);
+  border-color: rgba(249, 249, 249, 0.2);
+}
+.people-hero .cpdse-rings__tile-label {
+  color: var(--color-warm-sand, #E4D7A1);
+  opacity: 0.85;
+}
+.people-hero .cpdse-rings__tile-count {
+  color: var(--color-antique-gold, #D6C17C);
+}
+.people-hero .cpdse-rings__tile-sub {
+  color: rgba(249, 249, 249, 0.5);
+  opacity: 1;
+}
+
+/* Legend on dark background */
+.people-hero .eco-legend {
+  color: rgba(249, 249, 249, 0.55);
+}
+
+@media (max-width: 860px) {
+  .people-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .people-hero-viz {
+    order: -1; /* viz above text on small screens */
+  }
+}

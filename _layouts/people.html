@@ -1,12 +1,24 @@
-﻿---
+---
 layout: default
 ---
 
-<header class="page-hero">
+<header class="page-hero people-hero">
   <div class="container">
-    {% if page.eyebrow %}<span class="hero-label">{{ page.eyebrow }}</span>{% endif %}
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+    <div class="people-hero-grid">
+
+      <div class="people-hero-text">
+        {% if page.eyebrow %}<span class="hero-label">{{ page.eyebrow }}</span>{% endif %}
+        <h1>{{ page.title }}</h1>
+        {{ page.intro_left | markdownify }}
+      </div>
+
+      <div class="people-hero-viz">
+        <div id="cpdse-rings" class="cpdse-rings reveal" aria-label="People by involvement layer"></div>
+        <div id="eco-viz" class="eco-viz" aria-label="People in CPDSE — radial visualisation"></div>
+        <p class="eco-legend">Hover any avatar to preview, click to open details.</p>
+      </div>
+
+    </div>
   </div>
 </header>
 
@@ -14,15 +26,6 @@ layout: default
   <link rel="stylesheet" href="{{ '/assets/css/people.css' | relative_url }}">
 
   <div id="cpdse-people" class="cpdse-people" data-baseurl="{{ site.baseurl }}">
-
-    <!-- Radial ecosystem viz (full-bleed) -->
-    <section class="cpdse-eco">
-      <div class="cpdse-eco__inner">
-        <div id="cpdse-rings" class="cpdse-rings reveal" aria-label="People by involvement layer"></div>
-        <div id="eco-viz" class="eco-viz" aria-label="People in CPDSE — radial visualisation"></div>
-        <p class="eco-legend">Hover any avatar to preview, click to open details.</p>
-      </div>
-    </section>
 
     <!-- Directory grid + filters (full-bleed) -->
     <section class="cpdse-dir">
