@@ -8,9 +8,8 @@ description: How CPDSE thinks about data science education in pharmaceutical sci
 sections:
 
   - color: soft-white
-    eyebrow: "Why data science for pharmacists"
-    title: "You don't need to become a programmer. You need to speak both languages."
-    intro: "Pharmaceutical science generates more data than ever — from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly, without waiting for a specialist, are at a fundamental advantage. CPDSE exists to close that gap."
+    title: "Why data science for pharmacists"
+    intro: "Pharmaceutical science generates more data than ever, from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly and communicate with data specialists, are at a fundamental advantage. CPDSE exists to close that gap."
     card_columns: 3
     cards:
       - title: Lab data analysis
@@ -28,7 +27,7 @@ sections:
 
   - color: sage-green
     content: |
-      > The goal is not to replace the statistician or the programmer — it's to stop being entirely dependent on them.
+      > Pharmacists doesn't need to replace programmers, but learn to speak both languages.
 
   - color: soft-white
     eyebrow: "What data science actually is"
@@ -37,9 +36,8 @@ sections:
     include: competency-model.html
 
   - color: sage-green
-    eyebrow: "How to teach it"
-    title: "Learning by doing, not by watching."
-    intro: "Lectures about data science don't produce data scientists. CPDSE teaching formats are built around practice — small tasks, real datasets, and immediate feedback. Students learn by running code, not reading about it."
+    title: "How to Include Data Science in Education"
+    intro: "Data science is more than programming. It originates in algorithmic thinking and data literacy, extending to the application of advanced algorithms and ethical judgment. Some practical ways to include data science in the curricular are:"
     card_columns: 3
     card_color: soft-white
     cards:
