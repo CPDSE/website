@@ -20,17 +20,6 @@
     --shadow-card: inset 0 0 0 1px rgba(214, 193, 124, 0.25);
 }
 
-/* The section backgrounds below break out to the full viewport width with
-   `width: 100vw`. Since 100vw includes the vertical scrollbar, this would
-   otherwise trigger a horizontal scrollbar — clip horizontal overflow at
-   the root to prevent that. `overflow-x: clip` is preferred over
-   `overflow-x: hidden` because it doesn't establish a scroll container,
-   so the sticky site nav still works correctly. */
-html { overflow-x: clip; }
-@supports not (overflow-x: clip) {
-  html { overflow-x: hidden; }
-}
-
 /* Override the `.page-body > * { max-width: 720px }` clamp so the people
    page can use the full container width. We do NOT use a 100vw full-bleed
    trick — that creates a horizontal scrollbar at narrower viewports
@@ -517,10 +506,39 @@ html { overflow-x: clip; }
 }
 
 /* ── Responsive (narrow viewports) ───────────────────── */
+/* The eco-viz uses fixed pixel ring radii (110 / 200 / 290 px) in JS for
+   avatar positions, so it cannot rely on intrinsic SVG scaling. We use a
+   CSS transform to shrink the whole viz proportionally on small screens
+   and pull the surrounding layout up by the lost height with negative
+   margin-bottom so there's no large empty gap below it. */
+@media (max-width: 860px) {
+  .eco-viz {
+    transform: scale(0.78);
+    transform-origin: center top;
+    margin-bottom: -160px;
+  }
+}
 @media (max-width: 640px) {
   .cpdse-eco, .cpdse-dir { padding: var(--space-md) var(--space-sm); }
-  .cpdse-rings { grid-template-columns: 1fr; max-width: none; }
-  .eco-viz { height: 560px; }
+  .cpdse-rings { grid-template-columns: 1fr; max-width: none; gap: 0.5rem; }
+  .eco-viz {
+    height: 560px;
+    transform: scale(0.6);
+    transform-origin: center top;
+    margin-bottom: -230px;
+  }
+  .dir__filters { padding: 0.75rem; gap: 0.6rem; }
+  .dir__filter-search { min-width: 0; width: 100%; flex: 1 1 100%; }
+  .dir__grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.6rem; }
+  .dir__card { padding: 0.9rem; }
+}
+@media (max-width: 480px) {
+  .eco-viz {
+    transform: scale(0.48);
+    transform-origin: center top;
+    margin-bottom: -290px;
+  }
+  .dir__grid { grid-template-columns: 1fr; }
 }
 
 /* ── Two-column hero for people page ─────────────────── */
