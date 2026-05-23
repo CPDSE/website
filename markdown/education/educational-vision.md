@@ -1,7 +1,7 @@
 ---
 layout: sectioned-page
-title: Our Approach
-permalink: /our-approach/
+title: Educational Vision
+permalink: /educational-vision/
 description: How CPDSE thinks about data science education in pharmaceutical sciences — and why it matters.
 
 sections:
