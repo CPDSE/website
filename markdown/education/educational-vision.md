@@ -9,21 +9,7 @@ sections:
 
   - color: soft-white
     title: "Why data science for pharmacists"
-    intro: "Pharmaceutical science generates more data than ever, from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly and communicate with data specialists, are at a fundamental advantage. CPDSE exists to close that gap."
-    card_columns: 3
-    cards:
-      - title: Lab data analysis
-        content: Summarise and visualise experimental results from assays, dissolution tests, or stability studies — without exporting to Excel first.
-      - title: Image processing
-        content: Analyse microscopy, particle, and formulation images with reproducible, automated workflows.
-      - title: Simulation
-        content: Model drug release profiles, pharmacokinetics, or molecular interactions computationally — before running a single experiment.
-      - title: "Clinical & real-world data"
-        content: Work with patient records, trial datasets, and population-level health data using the same tools used in research.
-      - title: Reproducible reporting
-        content: Combine analysis, results, and interpretation in a single shareable notebook — so your work can be checked, reused, and built on.
-      - title: Free & open tools
-        content: "Python, R, Julia — industry-standard, actively maintained, and free. No licence fees, no vendor lock-in."
+    intro: "Pharmaceutical science generates more data than ever, from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly and communicate with data specialists, are at a fundamental advantage. CPDSE exists to close that gap. Integrating data science into pharmaceutical workflows marks a pivotal shift from manual, siloed analysis to a unified, computational framework that accelerates discovery and guarantees reproducibility. By harnessing the power of free, industry-standard open-source ecosystems like Python and R, organizations can seamlessly execute complex tasks across the entire development spectrum—from immediate lab data analysis and high-precision image processing to sophisticated predictive simulations. This transition not only democratizes access to advanced analytics but also establishes a robust foundation for data-driven innovation in modern pharmacy."
 
   - color: sage-green
     content: |
