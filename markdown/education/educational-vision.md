@@ -1,6 +1,7 @@
 ---
 layout: sectioned-page
 title: Educational Vision
+eyebrow: Education
 permalink: /educational-vision/
 description: How CPDSE thinks about data science education in pharmaceutical sciences — and why it matters.
 
