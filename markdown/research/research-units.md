@@ -58,7 +58,7 @@ sections:
 
   - color: soft-white
     title: Group Leaders
-    intro: Nine group leaders anchor CPDSE's research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
+    intro: CPDSE's group leaders anchor the research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
     include: people-table.html
     group_leaders:
       - initials: DG
@@ -117,7 +117,7 @@ sections:
       - initials: KB
         name: Karlis Berzins
         department: Pharmaceutical Solid Materials Science
-        uni: SDU
+        uni: UCPH
         group: Solid-State & Physical Science
         quote: >-
           Specialist in the materials science of pharmaceutical solids. He uses advanced
@@ -128,7 +128,7 @@ sections:
       - initials: MA
         name: Morten Andersen
         department: Pharmacovigilance
-        uni: SDU
+        uni: UCPH
         group: Clinical & Educational
         quote: >-
           Professor of Pharmacovigilance and Head of the Pharmacovigilance Research Center.
@@ -156,4 +156,28 @@ sections:
           A specialist from the Department of Science Education. He researches the didactics
           of the laboratory, focusing on how students engage with scientific inquiry and the
           epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
+
+      - initials: AP
+        name: Anton Pottegaard
+        department: Clinical Pharmacology & Pharmacy
+        uni: SDU
+        group: Clinical & Educational
+        url: https://portal.findresearcher.sdu.dk/en/persons/apottegaard/
+        quote: >-
+
+      - initials: JKu
+        name: Judith Kuntsche
+        department: Clinical Pharmacology & Pharmacy
+        uni: SDU
+        group: Clinical & Educational
+        url: https://portal.findresearcher.sdu.dk/en/persons/kuntsche/
+        quote: >-
+
+      - initials: JKo
+        name: Jacob Kongsted
+        department: Physics, Chemistry and Pharmacy
+        uni: SDU
+        group: Computational & Informatics
+        url: https://portal.findresearcher.sdu.dk/da/persons/kongsted/
+        quote: >-
 ---
