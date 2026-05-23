@@ -1,9 +1,9 @@
-﻿---
+---
 layout: sectioned-page
-title: Educational Offerings
+title: Educational Offers
 eyebrow: Education
-description: CPDSE develops and supports educational offerings across bachelor, master, PhD, and life-long learning levels.
-permalink: /educational-offerings/
+description: CPDSE develops and supports educational offers across bachelor, master, PhD, and life-long learning levels.
+permalink: /educational-offers/
 
 sections:
   - color: soft-white
