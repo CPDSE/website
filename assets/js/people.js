@@ -22,11 +22,11 @@
 
   /* ---- Mount points ---- */
   const root        = document.querySelector('#cpdse-people');
-  const vizMount    = root?.querySelector('#eco-viz');
+  const vizMount    = document.querySelector('#eco-viz');     // may live outside #cpdse-people (e.g. in page hero)
   const dirGrid     = root?.querySelector('#dir-grid');
   const dirFilters  = root?.querySelector('#dir-filters');
   const drawer      = root?.querySelector('#eco-drawer');
-  const ringsMount  = root?.querySelector('#cpdse-rings');
+  const ringsMount  = document.querySelector('#cpdse-rings'); // may live outside #cpdse-people
   const counterEl   = root?.querySelector('#dir-count');
 
   if (!root || !vizMount || !dirGrid || !drawer) {
