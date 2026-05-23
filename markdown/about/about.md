@@ -23,6 +23,7 @@ sections:
     title: "Five lines of active work"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."
     card_columns: 3
+    card_color: soft-white
     cards:
       - title: Community
         content: We build a strong and open community for pharmaceutical data science.

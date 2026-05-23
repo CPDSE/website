@@ -168,6 +168,22 @@
 .page-section--mint-gray .page-section__card-title  { color: var(--color-forest-green, #3C5E3E); }
 .page-section--mint-gray .page-section__card-body   { color: var(--color-charcoal, #333333); }
 
+/* Soft-white cards explicitly on a dark section — override dark-section defaults */
+.page-section--sage-green   .page-section__cards--soft-white .page-section__card,
+.page-section--forest-green .page-section__cards--soft-white .page-section__card {
+  background: var(--color-soft-white, #F9F9F9);
+  border-color: var(--card-border, #D9D9D9);
+  color: var(--color-charcoal, #333333);
+}
+.page-section--sage-green   .page-section__cards--soft-white .page-section__card-title,
+.page-section--forest-green .page-section__cards--soft-white .page-section__card-title {
+  color: var(--color-forest-green, #3C5E3E);
+}
+.page-section--sage-green   .page-section__cards--soft-white .page-section__card-body,
+.page-section--forest-green .page-section__cards--soft-white .page-section__card-body {
+  color: var(--color-charcoal, #333333);
+}
+
 /* Cards on sage-green section */
 .page-section--sage-green .page-section__card {
   background: rgba(249,249,249,0.12);
