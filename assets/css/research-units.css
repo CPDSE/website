@@ -271,12 +271,15 @@
 
 .ru-phd-supervisor {
   font-size: 0.8rem;
-  color: var(--muted, #8a9490);
+  color: var(--color-charcoal, #333333);
+  opacity: 0.75;
   margin: 0;
+  text-align: left;
 }
 .ru-phd-supervisor strong {
-  color: var(--charcoal, #333333);
-  font-weight: 400;
+  color: var(--color-charcoal, #333333);
+  opacity: 1;
+  font-weight: 600;
 }
 
 .ru-phd-project {
@@ -285,8 +288,6 @@
   line-height: 1.6;
   color: var(--charcoal, #333333);
   margin: 0;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border, #E7E2D1);
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
