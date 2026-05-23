@@ -262,6 +262,13 @@
 .page-section__column ul,
 .page-section__column ol { margin: 0.6rem 0 0.6rem 1.3rem; line-height: 1.7; font-size: 0.95rem; }
 
+.page-section--sage-green   .page-section__column h2,
+.page-section--sage-green   .page-section__column h3 { color: var(--color-warm-sand, #E4D7A1); }
+.page-section--forest-green .page-section__column h2,
+.page-section--forest-green .page-section__column h3 { color: var(--color-antique-gold, #D6C17C); }
+.page-section--mint-gray    .page-section__column h2,
+.page-section--mint-gray    .page-section__column h3 { color: var(--color-ivory-gold-tint, #F6F1DC); }
+
 /* ── Image + text layout ──────────────────────────────────────── */
 .page-section__image-text {
   display: grid;
@@ -282,6 +289,18 @@
 .page-section__image-body h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.5rem); color: var(--color-forest-green, #3C5E3E); margin: 1.5rem 0 0.5rem; line-height: 1.15; }
 .page-section__image-body h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--color-forest-green, #3C5E3E); margin-bottom: 0.75rem; line-height: 1.2; }
 .page-section__image-body h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--color-forest-green, #3C5E3E); margin-bottom: 0.5rem; }
+
+.page-section--sage-green .page-section__image-body h1,
+.page-section--sage-green .page-section__image-body h2,
+.page-section--sage-green .page-section__image-body h3 { color: var(--color-warm-sand, #E4D7A1); }
+
+.page-section--forest-green .page-section__image-body h1,
+.page-section--forest-green .page-section__image-body h2,
+.page-section--forest-green .page-section__image-body h3 { color: var(--color-antique-gold, #D6C17C); }
+
+.page-section--mint-gray .page-section__image-body h1,
+.page-section--mint-gray .page-section__image-body h2,
+.page-section--mint-gray .page-section__image-body h3 { color: var(--color-ivory-gold-tint, #F6F1DC); }
 .page-section__image-body p  { margin: 0.6rem 0; line-height: 1.7; }
 .page-section__image-body ul,
 .page-section__image-body ol { margin: 0.6rem 0 0.6rem 1.3rem; line-height: 1.7; }
