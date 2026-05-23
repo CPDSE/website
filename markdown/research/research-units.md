@@ -12,31 +12,31 @@ sections:
     include: department-grid.html
     departments:
       - uni: UCPH
-        name: Department of Drug Design and Pharmacology
+        name: Dept. of Drug Design and Pharmacology
         url: https://drug.ku.dk/
 
       - uni: UCPH
-        name: Department of Pharmacy
+        name: Dept. of Pharmacy
         url: https://pharmacy.ku.dk/
 
       - uni: UCPH
-        name: Department of Computer Science
+        name: Dept. of Computer Science
         url: https://di.ku.dk/english/
 
       - uni: UCPH
-        name: Department of Science Education
+        name: Dept. of Science Education
         url: https://www.ind.ku.dk/english/
 
       - uni: SDU
-        name: Department of Physics, Chemistry and Pharmacy
+        name: Dept. of Physics, Chemistry and Pharmacy
         url: https://www.sdu.dk/en/fkf
 
       - uni: SDU
-        name: Department of Public Health
+        name: Dept. of Public Health
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/ist
 
       - uni: SDU
-        name: Department of Mathematics and Computer Science
+        name: Dept. of Mathematics and Computer Science
         url: https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi
 
   - color: sage-green
@@ -95,7 +95,7 @@ sections:
         department: Clinical Pharmacology & Pharmacy
         uni: SDU
         quote: >-
-          Professor of pharmacoepidemiology at the Department of Public Health. He specializes
+          Professor of pharmacoepidemiology at the Dept. of Public Health. He specializes
           in analyzing registry data on drug use patterns and effects, investigating both known
           and unknown effects of pharmaceutical treatments with a focus on rational drug use
           and deprescribing.
@@ -114,7 +114,7 @@ sections:
         department: Science Education
         uni: UCPH
         quote: >-
-          A specialist from the Department of Science Education. He researches the didactics
+          A specialist from the Dept. of Science Education. He researches the didactics
           of the laboratory, focusing on how students engage with scientific inquiry and the
           epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
 
