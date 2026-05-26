@@ -8,6 +8,9 @@ markdown: kramdown
 permalink: /:categories/:title/
 future: true
 
+exclude:
+  - _posts/news/_template.md   # reference template, not a real post
+
 plugins:
   - jekyll-feed
 

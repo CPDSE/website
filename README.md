@@ -196,19 +196,35 @@ Renders a custom HTML partial from `_includes/`. The full section data is passed
 
 Individual news items live in [`_posts/news/`](_posts/news/). The filename must follow the format `YYYY-MM-DD-slug.md`.
 
+### 📝 Create a new news post (one click)
+
+[**→ Open GitHub's "create new file" editor pre-filled with the news post template**](https://github.com/CPDSE/website/new/main/_posts/news?filename=YYYY-MM-DD-slug.md&value=---%0Alayout%3A%20post%0Atitle%3A%20%22Your%20post%20title%20here%22%0Adate%3A%202026-05-26%0Acategory%3A%20Announcement%0Adescription%3A%20One-sentence%20summary%20shown%20in%20the%20news%20feed.%0A---%0A%0AOpening%20paragraph%20%E2%80%94%20keep%20it%20short%20and%20direct.%20This%20is%20what%20readers%20see%20in%20the%20news%20feed%20preview%2C%20so%20make%20it%20count.%0A%0A%23%23%20A%20subheading%0A%0AMarkdown%20formatting%20works%20here.%20You%20can%20use%20%2A%2Abold%20text%2A%2A%2C%20%2Aitalic%20text%2A%2C%20and%20%5Bexternal%20links%5D%28https%3A%2F%2Fexample.com%29.%0A%0A%23%23%23%20A%20smaller%20subheading%0A%0A-%20Bullet%20list%20item%20one%0A-%20Bullet%20list%20item%20two%0A-%20Bullet%20list%20item%20three%0A%0A1.%20Numbered%20list%0A2.%20Works%20the%20same%20way%0A3.%20Each%20item%20on%20its%20own%20line%0A%0A%3E%20A%20blockquote%20%E2%80%94%20useful%20for%20pull-quotes%20or%20short%20citations.%0A%0AYou%20can%20also%20use%20%60inline%20code%60%20and%20fenced%20code%20blocks%3A%0A%0A%60%60%60r%0A%23%20Example%20R%20snippet%0Alibrary%28tidyverse%29%0Adf%20%25%3E%25%20filter%28year%20%3D%3D%202026%29%0A%60%60%60%0A%0AFor%20images%2C%20place%20the%20file%20under%20%60%2Fassets%2Fimages%2F%60%20and%20reference%20it%20like%3A%0A%0A%21%5BAlt%20text%20describing%20the%20image%5D%28%2Fassets%2Fimages%2Fexample.jpg%29%0A%0AYou%20can%20also%20create%20tables%3A%0A%0A%7C%20Column%20A%20%7C%20Column%20B%20%7C%20Column%20C%20%7C%0A%7C---%7C---%7C---%7C%0A%7C%20Row%201%20%20%20%20%7C%20Value%20%20%20%20%7C%2042%20%20%20%20%20%20%20%7C%0A%7C%20Row%202%20%20%20%20%7C%20Value%20%20%20%20%7C%2088%20%20%20%20%20%20%20%7C%0A%0AClose%20with%20a%20short%20call-to-action%20paragraph%20or%20link%2C%20e.g.%20%22%5BRead%20more%20on%20our%20research%20page%5D%28%2Fresearchers-units%2F%29%22.%0A)
+
+The editor opens with the frontmatter and a markdown-formatting demo already in place. You only need to:
+
+1. Replace `YYYY-MM-DD-slug.md` in the filename field with the real date and a short slug
+2. Edit the title, date, category, description, and body
+3. Click **"Commit new file"** at the bottom of the page
+
+### Fallback: copy from the reference template
+
+If you'd rather copy-paste manually (or you're working locally), the same template lives at [`_posts/news/_template.md`](_posts/news/_template.md). It is excluded from the Jekyll build (declared in `_config.yml`), so it never shows up as a real post.
+
+### Post frontmatter
+
 ```yaml
 ---
 layout: post
 title: "Post headline"
 date: 2026-05-23
-category: news
+category: Announcement
 description: One-sentence summary shown in the news feed.
 ---
 
 Post body in markdown.
 ```
 
-Set `future: true` is already enabled in `_config.yml`, so posts with future dates are built and visible on the site.
+`future: true` is already enabled in `_config.yml`, so posts with future dates are built and visible on the site.
 
 ---
 
