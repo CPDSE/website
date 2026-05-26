@@ -1,4 +1,4 @@
-﻿---
+---
 layout: people
 title: People
 eyebrow: Who are we

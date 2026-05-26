@@ -1,4 +1,4 @@
-﻿---
+---
 layout: news-events
 title: News & Events
 permalink: /news-events/

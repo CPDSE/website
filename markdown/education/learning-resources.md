@@ -1,4 +1,4 @@
-﻿---
+---
 layout: learning-resources
 title: Learning resources
 eyebrow: Education

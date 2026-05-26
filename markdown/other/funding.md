@@ -1,4 +1,4 @@
-﻿---
+---
 layout: sectioned-page
 title: Funding
 eyebrow: About CPDSE

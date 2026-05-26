@@ -1,4 +1,4 @@
-﻿---
+---
 layout: sectioned-page
 title: Student Code Club
 eyebrow: Education

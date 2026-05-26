@@ -1,4 +1,4 @@
-﻿---
+---
 layout: contact
 title: Contact
 eyebrow: Get in touch

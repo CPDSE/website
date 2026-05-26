@@ -1,4 +1,4 @@
-﻿---
+---
 layout: sectioned-page
 title: About CPDSE
 eyebrow: Who are we
