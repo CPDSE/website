@@ -11,8 +11,10 @@ Files are listed in nav-bar order. Click the path to open the file.
 | Nav item | File to edit | Notes |
 |---|---|---|
 | **Home** | [`markdown/home/index.md`](markdown/home/index.md) | Sections-based; hero text in frontmatter |
+| — *timeline milestones* | [`_data/milestones.yml`](_data/milestones.yml) | Feeds the "Our Vision" milestone timeline; one entry per dot |
 | **News & Events** | [`markdown/news/news-events.md`](markdown/news/news-events.md) | Page intro; individual posts in [`_posts/news/`](_posts/news/) |
 | — *individual posts* | [`_posts/news/`](_posts/news/) | One `.md` file per post; date in filename |
+| — *convergence talks* | [`_data/convergence_talks.yml`](_data/convergence_talks.yml) | Upcoming talk schedule; past talks live in `news-events.md` |
 | **About CPDSE** | [`markdown/about/about.md`](markdown/about/about.md) | Sections-based |
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |
 | **Corporate Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
