@@ -228,6 +228,16 @@ Post body in markdown.
 
 ---
 
+## Adding images
+
+Site images live in [`assets/images/`](assets/images/). Reference them in markdown with `/assets/images/filename.ext` (the leading `/` is important — it resolves to the site root, baseurl-aware).
+
+**Compress before committing.** Phone cameras and screenshots often produce 3–10 MB files that load slowly on mobile. Use [**squoosh.app**](https://squoosh.app) — a free, browser-based image compressor by Google. Drop the image in, pick **WebP** or **MozJPEG** on the right-hand panel, and aim for under 500 KB. WebP usually gives the best size-to-quality ratio for screenshots and photos and is supported by every modern browser.
+
+Naming convention: `Capitalised-With-Hyphens.webp` (or `.jpg`/`.png`). Avoid spaces.
+
+---
+
 ## People data
 
 The people visualisation and directory on the [People page](markdown/about/people.md) are driven by [`assets/data/people.json`](assets/data/people.json). Edit that file to add, remove, or update people.

@@ -10,7 +10,7 @@ sections:
   - color: soft-white
     title: "Why data science for pharmacists"
     image:
-      src: /assets/images/Why-Data-Science.jpg
+      src: /assets/images/Why-Data-Science.webp
       alt: R code in RStudio for pharmaceutical data analysis — tablet content, blood pressure, and drug release plots
       position: right
     content: |
