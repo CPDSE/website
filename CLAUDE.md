@@ -10,6 +10,21 @@ Every page has a `.md` source file. See `README.md` for the full table. **Never 
 
 ---
 
+## Do not change content the user did not ask about
+
+**Only modify the specific text, section, or element the user explicitly named.** Surrounding paragraphs, headings, links, images, lists, and YAML values must be left exactly as they are.
+
+- Do **not** rewrite, paraphrase, or "improve" copy that the user did not call out — even if it has typos, awkward phrasing, or grammar issues
+- Do **not** change wording, capitalisation, punctuation, or tone in unrelated sections
+- Do **not** swap images, alt text, URLs, or link labels outside the requested change
+- Do **not** reorder sections, cards, or list items unless asked
+- Do **not** "tidy up" YAML — keep existing keys, quoting style, and spacing intact for fields you aren't touching
+- If you notice a likely typo or factual issue while making a different change, **mention it in your reply** and let the user decide — do not fix it silently
+
+When in doubt about scope, ask before editing rather than guessing. A minimal, surgical change is always preferred over a broad sweep.
+
+---
+
 ## Colour system — four approved pairings only
 
 | `color:` value | Background | Headlines & eyebrows | Body text |
