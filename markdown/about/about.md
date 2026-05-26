@@ -17,7 +17,7 @@ sections:
       Data science is an integral core capability in life science workers and organisations.
 
       # Mission
-      To educate the workforce of pharmaceutical data science professionals and researchers. The center develops research-based education for the future workforce of 'data and drugs' bilinguals -- spanning bachelor, master, PhD and life-long learning levels.
+      We upgrade, transform and help deliver pharmaceutical educations so universities can supply well-educated and data-science savvy people -- spanning bachelor, master, PhD and life-long learning levels.
 
   - color: sage-green
     title: "Five lines of active work"
