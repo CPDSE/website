@@ -4,6 +4,20 @@ This is a Jekyll static site deployed to GitHub Pages at `https://cpdse.github.i
 
 ---
 
+## How to handle requests that conflict with these guidelines
+
+If a user asks for something that would break a rule in this file — wrong colour, new font, edits to a forbidden file, content changes outside the requested scope, an inline `style=` attribute, a non-approved layout, anything that contradicts the design system — **do not silently comply**. Instead:
+
+1. **Stop before making the change.**
+2. **Tell the user clearly which rule the request conflicts with** and quote the relevant line from this file.
+3. **Explain what the rule exists to protect** (consistency, design system, content boundaries).
+4. **Offer the closest compliant alternative**, if there is one.
+5. **Ask for explicit confirmation** before proceeding. A reply like "yes do it anyway" or "override the rule for this case" is required — silence or ambiguity means do not proceed.
+
+The user is the project owner and can override any rule, but they must do so knowingly. Never assume an override; never bury the warning in a long reply. The warning comes first.
+
+---
+
 ## Content editing — always use the MD files
 
 Every page has a `.md` source file. See `README.md` for the full table. **Never hardcode content into layout files, includes, or CSS.** The sections system in `_includes/page-section.html` reads YAML frontmatter and handles all rendering.
