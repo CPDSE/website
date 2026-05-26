@@ -10,8 +10,8 @@ sections:
   - color: soft-white
     title: "Why data science for pharmacists"
     image:
-      src: https://placehold.co/600x400/A9BBAA/3C5E3E?text=Image+coming+soon
-      alt: Placeholder — replace with a relevant image
+      src: /assets/images/Why-Data-Science.jpg
+      alt: R code in RStudio for pharmaceutical data analysis — tablet content, blood pressure, and drug release plots
       position: right
     content: |
       Pharmaceutical science generates more data than ever, from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly and communicate with data specialists, are at a fundamental advantage. CPDSE exists to close that gap.
