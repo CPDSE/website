@@ -4,26 +4,22 @@
 # gold dot and gold heading by default. Only one milestone should be flagged.
 
 - year: "2023 · Vision"
-  title: "The vision condenses"
-  description: "UCPH, SDU, foundations and stakeholders develop the vision and establish the frames."
+  title: "The Vision Condenses"
+  description: "People from UCPH, SDU, the foundations and stakeholders together develop the vision and establish the frames"
 
 - year: "2024 · Grant"
-  title: "Grant awarded"
-  description: "Collaboration agreements finalised. Centre Leader role announced."
+  title: "Grant Awarded"
+  description: "The grant from Novo Nordisk Foundation, the LEO Foundation, and the Lundbeck Foundation is awarded"
 
 - year: "2025 · Season 1"
-  title: "Idea to mobilisation"
-  description: "Centre leader and coordinator mobilise. Members take ownership of circles."
-
-- year: "2025 · Retreat"
-  title: "First CPDSE retreat"
-  description: "25 active CPDSE members evaluated Season 1 and planned Season 2."
+  title: "Idea to Mobilisation"
+  description: "Existing university staff, center leader and coordinator mobilize and take responsibility for sub-areas termed circles"
 
 - year: "2025 · Season 2"
-  title: "Acting outwards"
-  description: "Gradual shift from owning plans to acting and impacting outwards."
+  title: "From Mobilization to Perseverance and Clarity"
+  description: "Gradual shift from getting to know and owning plans to acting and impacting outwards"
 
-- year: "Today"
-  title: "Perseverance & clarity"
-  description: "Project maturity, upstaffing, clearer allocation of data scientists across courses."
+- year: "Season 3"
+  title: "Systematize, Service, Expose"
+  description: "Shifting our focus from internal center mobilization to aim for external impact"
   is_now: true
