@@ -44,17 +44,25 @@ sections:
     intro: CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science.
     include: phd-grid.html
     phd_students:
-      - name: Placeholder Student A
-        supervisor: Prof. Placeholder One
-        project: Graph-based representations of drug–target interactions for off-target prediction
+      - name: 
+        supervisor: Anton Pottegård
+        project: AI to strengthen transparency and reproducibility in real-world evidence (RWE) generation
 
-      - name: Placeholder Student B
-        supervisor: Prof. Placeholder Four
-        project: Designing a longitudinal curriculum for statistical literacy in MSc Pharmacy
+      - name: 
+        supervisor: Lotte Stig Nørgaard
+        project: LLM-assisted patient–pharmacist conversation to improve communication education
 
-      - name: Placeholder Student C
-        supervisor: Prof. Placeholder Six
-        project: Real-world evidence pipelines for adverse drug reaction surveillance in Danish registries
+      - name: 
+        supervisor: Wouter Boomsma
+        project: A Neurosymbolic Framework for Literature-Driven GPCR Interaction Modeling
+
+      - name: 
+        supervisor: Icaro Ariel Simon
+        project: From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors
+
+      - name: 
+        supervisor: Judith Kuntsche
+        project: Modeling release and redistribution of hydrophobic drugs from lipid nanocarriers
 
   - color: soft-white
     title: Group Leaders
