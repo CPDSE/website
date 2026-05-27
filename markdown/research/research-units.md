@@ -44,19 +44,19 @@ sections:
     intro: CPDSE co-funds and co-supervises PhD projects at the intersection of pharmaceutical sciences and data science.
     include: phd-grid.html
     phd_students:
-      - name: 
+      - name: ""
         supervisor: Anton Pottegård
         project: AI to strengthen transparency and reproducibility in real-world evidence (RWE) generation
 
-      - name: 
+      - name: ""
         supervisor: Lotte Stig Nørgaard
         project: LLM-assisted patient–pharmacist conversation to improve communication education
 
-      - name: 
+      - name: ""
         supervisor: Wouter Boomsma
         project: A Neurosymbolic Framework for Literature-Driven GPCR Interaction Modeling
 
-      - name: 
+      - name: ""
         supervisor: Icaro Ariel Simon
         project: From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors
 
