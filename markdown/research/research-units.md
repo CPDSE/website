@@ -74,7 +74,7 @@ sections:
         department: Data Science for Drug Design
         uni: UCPH
         quote: >-
-          Associate Professor specializing in Data Science for Drug Design. His work
+          Specializes in Data Science for Drug Design. His work
           bridges structural bioinformatics and cheminformatics, focusing on AI/ML
           applications for kinases and the development of open-science tools like the
           KLIFS database.
@@ -84,7 +84,7 @@ sections:
         department: Drug-related Data Science
         uni: UCPH
         quote: >-
-          Associate Professor focusing on drug-related data science and pharmacogenomics.
+          Focuses on drug-related data science and pharmacogenomics.
           He integrates large-scale biomedical data — from genomics to clinical biobanks —
           to understand how genetic variability influences drug responses and personalized medicine.
 
@@ -93,7 +93,7 @@ sections:
         department: Crystallography & Structural Chemistry
         uni: UCPH
         quote: >-
-          Associate Professor and a leader in crystallography and structural chemistry.
+          A leader in crystallography and structural chemistry.
           He applies deep learning and advanced algorithms to solve the phase problem in
           X-ray and electron diffraction, focusing on polymorphism and crystal stability
           in pharmaceuticals.
@@ -103,7 +103,7 @@ sections:
         department: Clinical Pharmacology & Pharmacy
         uni: SDU
         quote: >-
-          Professor of pharmacoepidemiology at the Dept. of Public Health. He specializes
+          Works in pharmacoepidemiology at the Dept. of Public Health. He specializes
           in analyzing registry data on drug use patterns and effects, investigating both known
           and unknown effects of pharmaceutical treatments with a focus on rational drug use
           and deprescribing.
@@ -113,7 +113,7 @@ sections:
         department: Computational Receptor Biology
         uni: UCPH
         quote: >-
-          Professor of Computational Receptor Biology and a powerhouse in GPCR research.
+          A powerhouse in Computational Receptor Biology and GPCR research.
           He leads the development of world-renowned databases like GPCRdb and applies big
           data science to uncover new drug targets and receptor signaling mechanisms.
 
@@ -131,7 +131,7 @@ sections:
         department: Physics, Chemistry and Pharmacy
         uni: SDU
         quote: >-
-          Professor of Theoretical and Computational Chemistry. His research focuses on
+          Works in Theoretical and Computational Chemistry. His research focuses on
           computational methods for studying molecular properties, particularly photon
           absorption phenomena and excited electronic states using density functional
           theory approaches.
@@ -141,7 +141,7 @@ sections:
         department: Pharmaceutical Informatics
         uni: UCPH
         quote: >-
-          Assistant Professor (Tenure Track) in Pharmaceutical Informatics. She utilizes
+          Works in Pharmaceutical Informatics. She utilizes
           mathematical modeling and Quantitative Systems Pharmacology (QSP) to bridge
           biological mechanisms with clinical outcomes, particularly for metabolic and
           cardiovascular diseases.
@@ -151,7 +151,7 @@ sections:
         department: Physics, Chemistry and Pharmacy
         uni: SDU
         quote: >-
-          Associate Professor specializing in the development and characterization of
+          Specializes in the development and characterization of
           lipid-based nanoparticulate drug delivery systems. Her work focuses on supercooled
           smectic nanoparticles and liposomal formulations, exploring how colloidal systems
           interact with biological membranes and their applications in pharmaceutical delivery.
@@ -171,7 +171,7 @@ sections:
         department: Pharmacovigilance
         uni: UCPH
         quote: >-
-          Professor of Pharmacovigilance and Head of the Pharmacovigilance Research Center.
+          Head of the Pharmacovigilance Research Center, working in Pharmacovigilance.
           His research utilizes big healthcare data and real-world evidence from national
           registers to monitor drug safety and adopt AI/ML for signal detection in large
           populations.
@@ -181,7 +181,7 @@ sections:
         department: Pharmacometrics
         uni: UCPH
         quote: >-
-          Associate Professor and leader of the Pharmacometrics Group. She focuses on
+          Leader of the Pharmacometrics Group. She focuses on
           population PK/PD modeling and simulations to optimize dosing regimens, utilizing
           mathematical tools to understand variability in drug response across various
           therapeutic areas.
