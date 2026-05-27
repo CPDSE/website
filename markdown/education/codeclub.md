@@ -33,11 +33,11 @@ sections:
 
           Pharma Data Hub, Odense
 
-          [Go to SDU page →](/website/codeclub-sdu/)
+          [Go to SDU page →](/codeclub-sdu/)
       - content: |
           **KU Pharma Student Coding Club**
 
           Building 21, Copenhagen
 
-          [Go to KU page →](/website/codeclub-ku/)
+          [Go to KU page →](/codeclub-ku/)
 ---
