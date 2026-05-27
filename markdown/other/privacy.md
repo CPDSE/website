@@ -1,4 +1,4 @@
-﻿---
+---
 layout: sectioned-page
 title: Privacy Policy
 eyebrow: Legal

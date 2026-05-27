@@ -1,4 +1,4 @@
-﻿---
+---
 layout: bare
 title: KU Pharma Student Coding Club
 eyebrow: Education
