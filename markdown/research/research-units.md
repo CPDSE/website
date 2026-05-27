@@ -58,7 +58,7 @@ sections:
 
       - name: ""
         supervisor: Icaro Ariel Simon
-        project: From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors
+        project: "From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors"
 
       - name: ""
         supervisor: Judith Kuntsche
