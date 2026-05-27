@@ -60,7 +60,7 @@ sections:
         supervisor: Icaro Ariel Simon
         project: From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors
 
-      - name: 
+      - name: ""
         supervisor: Judith Kuntsche
         project: Modeling release and redistribution of hydrophobic drugs from lipid nanocarriers
 
