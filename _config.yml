@@ -33,8 +33,6 @@ nav:
     children:
       - title: Educational Vision
         url: /educational-vision/
-      - title: Educational Offers
-        url: /educational-offers/
       - title: Learning Resources
         url: /learning-resources/
       - title: Student Code Club
