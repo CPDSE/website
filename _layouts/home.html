@@ -357,7 +357,7 @@ layout: default
     var tip = document.getElementById('sg-tip');
 
     var xScale = d3.scalePoint().domain(years).range([0, iW]).padding(0.1);
-    var stack = d3.stack().keys(areas).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut);
+    var stack = d3.stack().keys(areas).offset(d3.stackOffsetSilhouette).order(d3.stackOrderInsideOut);
     var series = stack(tableData);
 
     var yExtent = [
