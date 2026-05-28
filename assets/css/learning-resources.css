@@ -29,6 +29,8 @@ html { overflow-x: clip; }
   padding-inline: var(--space-md);
 }
 .cpdse-learn__band--ivory { background: var(--color-sage-green, #5F7D61); color: var(--color-soft-white, #F9F9F9); }
+.cpdse-learn__band--ivory .cpdse-learn__eyebrow { color: var(--color-warm-sand, #E4D7A1); opacity: 0.85; }
+.cpdse-learn__band--ivory .cpdse-learn__title   { color: var(--color-warm-sand, #E4D7A1); }
 .cpdse-learn__band--stats { padding-block: calc(var(--space-md) + 0.5rem); }
 
 .cpdse-learn__inner {
