@@ -8,17 +8,12 @@ permalink: /codeclub/
 sections:
   - color: soft-white
     title: What We Do
-    intro: The Student Code Club is a community for students who want to develop their data science skills in a supportive, collaborative environment — no prior experience required.
-    content: |
-      - **Regular coding sessions** where you can work on your own projects or join guided exercises
-      - **Workshops** covering Python, R, data analysis, visualisation, and more
-      - **Consultations** to help you tackle specific challenges in your studies or research
-      - **A welcoming space** to ask questions, get unstuck, and learn from peers
+    intro: The Student Code Club is a community for students who want to develop their data science skills in a supportive, collaborative environment.
 
   - color: sage-green
     title: Who Can Join
     content: |
-      Any student at the University of Copenhagen or the University of Southern Denmark interested in data science — regardless of your background or skill level.
+      Any student at the University of Copenhagen or the University of Southern Denmark interested in data science, regardless of your background or skill level.
 
       All our teaching materials are available openly on GitHub. Feel free to explore, learn, and contribute.
 
@@ -26,7 +21,7 @@ sections:
 
   - color: soft-white
     title: Find Your Club
-    intro: We run sessions at both partner universities — find the one closest to you.
+    intro: We run sessions at both partner universities:
     columns:
       - content: |
           **SDU Pharma Code Club**
