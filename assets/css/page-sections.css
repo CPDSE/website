@@ -187,6 +187,10 @@
 .page-section--forest-green .page-section__cards--soft-white .page-section__card-body {
   color: var(--color-charcoal, #333333);
 }
+.page-section--sage-green   .page-section__cards--soft-white .page-section__card-link,
+.page-section--forest-green .page-section__cards--soft-white .page-section__card-link {
+  color: var(--color-forest-green, #3C5E3E);
+}
 
 /* Cards on sage-green section */
 .page-section--sage-green .page-section__card {
