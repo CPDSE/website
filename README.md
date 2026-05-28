@@ -17,7 +17,7 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **About CPDSE** | [`markdown/about/about.md`](markdown/about/about.md) | Sections-based |
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |
 | **Corporate Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
-| **Educational Vision** | [`markdown/education/educational-vision.md`](markdown/education/educational-vision.md) | Competency model pillar text under `pillars:` |
+| **Educational Programme** | [`markdown/education/educational-vision.md`](markdown/education/educational-vision.md) | Competency model pillar text under `pillars:` |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
 | — SDU Code Club | [`markdown/education/codeclub-sdu.md`](markdown/education/codeclub-sdu.md) | Sections-based |

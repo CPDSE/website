@@ -31,8 +31,8 @@ nav:
         url: /corporate-identity/
   - title: Education
     children:
-      - title: Educational Vision
-        url: /educational-vision/
+      - title: Educational Programme
+        url: /educational-programme/
       - title: Learning Resources
         url: /learning-resources/
       - title: Student Code Club
