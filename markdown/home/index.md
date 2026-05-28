@@ -13,9 +13,7 @@ stats:
   - number: 60
     suffix: "+"
     label: People
-  - number: 7
-    label: Departments
-  - number: 6
+  - number: 5
     label: PhD Scholarships
   - number: 7
     label: Courses Upgrading
