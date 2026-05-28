@@ -22,7 +22,7 @@ sections:
 
   - color: soft-white
     title: Find Your Club
-    intro: We run sessions at both partner universities:
+    intro: "We run sessions at both partner universities:"
     columns:
       - content: |
           **SDU Pharma Code Club**
