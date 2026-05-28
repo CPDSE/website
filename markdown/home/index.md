@@ -13,10 +13,12 @@ stats:
   - number: 60
     suffix: "+"
     label: People
-  - number: 5
-    label: PhD Scholarships
+  - number: 7
+    label: Departments
   - number: 7
     label: Courses Upgrading
+  - number: 5
+    label: PhD Scholarships
 
 # ── About intro ───────────────────────────────────────────────────────────────
 about_label: About CPDSE
