@@ -3,7 +3,7 @@ layout: sectioned-page
 title: Student Code Club
 eyebrow: Education
 description: A safe and collaborative space to practice and advance your data science skills.
-permalink: /codeclub/
+permalink: /code-club/
 
 sections:
   - color: soft-white

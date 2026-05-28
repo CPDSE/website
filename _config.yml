@@ -36,7 +36,7 @@ nav:
       - title: Learning Resources
         url: /learning-resources/
       - title: Student Code Club
-        url: /codeclub/
+        url: /code-club/
       - title: Educational Git
         url: https://github.com/CPDSE-EDUX
         external: true

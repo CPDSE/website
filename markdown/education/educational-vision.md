@@ -34,7 +34,7 @@ sections:
       - title: Pharma Code Club
         content: "A collaborative space for students at SDU or KU to practice and advance data science skills. All levels welcome — no prior experience required."
         link_text: "About the Code Club →"
-        link_url: /codeclub/
+        link_url: /code-club/
 
       - title: Open Source Materials
         content: "All data science curriculum materials — datasets, notebooks, exercises, and more — are openly published so anyone can learn, reuse, and contribute."
