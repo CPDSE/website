@@ -3490,39 +3490,30 @@ a { color: inherit; }
   }
 }
 
-/* ── Sankey visualization (homepage about strip) ────────────────── */
-.sankey-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  width: 100%;
+/* ── EMA chord diagram (homepage about strip) ───────────────────── */
+.arc-seg { cursor: pointer; transition: opacity 0.15s; }
+.chord-path { cursor: pointer; transition: opacity 0.15s; }
+#chord-tip {
+  position: absolute; display: none;
+  background: #fff;
+  border: 0.5px solid rgba(51, 51, 51, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px; font-size: 13px;
+  color: var(--color-charcoal, #333333); max-width: 180px;
+  z-index: 99; pointer-events: none; line-height: 1.5;
 }
-.sankey-year-btns { display: flex; gap: 0.4rem; }
-.sankey-yr-btn {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(214,193,124,0.35);
-  background: transparent;
-  color: rgba(249,249,249,0.55);
-  cursor: pointer;
-  transition: all 0.15s;
+#chord-hint {
+  font-size: 11px;
+  color: rgba(51, 51, 51, 0.45);
+  text-align: center;
+  margin-bottom: 6px;
 }
-.sankey-yr-btn:hover { border-color: rgba(214,193,124,0.65); color: rgba(249,249,249,0.85); }
-.sankey-yr-btn.is-active {
-  background: rgba(214,193,124,0.15);
-  border-color: var(--color-antique-gold, #D6C17C);
-  color: var(--color-antique-gold, #D6C17C);
-}
-.sankey-tooltip {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--color-antique-gold, #D6C17C);
-  margin: 0.4rem 0 0;
-  min-height: 1.2em;
-  opacity: 0;
-  transition: opacity 0.15s;
+#chord-detail {
+  margin-top: 10px; padding: 10px 14px;
+  background: rgba(60, 94, 62, 0.06);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--color-charcoal, #333333);
+  display: none;
+  line-height: 1.6;
 }

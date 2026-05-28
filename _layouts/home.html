@@ -46,10 +46,11 @@ layout: default
   <div class="about-inner fade-in">
     <div class="about-visual">
       <div class="about-viz" id="pharma-live-viz">
-        <div class="about-viz-hint" style="margin:0 0 0.5rem;text-align:left;">Drug use by setting &amp; age group · DDD · 2025</div>
-        <svg id="sankey-svg" aria-label="Sankey diagram of Danish drug use by setting and age group"></svg>
-        <p class="sankey-tooltip" id="sankey-tooltip"></p>
-        <div class="about-viz-hint">Hover any flow for details · <a href="https://www.medstat.dk/" target="_blank" rel="noopener">SOURCE: MEDSTAT.DK</a> · ATC CLASSIFICATION</div>
+        <h2 class="sr-only">Interactive radial chord diagram showing EMA-approved medicines by company and therapeutic area. Tap or hover any arc or ribbon to explore.</h2>
+        <p id="chord-hint">Tap any arc or ribbon to explore</p>
+        <div id="chord-tip"></div>
+        <svg id="chord-svg" width="100%" viewBox="0 0 360 360" style="display:block;max-width:420px;margin:0 auto;"></svg>
+        <div id="chord-detail"></div>
       </div>
     </div>
     <div class="about-text">
@@ -264,7 +265,6 @@ layout: default
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <script>
   // ─── OUR VISION TIMELINE — auto-looping carousel ──────────────────────────
   (() => {
@@ -305,120 +305,176 @@ layout: default
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
   })();
 
-  // ─── ABOUT VIZ: MEDSTAT SANKEY ─────────────────────────────────────────────
+  // ─── ABOUT VIZ: EMA RADIAL CHORD ───────────────────────────────────────────
   (function () {
-    if (typeof d3 === 'undefined' || typeof d3.sankey === 'undefined') return;
+    if (typeof d3 === 'undefined') return;
 
-    const snapshotUrl = '{{ "/assets/data/medstat_hierarchy_snapshot.json" | relative_url }}';
-
-    const COLORS = {
-      setting:  ['#3C5E3E', '#5A7A5C'],
-      category: ['#D6C17C', '#C8A855', '#BA9445', '#AC8035', '#9E6E25', '#905C15'],
-      age:      ['#A9BBAA', '#8DA49F', '#728D94']
+    var AREA_COLORS = {
+      "Oncology":"#7F77DD","Immunology":"#1D9E75","Cardiovascular":"#D85A30",
+      "Neurology":"#D4537E","Rare disease":"#378ADD","Metabolic":"#BA7517",
+      "Infectious":"#639922","Respiratory":"#888780"
     };
+    var COMPANY_COLOR = "#B4B2A9";
 
-    function sumLeaves(node) {
-      if (!node.children || !node.children.length) return Number(node.value) || 0;
-      return node.children.reduce(function (s, c) { return s + sumLeaves(c); }, 0);
-    }
+    var rawData = [
+      {company:"MSD",area:"Oncology",drug:"Keytruda",ind:17},
+      {company:"BMS",area:"Oncology",drug:"Opdivo",ind:14},
+      {company:"AstraZeneca",area:"Oncology",drug:"Imfinzi",ind:5},
+      {company:"Roche",area:"Oncology",drug:"Tecentriq",ind:6},
+      {company:"Daiichi/AZ",area:"Oncology",drug:"Enhertu",ind:4},
+      {company:"AstraZeneca",area:"Oncology",drug:"Calquence",ind:3},
+      {company:"Sanofi",area:"Immunology",drug:"Dupixent",ind:7},
+      {company:"AbbVie",area:"Immunology",drug:"Skyrizi",ind:4},
+      {company:"Janssen",area:"Immunology",drug:"Tremfya",ind:3},
+      {company:"AbbVie",area:"Immunology",drug:"Rinvoq",ind:6},
+      {company:"Bayer",area:"Cardiovascular",drug:"Xarelto",ind:6},
+      {company:"BMS/Pfizer",area:"Cardiovascular",drug:"Eliquis",ind:5},
+      {company:"Novartis",area:"Cardiovascular",drug:"Entresto",ind:2},
+      {company:"Novartis",area:"Cardiovascular",drug:"Leqvio",ind:2},
+      {company:"Roche",area:"Neurology",drug:"Ocrevus",ind:2},
+      {company:"Novartis",area:"Neurology",drug:"Kesimpta",ind:1},
+      {company:"Novartis",area:"Neurology",drug:"Mayzent",ind:1},
+      {company:"Biogen",area:"Neurology",drug:"Qalsody",ind:1},
+      {company:"Alnylam",area:"Rare disease",drug:"Onpattro",ind:1},
+      {company:"Novartis",area:"Rare disease",drug:"Luxturna",ind:1},
+      {company:"Bluebird",area:"Rare disease",drug:"Zynteglo",ind:1},
+      {company:"BioMarin",area:"Rare disease",drug:"Voxzogo",ind:1},
+      {company:"Novo Nordisk",area:"Metabolic",drug:"Ozempic",ind:3},
+      {company:"Boehringer",area:"Metabolic",drug:"Jardiance",ind:4},
+      {company:"AbbVie",area:"Infectious",drug:"Maviret",ind:1},
+      {company:"Gilead",area:"Infectious",drug:"Sunlenca",ind:1},
+      {company:"Pfizer",area:"Infectious",drug:"Paxlovid",ind:1},
+      {company:"AstraZeneca",area:"Respiratory",drug:"Trixeo",ind:1},
+      {company:"AstraZeneca",area:"Respiratory",drug:"Fasenra",ind:1},
+      {company:"Sanofi",area:"Respiratory",drug:"Dupixent(R)",ind:2}
+    ];
 
-    function buildGraph(yearRoot) {
-      var nodes = [], links = [], idx = {};
-      var cnt = { setting: 0, category: 0, age: 0 };
+    var areas = Object.keys(AREA_COLORS);
+    var companies = [];
+    rawData.forEach(function (d) {
+      if (companies.indexOf(d.company) === -1) companies.push(d.company);
+    });
+    var nodes = areas.concat(companies);
+    var N = nodes.length;
+    var idx = {};
+    nodes.forEach(function (n, i) { idx[n] = i; });
 
-      function addNode(name, group) {
-        if (name in idx) return idx[name];
-        var color = COLORS[group][cnt[group]++] || '#888';
-        idx[name] = nodes.length;
-        nodes.push({ name: name, group: group, color: color });
-        return idx[name];
-      }
-
-      yearRoot.children.forEach(function (setting) {
-        var si = addNode(setting.name, 'setting');
-        setting.children.forEach(function (cat) {
-          var ci = addNode(cat.name, 'category');
-          links.push({ source: si, target: ci, value: Math.max(1, sumLeaves(cat)) });
-          cat.children.forEach(function (age) {
-            var ai = addNode(age.name, 'age');
-            links.push({ source: ci, target: ai, value: Math.max(1, sumLeaves(age)) });
-          });
-        });
+    var totals = nodes.map(function (_, i) {
+      var t = 0;
+      rawData.forEach(function (d) {
+        if (nodes[i] === d.area || nodes[i] === d.company) t += d.ind;
       });
-      return { nodes: nodes, links: links };
+      return t;
+    });
+    var total = d3.sum(totals) / 2;
+    var gap = 0.013;
+    var startA = [], endA = [];
+    var angle = -Math.PI / 2;
+    totals.forEach(function (t, i) {
+      startA[i] = angle;
+      endA[i] = angle + (t / total) * (2 * Math.PI - gap * N);
+      angle = endA[i] + gap;
+    });
+
+    var svgEl = document.getElementById('chord-svg');
+    if (!svgEl) return;
+    var svg = d3.select(svgEl);
+    var g = svg.append('g').attr('transform', 'translate(180,180)');
+    var tip = document.getElementById('chord-tip');
+    var detail = document.getElementById('chord-detail');
+
+    var outerR = 148, innerR = 130;
+    var arcGen = d3.arc().innerRadius(innerR).outerRadius(outerR);
+
+    function showTip(event, html) {
+      var rect = svgEl.getBoundingClientRect();
+      var isTouch = event.touches && event.touches.length > 0;
+      var cx = isTouch ? event.touches[0].clientX : event.clientX;
+      var cy = isTouch ? event.touches[0].clientY : event.clientY;
+      tip.style.left = Math.min(cx - rect.left + 12, rect.width - 192) + 'px';
+      tip.style.top = Math.max(cy - rect.top - 40, 2) + 'px';
+      tip.style.display = 'block';
+      tip.innerHTML = html;
+    }
+    function hideTip() { tip.style.display = 'none'; }
+
+    function highlight(nodeId) {
+      svg.selectAll('.chord-path').attr('fill-opacity',
+        function (d) { return !nodeId || d.company===nodeId || d.area===nodeId ? 0.45 : 0.03; })
+        .attr('stroke-opacity',
+        function (d) { return !nodeId || d.company===nodeId || d.area===nodeId ? 0.6 : 0.04; });
+      svg.selectAll('.arc-seg').attr('fill-opacity',
+        function (d) { return !nodeId || d===nodeId ? (areas.indexOf(d) >= 0 ? 0.9 : 0.65) : 0.15; });
     }
 
-    function render(graph) {
-      var svgEl = document.getElementById('sankey-svg');
-      if (!svgEl) return;
-      var wrap = svgEl.closest('.about-viz');
-      var W = (wrap ? wrap.clientWidth : 460) || 460;
-      var H = 340;
-      var m = { top: 12, right: 140, bottom: 12, left: 118 };
+    nodes.forEach(function (name, i) {
+      var isArea = areas.indexOf(name) >= 0;
+      var color = isArea ? AREA_COLORS[name] : COMPANY_COLOR;
 
-      svgEl.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-      svgEl.style.cssText = 'width:100%;height:' + H + 'px;overflow:visible;display:block;';
-      svgEl.innerHTML = '';
+      g.append('path').datum(name)
+        .attr('class', 'arc-seg')
+        .attr('d', arcGen({startAngle: startA[i], endAngle: endA[i]}))
+        .attr('fill', color)
+        .attr('fill-opacity', isArea ? 0.9 : 0.65)
+        .on('mouseenter', function (event) {
+          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
+          var totalInd = d3.sum(related, function (d) { return d.ind; });
+          showTip(event, '<strong>' + name + '</strong><br>' + (isArea ? 'Therapeutic area' : 'Company') + ' · ' + totalInd + ' indication' + (totalInd !== 1 ? 's' : ''));
+          highlight(name);
+        })
+        .on('mouseleave', function () { hideTip(); highlight(null); })
+        .on('click', function () {
+          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
+          detail.style.display = 'block';
+          detail.innerHTML = '<strong>' + name + '</strong> — ' + (isArea ? 'Therapeutic area' : 'Company') + '<br>'
+            + related.map(function (d) { return '<span style="color:var(--color-charcoal,#333);opacity:0.65">' + d.drug + '</span> · ' + d.ind + ' ind.'; }).join('  ·  ');
+        })
+        .on('touchstart', function (event) {
+          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
+          var totalInd = d3.sum(related, function (d) { return d.ind; });
+          showTip(event, '<strong>' + name + '</strong><br>' + (isArea ? 'Therapeutic area' : 'Company') + ' · ' + totalInd + ' indication' + (totalInd !== 1 ? 's' : ''));
+          highlight(name);
+          event.preventDefault();
+        }, {passive: false})
+        .on('touchend', function () { hideTip(); highlight(null); });
+    });
 
-      var sk = d3.sankey()
-        .nodeWidth(15)
-        .nodePadding(11)
-        .extent([[m.left, m.top], [W - m.right, H - m.bottom]])
-        .nodeSort(null);
+    var offsets = nodes.map(function (_, i) { return startA[i]; });
 
-      var layout = sk({
-        nodes: graph.nodes.map(function (d) { return Object.assign({}, d); }),
-        links: graph.links.map(function (d) { return Object.assign({}, d); })
-      });
+    rawData.forEach(function (d) {
+      var ai = idx[d.area], ci = idx[d.company];
+      var aFrac = d.ind / totals[ai];
+      var cFrac = d.ind / totals[ci];
+      var a0s = offsets[ai], a0e = a0s + (endA[ai] - startA[ai]) * aFrac; offsets[ai] = a0e;
+      var a1s = offsets[ci], a1e = a1s + (endA[ci] - startA[ci]) * cFrac; offsets[ci] = a1e;
 
-      var svg = d3.select(svgEl);
-      var tip = document.getElementById('sankey-tooltip');
+      g.append('path').datum(d)
+        .attr('class', 'chord-path')
+        .attr('d', d3.ribbonArrow().radius(innerR - 2).padAngle(0.003)({
+          source: {startAngle: a0s, endAngle: a0e},
+          target: {startAngle: a1s, endAngle: a1e}
+        }))
+        .attr('fill', AREA_COLORS[d.area]).attr('fill-opacity', 0.18)
+        .attr('stroke', AREA_COLORS[d.area]).attr('stroke-width', 0.5).attr('stroke-opacity', 0.4)
+        .on('mouseenter', function (event) {
+          showTip(event, '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : ''));
+          highlight(d.area);
+        })
+        .on('mouseleave', function () { hideTip(); highlight(null); })
+        .on('click', function () {
+          detail.style.display = 'block';
+          detail.innerHTML = '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : '');
+        })
+        .on('touchstart', function (event) {
+          showTip(event, '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : ''));
+          highlight(d.area);
+          event.preventDefault();
+        }, {passive: false})
+        .on('touchend', function () { hideTip(); highlight(null); });
+    });
 
-      svg.append('g').attr('fill', 'none')
-        .selectAll('path').data(layout.links).join('path')
-          .attr('d', d3.sankeyLinkHorizontal())
-          .attr('stroke', function (d) { return d.source.color; })
-          .attr('stroke-width', function (d) { return Math.max(1.5, d.width); })
-          .attr('opacity', 0.28)
-          .on('mouseenter', function (event, d) {
-            d3.select(this).attr('opacity', 0.62);
-            if (tip) {
-              tip.textContent = d.source.name.split(' (')[0] + ' → ' + d.target.name + ': ' + d.value + ' DDD';
-              tip.style.opacity = '1';
-            }
-          })
-          .on('mouseleave', function () {
-            d3.select(this).attr('opacity', 0.28);
-            if (tip) tip.style.opacity = '0';
-          });
-
-      svg.append('g').selectAll('rect').data(layout.nodes).join('rect')
-        .attr('x', function (d) { return d.x0; })
-        .attr('y', function (d) { return d.y0; })
-        .attr('width', function (d) { return d.x1 - d.x0; })
-        .attr('height', function (d) { return Math.max(1, d.y1 - d.y0); })
-        .attr('fill', function (d) { return d.color; })
-        .attr('rx', 3);
-
-      svg.append('g')
-        .style('font', '9.5px "DM Mono",monospace')
-        .style('fill', 'rgba(249,249,249,0.82)')
-        .selectAll('text').data(layout.nodes).join('text')
-          .attr('x', function (d) { return d.x0 < W / 2 ? d.x1 + 7 : d.x0 - 7; })
-          .attr('y', function (d) { return (d.y0 + d.y1) / 2; })
-          .attr('dy', '0.35em')
-          .attr('text-anchor', function (d) { return d.x0 < W / 2 ? 'start' : 'end'; })
-          .text(function (d) {
-            var n = d.name.replace(/ \(ATC[^)]*\)/g, '').replace('/Anesthesia', '');
-            return n.length > 19 ? n.slice(0, 18) + '…' : n;
-          });
-    }
-
-    fetch(snapshotUrl, { cache: 'no-store' })
-      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-      .then(function (d) {
-        if (d.years && d.years['2025']) render(buildGraph(d.years['2025']));
-      })
-      .catch(function () {});
+    svgEl.addEventListener('touchstart', function (e) {
+      if (e.target === svgEl) { hideTip(); highlight(null); }
+    }, {passive: true});
   })();
 </script>
