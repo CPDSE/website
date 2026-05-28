@@ -3504,7 +3504,7 @@ a { color: inherit; }
 }
 #sg-legend {
   display: flex; flex-wrap: wrap; gap: 10px;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 .sg-legend-item {
   display: flex; align-items: center; gap: 5px;
