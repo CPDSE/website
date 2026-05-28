@@ -3460,12 +3460,6 @@ a { color: inherit; }
   100% { box-shadow: none; }
 }
 
-/* Marks the most recent milestone as the persistent "now" */
-.vision-timeline-item--now .vision-timeline-dot {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .vision-grid {
