@@ -8,7 +8,8 @@ permalink: /codeclub/
 sections:
   - color: soft-white
     title: What We Do
-    intro: The Student Code Club is a community for students who want to develop their data science skills in a supportive, collaborative environment.
+    content: |
+      The Student Code Club is a community for students who want to develop their data science skills in a supportive, collaborative environment.
 
   - color: sage-green
     title: Who Can Join
