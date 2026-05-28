@@ -49,6 +49,7 @@
 .page-section--forest-green h3,
 .page-section--forest-green h4 { color: var(--color-antique-gold, #D6C17C); }
 
+.page-section--soft-white a   { color: var(--color-antique-gold, #D6C17C); }
 .page-section--sage-green a   { color: rgba(249,249,249,0.85); }
 .page-section--mint-gray a    { color: var(--color-forest-green, #3C5E3E); }
 .page-section--forest-green a { color: var(--color-warm-sand, #E4D7A1); }
