@@ -8,19 +8,21 @@ permalink: /contact/
 sections:
   - color: soft-white
     title: "Write us"
-    content: |
-      [cpdse@ku.dk](mailto:cpdse@ku.dk)
+    card_columns: 2
+    card_color: soft-white
+    cards:
+      - title: E-Mail
+        content: |
+          [cpdse@ku.dk](mailto:cpdse@ku.dk)
+      - title: "Delivery address (post and packages)"
+        content: |
+          NBB BA1  
+          Varemodtagelsen  
+          Jagtvej 128  
+          2200 Copenhagen N  
+          Denmark
 
-  - color: sage-green
-    title: "Delivery address (post and packages)"
-    content: |
-      NBB BA1  
-      Varemodtagelsen  
-      Jagtvej 128  
-      2200 Copenhagen N  
-      Denmark
-
-      Att. (The Center for Pharmaceutical Data Science Education, Building 21, 1. floor + name of recipient)
+          Att. (The Center for Pharmaceutical Data Science Education, Building 21, 1. floor + name of recipient)
 
   - color: soft-white
     title: "Visiting addresses"
