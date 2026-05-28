@@ -3490,30 +3490,27 @@ a { color: inherit; }
   }
 }
 
-/* ── EMA chord diagram (homepage about strip) ───────────────────── */
-.arc-seg { cursor: pointer; transition: opacity 0.15s; }
-.chord-path { cursor: pointer; transition: opacity 0.15s; }
-#chord-tip {
+/* ── EMA streamgraph (homepage about strip) ──────────────────────── */
+.stream-path { cursor: pointer; transition: opacity 0.15s; }
+.stream-path:hover { opacity: 1 !important; }
+#sg-tip {
   position: absolute; display: none;
   background: #fff;
   border: 0.5px solid rgba(51, 51, 51, 0.15);
   border-radius: 8px;
-  padding: 8px 12px; font-size: 13px;
-  color: var(--color-charcoal, #333333); max-width: 180px;
+  padding: 8px 12px; font-size: 12px;
+  color: var(--color-charcoal, #333333); max-width: 200px;
   z-index: 99; pointer-events: none; line-height: 1.5;
 }
-#chord-hint {
-  font-size: 11px;
-  color: rgba(51, 51, 51, 0.45);
-  text-align: center;
-  margin-bottom: 6px;
+#sg-legend {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 10px;
 }
-#chord-detail {
-  margin-top: 10px; padding: 10px 14px;
-  background: rgba(60, 94, 62, 0.06);
-  border-radius: 8px;
-  font-size: 13px;
-  color: var(--color-charcoal, #333333);
-  display: none;
-  line-height: 1.6;
+.sg-legend-item {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: rgba(51, 51, 51, 0.6);
+}
+.sg-legend-swatch {
+  width: 18px; height: 3px; border-radius: 2px;
+  display: inline-block;
 }

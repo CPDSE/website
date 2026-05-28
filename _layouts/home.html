@@ -46,12 +46,13 @@ layout: default
   <div class="about-inner fade-in">
     <div class="about-visual">
       <div class="about-viz" id="pharma-live-viz">
-        <h2 class="sr-only">Interactive radial chord diagram showing EMA-approved medicines by company and therapeutic area. Tap or hover any arc or ribbon to explore.</h2>
-        <p id="chord-hint">Tap any arc or ribbon to explore</p>
-        <div id="chord-tip"></div>
-        <svg id="chord-svg" width="100%" viewBox="0 0 360 360" style="display:block;max-width:420px;margin:0 auto;"></svg>
-        <div id="chord-detail"></div>
-        <div class="about-viz-hint">EMA-approved indications · <a href="https://www.ema.europa.eu/" target="_blank" rel="noopener">SOURCE: EMA</a></div>
+        <h2 class="sr-only">Streamgraph showing cumulative EMA drug approvals by therapeutic area from 2008 to 2023. Stream width represents number of approvals per year.</h2>
+        <div id="sg-legend"></div>
+        <div id="sg-tip"></div>
+        <div style="position:relative;">
+          <svg id="sg-svg" width="100%" viewBox="0 0 500 280" style="display:block;"></svg>
+        </div>
+        <div class="about-viz-hint">EMA-approved indications 2008–2023 · <a href="https://www.ema.europa.eu/" target="_blank" rel="noopener">SOURCE: EMA</a></div>
       </div>
     </div>
     <div class="about-text">
@@ -306,176 +307,127 @@ layout: default
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
   })();
 
-  // ─── ABOUT VIZ: EMA RADIAL CHORD ───────────────────────────────────────────
+  // ─── ABOUT VIZ: EMA STREAMGRAPH ─────────────────────────────────────────────
   (function () {
     if (typeof d3 === 'undefined') return;
 
-    var AREA_COLORS = {
+    var COLORS = {
       "Oncology":"#7F77DD","Immunology":"#1D9E75","Cardiovascular":"#D85A30",
       "Neurology":"#D4537E","Rare disease":"#378ADD","Metabolic":"#BA7517",
       "Infectious":"#639922","Respiratory":"#888780"
     };
-    var COMPANY_COLOR = "#B4B2A9";
+    var areas = Object.keys(COLORS);
 
-    var rawData = [
-      {company:"MSD",area:"Oncology",drug:"Keytruda",ind:17},
-      {company:"BMS",area:"Oncology",drug:"Opdivo",ind:14},
-      {company:"AstraZeneca",area:"Oncology",drug:"Imfinzi",ind:5},
-      {company:"Roche",area:"Oncology",drug:"Tecentriq",ind:6},
-      {company:"Daiichi/AZ",area:"Oncology",drug:"Enhertu",ind:4},
-      {company:"AstraZeneca",area:"Oncology",drug:"Calquence",ind:3},
-      {company:"Sanofi",area:"Immunology",drug:"Dupixent",ind:7},
-      {company:"AbbVie",area:"Immunology",drug:"Skyrizi",ind:4},
-      {company:"Janssen",area:"Immunology",drug:"Tremfya",ind:3},
-      {company:"AbbVie",area:"Immunology",drug:"Rinvoq",ind:6},
-      {company:"Bayer",area:"Cardiovascular",drug:"Xarelto",ind:6},
-      {company:"BMS/Pfizer",area:"Cardiovascular",drug:"Eliquis",ind:5},
-      {company:"Novartis",area:"Cardiovascular",drug:"Entresto",ind:2},
-      {company:"Novartis",area:"Cardiovascular",drug:"Leqvio",ind:2},
-      {company:"Roche",area:"Neurology",drug:"Ocrevus",ind:2},
-      {company:"Novartis",area:"Neurology",drug:"Kesimpta",ind:1},
-      {company:"Novartis",area:"Neurology",drug:"Mayzent",ind:1},
-      {company:"Biogen",area:"Neurology",drug:"Qalsody",ind:1},
-      {company:"Alnylam",area:"Rare disease",drug:"Onpattro",ind:1},
-      {company:"Novartis",area:"Rare disease",drug:"Luxturna",ind:1},
-      {company:"Bluebird",area:"Rare disease",drug:"Zynteglo",ind:1},
-      {company:"BioMarin",area:"Rare disease",drug:"Voxzogo",ind:1},
-      {company:"Novo Nordisk",area:"Metabolic",drug:"Ozempic",ind:3},
-      {company:"Boehringer",area:"Metabolic",drug:"Jardiance",ind:4},
-      {company:"AbbVie",area:"Infectious",drug:"Maviret",ind:1},
-      {company:"Gilead",area:"Infectious",drug:"Sunlenca",ind:1},
-      {company:"Pfizer",area:"Infectious",drug:"Paxlovid",ind:1},
-      {company:"AstraZeneca",area:"Respiratory",drug:"Trixeo",ind:1},
-      {company:"AstraZeneca",area:"Respiratory",drug:"Fasenra",ind:1},
-      {company:"Sanofi",area:"Respiratory",drug:"Dupixent(R)",ind:2}
+    var medicines = [
+      {area:"Cardiovascular",year:2008,ind:6},{area:"Cardiovascular",year:2011,ind:5},
+      {area:"Metabolic",year:2014,ind:4},
+      {area:"Oncology",year:2015,ind:17},{area:"Oncology",year:2015,ind:14},{area:"Cardiovascular",year:2015,ind:2},
+      {area:"Immunology",year:2017,ind:7},{area:"Immunology",year:2017,ind:3},
+      {area:"Infectious",year:2017,ind:1},{area:"Oncology",year:2017,ind:6},
+      {area:"Neurology",year:2018,ind:2},{area:"Rare disease",year:2018,ind:1},
+      {area:"Rare disease",year:2018,ind:1},{area:"Respiratory",year:2018,ind:1},
+      {area:"Oncology",year:2018,ind:5},{area:"Metabolic",year:2018,ind:3},
+      {area:"Immunology",year:2019,ind:4},{area:"Immunology",year:2019,ind:6},
+      {area:"Rare disease",year:2019,ind:1},{area:"Respiratory",year:2019,ind:2},
+      {area:"Cardiovascular",year:2020,ind:2},{area:"Oncology",year:2020,ind:3},
+      {area:"Neurology",year:2020,ind:1},{area:"Respiratory",year:2020,ind:1},
+      {area:"Oncology",year:2021,ind:4},{area:"Rare disease",year:2021,ind:1},
+      {area:"Neurology",year:2021,ind:1},
+      {area:"Infectious",year:2022,ind:1},{area:"Infectious",year:2022,ind:1},
+      {area:"Neurology",year:2023,ind:1}
     ];
 
-    var areas = Object.keys(AREA_COLORS);
-    var companies = [];
-    rawData.forEach(function (d) {
-      if (companies.indexOf(d.company) === -1) companies.push(d.company);
-    });
-    var nodes = areas.concat(companies);
-    var N = nodes.length;
-    var idx = {};
-    nodes.forEach(function (n, i) { idx[n] = i; });
+    var years = d3.range(2008, 2024);
 
-    var totals = nodes.map(function (_, i) {
-      var t = 0;
-      rawData.forEach(function (d) {
-        if (nodes[i] === d.area || nodes[i] === d.company) t += d.ind;
+    var tableData = years.map(function (y) {
+      var row = {year: y};
+      areas.forEach(function (a) {
+        row[a] = d3.sum(medicines.filter(function (m) { return m.year === y && m.area === a; }), function (m) { return m.ind; });
       });
-      return t;
-    });
-    var total = d3.sum(totals) / 2;
-    var gap = 0.013;
-    var startA = [], endA = [];
-    var angle = -Math.PI / 2;
-    totals.forEach(function (t, i) {
-      startA[i] = angle;
-      endA[i] = angle + (t / total) * (2 * Math.PI - gap * N);
-      angle = endA[i] + gap;
+      return row;
     });
 
-    var svgEl = document.getElementById('chord-svg');
+    var W = 500, H = 280, mL = 30, mR = 10, mT = 16, mB = 28;
+    var iW = W - mL - mR, iH = H - mT - mB;
+
+    var svgEl = document.getElementById('sg-svg');
     if (!svgEl) return;
     var svg = d3.select(svgEl);
-    var g = svg.append('g').attr('transform', 'translate(180,180)');
-    var tip = document.getElementById('chord-tip');
-    var detail = document.getElementById('chord-detail');
+    var g = svg.append('g').attr('transform', 'translate(' + mL + ',' + mT + ')');
+    var tip = document.getElementById('sg-tip');
 
-    var outerR = 148, innerR = 130;
-    var arcGen = d3.arc().innerRadius(innerR).outerRadius(outerR);
+    var xScale = d3.scalePoint().domain(years).range([0, iW]).padding(0.1);
+    var stack = d3.stack().keys(areas).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut);
+    var series = stack(tableData);
 
-    function showTip(event, html) {
-      var rect = svgEl.getBoundingClientRect();
-      var isTouch = event.touches && event.touches.length > 0;
-      var cx = isTouch ? event.touches[0].clientX : event.clientX;
-      var cy = isTouch ? event.touches[0].clientY : event.clientY;
-      tip.style.left = Math.min(cx - rect.left + 12, rect.width - 192) + 'px';
-      tip.style.top = Math.max(cy - rect.top - 40, 2) + 'px';
-      tip.style.display = 'block';
-      tip.innerHTML = html;
-    }
-    function hideTip() { tip.style.display = 'none'; }
+    var yExtent = [
+      d3.min(series, function (s) { return d3.min(s, function (d) { return d[0]; }); }),
+      d3.max(series, function (s) { return d3.max(s, function (d) { return d[1]; }); })
+    ];
+    var yScale = d3.scaleLinear().domain(yExtent).range([iH, 0]);
 
-    function highlight(nodeId) {
-      svg.selectAll('.chord-path').attr('fill-opacity',
-        function (d) { return !nodeId || d.company===nodeId || d.area===nodeId ? 0.45 : 0.03; })
-        .attr('stroke-opacity',
-        function (d) { return !nodeId || d.company===nodeId || d.area===nodeId ? 0.6 : 0.04; });
-      svg.selectAll('.arc-seg').attr('fill-opacity',
-        function (d) { return !nodeId || d===nodeId ? (areas.indexOf(d) >= 0 ? 0.9 : 0.65) : 0.15; });
-    }
+    var areaGen = d3.area()
+      .x(function (d) { return xScale(d.data.year); })
+      .y0(function (d) { return yScale(d[0]); })
+      .y1(function (d) { return yScale(d[1]); })
+      .curve(d3.curveCatmullRom.alpha(0.5));
 
-    nodes.forEach(function (name, i) {
-      var isArea = areas.indexOf(name) >= 0;
-      var color = isArea ? AREA_COLORS[name] : COMPANY_COLOR;
+    g.selectAll('.stream-path').data(series).join('path')
+      .attr('class', 'stream-path')
+      .attr('d', areaGen)
+      .attr('fill', function (d) { return COLORS[d.key]; })
+      .attr('fill-opacity', 0.82)
+      .attr('opacity', 1)
+      .on('mousemove', function (event, d) {
+        var rect = svgEl.getBoundingClientRect();
+        var closestYear = years.reduce(function (a, b) {
+          return Math.abs(xScale(b) - (event.clientX - rect.left) * (W / rect.width) + mL) <
+                 Math.abs(xScale(a) - (event.clientX - rect.left) * (W / rect.width) + mL) ? b : a;
+        });
+        var val = d3.sum(medicines.filter(function (m) { return m.year === closestYear && m.area === d.key; }), function (m) { return m.ind; });
+        var count = medicines.filter(function (m) { return m.year === closestYear && m.area === d.key; }).length;
+        tip.style.display = 'block';
+        tip.style.left = (event.clientX - rect.left + 12) + 'px';
+        tip.style.top = (event.clientY - rect.top - 10) + 'px';
+        tip.innerHTML = '<strong>' + d.key + '</strong><br>' + closestYear + ': ' + count + ' drug' + (count !== 1 ? 's' : '') + ', ' + val + ' indication' + (val !== 1 ? 's' : '');
+        svg.selectAll('.stream-path').attr('opacity', function (p) { return p.key === d.key ? 1 : 0.2; });
+      })
+      .on('mouseleave', function () {
+        tip.style.display = 'none';
+        svg.selectAll('.stream-path').attr('opacity', 1);
+      });
 
-      g.append('path').datum(name)
-        .attr('class', 'arc-seg')
-        .attr('d', arcGen({startAngle: startA[i], endAngle: endA[i]}))
-        .attr('fill', color)
-        .attr('fill-opacity', isArea ? 0.9 : 0.65)
-        .on('mouseenter', function (event) {
-          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
-          var totalInd = d3.sum(related, function (d) { return d.ind; });
-          showTip(event, '<strong>' + name + '</strong><br>' + (isArea ? 'Therapeutic area' : 'Company') + ' · ' + totalInd + ' indication' + (totalInd !== 1 ? 's' : ''));
-          highlight(name);
-        })
-        .on('mouseleave', function () { hideTip(); highlight(null); })
-        .on('click', function () {
-          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
-          detail.style.display = 'block';
-          detail.innerHTML = '<strong>' + name + '</strong> — ' + (isArea ? 'Therapeutic area' : 'Company') + '<br>'
-            + related.map(function (d) { return '<span style="color:var(--color-charcoal,#333);opacity:0.65">' + d.drug + '</span> · ' + d.ind + ' ind.'; }).join('  ·  ');
-        })
-        .on('touchstart', function (event) {
-          var related = rawData.filter(function (d) { return d.company===name || d.area===name; });
-          var totalInd = d3.sum(related, function (d) { return d.ind; });
-          showTip(event, '<strong>' + name + '</strong><br>' + (isArea ? 'Therapeutic area' : 'Company') + ' · ' + totalInd + ' indication' + (totalInd !== 1 ? 's' : ''));
-          highlight(name);
-          event.preventDefault();
-        }, {passive: false})
-        .on('touchend', function () { hideTip(); highlight(null); });
+    /* year labels along the x axis */
+    g.selectAll('.sg-xlabel').data(years.filter(function (y) { return y % 2 === 0; })).join('text')
+      .attr('class', 'sg-xlabel')
+      .attr('x', function (d) { return xScale(d); }).attr('y', iH + 16)
+      .attr('text-anchor', 'middle').attr('font-size', '10px')
+      .attr('fill', 'rgba(51,51,51,0.45)').text(function (d) { return d; });
+
+    /* embedded area labels on widest streams */
+    series.forEach(function (s) {
+      var mid = s[Math.floor(s.length / 2)];
+      var midY = (yScale(mid[0]) + yScale(mid[1])) / 2;
+      var span = Math.abs(yScale(mid[1]) - yScale(mid[0]));
+      if (span > 16) {
+        g.append('text')
+          .attr('x', xScale(years[Math.floor(years.length / 2)]))
+          .attr('y', midY)
+          .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+          .attr('font-size', '9px').attr('font-weight', '500')
+          .attr('fill', 'white').attr('pointer-events', 'none')
+          .attr('fill-opacity', 0.9)
+          .text(s.key.length > 10 ? s.key.slice(0, 9) + '…' : s.key);
+      }
     });
 
-    var offsets = nodes.map(function (_, i) { return startA[i]; });
-
-    rawData.forEach(function (d) {
-      var ai = idx[d.area], ci = idx[d.company];
-      var aFrac = d.ind / totals[ai];
-      var cFrac = d.ind / totals[ci];
-      var a0s = offsets[ai], a0e = a0s + (endA[ai] - startA[ai]) * aFrac; offsets[ai] = a0e;
-      var a1s = offsets[ci], a1e = a1s + (endA[ci] - startA[ci]) * cFrac; offsets[ci] = a1e;
-
-      g.append('path').datum(d)
-        .attr('class', 'chord-path')
-        .attr('d', d3.ribbonArrow().radius(innerR - 2).padAngle(0.003)({
-          source: {startAngle: a0s, endAngle: a0e},
-          target: {startAngle: a1s, endAngle: a1e}
-        }))
-        .attr('fill', AREA_COLORS[d.area]).attr('fill-opacity', 0.18)
-        .attr('stroke', AREA_COLORS[d.area]).attr('stroke-width', 0.5).attr('stroke-opacity', 0.4)
-        .on('mouseenter', function (event) {
-          showTip(event, '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : ''));
-          highlight(d.area);
-        })
-        .on('mouseleave', function () { hideTip(); highlight(null); })
-        .on('click', function () {
-          detail.style.display = 'block';
-          detail.innerHTML = '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : '');
-        })
-        .on('touchstart', function (event) {
-          showTip(event, '<strong>' + d.drug + '</strong><br>' + d.company + ' → ' + d.area + '<br>' + d.ind + ' indication' + (d.ind > 1 ? 's' : ''));
-          highlight(d.area);
-          event.preventDefault();
-        }, {passive: false})
-        .on('touchend', function () { hideTip(); highlight(null); });
-    });
-
-    svgEl.addEventListener('touchstart', function (e) {
-      if (e.target === svgEl) { hideTip(); highlight(null); }
-    }, {passive: true});
+    /* colour legend */
+    var legDiv = document.getElementById('sg-legend');
+    if (legDiv) {
+      areas.forEach(function (a) {
+        legDiv.innerHTML += '<span class="sg-legend-item">'
+          + '<span class="sg-legend-swatch" style="background:' + COLORS[a] + '"></span>' + a + '</span>';
+      });
+    }
   })();
 </script>
