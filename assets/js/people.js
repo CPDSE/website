@@ -245,7 +245,14 @@
       </button>`;
     };
 
-    let state = { circle: 'All', uni: 'All', ring: 'All', q: '' };
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlCircle = urlParams.get('circle');
+    const initialCircle = (urlCircle && circleOpts.includes(urlCircle)) ? urlCircle : 'All';
+    let state = { circle: initialCircle, uni: 'All', ring: 'All', q: '' };
+    if (initialCircle !== 'All') {
+      const sel = dirFilters.querySelector('select[data-filter="circle"]');
+      if (sel) sel.value = initialCircle;
+    }
 
     // Match the search query across name + research + skills + title.
     // Multiple words are AND-ed and matched at WORD-PREFIX (so "stat" finds

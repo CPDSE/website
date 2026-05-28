@@ -3426,3 +3426,89 @@ a { color: inherit; }
   border-radius: 2px; flex-shrink: 0;
   display: inline-block;
 }
+
+/* Circle links row (About page — sits below the circle cluster) */
+.circle-links {
+  max-width: 620px;
+  margin: clamp(1.75rem, 4vw, 2.75rem) auto 0;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid rgba(249, 249, 249, 0.18);
+}
+.circle-links__heading {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-antique-gold, #D6C17C);
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+.circle-links__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(0.4rem, 1.2vw, 0.9rem);
+  justify-items: center;
+}
+.circle-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+a.circle-link:hover,
+a.circle-link:focus-visible {
+  transform: translateY(-3px);
+  outline: none;
+}
+a.circle-link:hover .circle-link__photo,
+a.circle-link:focus-visible .circle-link__photo {
+  box-shadow: 0 0 0 2px rgba(15, 26, 20, 0.18), 0 6px 14px rgba(15, 26, 20, 0.28);
+}
+.circle-link__photo {
+  width: clamp(54px, 9vw, 78px);
+  height: clamp(54px, 9vw, 78px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-soft-white, #F9F9F9);
+  border: 3px solid var(--cl-color, var(--color-antique-gold, #D6C17C));
+  box-shadow: 0 0 0 2px rgba(15, 26, 20, 0.18);
+  display: block;
+}
+.circle-link__circle {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cl-color, var(--color-antique-gold, #D6C17C));
+  margin-top: 0.55rem;
+  line-height: 1.15;
+}
+.circle-link__name {
+  font-family: var(--font-display);
+  font-size: clamp(0.72rem, 0.95vw, 0.85rem);
+  color: var(--color-soft-white, #F9F9F9);
+  line-height: 1.2;
+  margin-top: 0.15rem;
+}
+/* Per-circle accent colour — matches the bubble palette above */
+.circle-link--mission       { --cl-color: #D6C17C; } /* on forest-green bubble, use gold accent for legibility */
+.circle-link--education     { --cl-color: #D6C17C; }
+.circle-link--communication { --cl-color: #A9BBAA; }
+.circle-link--research      { --cl-color: #A9BBAA; }
+.circle-link--facility      { --cl-color: #E4D7A1; }
+.circle-link--community     { --cl-color: #F6F1DC; }
+
+@media (max-width: 720px) {
+  .circle-links__list { grid-template-columns: repeat(3, 1fr); row-gap: 1.1rem; }
+}
+@media (max-width: 380px) {
+  .circle-links__list { grid-template-columns: repeat(2, 1fr); }
+}

@@ -13,6 +13,7 @@
       </div>
       <div class="ru-leader-right">
         {% if leader.quote %}<p class="ru-leader-quote">{{ leader.quote }}</p>{% endif %}
+        {% if leader.url %}<a class="ru-leader-link" href="{{ leader.url }}" target="_blank" rel="noopener">{{ leader.url_label | default: "Group website" }} ↗</a>{% endif %}
       </div>
     </div>
   {% endfor %}

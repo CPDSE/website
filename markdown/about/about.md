@@ -114,5 +114,41 @@ sections:
         </div>
       </div>
     </div>
+
+    <div class="circle-links fade-in" aria-label="Circle links — Season 3">
+      <h3 class="circle-links__heading">Circle Links — Season 3</h3>
+      <div class="circle-links__list">
+        <a class="circle-link circle-link--mission" href="{{ '/people/?circle=Mission' | relative_url }}" title="See all members of the Mission circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/morten-lindow.jpg' | relative_url }}" alt="Morten Lindow" loading="lazy">
+          <span class="circle-link__circle">Mission</span>
+          <span class="circle-link__name">Morten Lindow</span>
+        </a>
+        <a class="circle-link circle-link--education" href="{{ '/people/?circle=Education' | relative_url }}" title="See all members of the Education circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/lykke-pedersen.jpg' | relative_url }}" alt="Lykke Pedersen" loading="lazy">
+          <span class="circle-link__circle">Education</span>
+          <span class="circle-link__name">Lykke Pedersen</span>
+        </a>
+        <a class="circle-link circle-link--communication" href="{{ '/people/?circle=Outreach+%26+Communication' | relative_url }}" title="See all members of the Outreach & Communication circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/jacob-fredegaard-hansen.jpg' | relative_url }}" alt="Jacob Fredegaard Hansen" loading="lazy">
+          <span class="circle-link__circle">Communication</span>
+          <span class="circle-link__name">Jacob F. Hansen</span>
+        </a>
+        <a class="circle-link circle-link--research" href="{{ '/people/?circle=Research' | relative_url }}" title="See all members of the Research circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/philipp-hans.jpg' | relative_url }}" alt="Philipp Hans" loading="lazy">
+          <span class="circle-link__circle">Research</span>
+          <span class="circle-link__name">Philipp Hans</span>
+        </a>
+        <a class="circle-link circle-link--facility" href="{{ '/people/?circle=Data+Science+Facility' | relative_url }}" title="See all members of the Data Science Facility circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/kasper-harpsoe.jpg' | relative_url }}" alt="Kasper Harpsøe" loading="lazy">
+          <span class="circle-link__circle">Data Facility</span>
+          <span class="circle-link__name">Kasper Harpsøe</span>
+        </a>
+        <a class="circle-link circle-link--community" href="{{ '/people/?circle=Community+%26+Org' | relative_url }}" title="See all members of the Community &amp; Org circle">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/jeppe-hartmann.jpg' | relative_url }}" alt="Jeppe Hartmann" loading="lazy">
+          <span class="circle-link__circle">Community &amp; Org</span>
+          <span class="circle-link__name">Jeppe Hartmann</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>

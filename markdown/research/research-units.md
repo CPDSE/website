@@ -83,6 +83,8 @@ sections:
         name: Alexander Hausser
         department: Drug-related Data Science
         uni: UCPH
+        url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/pharmacoinformatics/
+        url_label: Hauser Group
         quote: >-
           Focuses on drug-related data science and pharmacogenomics.
           He integrates large-scale biomedical data — from genomics to clinical biobanks —
@@ -112,6 +114,8 @@ sections:
         name: David Gloriam
         department: Computational Receptor Biology
         uni: UCPH
+        url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/gloriam-group/
+        url_label: Gloriam Group
         quote: >-
           A powerhouse in Computational Receptor Biology and GPCR research.
           He leads the development of world-renowned databases like GPCRdb and applies big
@@ -140,6 +144,8 @@ sections:
         name: Jane Knöchel
         department: Pharmaceutical Informatics
         uni: UCPH
+        url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/integrated-mechanistic-data-driven-modeling-group/
+        url_label: Knöchel Group
         quote: >-
           Works in Pharmaceutical Informatics. She utilizes
           mathematical modeling and Quantitative Systems Pharmacology (QSP) to bridge
@@ -170,6 +176,8 @@ sections:
         name: Morten Andersen
         department: Pharmacovigilance
         uni: UCPH
+        url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/pharmacovigilance-research-group/
+        url_label: Pharmacovigilance Research Center
         quote: >-
           Head of the Pharmacovigilance Research Center, working in Pharmacovigilance.
           His research utilizes big healthcare data and real-world evidence from national
@@ -180,6 +188,8 @@ sections:
         name: Trine Meldgård Lund
         department: Pharmacometrics
         uni: UCPH
+        url: https://drug.ku.dk/research-sections/translational-and-clinical-pharmacology/pharmacometrics/
+        url_label: Pharmacometrics Research Group
         quote: >-
           Leader of the Pharmacometrics Group. She focuses on
           population PK/PD modeling and simulations to optimize dosing regimens, utilizing
