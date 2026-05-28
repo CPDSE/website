@@ -180,6 +180,7 @@
 .logo-canvas--ivory   { background: var(--color-ivory, #F6F1DC); }
 .logo-canvas--sand    { background: var(--color-warm-sand, #E4D7A1); }
 .logo-canvas--charcoal{ background: #333333; }
+.logo-canvas--gold    { background: var(--color-antique-gold, #D6C17C); }
 .logo-canvas--white   {
   background: var(--color-soft-white, #F9F9F9);
   border-bottom: 1px solid var(--border, #d4cfc4);
