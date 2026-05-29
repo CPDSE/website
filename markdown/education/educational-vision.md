@@ -16,9 +16,11 @@ sections:
     content: |
       Pharmaceutical science generates more data than ever, from high-throughput screening to real-world patient records. The students and researchers who can work with that data directly and communicate with data specialists, are at a fundamental advantage. CPDSE exists to close that gap.
 
-      Integrating data science into pharmaceutical workflows marks a pivotal shift from manual, siloed analysis to a unified, computational framework that accelerates discovery and guarantees reproducibility. By harnessing the power of free, industry-standard open-source ecosystems like Python and R, organizations can seamlessly execute complex tasks across the entire development spectrum — from immediate lab data analysis and high-precision image processing to sophisticated predictive simulations.
+      Integrating data science into pharmaceutical workflows marks a pivotal shift from manual, siloed analysis to a unified, computational framework that accelerates discovery and guarantees reproducibility. By harnessing the power of free, industry-standard open-source ecosystems like Python and R, organizations can seamlessly execute complex tasks across the entire development spectrum ranging from lab data analysis and image processing to predictive simulations.
 
       This transition not only democratizes access to advanced analytics but also establishes a robust foundation for data-driven innovation in modern pharmacy.
+
+      [Track the progress of data science integration into the pharmacy curricula at SDU and UCPH →](https://cpdse.ku.dk/edu_circle/pharma-ds-dashboard_server_static_mock.html){:target="_blank"}
 
   - color: sage-green
     title: "What We Offer"
