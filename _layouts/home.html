@@ -46,13 +46,18 @@ layout: default
   <div class="about-inner fade-in">
     <div class="about-visual">
       <div class="about-viz" id="pharma-live-viz">
-        <div class="about-viz-hint" style="margin:0 0 0.5rem;text-align:center;">EMA-approved indications 2008–2023 · <a href="https://www.ema.europa.eu/" target="_blank" rel="noopener">SOURCE: EMA</a></div>
+        <div class="about-viz-header">
+          <span class="section-label" style="color:var(--color-forest-green)">{{ page.viz_label }}</span>
+          <h2>{{ page.viz_headline }}</h2>
+        </div>
         <h2 class="sr-only">Streamgraph showing cumulative EMA drug approvals by therapeutic area from 2008 to 2023. Stream width represents number of approvals per year.</h2>
         <div id="sg-tip"></div>
         <div style="position:relative;">
           <svg id="sg-svg" width="100%" viewBox="0 0 500 280" style="display:block;"></svg>
         </div>
         <div id="sg-legend"></div>
+        <p class="about-viz-caption">{{ page.viz_caption }}</p>
+        <div class="about-viz-hint">{{ page.viz_source_label }} · <a href="{{ page.viz_source_url }}" target="_blank" rel="noopener">SOURCE: EMA</a></div>
       </div>
     </div>
     <div class="about-text">

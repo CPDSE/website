@@ -20,6 +20,13 @@ stats:
   - number: 5
     label: PhD Scholarships
 
+# ── Data viz showcase ─────────────────────────────────────────────────────────
+viz_label: Data Science in Action
+viz_headline: "Pharma data, <em>visualized</em>"
+viz_caption: "This streamgraph was built by our team using open EMA data — an example of the pharmaceutical data literacy we develop in our courses."
+viz_source_label: "EMA-approved indications 2008–2023"
+viz_source_url: "https://www.ema.europa.eu/"
+
 # ── About intro ───────────────────────────────────────────────────────────────
 about_label: About CPDSE
 about_headline: "Pharmaceutical sciences,<br><em>boosted by data science</em>"
