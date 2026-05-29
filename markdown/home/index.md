@@ -22,7 +22,7 @@ stats:
 
 # ── Data viz showcase ─────────────────────────────────────────────────────────
 viz_label: Pharma Data Science in Action
-viz_caption: "This streamgraph was created using open EMA data, as an example of the pharmaceutical data literacy we are working to establish.."
+viz_caption: "This streamgraph was created using open EMA data, as an example of the pharmaceutical data literacy we are working to establish."
 viz_source_label: "EMA-approved indications 2008–2023"
 viz_source_url: "https://www.ema.europa.eu/"
 
