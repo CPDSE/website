@@ -33,12 +33,12 @@ sections:
         content: |
           Building 21, 1. Floor  
           Jagtvej 160  
-          2100 Copenhagen O  
+          2100 Copenhagen Ø  
           Denmark
       - title: SDU
         content: |
-          Building 21O, 2. Floor  
+          Building 21O, 2. Floor ([PharmaDataHub](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cb992423b7d0540c9a84c))
           Campusvej 55  
           5230 Odense M  
-          Denmark ([PharmaDataHub](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cb992423b7d0540c9a84c))
+          Denmark 
 ---
