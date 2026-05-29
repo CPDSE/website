@@ -20,7 +20,7 @@ sections:
 
       This transition not only democratizes access to advanced analytics but also establishes a robust foundation for data-driven innovation in modern pharmacy.
 
-      [Track the progress of data science integration into the pharmacy curricula at SDU and UCPH →](https://cpdse.ku.dk/edu_circle/pharma-ds-dashboard_server_static_mock.html){:target="_blank"}
+      [Track the progress of data science integration into the pharmacy curricula at SDU and UCPH →](https://cpdse.ku.dk/edu_circle/pharma-ds-dashboard_server_static_mock.html){:.btn .btn-primary target="_blank"}
 
   - color: sage-green
     title: "What We Offer"
