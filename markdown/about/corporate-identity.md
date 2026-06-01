@@ -1,6 +1,6 @@
 ---
 layout: sectioned-page
-title: Corporate Identity
+title: Visual Identity
 eyebrow: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
 permalink: /corporate-identity/

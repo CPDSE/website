@@ -124,7 +124,7 @@ Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 
 ```
 markdown/          # all editable page content
-  about/           # About CPDSE, People, Corporate Identity
+  about/           # About CPDSE, People, Visual Identity
   education/       # Educational Vision, Offers, Learning Resources, Code Clubs
   news/            # News & Events page
   research/        # Researchers & Units

@@ -16,7 +16,7 @@ Files are listed in nav-bar order. Click the path to open the file.
 | — *individual posts* | [`_posts/news/`](_posts/news/) | One `.md` file per post; date in filename |
 | **About CPDSE** | [`markdown/about/about.md`](markdown/about/about.md) | Sections-based |
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |
-| **Corporate Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
+| **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
 | **Educational Programme** | [`markdown/education/educational-vision.md`](markdown/education/educational-vision.md) | Competency model pillar text under `pillars:` |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
