@@ -70,6 +70,7 @@ sections:
     include: people-table.html
     group_leaders:
       - initials: AK
+        headshot: basecamp/albert-kooistra.jpg
         name: Albert Kooistra
         department: Data Science for Drug Design
         uni: UCPH
@@ -80,6 +81,7 @@ sections:
           KLIFS database.
 
       - initials: AH
+        headshot: basecamp/alexander-s-hauser.jpg
         name: Alexander Hausser
         department: Drug-related Data Science
         uni: UCPH
@@ -91,6 +93,7 @@ sections:
           to understand how genetic variability influences drug responses and personalized medicine.
 
       - initials: AM
+        headshot: basecamp/anders-o-madsen.jpg
         name: Anders Østergård Madsen
         department: Crystallography & Structural Chemistry
         uni: UCPH
@@ -101,6 +104,7 @@ sections:
           in pharmaceuticals.
 
       - initials: AP
+        headshot: basecamp/anton-pottegard.jpg
         name: Anton Pottegård
         department: Clinical Pharmacology & Pharmacy
         uni: SDU
@@ -131,6 +135,7 @@ sections:
           epistemic emotions — like curiosity and doubt — that drive learning in STEM environments.
 
       - initials: JKo
+        headshot: portraits/jacob-kongsted.jpg
         name: Jacob Kongsted
         department: Physics, Chemistry and Pharmacy
         uni: SDU
@@ -141,6 +146,7 @@ sections:
           theory approaches.
 
       - initials: JK
+        headshot: basecamp/jane-knochel.jpg
         name: Jane Knöchel
         department: Pharmaceutical Informatics
         uni: UCPH
@@ -163,6 +169,7 @@ sections:
           interact with biological membranes and their applications in pharmaceutical delivery.
 
       - initials: KB
+        headshot: basecamp/karlis-berzins.jpg
         name: Karlis Berzins
         department: Pharmaceutical Solid Materials Science
         uni: UCPH
@@ -185,6 +192,7 @@ sections:
           populations.
 
       - initials: TL
+        headshot: basecamp/trine-m-lund.jpg
         name: Trine Meldgård Lund
         department: Pharmacometrics
         uni: UCPH

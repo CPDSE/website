@@ -4,7 +4,13 @@
     {% assign uni_lower = leader.uni | downcase %}
     <div class="ru-leader-row">
       <div class="ru-leader-left">
-        <div class="ru-leader-avatar">{{ leader.initials }}</div>
+        {% if leader.headshot %}
+          <div class="ru-leader-avatar ru-leader-avatar--photo">
+            <img src="{{ leader.headshot | prepend: '/assets/images/' | relative_url }}" alt="{{ leader.name }}" loading="lazy">
+          </div>
+        {% else %}
+          <div class="ru-leader-avatar">{{ leader.initials }}</div>
+        {% endif %}
         <div class="ru-leader-meta">
           <p class="ru-leader-name">{{ leader.name }}</p>
           <p class="ru-leader-dept">{{ leader.department }}</p>
