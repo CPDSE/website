@@ -1,0 +1,26 @@
+{%- comment -%}
+  Renders one resource card from the learning-resources data.
+  Usage: {% include learn-card.html r=some_resource %}
+{%- endcomment -%}
+{%- assign card = include.r -%}
+<a class="cpdse-learn__card" href="{{ card.url | escape }}" target="_blank" rel="noopener noreferrer">
+  <div class="cpdse-learn__card-meta">
+    {%- if card.badge %}<span class="cpdse-learn__pill cpdse-learn__pill--course">{{ card.badge | escape }}</span>{% endif -%}
+    {%- if card.certificate.available -%}
+      <span class="cpdse-learn__pill cpdse-learn__pill--cert">Certificate · {{ card.certificate.where | default: 'available' | escape }}</span>
+    {%- elsif card.free == true -%}
+      <span class="cpdse-learn__pill cpdse-learn__pill--free">Free</span>
+    {%- elsif card.free == false -%}
+      <span class="cpdse-learn__pill">Paid</span>
+    {%- endif -%}
+    {%- if card.language %}<span class="cpdse-learn__pill cpdse-learn__pill--lang">{{ card.language | escape }}</span>{% endif -%}
+    {%- if card.level %}<span class="cpdse-learn__pill">{{ card.level | escape }}</span>{% endif -%}
+  </div>
+  <h3 class="cpdse-learn__card-title">{{ card.title | escape }}</h3>
+  {%- if card.provider %}<p class="cpdse-learn__card-provider">{{ card.provider | escape }}</p>{% endif -%}
+  {%- if card.blurb %}<p class="cpdse-learn__card-blurb">{{ card.blurb | escape }}</p>{% endif -%}
+  <div class="cpdse-learn__card-foot">
+    <span>{{ card.format | escape }}{% if card.time %} · {{ card.time | escape }}{% endif %}</span>
+    <span class="cpdse-learn__card-cta">Open ↗</span>
+  </div>
+</a>

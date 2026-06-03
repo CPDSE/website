@@ -2,6 +2,6 @@
 layout: learning-resources
 title: Learning resources
 eyebrow: Education
-description: A curated library of online materials for learning pharmaceutical data science — Python, R, Git, Galaxy, cheminformatics, pharmacometrics — sorted by what to do when. Mostly free; certificate-bearing programmes are clearly marked.
+description: Where to start with data science in pharma — two short steps in Python or R, then a full library for when you want to go deeper. Mostly free.
 permalink: /learning-resources/
 ---

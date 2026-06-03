@@ -3,43 +3,61 @@
     "lastReviewed": "2026-05-08",
     "purpose": "Curated learning library for pharmaceutical data science. Resources are hand-picked for people with a pharma/life-science background who are learning data science. Confidence is high for the listed URLs at the time of review. If a link breaks, please update via PR."
   },
-
-  "starterPaths": [
+  "stages": [
     {
-      "id": "pharma-to-python",
-      "title": "Pharma → Python in 8 weeks",
-      "blurb": "If you've never written code and want a working data-science toolkit. Pick this if your interest is registry/clinical data, ML, or general scripting.",
-      "steps": [
-        { "n": 1, "label": "Python basics",         "ref": "py-for-everybody",       "weeks": 3 },
-        { "n": 2, "label": "Pandas + plotting",     "ref": "uw-pandas-tutorial",     "weeks": 2 },
-        { "n": 3, "label": "Reproducible workflow", "ref": "happy-git-with-r",       "weeks": 1, "note": "Use the Git lessons; ignore R-specific bits." },
-        { "n": 4, "label": "Domain track",          "ref": "deepchem-tutorials",     "weeks": 2, "note": "Or Galaxy / Bioconductor depending on your area." }
+      "id": "getting-started",
+      "step": "Step 1",
+      "title": "Getting started",
+      "blurb": "Install the tools and learn the basics from zero. Pick the language your group uses — Python or R. The way of thinking carries over either way.",
+      "tracks": [
+        {
+          "language": "Python",
+          "refs": [
+            "futurecoder",
+            "think-python",
+            "swc-python",
+            "py-beginners-guide"
+          ]
+        },
+        {
+          "language": "R",
+          "refs": [
+            "swirl",
+            "hopr",
+            "rladies-basics",
+            "fasteR",
+            "r4phd-sdu"
+          ]
+        }
       ]
     },
     {
-      "id": "pharma-to-r",
-      "title": "Pharma → R for stats and pharmacometrics",
-      "blurb": "If you'll mostly work with clinical/registry data, biostats, or pharmacometrics. R is dominant in those communities.",
-      "steps": [
-        { "n": 1, "label": "R + tidyverse",       "ref": "r-for-data-science",      "weeks": 3 },
-        { "n": 2, "label": "Statistics intuition","ref": "statquest",               "weeks": "ongoing", "note": "Watch alongside the next two steps." },
-        { "n": 3, "label": "Statistical Learning","ref": "islr",                    "weeks": 4 },
-        { "n": 4, "label": "Reproducible workflow","ref": "happy-git-with-r",       "weeks": 1 }
-      ]
-    },
-    {
-      "id": "teacher-track",
-      "title": "Teacher track — building a pharma-DS module",
-      "blurb": "If you teach pharmacy and want to add data-science elements to a course. Focus on FAIR materials you can reuse.",
-      "steps": [
-        { "n": 1, "label": "Open course design",  "ref": "the-turing-way",         "weeks": "browse" },
-        { "n": 2, "label": "Datasets to teach with","ref": "galaxy-training-network","weeks": "browse" },
-        { "n": 3, "label": "Cheminformatics demos","ref": "teachopencadd",          "weeks": "browse" },
-        { "n": 4, "label": "Notebook publishing", "ref": "github-skills",          "weeks": 1 }
+      "id": "going-further",
+      "step": "Step 2",
+      "title": "Going further",
+      "blurb": "Once you can write a bit of code, move into data science: wrangling data, making figures, and doing statistics — with reproducible, shareable workflows.",
+      "tracks": [
+        {
+          "language": "Python",
+          "refs": [
+            "whirlwind-python",
+            "uw-pandas-tutorial",
+            "wes-mckinney",
+            "kaggle-learn"
+          ]
+        },
+        {
+          "language": "R",
+          "refs": [
+            "r-for-data-science",
+            "modern-statistics-r",
+            "posit-recipes",
+            "datatable-intro"
+          ]
+        }
       ]
     }
   ],
-
   "categories": [
     {
       "id": "foundations-programming",
@@ -87,7 +105,6 @@
       "blurb": "GxP, GDPR/HIPAA, fairness, validation. Necessary context for anyone building tools that touch patients."
     }
   ],
-
   "resources": [
     {
       "id": "py-for-everybody",
@@ -100,7 +117,11 @@
       "language": "Python",
       "time": "~30 hours",
       "free": true,
-      "certificate": { "available": true, "where": "Coursera", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera",
+        "free": false
+      },
       "blurb": "The single best on-ramp from no programming to working Python — kind, paced, with auto-graded exercises. Free at py4e.com; same content also available as a paid Coursera Specialization with a certificate."
     },
     {
@@ -168,7 +189,6 @@
       "free": true,
       "blurb": "One-page printable cheatsheets for ggplot2, dplyr, tidyr, lubridate, and the rest of the tidyverse. The fastest reference once you know the basics."
     },
-
     {
       "id": "statquest",
       "category": "stats",
@@ -234,7 +254,6 @@
       "free": true,
       "blurb": "Animated math explainers with unmatched visual intuition. The 'Essence of' series is the recommended primer before any ML course."
     },
-
     {
       "id": "pro-git",
       "category": "reproducibility",
@@ -300,7 +319,6 @@
       "free": true,
       "blurb": "Volunteer-maintained workshop materials covering shell, Git, Python/R, and SQL for researchers. Excellent self-study and even better as the basis for an in-house workshop."
     },
-
     {
       "id": "galaxy-training-network",
       "category": "bioinformatics",
@@ -353,7 +371,6 @@
       "free": true,
       "blurb": "Working with sequences, alignments, structures, and biological databases in Python. Complements Galaxy when you need scripted control."
     },
-
     {
       "id": "rdkit-cookbook",
       "category": "cheminformatics",
@@ -393,7 +410,6 @@
       "free": true,
       "blurb": "Step-by-step notebooks for ML on molecules — featurisation, regression, classification, generative models. Pairs cheminformatics with deep learning."
     },
-
     {
       "id": "fastai",
       "category": "ml-ai",
@@ -444,7 +460,11 @@
       "language": "Python",
       "time": "~95 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (Stanford / DeepLearning.AI)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (Stanford / DeepLearning.AI)",
+        "free": false
+      },
       "blurb": "Andrew Ng's reboot of the classic Coursera ML course. Audit free; pay (~£40/month) for graded assignments and a certificate."
     },
     {
@@ -458,10 +478,13 @@
       "language": "Python",
       "time": "~80 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (DeepLearning.AI)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (DeepLearning.AI)",
+        "free": false
+      },
       "blurb": "Three courses on diagnosis, prognosis, and treatment with ML — covers medical image segmentation, survival analysis, and causal inference for medicine. Closest 'pharma-flavoured' specialization at this level."
     },
-
     {
       "id": "mrgsolve",
       "category": "pharmacometrics",
@@ -480,7 +503,7 @@
       "category": "pharmacometrics",
       "title": "Open pharmacometrics teaching materials (Bauer / Mould lectures, NMUsersGroup archives)",
       "provider": "Various (NONMEM/PsN/community)",
-      "url": "https://www.iconplc.com/innovation/nonmem/",
+      "url": "https://www.iconplc.com/solutions/technologies/nonmem",
       "format": "Mixed (lecture notes, NMUsers archive, vendor docs)",
       "level": "Intermediate → Advanced",
       "language": "NONMEM",
@@ -489,20 +512,17 @@
       "blurb": "There is no single canonical open pharmacometrics course. The community lives in NMUsers archives, vendor tutorial decks (ICON/NONMEM, Lixoft/Monolix), and conference workshops. Treat this as an entry point — ask a CPDSE pharmacometrician for a curated path."
     },
     {
-      "id": "pharmacometrics-coursera",
+      "id": "pmx-africa-uct",
       "category": "pharmacometrics",
-      "title": "Pharmacometrics — Coursera (University of Cape Town)",
-      "provider": "University of Cape Town · Coursera",
-      "url": "https://www.coursera.org/learn/pharmacometrics",
-      "format": "Coursera course",
-      "level": "Intermediate",
-      "language": "Theory + NONMEM",
+      "title": "UCT Pharmacometrics training (PMX Africa)",
+      "provider": "University of Cape Town · PMX Africa",
+      "url": "https://pmxafrica.org/uct/",
+      "format": "Courses + community",
+      "level": "Intermediate → Advanced",
+      "language": "NONMEM",
       "time": "~25 hours",
-      "free": false,
-      "certificate": { "available": true, "where": "Coursera", "free": false },
-      "blurb": "One of the few formal MOOCs on pharmacometrics. Audit-free or pay for a certificate."
+      "blurb": "The University of Cape Town pharmacometrics group's training hub — courses, workshops and a community of practice for learning pharmacometrics."
     },
-
     {
       "id": "fundamentals-of-dataviz",
       "category": "visualisation",
@@ -555,7 +575,6 @@
       "free": true,
       "blurb": "Tool-agnostic chart-design articles by Lisa Charlotte Muth. Excellent treatment of how to choose a chart type and label it well."
     },
-
     {
       "id": "harvardx-data-science",
       "category": "ml-ai",
@@ -567,7 +586,11 @@
       "language": "R",
       "time": "~150 hours",
       "free": true,
-      "certificate": { "available": true, "where": "edX (Harvard)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "edX (Harvard)",
+        "free": false
+      },
       "blurb": "Audit each course for free; pay for the certificate. Covers R, viz, probability, inference, ML, and a capstone. The most-recommended single learning path for stats + ML in R."
     },
     {
@@ -581,7 +604,11 @@
       "language": "Python",
       "time": "~12 months part-time",
       "free": true,
-      "certificate": { "available": true, "where": "edX (MIT)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "edX (MIT)",
+        "free": false
+      },
       "blurb": "Rigorous graduate-level treatment of probability, stats, ML, and capstone. Audit free; verified track requires payment per course. Stackable into MIT degrees."
     },
     {
@@ -595,7 +622,11 @@
       "language": "Both",
       "time": "~50 hours",
       "free": true,
-      "certificate": { "available": true, "where": "edX (Stanford)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "edX (Stanford)",
+        "free": false
+      },
       "blurb": "The video lectures companion to the ISLR book, taught by the authors. Audit free or pay for the verified certificate."
     },
     {
@@ -609,7 +640,11 @@
       "language": "Python",
       "time": "~110 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (Stanford)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (Stanford)",
+        "free": false
+      },
       "blurb": "Stanford School of Medicine's overview of AI in healthcare — from data fundamentals through evaluation and ethics. Most pharma-relevant of the Stanford Coursera offerings."
     },
     {
@@ -623,7 +658,11 @@
       "language": "R",
       "time": "~120 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (Johns Hopkins)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (Johns Hopkins)",
+        "free": false
+      },
       "blurb": "Long-running R-based specialisation that covers tooling, EDA, regression models, ML, and a capstone. Stackable; audit-free per course."
     },
     {
@@ -637,7 +676,11 @@
       "language": "Python + Galaxy + R",
       "time": "~80 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (Johns Hopkins)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (Johns Hopkins)",
+        "free": false
+      },
       "blurb": "Covers Galaxy, Bioconductor, Python for genomics, statistics, and a capstone. Strong applied bioinformatics path."
     },
     {
@@ -651,7 +694,11 @@
       "language": "Python + theory",
       "time": "~50 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (Imperial)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (Imperial)",
+        "free": false
+      },
       "blurb": "Linear algebra, multivariate calculus, and PCA, framed for ML. Bridge between 3Blue1Brown intuition and reading actual ML papers."
     },
     {
@@ -665,10 +712,13 @@
       "language": "Python",
       "time": "~80 hours",
       "free": false,
-      "certificate": { "available": true, "where": "Coursera (UMich)", "free": false },
+      "certificate": {
+        "available": true,
+        "where": "Coursera (UMich)",
+        "free": false
+      },
       "blurb": "Pandas, plotting, ML with scikit-learn, text analysis, network analysis. Practical, applied; assumes you know basic Python (do Python for Everybody first)."
     },
-
     {
       "id": "microsoft-learn-ml",
       "category": "ml-ai",
@@ -680,10 +730,13 @@
       "language": "Python",
       "time": "~10–80 hours per path",
       "free": true,
-      "certificate": { "available": true, "where": "Microsoft Learn (badges + paid Microsoft certifications)", "free": true },
+      "certificate": {
+        "available": true,
+        "where": "Microsoft Learn (badges + paid Microsoft certifications)",
+        "free": true
+      },
       "blurb": "Free, hands-on learning paths with optional paid Microsoft Certified credentials at the end (Azure Data Scientist Associate is the relevant one). Useful if your org uses Azure."
     },
-
     {
       "id": "fda-data-science",
       "category": "regulatory-ethics",
@@ -726,17 +779,16 @@
     {
       "id": "gdpr-compliance",
       "category": "regulatory-ethics",
-      "title": "GDPR for researchers — UCPH guidance",
+      "title": "Data protection & information privacy (UCPH)",
       "provider": "University of Copenhagen",
-      "url": "https://informationssikkerhed.ku.dk/english/gdpr/",
+      "url": "https://informationssikkerhed.ku.dk/english/protection-of-information-privacy/",
       "format": "Institutional guidance",
       "level": "All",
       "language": "Theory",
       "time": "Browse",
       "free": true,
-      "blurb": "UCPH's research-facing GDPR pages — DPA templates, data classifications, what to do with patient data. Start here when a project will touch personal data."
+      "blurb": "The University of Copenhagen's information-privacy pages and Data Protection Officer guidance — start here when a project will touch personal data."
     },
-
     {
       "id": "kaggle-learn",
       "category": "ml-ai",
@@ -762,6 +814,383 @@
       "time": "Reference",
       "free": true,
       "blurb": "Open repository of curated ML datasets and benchmark results. Useful when you need a teaching dataset that's not the same iris/MNIST as everyone else."
+    },
+    {
+      "id": "futurecoder",
+      "category": "foundations-programming",
+      "title": "futurecoder",
+      "provider": "futurecoder.io",
+      "url": "https://futurecoder.io/",
+      "format": "Interactive course",
+      "level": "Beginner",
+      "language": "Python",
+      "time": "Self-paced",
+      "free": true,
+      "blurb": "Learn Python from scratch in the browser — it runs your code and gives instant feedback, with nothing to install to begin."
+    },
+    {
+      "id": "think-python",
+      "category": "foundations-programming",
+      "title": "Think Python",
+      "provider": "Allen B. Downey",
+      "url": "https://allendowney.github.io/ThinkPython/",
+      "format": "Free book",
+      "level": "Beginner",
+      "language": "Python",
+      "time": "~25 hours",
+      "free": true,
+      "blurb": "A clear introduction to Python for people who have never programmed before. Free online from the author."
+    },
+    {
+      "id": "swc-python",
+      "category": "foundations-programming",
+      "title": "Programming with Python (Software Carpentry)",
+      "provider": "The Carpentries",
+      "url": "https://swcarpentry.github.io/python-novice-inflammation/",
+      "format": "Workshop lesson",
+      "level": "Beginner",
+      "language": "Python",
+      "time": "~4 hours",
+      "free": true,
+      "blurb": "A hands-on novice Python lesson aimed at researchers — used as the recommended primer for the ULLA AI in Drug Discovery course."
+    },
+    {
+      "id": "wes-mckinney",
+      "category": "foundations-programming",
+      "title": "Python for Data Analysis (3rd ed.)",
+      "provider": "Wes McKinney",
+      "url": "https://wesmckinney.com/book/",
+      "format": "Free book",
+      "level": "Beginner → Intermediate",
+      "language": "Python",
+      "time": "~30 hours",
+      "free": true,
+      "blurb": "Written by the creator of pandas. Free to read online; the practical reference for data wrangling once you know basic Python."
+    },
+    {
+      "id": "py-beginners-guide",
+      "category": "foundations-programming",
+      "title": "Python Beginner's Guide",
+      "provider": "Python Software Foundation",
+      "url": "https://wiki.python.org/moin/BeginnersGuide",
+      "format": "Link hub / reference",
+      "level": "Beginner",
+      "language": "Python",
+      "time": "Reference",
+      "free": true,
+      "blurb": "The official starting point — how to install Python and where to learn, for both new and experienced programmers."
+    },
+    {
+      "id": "w3schools-python",
+      "category": "foundations-programming",
+      "title": "W3Schools Python Tutorial",
+      "provider": "W3Schools",
+      "url": "https://www.w3schools.com/python/",
+      "format": "Reference tutorial",
+      "level": "Beginner",
+      "language": "Python",
+      "time": "Reference",
+      "free": true,
+      "blurb": "A modular, look-it-up reference for Python basics — handy when you just need to remember how to do one small thing."
+    },
+    {
+      "id": "freecodecamp",
+      "category": "foundations-programming",
+      "title": "freeCodeCamp",
+      "provider": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn",
+      "format": "Interactive courses",
+      "level": "Beginner",
+      "language": "Mixed",
+      "time": "Self-paced",
+      "free": true,
+      "blurb": "Free, project-based coding courses you can fit around a busy schedule. Good for building momentum and habit."
+    },
+    {
+      "id": "fasteR",
+      "category": "foundations-programming",
+      "title": "fasteR — Fast Lane to Learning R",
+      "provider": "Norm Matloff",
+      "url": "https://github.com/matloff/fasteR",
+      "format": "Free tutorial",
+      "level": "Beginner",
+      "language": "R",
+      "time": "~15 hours",
+      "free": true,
+      "blurb": "A comprehensive single-document introduction to R for new programmers — general programming principles plus R's data types and objects."
+    },
+    {
+      "id": "hopr",
+      "category": "foundations-programming",
+      "title": "Hands-On Programming with R",
+      "provider": "Garrett Grolemund",
+      "url": "https://rstudio-education.github.io/hopr/",
+      "format": "Free book",
+      "level": "Beginner",
+      "language": "R",
+      "time": "~15 hours",
+      "free": true,
+      "blurb": "A friendly introduction written for non-programmers, teaching R through small hands-on projects."
+    },
+    {
+      "id": "rladies-basics",
+      "category": "foundations-programming",
+      "title": "R-Ladies Sydney — Basic Basics",
+      "provider": "R-Ladies Sydney",
+      "url": "https://rladiessydney.org/courses/01-basicbasics-1",
+      "format": "Tutorial + videos",
+      "level": "Beginner",
+      "language": "R",
+      "time": "~3 hours",
+      "free": true,
+      "blurb": "Get R and RStudio installed and find your way around the IDE. A very gentle start, with short videos."
+    },
+    {
+      "id": "w3schools-r",
+      "category": "foundations-programming",
+      "title": "W3Schools R Tutorial",
+      "provider": "W3Schools",
+      "url": "https://www.w3schools.com/r/",
+      "format": "Reference tutorial",
+      "level": "Beginner",
+      "language": "R",
+      "time": "Reference",
+      "free": true,
+      "blurb": "A modular reference for R basics — nice for quickly looking up how to do a specific thing."
+    },
+    {
+      "id": "r-intro-manual",
+      "category": "foundations-programming",
+      "title": "An Introduction to R",
+      "provider": "R Core Team",
+      "url": "https://cran.r-project.org/doc/manuals/R-intro.pdf",
+      "format": "Official manual (PDF)",
+      "level": "Beginner → Intermediate",
+      "language": "R",
+      "time": "Reference",
+      "free": true,
+      "blurb": "The official introduction, straight from the source. A little dry and technical, but authoritative."
+    },
+    {
+      "id": "datatable-intro",
+      "category": "foundations-programming",
+      "title": "data.table — Introduction",
+      "provider": "data.table project",
+      "url": "https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html",
+      "format": "Vignette",
+      "level": "Intermediate",
+      "language": "R",
+      "time": "Reference",
+      "free": true,
+      "blurb": "The main features of data.table for fast, memory-efficient data wrangling. Further vignettes cover specific topics in depth."
+    },
+    {
+      "id": "adv-r",
+      "category": "foundations-programming",
+      "title": "Advanced R",
+      "provider": "Hadley Wickham",
+      "url": "https://adv-r.hadley.nz/",
+      "format": "Free book",
+      "level": "Advanced",
+      "language": "R",
+      "time": "~40 hours",
+      "free": true,
+      "blurb": "Deeper R concepts for experienced programmers — not for beginners, but excellent once you want to understand how R really works."
+    },
+    {
+      "id": "datacamp-r",
+      "category": "foundations-programming",
+      "title": "DataCamp — R courses",
+      "provider": "DataCamp",
+      "url": "https://www.datacamp.com/category/r",
+      "format": "Online platform",
+      "level": "Beginner → Advanced",
+      "language": "R",
+      "time": "Self-paced",
+      "free": false,
+      "blurb": "Polished interactive courses for R and more. Mostly a paid plan, though the introductory R course has historically been free."
+    },
+    {
+      "id": "hds-sandbox",
+      "category": "bioinformatics",
+      "title": "National Health Data Science Sandbox",
+      "provider": "HeaDS · University of Copenhagen",
+      "url": "https://hds-sandbox.github.io",
+      "format": "Training platform",
+      "level": "All",
+      "language": "Mixed",
+      "time": "Browse",
+      "free": true,
+      "blurb": "Coordinated at HeaDS (KU). Training modules and a model for building and curating computational resources for research and teaching."
+    },
+    {
+      "id": "r4phd-sdu",
+      "category": "foundations-programming",
+      "title": "R4PhD — Introduction to R and the tidyverse",
+      "provider": "University of Southern Denmark · O'Neill & Harsted",
+      "url": "https://r4phd.sdu.dk/",
+      "format": "Course + open site",
+      "level": "Beginner",
+      "language": "R",
+      "time": "4-day course / self-study",
+      "free": true,
+      "badge": "SDU course",
+      "blurb": "An open site tied to a hands-on SDU course (run 1–3× a year, also on demand). Assumes no prior data-science experience. 2026 PhD dates: Feb 4–5 and 25–26."
+    },
+    {
+      "id": "phd-pharma-ds",
+      "category": "local-courses",
+      "title": "Hands-on Introduction to Pharmaceutical Data Science",
+      "provider": "Graduate School of Health & Medical Sciences · University of Copenhagen",
+      "url": "https://dra.ku.dk/phd-courses/2026/hands-on_introduction_to_pharmaceutical_data_science/",
+      "format": "PhD course",
+      "time": "Course",
+      "badge": "KU course",
+      "blurb": "A PhD course introducing pharmaceutical data science in Python. Free for PhD students at Danish universities (except CBS) and NorDoc faculties; others may apply and pay a fee.",
+      "uni": "KU"
+    },
+    {
+      "id": "ai-drug-design",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "AI- & data-driven drug design – An introduction",
+      "provider": "University of Copenhagen",
+      "url": "https://dra.ku.dk/phd-courses/2026/ai_and_data_driven_drug_design/",
+      "format": "PhD course",
+      "badge": "KU course",
+      "blurb": "An introduction to AI- and data-driven approaches to drug design."
+    },
+    {
+      "id": "smim22002u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Big data, artificial intelligence and machine learning in drug safety",
+      "provider": "University of Copenhagen · SMIM22002U",
+      "url": "https://kurser.ku.dk/course/SMIM22002U/2025-2026",
+      "format": "University course",
+      "badge": "KU course",
+      "blurb": "Big data, artificial intelligence and machine-learning methods applied to drug safety."
+    },
+    {
+      "id": "smim25001u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Pharmacoepidemiology, post-authorisation safety studies and real-world data",
+      "provider": "University of Copenhagen · SMIM25001U",
+      "url": "https://kurser.ku.dk/course/SMIM25001U/2025-2026",
+      "format": "University course",
+      "badge": "KU course",
+      "blurb": "Pharmacoepidemiology, post-authorisation safety studies (PASS) and the use of real-world data."
+    },
+    {
+      "id": "sfak24001u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Medicinal and Biostructural Chemistry",
+      "provider": "University of Copenhagen · SFAK24001U",
+      "url": "https://kurser.ku.dk/course/SFAK24001U/2025-2026",
+      "format": "University course",
+      "badge": "KU course",
+      "blurb": "Medicinal chemistry and the structural basis of drug–target interactions."
+    },
+    {
+      "id": "slkkil112u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Structure-based Drug Research",
+      "provider": "University of Copenhagen · SLKKIL112U",
+      "url": "https://kurser.ku.dk/course/SLKKIL112U/2025-2026",
+      "format": "University course",
+      "badge": "KU course",
+      "blurb": "Structure-based approaches to drug discovery and research."
+    },
+    {
+      "id": "sfab21002u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Pharmaceutical Modelling",
+      "provider": "University of Copenhagen · SFAB21002U",
+      "url": "https://kurser.ku.dk/course/SFAB21002U/2025-2026",
+      "format": "BSc/MSc elective",
+      "badge": "KU course",
+      "blurb": "Modelling approaches across the pharmaceutical sciences. Open as an elective to BSc and MSc students."
+    },
+    {
+      "id": "sfkkif102u",
+      "category": "local-courses",
+      "uni": "KU",
+      "title": "Design and Analysis of Experiments",
+      "provider": "University of Copenhagen · SFKKIF102U",
+      "url": "https://kurser.ku.dk/course/SFKKIF102U/2025-2026",
+      "format": "BSc/MSc elective",
+      "badge": "KU course",
+      "blurb": "Statistical design of experiments and analysis of the resulting data. Open as an elective to BSc and MSc students."
+    },
+    {
+      "id": "mm556",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Mathematics and statistics for pharmacy",
+      "provider": "University of Southern Denmark · MM556",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=201737&lang=en&listid=",
+      "format": "BSc mandatory",
+      "badge": "SDU course",
+      "blurb": "A mandatory first-semester course on the BSc in Pharmacy covering the mathematics and statistics pharmacists need."
+    },
+    {
+      "id": "fa507",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Instrumental pharmaceutical analysis",
+      "provider": "University of Southern Denmark · FA507",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=205129&lang=en&listid=",
+      "format": "BSc mandatory",
+      "badge": "SDU course",
+      "blurb": "A mandatory fourth-semester BSc Pharmacy course on instrumental pharmaceutical analysis, with a strong statistics component."
+    },
+    {
+      "id": "fa509",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Introduction to Pharmaceutical Molecular Modelling",
+      "provider": "University of Southern Denmark · FA509",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=176354&lang=en&listid=",
+      "format": "BSc elective",
+      "badge": "SDU course",
+      "blurb": "An elective introduction to pharmaceutical molecular modelling — computational and pharmaceutically relevant, if not classic data science."
+    },
+    {
+      "id": "fa516",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Chemical and pharmaceutical data science",
+      "provider": "University of Southern Denmark · FA516",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=206899&lang=en&listid=",
+      "format": "BSc elective",
+      "badge": "SDU course",
+      "blurb": "A new BSc elective in chemical and pharmaceutical data science, created by Casper Steinmann and running for the first time in autumn 2026."
+    },
+    {
+      "id": "ke561",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Chemical and pharmaceutical data science",
+      "provider": "University of Southern Denmark · KE561",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=207025&lang=en&listid=1752",
+      "format": "University course",
+      "badge": "SDU course",
+      "blurb": "Data-science methods applied to chemical and pharmaceutical problems."
+    },
+    {
+      "id": "fa811",
+      "category": "local-courses",
+      "uni": "SDU",
+      "title": "Application of PBPK Modeling in Pharmaceutics – Biopharmaceutical Data Science",
+      "provider": "University of Southern Denmark · FA811",
+      "url": "https://odin.sdu.dk/sitecore/index.php?a=searchfagbesk&internkode=fa811&lang=en",
+      "format": "MSc elective",
+      "badge": "SDU course",
+      "blurb": "An applied, elective MSc summer course on physiologically based pharmacokinetic (PBPK) modelling as a case of pharmaceutical data science."
     }
   ]
 }

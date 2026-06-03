@@ -1,6 +1,8 @@
-﻿---
+---
 layout: default
 ---
+{%- assign data = site.data.learning_resources -%}
+{%- assign all = data.resources -%}
 
 <header class="page-hero">
   <div class="container">
@@ -11,50 +13,113 @@ layout: default
 </header>
 
 <main class="page-body">
-  <link rel="stylesheet" href="{{ '/assets/css/learning-resources.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/learning-resources.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-  <div id="cpdse-learn" class="cpdse-learn" data-baseurl="{{ site.baseurl }}">
+  <div id="cpdse-learn" class="cpdse-learn">
 
-    <!-- At-a-glance numbers -->
-    <section class="cpdse-learn__band cpdse-learn__band--stats">
+    <!-- 1. Courses at KU & SDU (showcased first, KU/SDU tabs) -->
+    {%- assign courses = all | where: 'category', 'local-courses' -%}
+    {%- assign ku = courses | where: 'uni', 'KU' -%}
+    {%- assign sdu = courses | where: 'uni', 'SDU' -%}
+    <section class="cpdse-learn__band cpdse-learn__band--forest">
       <div class="cpdse-learn__inner">
-        <div id="learn-stats" class="cpdse-learn__stats reveal" aria-label="Library overview"></div>
-        <p id="learn-data-note" class="cpdse-learn__note reveal"></p>
+        <p class="cpdse-learn__eyebrow">Courses at KU &amp; SDU</p>
+        <h2 class="cpdse-learn__title">Start with a course.</h2>
+        <p class="cpdse-learn__lede">
+          Instructor-led courses in pharmaceutical data science at the University of Copenhagen
+          and the University of Southern Denmark. Several are open to PhD students and external
+          participants — follow each link for level, dates and enrolment.
+        </p>
+        <div class="cpdse-learn__tabs">
+          <input type="radio" name="course-uni" id="tab-ku" class="cpdse-learn__tab-input" checked>
+          <label for="tab-ku" class="cpdse-learn__tab">University of Copenhagen <span>{{ ku | size }}</span></label>
+          <input type="radio" name="course-uni" id="tab-sdu" class="cpdse-learn__tab-input">
+          <label for="tab-sdu" class="cpdse-learn__tab">University of Southern Denmark <span>{{ sdu | size }}</span></label>
+          <div class="cpdse-learn__tabpanel cpdse-learn__tabpanel--ku">
+            <div class="cpdse-learn__grid">
+              {%- for r in ku %}{% include learn-card.html r=r %}{% endfor -%}
+            </div>
+          </div>
+          <div class="cpdse-learn__tabpanel cpdse-learn__tabpanel--sdu">
+            <div class="cpdse-learn__grid">
+              {%- for r in sdu %}{% include learn-card.html r=r %}{% endfor -%}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Starter paths (recommended progressions) -->
+    <!-- 2. Two self-study steps -->
     <section class="cpdse-learn__band cpdse-learn__band--ivory">
       <div class="cpdse-learn__inner">
-        <p class="cpdse-learn__eyebrow reveal">Starter paths</p>
-        <h2 class="cpdse-learn__title reveal">Where to begin.</h2>
-        <p class="cpdse-learn__lede reveal">
-          Three suggested progressions for pharma people picking up data science. Pick the one that matches your goal —
-          you can jump between paths once you've found your footing.
+        <p class="cpdse-learn__eyebrow">Where to begin</p>
+        <h2 class="cpdse-learn__title">Two steps to get going.</h2>
+        <p class="cpdse-learn__lede">
+          Pick the language your group uses — Python or R — and follow two steps. Everything
+          else is in the library below, there whenever you want to go deeper.
         </p>
-        <div id="learn-paths" class="cpdse-learn__paths reveal"></div>
+        <div class="cpdse-learn__stages">
+          {%- for st in data.stages -%}
+          <section class="cpdse-learn__stage">
+            <div class="cpdse-learn__stage-head">
+              {% if st.step %}<span class="cpdse-learn__stage-step">{{ st.step | escape }}</span>{% endif %}
+              <h3 class="cpdse-learn__stage-title">{{ st.title | escape }}</h3>
+              {% if st.blurb %}<p class="cpdse-learn__stage-blurb">{{ st.blurb | escape }}</p>{% endif %}
+            </div>
+            <div class="cpdse-learn__stage-tracks">
+              {%- for tr in st.tracks -%}
+              <div class="cpdse-learn__track">
+                <p class="cpdse-learn__track-lang">{{ tr.language | escape }}</p>
+                <div class="cpdse-learn__track-cards">
+                  {%- for ref in tr.refs -%}
+                    {%- assign r = all | where: 'id', ref | first -%}
+                    {%- if r %}{% include learn-card.html r=r %}{% endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              {%- endfor -%}
+            </div>
+          </section>
+          {%- endfor -%}
+        </div>
       </div>
     </section>
 
-    <!-- Filter row + library -->
+    <!-- 3. The full library: collapsed, by topic -->
     <section class="cpdse-learn__band">
       <div class="cpdse-learn__inner">
-        <p class="cpdse-learn__eyebrow reveal">The library</p>
-        <h2 class="cpdse-learn__title reveal"><span id="learn-count">—</span> resources, organised by topic.</h2>
-        <p class="cpdse-learn__lede reveal">
-          Filter by language, level, or whether you want a certificate. Click any card to open the resource
-          in a new tab.
+        <p class="cpdse-learn__eyebrow">The full library</p>
+        <h2 class="cpdse-learn__title">Browse everything by topic.</h2>
+        <p class="cpdse-learn__lede">
+          Hand-picked resources grouped by topic — open a section to explore. Mostly free;
+          options that carry a certificate are marked.
         </p>
-        <div id="learn-filters" class="cpdse-learn__filters reveal" role="group" aria-label="Filter resources"></div>
-        <div id="learn-active" class="cpdse-learn__active" aria-live="polite"></div>
-        <div id="learn-categories" class="cpdse-learn__categories" aria-live="polite"></div>
+        <div class="cpdse-learn__categories">
+          {%- for cat in data.categories -%}
+            {%- assign inCat = all | where: 'category', cat.id -%}
+            {%- if inCat.size > 0 -%}
+            <details class="cpdse-learn__cat" id="cat-{{ cat.id }}">
+              <summary class="cpdse-learn__cat-summary">
+                <span class="cpdse-learn__cat-title">{{ cat.title | escape }}</span>
+                <span class="cpdse-learn__cat-meta">
+                  <span class="cpdse-learn__cat-count">{{ inCat.size }} resource{% if inCat.size != 1 %}s{% endif %}</span>
+                  <span class="cpdse-learn__cat-icon" aria-hidden="true"></span>
+                </span>
+              </summary>
+              <div class="cpdse-learn__cat-body">
+                {% if cat.blurb %}<p class="cpdse-learn__cat-blurb">{{ cat.blurb | escape }}</p>{% endif %}
+                <div class="cpdse-learn__grid">
+                  {%- for r in inCat %}{% include learn-card.html r=r %}{% endfor -%}
+                </div>
+              </div>
+            </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {%- assign meta = data._meta -%}
+        <p class="cpdse-learn__note">Hand-curated and last reviewed {{ meta.lastReviewed | escape }}. These are starting points the centre believes in — quality is subjective. Spot a broken link or a better resource? Open an issue or pull request on the <a href="https://github.com/CPDSE/website" target="_blank" rel="noopener">website repo</a>.</p>
       </div>
     </section>
 
   </div>
-
-  <script>
-    document.documentElement.dataset.baseurl = "{{ site.baseurl }}";
-  </script>
-  <script defer src="{{ '/assets/js/learning-resources.js' | relative_url }}"></script>
 </main>
