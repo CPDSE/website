@@ -3024,4 +3024,55 @@ ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=calendar@cpdse.dk;X-PM-TOKEN=62c
  a07b08f98c5aca7f80b9917608b658efd3674;PARTSTAT=NEEDS-ACTION:mailto:calenda
  r@cpdse.dk
 END:VEVENT
+BEGIN:VEVENT
+ORGANIZER;CN=Jeppe Hartmann:mailto:jeppe.hartmann@sund.ku.dk
+UID:040000008200E00074C5B7101A82E00800000000E00AA5C4E7E9DC01000000000000000
+ 010000000D25510E2D14CFF46B9118E5D5ADC118F
+DTSTART;TZID=Europe/Paris:20260612T113000
+DTEND;TZID=Europe/Paris:20260612T133000
+DTSTAMP:20260603T131439Z
+SEQUENCE:10
+DESCRIPTION;LANGUAGE=en-US:Dear all\,\n\nThank you for signing up for the C
+ onvergenceTalk+ with Stacey Tannenbaum. The title of the talk is Thriving 
+ Together: Relationships\, Conflict Skills\, and Digital Collaboration.\n\n
+ We will be exploring:\n\n  *   Building strong professional relationships\
+ n  *   Navigating conflict constructively\n  *   Collaborating effectively
+  in digital environments\n\nAbout Stacey\nStacey brings 25+ years of exper
+ ience from Metrum\, Astellas\, and Novartis\, and is a co-founder of ISoP 
+ and ACoP. She has delivered 100+ talks and is widely recognized for helpin
+ g scientists strengthen their communication\, leadership\, and impact.\n\n
+ It is also possible to participate via Microsoft Teams.\n\nWe will be serv
+ ing sandwiches. Feel free to bring your coffee.\n\nWe are looking forward 
+ to seeing you.\n\nOn behalf of CPDSE\n\nJeppe Hartmann\nProject Coordinato
+ r\n\nUniversity of Copenhagen\nDepartment of Drug Design and Pharmacology\
+ n\nUniversitetsparken 2\nDK - 2100 Copenhagen\nDenmark\nPhone +45 35323413
+ \njeppe.hartmann@sund.ku.dk<mailto:jeppe.hartmann@sund.ku.dk>\n\n[Logo for
+  Københavns Universitet]\n\nHow we protect personal data<https://informat
+ ionssikkerhed.ku.dk/english/protection-of-information-privacy/privacy-poli
+ cy/>\n\n\n________________________________________________________________
+ ________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.c
+ om/meet/359864938659882?p=QlOoOnwfXOcz3ax3kb\nMeeting ID: 359 864 938 659 
+ 882\nPasscode: 5c289Hr7\n________________________________\nNeed help?<http
+ s://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.m
+ icrosoft.com/l/meetup-join/19%3ameeting_Y2QzMTBiOTgtM2FjNS00NTJjLWI2MmEtZW
+ QzMzVmYjY5YjFh%40thread.v2/0?context=%7b%22Tid%22%3a%22a3927f91-cda1-4696-
+ af89-8c9f1ceffa91%22%2c%22Oid%22%3a%224f33c9c6-7cec-4896-989f-8d511d58f4ea
+ %22%7d>\nDial in by phone\n+45 32 72 07 55\,\,538883652#<tel:+4532720755\,
+ \,538883652> Denmark\, All locations\nFind a local number<https://dialin.t
+ eams.microsoft.com/8fa1ad49-0722-4052-88ca-11fecd3ccf50?id=538883652>\nPho
+ ne conference ID: 538 883 652#\nFor organizers: Meeting options<https://te
+ ams.microsoft.com/meetingOptions/?organizerId=4f33c9c6-7cec-4896-989f-8d51
+ 1d58f4ea&tenantId=a3927f91-cda1-4696-af89-8c9f1ceffa91&threadId=19_meeting
+ _Y2QzMTBiOTgtM2FjNS00NTJjLWI2MmEtZWQzMzVmYjY5YjFh@thread.v2&messageId=0&la
+ nguage=en-US> | Reset dial-in PIN<https://dialin.teams.microsoft.com/usp/p
+ stnconferencing>\n________________________________________________________
+ ________________________\n\n
+SUMMARY;LANGUAGE=en-US:ConvergenceTalk+ with Stacey Tannenbaum
+LOCATION;LANGUAGE=en-US:UCPH\, Jagtvej 160\, Meeting room 22-3-302 (3rd flo
+ or) + Microsoft Teams
+STATUS:CONFIRMED
+ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=calendar@cpdse.dk;X-PM-TOKEN=111
+ 7d873feb50760b3ce09572666d97d2fa3b01b;PARTSTAT=ACCEPTED:mailto:calendar@cp
+ dse.dk
+END:VEVENT
 END:VCALENDAR
