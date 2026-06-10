@@ -64,6 +64,10 @@ sections:
         supervisor: Judith Kuntsche
         project: Modeling release and redistribution of hydrophobic drugs from lipid nanocarriers
 
+      - name: ""
+        supervisor: Philipp Hans
+        project: A Provenance-Aware, Data-Driven Framework for Pharmaceutical Amorphous Solids
+
   - color: soft-white
     title: Group Leaders
     intro: CPDSE's group leaders anchor the research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
