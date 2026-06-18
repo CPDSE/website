@@ -17,7 +17,7 @@ stats:
     label: Departments
   - number: 7
     label: Courses Upgrading
-  - number: 5
+  - number: 6
     label: PhD Scholarships
 
 # ── Data viz showcase ─────────────────────────────────────────────────────────
