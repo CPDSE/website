@@ -3,7 +3,7 @@ layout: sectioned-page
 title: Visual Identity
 eyebrow: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
-permalink: /corporate-identity/
+permalink: /visual-identity/
 css: /assets/css/corporate-identity.css
 
 sections:
