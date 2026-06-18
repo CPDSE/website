@@ -18,6 +18,8 @@
 .page-section--sage-green .role-count { color: rgba(249,249,249,0.7); }
 .page-section--sage-green .logo-row-label { color: rgba(249,249,249,0.85); }
 .page-section--sage-green .logo-row-count { color: rgba(249,249,249,0.6); }
+.page-section--sage-green .logo-foot-color { color: #8a9490; }
+.page-section--sage-green .swatch-note { color: #8a9490; }
 
 /* ── Shared header primitives (same pattern as About page) ───── */
 .ci-header { margin-bottom: var(--space-md); }
