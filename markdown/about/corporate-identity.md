@@ -4,7 +4,7 @@ title: Visual Identity
 eyebrow: About CPDSE
 description: Our visual identity reflects the values, ambition, and community behind CPDSE.
 permalink: /visual-identity/
-css: /assets/css/corporate-identity.css
+css: /assets/css/visual-identity.css
 
 sections:
   - color: soft-white

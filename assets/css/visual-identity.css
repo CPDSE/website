@@ -18,12 +18,6 @@
 .page-section--sage-green .role-count { color: rgba(249,249,249,0.7); }
 .page-section--sage-green .logo-row-label { color: rgba(249,249,249,0.85); }
 .page-section--sage-green .logo-row-count { color: rgba(249,249,249,0.6); }
-.page-section--sage-green .logo-foot-name { color: #F9F9F9; }
-.page-section--sage-green .logo-foot-color { color: rgba(249,249,249,0.65); }
-.page-section--sage-green .logo-formats span { color: rgba(249,249,249,0.55); border-color: rgba(249,249,249,0.2); }
-.page-section--sage-green .swatch-name { color: #F9F9F9; }
-.page-section--sage-green .swatch-note { color: rgba(249,249,249,0.7); }
-.page-section--sage-green .swatch-hex span { color: rgba(249,249,249,0.85); }
 
 /* ── Shared header primitives (same pattern as About page) ───── */
 .ci-header { margin-bottom: var(--space-md); }
