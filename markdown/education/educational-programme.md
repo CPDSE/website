@@ -56,6 +56,12 @@ sections:
         link_url: https://cpdse-edux.github.io/R_documentation/
         link_external: true
 
+      - title: Educational Overview
+        content: "An overview of the data science curricula at both SDU and UCPH — see how data science is woven into pharmaceutical science education at each university."
+        link_text: "View overview →"
+        link_url: https://cpdse.github.io/education_overview/
+        link_external: true
+
   - color: soft-white
     title: "What data science actually is"
     intro: "Data science is often treated as synonymous with machine learning or coding. In reality it is a broad competency spanning ethics, mathematics, computing, data management, analysis, AI, and communication."
