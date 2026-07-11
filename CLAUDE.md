@@ -1,6 +1,6 @@
 # CPDSE Website — Claude Guidelines
 
-This is a Jekyll static site deployed to GitHub Pages at `https://cpdse.github.io/website` (baseurl: `/website`). Content is edited through `.md` files; the layout and design system must not be changed without explicit instruction.
+This is a Jekyll static site deployed via GitHub Pages to the custom domain `https://cpdse.dk` (CNAME file; `baseurl: ""`). Content is edited through `.md` files; the layout and design system must not be changed without explicit instruction.
 
 ---
 
@@ -114,7 +114,13 @@ Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 ## Layouts
 
 - `layout: sectioned-page` — standard interior pages (hero + sections)
+- `layout: home` — home page (hero video, stats strip, milestone timeline)
 - `layout: people` — People page (custom two-column hero with radial viz)
+- `layout: news-events` — News & Events page (post feed + FullCalendar)
+- `layout: post` — individual news posts in `_posts/news/`
+- `layout: learning-resources` — Learning Resources page
+- `layout: publications` — publications listing
+- `layout: page` — simple generic page
 - `layout: bare` — strips all site chrome (nav, hero, footer); only for KU Code Club
 - `layout: default` — base layout; rarely used directly
 
@@ -124,23 +130,32 @@ Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 
 ```
 markdown/          # all editable page content
-  about/           # About CPDSE, People, Visual Identity
-  education/       # Educational Vision, Offers, Learning Resources, Code Clubs
+  about/           # About CPDSE, People, Fellow Program, Visual Identity
+  education/       # Educational Programme, Learning Resources, Code Clubs (hub, SDU, KU)
   news/            # News & Events page
   research/        # Researchers & Units
   contact/
   home/
   other/           # Funding, Privacy (not in nav)
 _posts/news/       # individual news posts (YYYY-MM-DD-slug.md)
+_data/             # milestones.yml, convergence_talks.yml, learning_resources.json
 assets/
   css/
     main.css           # global styles — edit with care
     page-sections.css  # sections system styles
     people.css         # people page only
     research-units.css # research units page only
+    (plus per-page styles: about, convtalks, educational-offerings,
+     learning-resources, publications, visual-identity, fullcalendar.min)
+  fonts/             # self-hosted webfonts (GDPR) — never load fonts from a CDN
+  js/
+    vendor/          # self-hosted JS libraries (GDPR) — never load scripts from a CDN
   data/
     people.json        # people page data
+    publications.json  # publications data
+    events-calendar.ics  # auto-updated by GitHub Action — do not edit by hand
   images/            # site images
+scripts/             # data-refresh scripts (not published to the site)
 _includes/           # HTML partials — edit only when the MD system cannot do the job
 _layouts/            # page layout templates — rarely need editing
 ```
@@ -153,5 +168,6 @@ _layouts/            # page layout templates — rarely need editing
 - Do not change permalink values without updating `_config.yml` nav URLs
 - Do not edit `_layouts/default.html`, `_layouts/sectioned-page.html`, or `_includes/nav.html` for content changes — use the MD files
 - Do not use `layout: bare` on any page except KU Code Club
+- Do not load fonts, scripts, or other assets from external CDNs (Google Fonts, jsDelivr, …) — self-host them under `assets/fonts/` or `assets/js/vendor/` instead; third-party requests leak visitor IPs and break GDPR compliance
 - Do not commit `.env` files, credentials, or large binaries
 - Do not push directly to `main` without checking the build passes on GitHub Pages

@@ -1,3 +1,7 @@
 _site/
 .jekyll-cache/
 .jekyll-metadata
+
+# Local MedStat data downloads — never commit (large raw data)
+groups_of_medicines_data.txt
+medstat_atc_code*.txt

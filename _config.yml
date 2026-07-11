@@ -10,6 +10,13 @@ future: true
 
 exclude:
   - _posts/news/_template.md   # reference template, not a real post
+  - scripts/                   # data-refresh scripts, not site content
+  - _preview/                  # local preview harness
+  - docs/                      # internal reference screenshots
+  - CLAUDE.md                  # repo-only guidance (stays in git, just not published)
+  - README.md                  # repo-only guidance (stays in git, just not published)
+  - Gemfile
+  - Gemfile.lock
 
 plugins:
   - jekyll-feed

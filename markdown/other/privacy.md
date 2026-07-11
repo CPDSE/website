@@ -38,6 +38,10 @@ sections:
 
       If you register for a CPDSE event — such as a ConvergenceTalk — we process your name, email address, and institutional affiliation in order to administer the event. The legal basis is performance of an agreement (Article 6(1)(b) GDPR). We retain registration data for one year after the event.
 
+      **Embedded third-party content**
+
+      Some pages embed content loaded directly from third parties: campus maps from **OpenStreetMap** (OpenStreetMap Foundation, UK) and, on the Student Code Club pages, an interactive coding game hosted on **GitHub Pages** (GitHub Inc., USA). When your browser loads a page containing such an embed, it requests the content directly from that provider, which transmits your IP address and technical connection data to them. The legal basis is legitimate interests (Article 6(1)(f) GDPR). The providers' own privacy policies apply: [OpenStreetMap Foundation privacy policy](https://osmfoundation.org/wiki/Privacy_Policy) and [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Fonts, scripts, and all other site assets are hosted by us and involve no additional third-party requests.
+
 
   - color: soft-white
     title: Sharing and Transfers
@@ -49,7 +53,7 @@ sections:
 
       This website is hosted on GitHub Pages (GitHub Inc., USA). GitHub Inc. is certified under the EU–US Data Privacy Framework, which provides an adequate level of protection for transfers of personal data to the United States. For details, see [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
-      No other transfers of personal data to countries outside the EU/EEA take place.
+      Embedded campus maps are served by the OpenStreetMap Foundation (United Kingdom); the UK is covered by an EU adequacy decision. No other transfers of personal data to countries outside the EU/EEA take place.
 
   - color: sage-green
     title: Your Rights

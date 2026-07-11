@@ -179,21 +179,8 @@ permalink: /codeclub-ku/
     <span class="ku-marquee">🧬 ALL LEVELS WELCOME! FROM BEGINNER TO PRO, WE ALL LEARN TOGETHER! &nbsp;&nbsp;&nbsp;&nbsp; 🧬 ALL LEVELS WELCOME! FROM BEGINNER TO PRO, WE ALL LEARN TOGETHER!</span>
   </div>
 
-  <div class="ku-dna-banner">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/1994-DNA.gif" alt="">
-  </div>
-
   <div class="ku-title-row">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/rotating-molecule.gif" alt="rotating molecule">
     <h1 class="ku-title">🤖<br>PHARMA STUDENT CODING CLUB<br>🤖</h1>
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/agitated-modelule.gif" alt="agitated molecule">
   </div>
 
   <p class="ku-subtitle">2026 EDITION!!!</p>
@@ -210,11 +197,10 @@ permalink: /codeclub-ku/
         src="https://www.openstreetmap.org/export/embed.html?bbox=12.558223307132723%2C55.702974763821835%2C12.561763823032381%2C55.70428057398417&layer=mapnik&marker=55.703627674357115%2C12.55999356508255"
         width="300" height="200"
         style="border:1px solid #a8ff99;border-radius:6px;display:block;"
-        loading="lazy"></iframe>
+        loading="lazy"
+        referrerpolicy="no-referrer"></iframe>
       <small><a href="https://www.openstreetmap.org/?mlat=55.70363&mlon=12.55999#map=19/55.70363/12.55999&layers=N" target="_blank" rel="noopener" style="color:#D6C17C;">View larger map ↗</a></small>
     </div>
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/angry-panda_2.gif" class="ku-panda" style="bottom:10px;left:4%;animation-delay:1.5s;" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/angry-panda_1.gif" class="ku-panda" style="top:10px;right:8%;animation-delay:1s;" alt="">
   </div>
 
   <div class="ku-section">
@@ -224,8 +210,6 @@ permalink: /codeclub-ku/
     <p>3. We can identify common errors and know how to solve them.</p>
     <p>4. We know how to investigate in order to decipher complicated code.</p>
     <p>💪 If you want to get there, you're in the right place. 👍</p>
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/angry-panda_1.gif" class="ku-panda" style="bottom:8px;right:6%;animation-delay:3.33s;" alt="">
-    <img src="https://www.cpdse.dk/wp-content/uploads/2026/02/angry-panda_2.gif" class="ku-panda" style="bottom:8px;left:6%;animation-delay:0.42s;" alt="">
   </div>
 
   <div class="ku-section">
