@@ -46,7 +46,7 @@ sections:
     card_color: soft-white
     cards:
       - title: "Creating a strong joint research community around pharmaceutical data science"
-        content: "We hire group leaders, phd students, post docs, scholar and project students. And try ways share and grow our methodologies and applications of data science."
+        content: "We hire group leaders, phd students, post docs, scholar and project students. And try ways to share and grow our methodologies and applications of data science."
       - title: "Upgrading existing courses"
         content: "We work directly with teachers at UCPH and SDU to integrate data science where it fits naturally. Follow progress in our live dashboard."
       - title: "Building new ones"
