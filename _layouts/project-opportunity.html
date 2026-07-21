@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/project-opportunities.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+<header class="page-hero post-hero">
+  <div class="container">
+    <span class="hero-label">{% if page.degree_level %}{{ page.degree_level }} project{% else %}Project opportunity{% endif %}</span>
+    <h1>{{ page.title }}</h1>
+    <p class="hero-sub">
+      <time datetime="{{ page.date | date_to_xmlschema }}">Posted {{ page.date | date: "%B %-d, %Y" }}</time>
+      <span class="project-status-badge project-status-badge--{{ page.status | default: 'open' }}">{% if page.status == 'filled' %}Filled{% else %}Open{% endif %}</span>
+    </p>
+  </div>
+</header>
+
+<article class="post-content project-detail">
+
+  <dl class="project-meta">
+    {% if page.host_organization %}
+    <div class="project-meta__item">
+      <dt>Host organisation</dt>
+      <dd>{{ page.host_organization }}</dd>
+    </div>
+    {% endif %}
+    {% if page.university_supervisor %}
+    <div class="project-meta__item">
+      <dt>University supervisor</dt>
+      <dd>{{ page.university_supervisor }}</dd>
+    </div>
+    {% endif %}
+    {% if page.external_supervisor %}
+    <div class="project-meta__item">
+      <dt>External supervisor</dt>
+      <dd>{{ page.external_supervisor }}</dd>
+    </div>
+    {% endif %}
+    {% if page.duration %}
+    <div class="project-meta__item">
+      <dt>Duration</dt>
+      <dd>{{ page.duration }}</dd>
+    </div>
+    {% endif %}
+    {% if page.deadline %}
+    <div class="project-meta__item">
+      <dt>Application deadline</dt>
+      <dd><time datetime="{{ page.deadline | date_to_xmlschema }}">{{ page.deadline | date: "%B %-d, %Y" }}</time></dd>
+    </div>
+    {% endif %}
+    {% if page.contact_email %}
+    <div class="project-meta__item">
+      <dt>Contact</dt>
+      <dd>
+        {% assign contact_emails = page.contact_email | split: ',' %}
+        {% for email in contact_emails %}{% assign trimmed_email = email | strip %}<a href="mailto:{{ trimmed_email }}">{{ trimmed_email }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+      </dd>
+    </div>
+    {% endif %}
+  </dl>
+
+  {% if page.competencies and page.competencies.size > 0 %}
+  <div class="approach-pills project-competencies">
+    {% for c in page.competencies %}<span class="approach-pill">{{ c }}</span>{% endfor %}
+  </div>
+  {% endif %}
+
+  {{ content }}
+
+  <div class="post-back">
+    <a href="{{ '/project-opportunities/' | relative_url }}">← Back to project opportunities</a>
+  </div>
+</article>

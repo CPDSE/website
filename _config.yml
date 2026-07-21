@@ -8,8 +8,14 @@ markdown: kramdown
 permalink: /:categories/:title/
 future: true
 
+collections:
+  projects:
+    output: true
+    permalink: /project-opportunities/:title/
+
 exclude:
   - _posts/news/_template.md   # reference template, not a real post
+  - _projects/_template.md     # reference template, not a real project
   - scripts/                   # data-refresh scripts, not site content
   - _preview/                  # local preview harness
   - docs/                      # internal reference screenshots
@@ -42,6 +48,8 @@ nav:
         url: /educational-programme/
       - title: Learning Resources
         url: /learning-resources/
+      - title: Project Opportunities
+        url: /project-opportunities/
       - title: Student Code Club
         url: /codeclub/
       - title: Educational Git

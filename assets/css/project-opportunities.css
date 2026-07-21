@@ -1,0 +1,153 @@
+/* ─── Project Opportunities ──────────────────────────────────── */
+
+.project-opportunities-main {
+  padding: var(--space-lg) 0;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: var(--color-soft-white, #F9F9F9);
+  border: 1px solid var(--card-border, #D9D9D9);
+  text-decoration: none;
+  transition: box-shadow 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+.project-card--filled {
+  opacity: 0.7;
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.project-card__level {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal, #333333);
+  opacity: 0.65;
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-forest-green, #3C5E3E);
+  margin: 0;
+}
+
+.project-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-charcoal, #333333);
+  margin: 0;
+}
+
+.project-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.project-card__meta dt {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.65rem;
+  color: var(--color-charcoal, #333333);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.project-card__meta dd {
+  margin: 0 0 0.3rem;
+  color: var(--color-charcoal, #333333);
+}
+
+.project-card__pills {
+  margin-top: 0.2rem;
+}
+
+/* Status badge — reuses the site's four approved colour pairings only */
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+}
+
+.project-status-badge--open {
+  background: var(--color-forest-green, #3C5E3E);
+  color: var(--color-antique-gold, #D6C17C);
+}
+
+.project-status-badge--filled {
+  background: var(--color-mint-gray, #A9BBAA);
+  color: var(--color-charcoal, #333333);
+}
+
+/* Detail page */
+.post-hero .hero-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0 0 var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-meta__item dt {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.project-meta__item dd {
+  margin: 0;
+  color: var(--color-charcoal, #333333);
+  font-size: 0.92rem;
+}
+
+.project-competencies {
+  margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 640px) {
+  .project-cards { grid-template-columns: 1fr; }
+  .project-meta { grid-template-columns: 1fr; }
+}

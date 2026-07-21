@@ -20,6 +20,8 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
 | **Educational Programme** | [`markdown/education/educational-programme.md`](markdown/education/educational-programme.md) | Competency model pillar text under `pillars:` |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
+| **Project Opportunities** | [`markdown/education/project-opportunities.md`](markdown/education/project-opportunities.md) | Page intro; individual projects in [`_projects/`](_projects/) |
+| — *individual projects* | [`_projects/`](_projects/) | One `.md` file per project; date in filename |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
 | — SDU Code Club | [`markdown/education/codeclub-sdu.md`](markdown/education/codeclub-sdu.md) | Sections-based |
 | — KU Code Club | [`markdown/education/codeclub-ku.md`](markdown/education/codeclub-ku.md) | Raw HTML (`layout: bare`) — no sections system, no site chrome |
@@ -63,6 +65,54 @@ Post body in markdown.
 ```
 
 `future: true` is already enabled in `_config.yml`, so posts with future dates are built and visible on the site.
+
+---
+
+## Project opportunity posts
+
+Individual project opportunities live in [`_projects/`](_projects/), a separate collection from news posts. The filename must follow the format `YYYY-MM-DD-slug.md` (the date drives sort order on the list page; it doesn't have to be the day you commit it).
+
+### 📝 Create a new project opportunity (one click)
+
+[**→ Open GitHub's "create new file" editor pre-filled with the project template**](https://github.com/CPDSE/website/new/main/_projects?filename=YYYY-MM-DD-slug.md&value=---%0Alayout%3A%20project-opportunity%0Atitle%3A%20%22Your%20project%20title%20here%22%0Adate%3A%202026-05-26%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20date%20posted%20%E2%80%94%20drives%20sort%20order%20on%20the%20list%20page%0Adegree_level%3A%20Master%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20Bachelor%20%7C%20Master%20%7C%20PhD%20%E2%80%94%20optional%2C%20omit%20if%20not%20applicable%0Astatus%3A%20open%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20open%20%7C%20filled%0Auniversity_supervisor%3A%20%22Full%20Name%2C%20Department%2C%20University%22%20%20%20%20%23%20optional%20%E2%80%94%20omit%20for%20pure%20external%20placements%0Aexternal_supervisor%3A%20%22Name%2C%20external%20organisation%22%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20optional%0Ahost_organization%3A%20%22Company%20or%20institution%20name%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20optional%20%E2%80%94%20shown%20as%20a%20badge%20on%20the%20list%20page%0Aduration%3A%20%221%20semester%20%285%E2%80%936%20months%29%22%20%20%23%20optional%2C%20freeform%0Acompetencies%3A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20optional%20%E2%80%94%20shown%20as%20pill%20tags%0A%20%20-%20R%0A%20%20-%20Statistics%0Adeadline%3A%202026-09-15%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20optional%20%E2%80%94%20omit%20for%20rolling%20applications%0Acontact_email%3A%20someone%40sund.ku.dk%20%20%20%20%23%20how%20to%20apply%0Adescription%3A%20One-sentence%20summary%20shown%20in%20the%20project%20opportunities%20list.%0A---%0A%0A%23%23%20Background%0A%0ADescribe%20the%20motivation%20and%20context%20for%20this%20project.%0A%0A%23%23%20What%20you%27ll%20do%0A%0A-%20Bullet%20point%20of%20task%20one%0A-%20Bullet%20point%20of%20task%20two%0A%0A%23%23%20Requirements%0A%0ADescribe%20any%20prerequisite%20skills%20or%20coursework.%0A%0A%5BContact%20someone%40sund.ku.dk%20to%20apply%20%E2%86%92%5D%28mailto%3Asomeone%40sund.ku.dk%29%0A)
+
+The editor opens with the frontmatter and a body template already in place. You only need to:
+
+1. Replace `YYYY-MM-DD-slug.md` in the filename field with the real date and a short slug
+2. Edit the title, metadata fields, and body — delete any optional field you don't need
+3. Click **"Commit new file"** at the bottom of the page
+
+### Fallback: copy from the reference template
+
+If you'd rather copy-paste manually (or you're working locally), the same template lives at [`_projects/_template.md`](_projects/_template.md). It is excluded from the Jekyll build (declared in `_config.yml`), so it never shows up as a real project.
+
+### Project frontmatter
+
+```yaml
+---
+layout: project-opportunity
+title: "Project title"
+date: 2026-07-21                     # date posted — drives sort order
+degree_level: Master                 # Bachelor | Master | PhD — optional
+status: open                         # open | filled
+university_supervisor: "Full Name, Department, University"   # optional
+external_supervisor: "Name, external organisation"            # optional
+host_organization: "Company or institution name"               # optional
+duration: "1 semester (5–6 months)"  # optional, freeform
+competencies:                        # optional — shown as pill tags
+  - R
+  - Statistics
+deadline: 2026-09-15                 # optional — omit for rolling applications
+contact_email: someone@sund.ku.dk    # how to apply — comma-separate for more than one address
+description: One-sentence summary shown in the project opportunities list.
+---
+
+Project body in markdown.
+```
+
+Only `title`, `date`, `status`, and `contact_email` are required — everything else is shown conditionally, so it's safe to omit a field entirely rather than leaving it blank. Projects marked `status: filled` still appear on the list page (sorted after open ones, shown greyed out) rather than disappearing, so the history of past projects stays visible.
+
+`future: true` is already enabled in `_config.yml`, so projects with future dates are built and visible on the site — the same as news posts.
 
 ---
 

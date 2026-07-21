@@ -2736,6 +2736,9 @@ a { color: inherit; }
 .post-content p { margin-bottom: 1.1rem; color: #333; line-height: 1.75; }
 .post-content h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; margin: 2rem 0 0.75rem; }
 .post-content a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+.post-content ul,
+.post-content ol { margin: 0 0 1.1rem 1.4rem; line-height: 1.75; }
+.post-content li { margin-bottom: 0.3rem; }
 .post-back { margin-top: var(--space-lg); padding-top: var(--space-sm); border-top: 1px solid var(--border); }
 .post-back a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
 .post-back a:hover { color: var(--green); }

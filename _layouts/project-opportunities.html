@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/project-opportunities.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+<header class="page-hero">
+  <div class="container">
+    {% if page.eyebrow %}<span class="hero-label">{{ page.eyebrow }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="hero-sub">{{ page.description }}</p>{% endif %}
+  </div>
+</header>
+
+<main class="section section-alt project-opportunities-main">
+  <div class="container">
+
+    {% assign all_projects = site.projects | sort: 'date' | reverse %}
+    {% assign open_projects = all_projects | where: 'status', 'open' %}
+    {% assign filled_projects = all_projects | where: 'status', 'filled' %}
+    {% assign sorted_projects = open_projects | concat: filled_projects %}
+
+    {% if sorted_projects.size > 0 %}
+    <div class="project-cards">
+      {% for project in sorted_projects %}
+      <a class="project-card project-card--{{ project.status }}" href="{{ project.url | relative_url }}">
+        <div class="project-card__head">
+          <span class="project-status-badge project-status-badge--{{ project.status }}">
+            {% if project.status == 'filled' %}Filled{% else %}Open{% endif %}
+          </span>
+          {% if project.degree_level %}<span class="project-card__level">{{ project.degree_level }}</span>{% endif %}
+        </div>
+        <h3 class="project-card__title">{{ project.title }}</h3>
+        <p class="project-card__desc">{{ project.description | default: project.excerpt | strip_html | truncate: 140 }}</p>
+        <dl class="project-card__meta">
+          {% if project.host_organization %}<div><dt>Host</dt><dd>{{ project.host_organization }}</dd></div>{% endif %}
+          {% if project.duration %}<div><dt>Duration</dt><dd>{{ project.duration }}</dd></div>{% endif %}
+        </dl>
+        {% if project.competencies and project.competencies.size > 0 %}
+        <div class="approach-pills project-card__pills">
+          {% for c in project.competencies limit: 4 %}<span class="approach-pill">{{ c }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="updates-empty">No project opportunities are posted right now — check back soon.</p>
+    {% endif %}
+
+  </div>
+</main>
+
+{% for section in page.sections %}
+  {% include page-section.html section=section %}
+{% endfor %}
