@@ -7,7 +7,8 @@ layout: default
     {% if page.category %}<span class="hero-label">{{ page.category }}</span>{% endif %}
     <h1>{{ page.title }}</h1>
     {% assign post_display_date = page.date %}
-    {% if page.category and page.category | downcase == 'event' and page.event_date %}
+    {% assign post_category_lower = page.category | downcase %}
+    {% if page.category and post_category_lower == 'event' and page.event_date %}
       {% assign post_display_date = page.event_date %}
     {% endif %}
     <p class="hero-sub"><time datetime="{{ post_display_date | date_to_xmlschema }}">{{ post_display_date | date: "%B %-d, %Y" }}</time></p>

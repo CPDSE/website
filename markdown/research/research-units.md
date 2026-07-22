@@ -78,6 +78,8 @@ sections:
         name: Albert Kooistra
         department: Data Science for Drug Design
         uni: UCPH
+        url: https://researchprofiles.ku.dk/en/persons/albert-j-kooistra/
+        url_label: Research Profile
         quote: >-
           Specializes in Data Science for Drug Design. His work
           bridges structural bioinformatics and cheminformatics, focusing on AI/ML
@@ -101,6 +103,8 @@ sections:
         name: Anders Østergård Madsen
         department: Crystallography & Structural Chemistry
         uni: UCPH
+        url: https://researchprofiles.ku.dk/en/persons/anders-%C3%B8stergaard-madsen/
+        url_label: Research Profile
         quote: >-
           A leader in crystallography and structural chemistry.
           He applies deep learning and advanced algorithms to solve the phase problem in
@@ -112,6 +116,8 @@ sections:
         name: Anton Pottegård
         department: Clinical Pharmacology & Pharmacy
         uni: SDU
+        url: https://www.sdu.dk/en/forskning/cppem/pharmacoepidemiology
+        url_label: Pharmacoepidemiology Research Group
         quote: >-
           Works in pharmacoepidemiology at the Dept. of Public Health. He specializes
           in analyzing registry data on drug use patterns and effects, investigating both known
@@ -133,6 +139,8 @@ sections:
         name: Hendra Augustian
         department: Science Education
         uni: UCPH
+        url: https://www.ind.ku.dk/english/staff-auto-list/?pure=en%2Fpersons%2F673512
+        url_label: Staff Profile
         quote: >-
           A specialist from the Dept. of Science Education. He researches the didactics
           of the laboratory, focusing on how students engage with scientific inquiry and the
@@ -143,6 +151,8 @@ sections:
         name: Jacob Kongsted
         department: Physics, Chemistry and Pharmacy
         uni: SDU
+        url: https://portal.findresearcher.sdu.dk/en/persons/kongsted
+        url_label: Research Profile
         quote: >-
           Works in Theoretical and Computational Chemistry. His research focuses on
           computational methods for studying molecular properties, particularly photon
@@ -166,6 +176,8 @@ sections:
         name: Judith Kuntsche
         department: Physics, Chemistry and Pharmacy
         uni: SDU
+        url: https://www.sdu.dk/en/forskning/farmaci-sektionen/forskere/researcherswithinsection/judith-kuntsche
+        url_label: Research Profile
         quote: >-
           Specializes in the development and characterization of
           lipid-based nanoparticulate drug delivery systems. Her work focuses on supercooled
@@ -177,6 +189,8 @@ sections:
         name: Karlis Berzins
         department: Pharmaceutical Solid Materials Science
         uni: UCPH
+        url: https://pharmacy.ku.dk/employees/?pure=en/persons/karlis-berzins(1e8f01c2-d929-4de4-87b0-231f61133fb2).html
+        url_label: Staff Profile
         quote: >-
           Specialist in the materials science of pharmaceutical solids. He uses advanced
           low-frequency Raman spectroscopy combined with multivariate chemometrics and
@@ -194,6 +208,19 @@ sections:
           His research utilizes big healthcare data and real-world evidence from national
           registers to monitor drug safety and adopt AI/ML for signal detection in large
           populations.
+
+      - initials: ML
+        headshot: basecamp/morten-lindow.jpg
+        name: Morten Lindow
+        department: Center Leadership & RNA Therapeutics
+        uni: UCPH
+        url: https://mortenlindow.github.io/
+        url_label: Personal Website
+        quote: >-
+          Professor and leader of CPDSE. He works on
+          RNA therapeutics and Pharma Strategy, drawing on a background in drug discovery
+          and bioinformatics to shape the center's strategy and organizational
+          growth.
 
       - initials: TL
         headshot: basecamp/trine-m-lund.jpg

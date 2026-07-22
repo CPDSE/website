@@ -38,8 +38,6 @@ nav:
         url: /about/
       - title: People
         url: /people/
-      - title: Fellow Program
-        url: /fellow-program/
       - title: Visual Identity
         url: /visual-identity/
   - title: Education
@@ -48,8 +46,6 @@ nav:
         url: /educational-programme/
       - title: Learning Resources
         url: /learning-resources/
-      - title: Project Opportunities
-        url: /project-opportunities/
       - title: Student Code Club
         url: /codeclub/
       - title: Educational Git
@@ -62,6 +58,14 @@ nav:
       - title: Research Git
         url: https://github.com/CPDSE
         external: true
+  - title: Join Us
+    children:
+      - title: Join Us
+        url: /join-us/
+      - title: Fellow Program
+        url: /fellow-program/
+      - title: Project Opportunities
+        url: /project-opportunities/
   - title: Contact
     url: /contact/
 
