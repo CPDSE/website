@@ -19,7 +19,7 @@ CPDSE nav                                                    ● = planned
 ├── Resources
 │   ├── Learning Resources        /learning-resources/
 │   ├── Educational Git ↗         github.com/CPDSE-EDUX
-│   ├── Research Git ↗            github.com/CPDSE
+│   ├── Project Git ↗            github.com/CPDSE
 │   └── ● Digital Infrastructure  (plan) — servers, machines, git, storage
 ├── Services
 │   ├── Curriculum Development    /curriculum-development/
@@ -61,7 +61,7 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
 | ***Resources*** | | |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
-| — Educational Git / Research Git | [`_config.yml`](_config.yml) | External GitHub links — no page file; edit the URL in the `nav:` list |
+| — Educational Git / Project Git | [`_config.yml`](_config.yml) | External GitHub links — no page file; edit the URL in the `nav:` list |
 | ***Services*** | | |
 | **Curriculum Development** | [`markdown/education/curriculum-development.md`](markdown/education/curriculum-development.md) | Competency model pillar text under `pillars:` |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |

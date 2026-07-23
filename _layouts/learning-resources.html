@@ -17,6 +17,29 @@ layout: default
 
   <div id="cpdse-learn" class="cpdse-learn">
 
+    {%- if page.highlights -%}
+    <!-- 0. CPDSE's own developed resources (highlight, directly below the hero) -->
+    <section class="cpdse-learn__band cpdse-learn__band--ivory">
+      <div class="cpdse-learn__inner">
+        {% if page.highlight_eyebrow %}<p class="cpdse-learn__eyebrow">{{ page.highlight_eyebrow }}</p>{% endif %}
+        {% if page.highlight_title %}<h2 class="cpdse-learn__title">{{ page.highlight_title }}</h2>{% endif %}
+        {% if page.highlight_lede %}<p class="cpdse-learn__lede">{{ page.highlight_lede }}</p>{% endif %}
+        <div class="cpdse-learn__grid">
+          {%- for h in page.highlights -%}
+          <a class="cpdse-learn__card" href="{{ h.url | escape }}" target="_blank" rel="noopener noreferrer">
+            <h3 class="cpdse-learn__card-title">{{ h.title | escape }}</h3>
+            {%- if h.blurb %}<p class="cpdse-learn__card-blurb">{{ h.blurb | escape }}</p>{% endif -%}
+            <div class="cpdse-learn__card-foot">
+              <span>{{ h.type | default: 'CPDSE' | escape }}</span>
+              <span class="cpdse-learn__card-cta">Open ↗</span>
+            </div>
+          </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+    {%- endif -%}
+
     <!-- 1. Courses at KU & SDU (showcased first, KU/SDU tabs) -->
     {%- assign courses = all | where: 'category', 'local-courses' -%}
     {%- assign ku = courses | where: 'uni', 'KU' -%}
