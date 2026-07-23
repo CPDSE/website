@@ -28,8 +28,6 @@ plugins:
   - jekyll-feed
 
 nav:
-  - title: Home
-    url: /
   - title: News & Events
     url: /news-events/
   - title: About
@@ -54,8 +52,8 @@ nav:
         external: true
   - title: Services
     children:
-      - title: Educational Programme
-        url: /educational-programme/
+      - title: Curriculum Development
+        url: /curriculum-development/
       - title: Student Code Club
         url: /codeclub/
   - title: Join Us

@@ -131,7 +131,7 @@ Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 ```
 markdown/          # all editable page content
   about/           # About CPDSE, People, Fellow Program, Visual Identity
-  education/       # Educational Programme, Learning Resources, Code Clubs (hub, SDU, KU)
+  education/       # Curriculum Development, Learning Resources, Code Clubs (hub, SDU, KU)
   news/            # News & Events page
   research/        # Researchers & Units
   contact/

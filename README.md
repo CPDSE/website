@@ -4,28 +4,74 @@ Website design & how to update content.
 
 ---
 
+## Site structure
+
+The nav bar is built from the `nav:` list in [`_config.yml`](_config.yml) — edit it there, never in [`_includes/nav.html`](_includes/nav.html). There is no **Home** entry; the logo links to the homepage.
+
+```
+CPDSE nav                                                    ● = planned
+├── News & Events                 /news-events/
+├── About
+│   ├── About CPDSE               /about/
+│   ├── People                    /people/
+│   ├── Researchers & Units       /researchers-units/
+│   └── Visual Identity           /visual-identity/
+├── Resources
+│   ├── Learning Resources        /learning-resources/
+│   ├── Educational Git ↗         github.com/CPDSE-EDUX
+│   ├── Research Git ↗            github.com/CPDSE
+│   └── ● Digital Infrastructure  (plan) — servers, machines, git, storage
+├── Services
+│   ├── Curriculum Development    /curriculum-development/
+│   ├── Student Code Club         /codeclub/
+│   │   ├── SDU Pharma Code Club  /codeclub-sdu/      (hub page only)
+│   │   └── KU Coding Club        /codeclub-ku/       (hub page only)
+│   ├── ● Staff Development             (plan)
+│   ├── ● Project Consultation          (plan)
+│   └── ● Research Strategy Development (plan)
+├── Join Us
+│   ├── Join Us                   /join-us/
+│   ├── Fellow Program            /fellow-program/
+│   └── Project Opportunities     /project-opportunities/
+└── Contact                       /contact/
+
+Not in nav
+├── Funding                       /funding/           (footer)
+└── Privacy Policy                /privacy/           (footer)
+```
+
+*Hub page only* = reachable from its parent page, not from the nav bar.
+
+---
+
 ## Content files — quick reference
 
 Files are listed in nav-bar order. Click the path to open the file.
 
 | Nav item | File to edit | Notes |
 |---|---|---|
-| **Home** | [`markdown/home/index.md`](markdown/home/index.md) | Sections-based; hero text in frontmatter |
+| **Home** *(logo link)* | [`markdown/home/index.md`](markdown/home/index.md) | Sections-based; hero text in frontmatter |
 | — *timeline milestones* | [`_data/milestones.yml`](_data/milestones.yml) | Feeds the "Our Vision" milestone timeline; one entry per dot |
 | **News & Events** | [`markdown/news/news-events.md`](markdown/news/news-events.md) | Page intro; individual posts in [`_posts/news/`](_posts/news/) |
 | — *individual posts* | [`_posts/news/`](_posts/news/) | One `.md` file per post; date in filename |
+| ***About*** | | |
 | **About CPDSE** | [`markdown/about/about.md`](markdown/about/about.md) | Sections-based |
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |
-| **Fellow Program** | [`markdown/about/fellows.md`](markdown/about/fellows.md) | |
+| **Researchers & Units** | [`markdown/research/research-units.md`](markdown/research/research-units.md) | Department grid, PhD students, and group leaders all in frontmatter |
 | **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
-| **Educational Programme** | [`markdown/education/educational-programme.md`](markdown/education/educational-programme.md) | Competency model pillar text under `pillars:` |
+| ***Resources*** | | |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
-| **Project Opportunities** | [`markdown/education/project-opportunities.md`](markdown/education/project-opportunities.md) | Page intro; individual projects in [`_projects/`](_projects/) |
-| — *individual projects* | [`_projects/`](_projects/) | One `.md` file per project; date in filename |
+| — Educational Git / Research Git | [`_config.yml`](_config.yml) | External GitHub links — no page file; edit the URL in the `nav:` list |
+| ***Services*** | | |
+| **Curriculum Development** | [`markdown/education/curriculum-development.md`](markdown/education/curriculum-development.md) | Competency model pillar text under `pillars:` |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
 | — SDU Code Club | [`markdown/education/codeclub-sdu.md`](markdown/education/codeclub-sdu.md) | Sections-based |
 | — KU Code Club | [`markdown/education/codeclub-ku.md`](markdown/education/codeclub-ku.md) | Raw HTML (`layout: bare`) — no sections system, no site chrome |
-| **Researchers & Units** | [`markdown/research/research-units.md`](markdown/research/research-units.md) | Department grid, PhD students, and group leaders all in frontmatter |
+| ***Join Us*** | | |
+| **Join Us** | [`markdown/other/join-us.md`](markdown/other/join-us.md) | |
+| **Fellow Program** | [`markdown/about/fellows.md`](markdown/about/fellows.md) | |
+| **Project Opportunities** | [`markdown/education/project-opportunities.md`](markdown/education/project-opportunities.md) | Page intro; individual projects in [`_projects/`](_projects/) |
+| — *individual projects* | [`_projects/`](_projects/) | One `.md` file per project; date in filename |
 | **Contact** | [`markdown/contact/contact.md`](markdown/contact/contact.md) | |
 | Funding *(not in nav)* | [`markdown/other/funding.md`](markdown/other/funding.md) | |
 | Privacy *(not in nav)* | [`markdown/other/privacy.md`](markdown/other/privacy.md) | |

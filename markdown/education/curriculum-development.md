@@ -1,8 +1,8 @@
 ---
 layout: sectioned-page
-title: Educational Programme
-eyebrow: Education
-permalink: /educational-programme/
+title: Curriculum Development
+eyebrow: Services
+permalink: /curriculum-development/
 description: How CPDSE thinks about data science education in pharmaceutical sciences — and why it matters.
 
 sections:
