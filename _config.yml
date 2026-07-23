@@ -38,26 +38,26 @@ nav:
         url: /about/
       - title: People
         url: /people/
+      - title: Researchers & Units
+        url: /researchers-units/
       - title: Visual Identity
         url: /visual-identity/
-  - title: Education
+  - title: Resources
     children:
-      - title: Educational Programme
-        url: /educational-programme/
       - title: Learning Resources
         url: /learning-resources/
-      - title: Student Code Club
-        url: /codeclub/
       - title: Educational Git
         url: https://github.com/CPDSE-EDUX
         external: true
-  - title: Research
-    children:
-      - title: Researchers & Units
-        url: /researchers-units/
       - title: Research Git
         url: https://github.com/CPDSE
         external: true
+  - title: Services
+    children:
+      - title: Educational Programme
+        url: /educational-programme/
+      - title: Student Code Club
+        url: /codeclub/
   - title: Join Us
     children:
       - title: Join Us
