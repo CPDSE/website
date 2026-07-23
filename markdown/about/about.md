@@ -19,6 +19,10 @@ sections:
       # Mission
       We upgrade, transform and help deliver pharmaceutical educations so universities can supply well-educated and data-science savvy people -- spanning bachelor, master, PhD and life-long learning levels.
 
+  - color: forest-green
+    class: vision-section-band
+    include: vision-journey.html
+
   - color: sage-green
     title: "Five lines of active work"
     intro: "The center's activities span community-building, infrastructure, course design, direct teaching, and the networks that keep pharma data science moving across institutions."
@@ -35,10 +39,6 @@ sections:
         content: We contribute directly to teaching at BA, MS, PhD and life-long learning levels.
       - title: Networks
         content: We connect and develop national and international networks in pharma data science and data science education.
-
-  - color: forest-green
-    class: vision-section-band
-    include: vision-journey.html
 
   - color: soft-white
     title: "The New Ways of Working Philosophy"
