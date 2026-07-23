@@ -1,0 +1,76 @@
+<!-- ════════════════════════════════════════════════════════
+     OUR JOURNEY — mission statement + animated milestone timeline
+     Milestones come from _data/milestones.yml
+     Designed to sit inside a forest-green page-section.
+     ════════════════════════════════════════════════════════ -->
+<div class="vision-grid">
+
+  <!-- Left: mission quote -->
+  <div class="vision-quote-col">
+    <span class="vision-label">Our Journey</span>
+    <p class="vision-quote">
+      Data science is an integral core capability in
+      <em>life science</em> workers and organisations.
+    </p>
+  </div>
+
+  <!-- Right: auto-looping timeline -->
+  <div class="vision-timeline-col">
+    <div class="vision-timeline-wrap">
+      <ol class="vision-timeline" aria-label="CPDSE milestones">
+        {% for milestone in site.data.milestones %}
+          <li class="vision-timeline-item{% if milestone.is_now %} vision-timeline-item--now{% endif %}" tabindex="0">
+            <span class="vision-timeline-dot" aria-hidden="true"></span>
+            <div class="vision-timeline-content">
+              <span class="vision-timeline-year">{{ milestone.year }}</span>
+              <h4>{{ milestone.title }}</h4>
+              <p>{{ milestone.description }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ─── OUR JOURNEY TIMELINE — auto-looping carousel ──────────────────────────
+  (() => {
+    const timelineEl = document.querySelector('.vision-timeline');
+    if (!timelineEl) return;
+
+    const items = Array.from(timelineEl.querySelectorAll('.vision-timeline-item'));
+    if (items.length === 0) return;
+
+    const DURATION = 5000;
+    let idx = 0;
+    let timer = null;
+    let paused = false;
+
+    const setActive = (i) => {
+      items.forEach((el, n) => el.classList.toggle('is-active', n === i));
+      idx = i;
+    };
+
+    const tick = () => { if (paused) return; setActive((idx + 1) % items.length); };
+    const start = () => { if (timer) return; timer = setInterval(tick, DURATION); };
+    const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const restart = () => { stop(); start(); };
+
+    items.forEach((el, i) => {
+      el.addEventListener('click', () => { setActive(i); restart(); });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActive(i); restart(); }
+      });
+    });
+
+    timelineEl.addEventListener('mouseenter', () => { paused = true; });
+    timelineEl.addEventListener('mouseleave', () => { paused = false; });
+    timelineEl.addEventListener('focusin',    () => { paused = true; });
+    timelineEl.addEventListener('focusout',   () => { paused = false; });
+
+    setActive(0);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
+  })();
+</script>

@@ -36,6 +36,10 @@ sections:
       - title: Networks
         content: We connect and develop national and international networks in pharma data science and data science education.
 
+  - color: forest-green
+    class: vision-section-band
+    include: vision-journey.html
+
   - color: soft-white
     title: "The New Ways of Working Philosophy"
     intro: "Our center's philosophy is rooted in the principles of the New Ways of Working movement -- taking values and inspiration from sociocracy, agile, lean, and teal."

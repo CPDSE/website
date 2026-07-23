@@ -368,16 +368,16 @@ a { color: inherit; }
   pointer-events: none;
 }
 .section-announcements {
-  background: var(--color-sage-green, #5F7D61);
+  background: var(--color-forest-green, #3C5E3E);
   position: relative;
   overflow: hidden;
   color: var(--color-soft-white, #F9F9F9);
 }
 .section-announcements .section-label {
-  color: var(--color-warm-sand, #E4D7A1);
+  color: var(--color-antique-gold, #D6C17C);
 }
 .section-announcements h2 {
-  color: var(--color-warm-sand, #E4D7A1);
+  color: var(--color-antique-gold, #D6C17C);
 }
 .section-announcements .announcement-card {
   background: var(--offwhite);

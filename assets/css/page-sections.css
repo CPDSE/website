@@ -459,3 +459,14 @@
   .page-section__image-text--right .page-section__image-wrap { order: 0; }
   .approach-pill { font-size: 0.72rem; padding: 0.5rem 0.9rem; }
 }
+
+/* ── "Our Journey" milestone timeline inside a forest-green band ──────────────
+   The timeline dims inactive milestones and brightens the active one. The
+   generic `.page-section--forest-green h4` gold heading rule would flatten that
+   contrast, so restore the timeline's own states at higher specificity. */
+.page-section--forest-green .vision-timeline-content h4 {
+  color: rgba(249, 249, 249, 0.55);
+}
+.page-section--forest-green .vision-timeline-item.is-active .vision-timeline-content h4 {
+  color: var(--color-soft-white, #F9F9F9);
+}
