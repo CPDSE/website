@@ -86,19 +86,19 @@ spotlight_intro: Three ways to work with the center, whether you teach, study, o
 spotlight:
   - title: Access Resources
     body: We develop and publish free educational resources for data science in pharma — two short steps in Python or R to get started, then a full library for when you want to go deeper.
-    image: /assets/images/Why-Data-Science.webp
+    image: /assets/images/Why-Data-Science-spotlight.webp
     alt: Why data science matters for pharmaceutical sciences
     link_text: Read more
     link_url: /learning-resources/
   - title: Employ Services
     body: We help teachers adapt their courses to modern requirements and the growing need to include data science, upgrading and reforming pharma curricula across all levels.
-    image: /assets/images/retreat-01-2026.jpeg
+    image: /assets/images/retreat-01-2026-spotlight.jpg
     alt: CPDSE members at the January 2026 retreat
     link_text: Read more
     link_url: /curriculum-development/
   - title: Join Us
     body: Visit us and join our talks, take on a project opportunity, or become a fellow — several ways to get involved with the community.
-    image: /assets/images/new-years-celebration.jpeg
+    image: /assets/images/new-years-celebration-spotlight.jpg
     alt: CPDSE community at a new year celebration
     link_text: Read more
     link_url: /join-us/
