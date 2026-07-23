@@ -1456,7 +1456,13 @@ a { color: inherit; }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
 .site-footer {
-  background: #3C5E3E;
+  /* Subtle top-down gradient between the two approved dark greens —
+     sage easing into forest. No new colours introduced. */
+  background: linear-gradient(
+    180deg,
+    var(--color-sage-green, #5F7D61) 0%,
+    var(--color-forest-green, #3C5E3E) 42%
+  );
   color: rgba(249,249,249,0.6);
   padding: var(--space-lg) 0 var(--space-md);
 }
