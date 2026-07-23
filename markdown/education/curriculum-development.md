@@ -22,6 +22,13 @@ sections:
 
       <!--[Track the progress of data science integration into the pharmacy curricula at SDU and UCPH →](https://cpdse.ku.dk/edu_circle/pharma-ds-dashboard_server_static_mock.html){:.btn .btn-primary target="_blank"}-->
 
+  - color: forest-green
+    title: "See the full educational overview"
+    content: |
+      Explore how data science is woven into the pharmaceutical curricula at SDU and UCPH — course by course, level by level.
+
+      [View the educational overview →](https://cpdse.github.io/education_overview/){:.btn .btn-primary target="_blank" rel="noopener"}
+
   - color: sage-green
     title: "What We Offer"
     intro: "From regular talks to open learning materials — everything CPDSE produces is freely accessible to students, researchers, and practitioners at every level."
