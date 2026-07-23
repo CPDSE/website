@@ -368,16 +368,16 @@ a { color: inherit; }
   pointer-events: none;
 }
 .section-announcements {
-  background: var(--color-forest-green, #3C5E3E);
+  background: var(--color-sage-green, #5F7D61);
   position: relative;
   overflow: hidden;
   color: var(--color-soft-white, #F9F9F9);
 }
 .section-announcements .section-label {
-  color: var(--color-antique-gold, #D6C17C);
+  color: var(--color-warm-sand, #E4D7A1);
 }
 .section-announcements h2 {
-  color: var(--color-antique-gold, #D6C17C);
+  color: var(--color-warm-sand, #E4D7A1);
 }
 .section-announcements .announcement-card {
   background: var(--offwhite);
@@ -871,17 +871,14 @@ a { color: inherit; }
 
 /* ─── COMMUNITY / JOURNEY ─────────────────────────────────── */
 .section-community {
-  background: var(--color-sage-green, #5F7D61);
-  color: var(--color-soft-white, #F9F9F9);
-}
-.section-community .section-label {
-  color: var(--color-warm-sand, #E4D7A1);
+  background: var(--color-soft-white);
+  color: var(--color-charcoal, #333333);
 }
 .section-community h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 400;
-  color: var(--color-warm-sand, #E4D7A1);
+  color: var(--color-forest-green);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -900,7 +897,7 @@ a { color: inherit; }
   flex: 1 1 0;
 }
 .community-copy {
-  color: var(--color-soft-white, #F9F9F9);
+  color: rgba(15,26,20,0.72);
   line-height: 1.75;
   max-width: 60ch;
 }
@@ -1003,7 +1000,7 @@ a { color: inherit; }
   opacity: 1;
 }
 .section-community .section-header p {
-  color: var(--color-soft-white, #F9F9F9);
+  color: rgba(51,51,51,0.7);
 }
 .section-green {
   background: var(--color-forest-green, #3C5E3E);
