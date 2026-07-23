@@ -86,6 +86,20 @@ layout: default
   </div>
 </section>
 
+<!-- STATS STRIP -->
+<section class="page-section page-section--forest-green">
+  <div class="container">
+    <div class="page-section__stats stats-strip" aria-label="Key numbers">
+      {% for stat in page.stats %}
+      <div class="page-section__stat">
+        <span class="page-section__stat-number stat-number" data-count="{{ stat.number }}"{% if stat.suffix %} data-suffix="{{ stat.suffix }}"{% endif %}>0{{ stat.suffix }}</span>
+        <span class="page-section__stat-label stat-label">{{ stat.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <!-- COMMUNITY -->
 <section class="section section-community">
   <div class="container">
@@ -105,20 +119,6 @@ layout: default
           <a href="{{ site.socials.linkedin }}" target="_blank" rel="noopener" class="btn btn-ghost">Follow us</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS STRIP -->
-<section class="page-section page-section--forest-green">
-  <div class="container">
-    <div class="page-section__stats stats-strip" aria-label="Key numbers">
-      {% for stat in page.stats %}
-      <div class="page-section__stat">
-        <span class="page-section__stat-number stat-number" data-count="{{ stat.number }}"{% if stat.suffix %} data-suffix="{{ stat.suffix }}"{% endif %}>0{{ stat.suffix }}</span>
-        <span class="page-section__stat-label stat-label">{{ stat.label }}</span>
-      </div>
-      {% endfor %}
     </div>
   </div>
 </section>
