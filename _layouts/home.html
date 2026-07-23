@@ -27,6 +27,34 @@ layout: default
 
 </section>
 
+<!-- ANNOUNCEMENTS -->
+<section class="section section-announcements">
+  <div class="container">
+    <div class="section-header fade-in" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+      <div>
+        <span class="section-label">Latest</span>
+        <h2>News &amp; Events</h2>
+      </div>
+      <a href="{{ '/news-events/' | relative_url }}" class="btn btn-ghost">View all →</a>
+    </div>
+
+    <div class="announcements-grid fade-in-stagger">
+      {% assign posts = site.posts | slice: 0, 3 %}
+      {% for post in posts %}
+      <a class="announcement-card" href="{{ post.url | relative_url }}">
+        <div class="card-meta">
+          {% if post.category %}<span class="card-tag">{{ post.category }}</span>{% endif %}
+          <span class="card-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+        <h3>{{ post.title }}</h3>
+        {% if post.excerpt %}<p style="font-size:0.88rem; color:var(--muted); line-height:1.55;">{{ post.excerpt | strip_html | truncate: 100 }}</p>{% endif %}
+        <span class="card-arrow">Read more →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT INTRO -->
 <section class="about-strip">
   <div class="about-inner fade-in">
@@ -54,34 +82,6 @@ layout: default
         <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn more</a>
         <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Get in touch</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ANNOUNCEMENTS -->
-<section class="section section-announcements">
-  <div class="container">
-    <div class="section-header fade-in" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
-      <div>
-        <span class="section-label">Latest</span>
-        <h2>News &amp; Events</h2>
-      </div>
-      <a href="{{ '/news-events/' | relative_url }}" class="btn btn-ghost">View all →</a>
-    </div>
-
-    <div class="announcements-grid fade-in-stagger">
-      {% assign posts = site.posts | slice: 0, 3 %}
-      {% for post in posts %}
-      <a class="announcement-card" href="{{ post.url | relative_url }}">
-        <div class="card-meta">
-          {% if post.category %}<span class="card-tag">{{ post.category }}</span>{% endif %}
-          <span class="card-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        </div>
-        <h3>{{ post.title }}</h3>
-        {% if post.excerpt %}<p style="font-size:0.88rem; color:var(--muted); line-height:1.55;">{{ post.excerpt | strip_html | truncate: 100 }}</p>{% endif %}
-        <span class="card-arrow">Read more →</span>
-      </a>
-      {% endfor %}
     </div>
   </div>
 </section>
@@ -206,6 +206,19 @@ layout: default
   </div>
 </section>
 
+<!-- SPOTLIGHT -->
+{% if page.spotlight %}
+<section class="page-section page-section--forest-green">
+  <div class="container">
+    {% include spotlight.html
+       items=page.spotlight
+       eyebrow=page.spotlight_label
+       title=page.spotlight_headline
+       intro=page.spotlight_intro
+       id_prefix="home-spotlight" %}
+  </div>
+</section>
+{% endif %}
 
 <!-- FUNDERS -->
 <section class="section section-partners section-circles">

@@ -1,0 +1,81 @@
+{% comment %}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CPDSE — Spotlight (tabbed feature band)
+
+  A column of topics on the left, a media panel on the right that
+  swaps as you move between them. Auto-advances every 6 seconds,
+  pauses on hover/focus, and responds to click and arrow keys.
+
+  Called two ways:
+    • from page-section.html, for `spotlight:` sections in any .md page
+    • directly from _layouts/home.html
+
+  Parameters
+  ──────────
+  items      Required — list of topics. Each topic:
+               title:      Label in the left column (also the panel heading)
+               body:       Short description shown under the image
+               image:      Path to the panel image, e.g. /assets/team.jpg
+               alt:        Alt text for the image
+               link_text:  Button label (optional — button hidden without it)
+               link_url:   Button destination
+               link_external: true — opens in a new tab
+  eyebrow    Small all-caps label above the title (optional)
+  title      Section headline, rendered inside the left column (optional)
+  intro      Lead paragraph beneath the title (optional)
+  id_prefix  Unique string per instance on a page, used to wire the
+             tab/panel aria attributes. Defaults to "spotlight".
+
+  NOTE: unlike the other layout types, eyebrow/title/intro render inside
+  the left column rather than across the top of the band. That is what
+  keeps the two columns balanced.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{% endcomment %}
+
+{% assign sp_id = include.id_prefix | default: 'spotlight' %}
+
+<div class="spotlight" data-spotlight>
+
+  <div class="spotlight__side">
+    {% if include.eyebrow %}<p class="spotlight__eyebrow">{{ include.eyebrow }}</p>{% endif %}
+    {% if include.title %}<h2 class="spotlight__title">{{ include.title }}</h2>{% endif %}
+    {% if include.intro %}<p class="spotlight__intro">{{ include.intro }}</p>{% endif %}
+
+    <ul class="spotlight__list" role="tablist"{% if include.title %} aria-label="{{ include.title }}"{% endif %}>
+      {% for item in include.items %}
+      <li>
+        <button class="spotlight__trigger{% if forloop.first %} is-active{% endif %}"
+                role="tab"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                {% unless forloop.first %}tabindex="-1"{% endunless %}
+                aria-controls="{{ sp_id }}-p{{ forloop.index }}"
+                id="{{ sp_id }}-t{{ forloop.index }}">
+          <span class="spotlight__arrow" aria-hidden="true">&rarr;</span>
+          <span class="spotlight__trigger-text">{{ item.title }}</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="spotlight__panels">
+    {% for item in include.items %}
+    <div class="spotlight__panel{% if forloop.first %} is-active{% endif %}"
+         role="tabpanel"
+         id="{{ sp_id }}-p{{ forloop.index }}"
+         aria-labelledby="{{ sp_id }}-t{{ forloop.index }}"
+         {% unless forloop.first %}hidden{% endunless %}>
+      {% if item.image %}
+      <div class="spotlight__media">
+        <img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: '' }}" loading="lazy">
+      </div>
+      {% endif %}
+      {% if item.body %}<p class="spotlight__panel-body">{{ item.body }}</p>{% endif %}
+      {% if item.link_text %}
+      <a class="spotlight__cta" href="{% if item.link_external %}{{ item.link_url }}{% else %}{{ item.link_url | relative_url }}{% endif %}"{% if item.link_external %} target="_blank" rel="noopener"{% endif %}>{{ item.link_text }}</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

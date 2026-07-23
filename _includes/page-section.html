@@ -165,6 +165,38 @@
 
   ─────────────────────────────────────────────────────────
 
+  7. SPOTLIGHT (tabbed feature band)
+     ──────────────────────────────
+     spotlight:          Required — list of topics.
+
+     Each topic:
+       title:      Label in the left column (also the panel heading)
+       body:       Short description shown under the image
+       image:      Panel image, e.g. /assets/images/team.jpg
+       alt:        Alt text for the image
+       link_text:  Button label (button hidden if omitted)
+       link_url:   Button destination
+       link_external: true — opens in a new tab
+
+     NOTE: for this layout only, eyebrow/title/intro render inside the
+     left column rather than across the top of the band. That is what
+     keeps the two columns balanced.
+
+     Example:
+       - color: forest-green
+         eyebrow: What we do
+         title: Services
+         intro: Three ways the center works with students and teachers.
+         spotlight:
+           - title: Curriculum Development
+             body: We upgrade and reform pharma courses.
+             image: /assets/images/Episode_Meeting.png
+             alt: CPDSE members working together at a meeting
+             link_text: Read more
+             link_url: /curriculum-development/
+
+  ─────────────────────────────────────────────────────────
+
   6. INCLUDE (HTML partial)
      ──────────────────────
      include: filename.html
@@ -192,15 +224,25 @@
 <section class="page-section page-section--{{ color }}{% if s.class %} {{ s.class }}{% endif %}"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="container">
 
-    {% if s.eyebrow or s.title or s.intro %}
+    {% comment %}Spotlight renders its own header inside the left column{% endcomment %}
+    {% if s.eyebrow or s.title or s.intro %}{% unless s.spotlight %}
     <header class="page-section__header">
       {% if s.eyebrow %}<p class="page-section__eyebrow">{{ s.eyebrow }}</p>{% endif %}
       {% if s.title %}<h2 class="page-section__title">{{ s.title }}</h2>{% endif %}
       {% if s.intro %}<p class="page-section__intro">{{ s.intro }}</p>{% endif %}
     </header>
-    {% endif %}
+    {% endunless %}{% endif %}
 
-    {% if s.stats %}
+    {% if s.spotlight %}
+    <!-- ── Spotlight ── -->
+    {% include spotlight.html
+       items=s.spotlight
+       eyebrow=s.eyebrow
+       title=s.title
+       intro=s.intro
+       id_prefix=s.id %}
+
+    {% elsif s.stats %}
     <!-- ── Stats banner ── -->
     <div class="page-section__stats stats-strip">
       {% for stat in s.stats %}

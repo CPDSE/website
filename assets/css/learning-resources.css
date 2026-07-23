@@ -627,3 +627,16 @@ html { overflow-x: clip; }
   .cpdse-learn__filter-search { min-width: 100%; }
   .cpdse-learn__stage-tracks { grid-template-columns: 1fr; }
 }
+
+/* ── Body copy on the dark bands ───────────────────────────────────────
+   `.page-body p { color: #333 }` in main.css (specificity 0,1,1) outbids
+   both the band-level `color` and the class rules below it (0,1,0), which
+   greys out the lede and stage blurbs sitting on the forest and sage
+   bands. Restore the intended pairing — soft white on dark green — at a
+   specificity that wins. The third band is light, so it is left alone,
+   as is card copy, which sits on its own light background. */
+.page-body .cpdse-learn__band--forest .cpdse-learn__lede,
+.page-body .cpdse-learn__band--ivory .cpdse-learn__lede,
+.page-body .cpdse-learn__band--ivory .cpdse-learn__stage-blurb {
+  color: var(--color-soft-white, #F9F9F9);
+}

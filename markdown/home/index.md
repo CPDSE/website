@@ -79,6 +79,30 @@ audience_ctas:
     url: https://github.com/CPDSE
     external: true
 
+# ── Spotlight (tabbed feature band below "Who we serve") ──────────────────────
+spotlight_label: What we offer
+spotlight_headline: "Engage with us"
+spotlight_intro: Three ways to work with the center, whether you teach, study, or want to build your own data science skills.
+spotlight:
+  - title: Access Resources
+    body: We develop and publish free educational resources for data science in pharma — two short steps in Python or R to get started, then a full library for when you want to go deeper.
+    image: /assets/images/Why-Data-Science.webp
+    alt: Why data science matters for pharmaceutical sciences
+    link_text: Read more
+    link_url: /learning-resources/
+  - title: Employ Services
+    body: We help teachers adapt their courses to modern requirements and the growing need to include data science, upgrading and reforming pharma curricula across all levels.
+    image: /assets/images/retreat-01-2026.jpeg
+    alt: CPDSE members at the January 2026 retreat
+    link_text: Read more
+    link_url: /curriculum-development/
+  - title: Join Us
+    body: Visit us and join our talks, take on a project opportunity, or become a fellow — several ways to get involved with the community.
+    image: /assets/images/new-years-celebration.jpeg
+    alt: CPDSE community at a new year celebration
+    link_text: Read more
+    link_url: /join-us/
+
 # ── Funders ───────────────────────────────────────────────────────────────────
 funders_note: "This work was supported by the Novo Nordisk Foundation (NNF24SA0092613), the LEO Foundation (LF-ST-24-500013), and the Lundbeck Foundation (R469-2024-629) through funding to the Center for Pharmaceutical Data Science Education."
 ---

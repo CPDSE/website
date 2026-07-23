@@ -343,6 +343,38 @@ Renders a custom HTML partial from `_includes/`. The full section data is passed
 
 ---
 
+### Layout 7 — Spotlight
+
+A tabbed feature band: a list of topics on the left, a large image panel on the right that swaps as you move between them. It advances on its own every six seconds, pauses when you hover or focus it, and responds to click and arrow keys.
+
+Best with `color: forest-green`. Three topics is the comfortable maximum — beyond that the left column grows taller than the image.
+
+```yaml
+  - color: forest-green
+    eyebrow: What we offer
+    title: Where to start with us
+    intro: Three places to begin, whether you teach or study.
+    spotlight:
+      - title: Curriculum Development     # left-column label, and the panel heading
+        body: How CPDSE thinks about data science education.
+        image: /assets/images/Episode_Meeting.png
+        alt: CPDSE community members collaborating
+        link_text: Read more             # omit to hide the button
+        link_url: /curriculum-development/
+      - title: Student Code Club
+        body: A safe and collaborative space to practice your skills.
+        image: /assets/team.jpg
+        alt: CPDSE community group photo
+        link_text: Read more
+        link_url: /codeclub/
+```
+
+**One difference from the other layouts:** `eyebrow`, `title` and `intro` render *inside the left column*, above the topic list — not across the top of the band. That is what keeps the two columns balanced, so don't be surprised when the headline doesn't sit full-width like it does elsewhere.
+
+Images are cropped to 16:9. `link_external: true` on a topic opens its button in a new tab.
+
+---
+
 ## Update Danish pharma snapshot
 
 The About section visualization reads from `assets/data/pharma_snapshot.json`.

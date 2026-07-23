@@ -127,6 +127,77 @@
         heroVideo.pause();
       });
     }
+
+    // ─── SPOTLIGHT SECTIONS — tabbed feature band (_includes/spotlight.html) ───
+    (() => {
+      const DURATION = 6000;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      document.querySelectorAll('[data-spotlight]').forEach((root) => {
+        const triggers = Array.from(root.querySelectorAll('.spotlight__trigger'));
+        const panels   = Array.from(root.querySelectorAll('.spotlight__panel'));
+        if (!triggers.length || triggers.length !== panels.length) return;
+
+        let idx = 0, timer = null, paused = false;
+
+        // Restart the underline fill that times the auto-advance
+        const arm = (i) => {
+          if (reducedMotion || paused) return;
+          void triggers[i].offsetWidth;
+          triggers[i].classList.add('is-timing');
+        };
+
+        const setActive = (i) => {
+          idx = i;
+          triggers.forEach((t, n) => {
+            const on = n === i;
+            t.classList.toggle('is-active', on);
+            t.classList.remove('is-timing');
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.tabIndex = on ? 0 : -1;
+          });
+          panels.forEach((p, n) => {
+            const on = n === i;
+            p.classList.toggle('is-active', on);
+            p.hidden = !on;
+          });
+          arm(i);
+        };
+
+        const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+        const start = () => {
+          if (reducedMotion || timer) return;
+          timer = setInterval(() => { if (!paused) setActive((idx + 1) % triggers.length); }, DURATION);
+        };
+        const restart = () => { stop(); start(); };
+
+        triggers.forEach((t, i) => {
+          t.addEventListener('click', () => { setActive(i); restart(); });
+          t.addEventListener('keydown', (e) => {
+            const last = triggers.length - 1;
+            let next = null;
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') next = idx === last ? 0 : idx + 1;
+            if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  next = idx === 0 ? last : idx - 1;
+            if (e.key === 'Home') next = 0;
+            if (e.key === 'End')  next = last;
+            if (next === null) return;
+            e.preventDefault();
+            setActive(next);
+            triggers[next].focus();
+            restart();
+          });
+        });
+
+        root.addEventListener('mouseenter', () => { paused = true; triggers[idx].classList.remove('is-timing'); });
+        root.addEventListener('mouseleave', () => { paused = false; arm(idx); });
+        root.addEventListener('focusin',    () => { paused = true; triggers[idx].classList.remove('is-timing'); });
+        root.addEventListener('focusout',   () => { paused = false; arm(idx); });
+
+        root.style.setProperty('--spotlight-duration', DURATION + 'ms');
+        setActive(0);
+        start();
+      });
+    })();
   </script>
 </body>
 </html>

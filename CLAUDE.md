@@ -89,7 +89,7 @@ description: One line.  # soft-white paragraph
 
 ## Sections system
 
-All layout is controlled through `sections:` YAML. The six layout types are:
+All layout is controlled through `sections:` YAML. The seven layout types are:
 
 1. **Plain text** — `content: |`
 2. **Two columns** — `columns:` list with two `content:` blocks
@@ -97,6 +97,7 @@ All layout is controlled through `sections:` YAML. The six layout types are:
 4. **Image + text** — `image:` with `src:`, `alt:`, `position: left|right` plus `content:`
 5. **Stats banner** — `stats:` list; best on `forest-green`
 6. **HTML include** — `include: filename.html`; pass data via custom YAML keys
+7. **Spotlight** — `spotlight:` list of topics; tabbed feature band, best on `forest-green`. Note: `eyebrow`/`title`/`intro` render inside the left column, not across the top
 
 Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 
