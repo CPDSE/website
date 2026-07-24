@@ -375,18 +375,20 @@ Images are cropped to 16:9. `link_external: true` on a topic opens its button in
 
 ---
 
-## Update Danish pharma snapshot
+## Update the homepage pharma data story
 
-The About section visualization reads from `assets/data/pharma_snapshot.json`.
+The "Pharma is full of data" visualization in the About strip is a stepped D3 data
+story. Its numbers live in `_data/pharma_data_growth.json` (new records per year,
+oldest first, from `startYear`), its copy in the `viz_*` frontmatter keys of
+`markdown/home/index.md`, and its chart code / styles in `_layouts/home.html` and
+the `.ds-*` classes in `assets/css/main.css`.
 
-To regenerate that snapshot from Medstat download files, run:
+To refresh the data, re-query the three public sources and overwrite the arrays in
+`_data/pharma_data_growth.json` (one integer per year):
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/update-pharma-snapshot.ps1
-```
+- **ClinicalTrials.gov** — studies first posted per year (v2 API, `AREA[StudyFirstPostDate]RANGE[...]` filter with `countTotal=true`)
+- **PubMed** — records with MeSH `"Pharmaceutical Preparations"` by publication year (E-utilities `esearch`, `datetype=pdat`)
+- **RCSB PDB** — structures released per year (search API, `rcsb_accession_info.initial_release_date` range with `return_counts`)
 
-Optional parameters:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/update-pharma-snapshot.ps1 -OutputPath "assets/data/pharma_snapshot.json" -MaxLookbackYears 8
-```
+If you add a year, extend each array and update `viz_finale_number` plus the
+highlighted figures written into the step captions in `markdown/home/index.md`.

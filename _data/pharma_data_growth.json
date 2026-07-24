@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "name": "Pharma data growth",
+    "updated": "2026-07-24",
+    "note": "New records per year, 2000-2025. Committed static snapshot; refetch by hand to update.",
+    "sources": [
+      { "key": "ct",  "source": "ClinicalTrials.gov",       "measure": "studies first posted per year" },
+      { "key": "pm",  "source": "PubMed",                    "measure": "records with MeSH \"Pharmaceutical Preparations\", by publication year" },
+      { "key": "pdb", "source": "RCSB Protein Data Bank",    "measure": "structures released per year" }
+    ]
+  },
+  "startYear": 2000,
+  "series": {
+    "ct":  [1063,1773,1378,3588,3166,12797,10917,12549,17563,17008,17344,17815,19462,20428,23307,24104,27785,29175,30945,32509,36720,37013,38022,39704,43671,42966],
+    "pm":  [14087,15130,16926,18570,20933,23051,24491,26078,27689,29923,33172,35375,37241,37999,38399,38259,37456,37383,37652,38874,43376,43227,37730,32536,41388,45571],
+    "pdb": [2624,2810,2994,4144,5149,5334,6405,7134,6903,7288,7742,7925,8750,9338,9551,9242,10803,11061,11169,11479,14004,12584,14284,14498,15458,17615]
+  }
+}

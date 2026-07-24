@@ -3485,31 +3485,66 @@ a { color: inherit; }
   }
 }
 
-/* ── EMA streamgraph (homepage about strip) ──────────────────────── */
-.stream-path { cursor: pointer; transition: opacity 0.15s; }
-.stream-path:hover { opacity: 1 !important; }
-#sg-tip {
-  position: absolute; display: none;
-  background: #fff;
-  border: 0.5px solid rgba(51, 51, 51, 0.15);
-  border-radius: 8px;
-  padding: 8px 12px; font-size: 12px;
-  color: var(--color-charcoal, #333333); max-width: 200px;
-  z-index: 99; pointer-events: none; line-height: 1.5;
+/* ── Pharma data story (homepage about strip) ────────────────────── */
+.ds-wrap { position: relative; width: 100%; }
+.ds-caption { min-height: 3rem; }
+.ds-caption em { font-style: italic; }
+.ds-num { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1.08em; }
+.ds-finale {
+  position: absolute; inset: 0;
+  display: none; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; pointer-events: none;
 }
-#sg-legend {
-  display: flex; flex-wrap: wrap; gap: 10px;
-  margin-top: 18px;
+.ds-finale-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
-.sg-legend-item {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 11px; color: rgba(51, 51, 51, 0.6);
+.ds-finale-unit {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
 }
-.sg-legend-swatch {
-  width: 9px; height: 9px; min-width: 9px; min-height: 9px;
-  border-radius: 2px; flex-shrink: 0;
-  display: inline-block;
+.ds-controls {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; margin-top: 0.25rem;
 }
+.ds-btn {
+  border: 1px solid rgba(15, 26, 20, 0.22);
+  background: rgba(15, 26, 20, 0.04);
+  color: var(--color-charcoal, #333333);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ds-btn:hover { background: rgba(15, 26, 20, 0.08); }
+.ds-btn:disabled { opacity: 0.35; cursor: default; }
+.ds-dots { display: flex; gap: 6px; }
+.ds-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(15, 26, 20, 0.2);
+  transition: background 0.2s;
+}
+.ds-dot.is-active { background: rgba(15, 26, 20, 0.55); }
+.ds-sources {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 0.9rem;
+}
+.ds-sources a {
+  color: var(--color-charcoal, #333333);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15, 26, 20, 0.25);
+}
+.ds-sources a:hover { color: var(--color-forest-green); }
 
 /* Circle links row (About page — sits below the circle cluster) */
 .circle-links {

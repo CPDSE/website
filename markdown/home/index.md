@@ -20,11 +20,54 @@ stats:
   - number: 6
     label: PhD Scholarships
 
-# ── Data viz showcase ─────────────────────────────────────────────────────────
-viz_label: Pharma Data Science in Action
-viz_caption: "This streamgraph was created using open EMA data, as an example of the pharmaceutical data literacy we are working to establish."
-viz_source_label: "EMA-approved indications 2008–2023"
-viz_source_url: "https://www.ema.europa.eu/"
+# ── Data story (about strip) ──────────────────────────────────────────────────
+# Numbers live in _data/pharma_data_growth.json. Colours are data-viz series
+# colours (deliberately outside the four-pairing palette — approved choice).
+viz_label: Pharma is full of data
+viz_finale_number: "1.6M+"
+viz_finale_unit: data records since 2000
+viz_curve_color: "#E3B043"
+viz_hot_color: "#9A6B0A"
+viz_series:
+  - key: ct
+    name: Clinical trials
+    color: "#D85A30"
+    dash: ""
+  - key: pm
+    name: Drug papers
+    color: "#7F77DD"
+    dash: "6 4"
+  - key: pdb
+    name: Protein structures
+    color: "#1D9E75"
+    dash: "2 4"
+viz_annotation:
+  year: 2005
+  series: ct
+  lines:
+    - "2005 — trial registration"
+    - "required to publish"
+viz_sources_intro: "New records per year. Sources:"
+viz_sources:
+  - label: ClinicalTrials.gov
+    url: "https://clinicaltrials.gov/"
+  - label: PubMed
+    url: "https://pubmed.ncbi.nlm.nih.gov/"
+  - label: RCSB Protein Data Bank
+    url: "https://www.rcsb.org/"
+viz_steps:
+  - intro: true
+    caption: "In 2000, pharma produced <span class='ds-num' data-series='hot'>under 20,000</span> new data records a year. Today it's <span class='ds-num' data-series='hot'>over 100,000</span> — and still climbing."
+  - show: [ct]
+    anno: true
+    caption: "Where does it all come from? Start with clinical trials — about <span class='ds-num' data-series='ct'>43,000</span> registered in 2025, roughly <span class='ds-num' data-series='ct'>40×</span> the number in 2000."
+  - show: [ct, pm]
+    caption: "Add the literature: PubMed absorbed over <span class='ds-num' data-series='pm'>45,000</span> new drug-research papers in 2025 alone."
+  - show: [ct, pm, pdb]
+    caption: "And the molecules themselves — <span class='ds-num' data-series='pdb'>17,000+</span> new protein structures released in 2025, up from <span class='ds-num' data-series='pdb'>a few thousand</span> a year in 2000."
+  - show: [ct, pm, pdb]
+    finale: true
+    caption: "Three public sources. <span class='ds-num' data-series='hot'>1.6 million+</span> records since 2000. Pharma is full of data — what it needs is the <em>data science</em> to read it."
 
 # ── About intro ───────────────────────────────────────────────────────────────
 about_label: About CPDSE

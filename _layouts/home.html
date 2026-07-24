@@ -45,19 +45,28 @@ layout: default
 <section class="about-strip">
   <div class="about-inner fade-in">
     <div class="about-visual">
-      <div class="about-viz" id="pharma-live-viz">
+      <div class="about-viz" id="pharma-data-story">
         <div class="about-viz-header">
           <span class="section-label" style="color:var(--color-forest-green)">{{ page.viz_label }}</span>
-          <h2>{{ page.viz_headline }}</h2>
         </div>
-        <h2 class="sr-only">Streamgraph showing cumulative EMA drug approvals by therapeutic area from 2008 to 2023. Stream width represents number of approvals per year.</h2>
-        <div id="sg-tip"></div>
-        <div style="position:relative;">
-          <svg id="sg-svg" width="100%" viewBox="0 0 500 280" style="display:block;"></svg>
+        <h2 class="sr-only">A stepped data story showing the growth of pharmaceutical data from 2000 to 2025. It reveals three public sources — clinical trials, drug publications and protein structures — one at a time, and concludes that pharma has accumulated over 1.6 million new records since 2000.</h2>
+        <div class="ds-wrap">
+          <svg id="ds-svg" width="100%" style="display:block; overflow:visible;"></svg>
+          <div id="ds-finale" class="ds-finale" aria-hidden="true">
+            <div class="ds-finale-number">{{ page.viz_finale_number }}</div>
+            <div class="ds-finale-unit">{{ page.viz_finale_unit }}</div>
+          </div>
         </div>
-        <div id="sg-legend"></div>
-        <p class="about-viz-caption">{{ page.viz_caption }}</p>
-        <div class="about-viz-hint">{{ page.viz_source_label }} · <a href="{{ page.viz_source_url }}" target="_blank" rel="noopener">SOURCE: EMA</a></div>
+        <p id="ds-caption" class="about-viz-caption ds-caption"></p>
+        <div class="ds-controls">
+          <button id="ds-back" class="ds-btn" type="button">Back</button>
+          <div id="ds-dots" class="ds-dots" aria-hidden="true"></div>
+          <button id="ds-next" class="ds-btn" type="button">Next</button>
+        </div>
+        <div class="ds-sources">
+          {{ page.viz_sources_intro }}
+          {% for src in page.viz_sources %}<a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}.
+        </div>
       </div>
     </div>
     <div class="about-text">
@@ -248,127 +257,173 @@ layout: default
 
 <script src="{{ '/assets/js/vendor/d3.v7.min.js' | relative_url }}"></script>
 <script>
-  // ─── ABOUT VIZ: EMA STREAMGRAPH ─────────────────────────────────────────────
+  // ─── ABOUT VIZ: PHARMA DATA STORY ───────────────────────────────────────────
   (function () {
     if (typeof d3 === 'undefined') return;
-
-    var COLORS = {
-      "Oncology":"#7F77DD","Immunology":"#1D9E75","Cardiovascular":"#D85A30",
-      "Neurology":"#D4537E","Rare disease":"#378ADD","Metabolic":"#BA7517",
-      "Infectious":"#639922","Respiratory":"#888780"
-    };
-    var areas = Object.keys(COLORS);
-
-    var medicines = [
-      {area:"Cardiovascular",year:2008,ind:6},{area:"Cardiovascular",year:2011,ind:5},
-      {area:"Metabolic",year:2014,ind:4},
-      {area:"Oncology",year:2015,ind:17},{area:"Oncology",year:2015,ind:14},{area:"Cardiovascular",year:2015,ind:2},
-      {area:"Immunology",year:2017,ind:7},{area:"Immunology",year:2017,ind:3},
-      {area:"Infectious",year:2017,ind:1},{area:"Oncology",year:2017,ind:6},
-      {area:"Neurology",year:2018,ind:2},{area:"Rare disease",year:2018,ind:1},
-      {area:"Rare disease",year:2018,ind:1},{area:"Respiratory",year:2018,ind:1},
-      {area:"Oncology",year:2018,ind:5},{area:"Metabolic",year:2018,ind:3},
-      {area:"Immunology",year:2019,ind:4},{area:"Immunology",year:2019,ind:6},
-      {area:"Rare disease",year:2019,ind:1},{area:"Respiratory",year:2019,ind:2},
-      {area:"Cardiovascular",year:2020,ind:2},{area:"Oncology",year:2020,ind:3},
-      {area:"Neurology",year:2020,ind:1},{area:"Respiratory",year:2020,ind:1},
-      {area:"Oncology",year:2021,ind:4},{area:"Rare disease",year:2021,ind:1},
-      {area:"Neurology",year:2021,ind:1},
-      {area:"Infectious",year:2022,ind:1},{area:"Infectious",year:2022,ind:1},
-      {area:"Neurology",year:2023,ind:1}
-    ];
-
-    var years = d3.range(2008, 2024);
-
-    var tableData = years.map(function (y) {
-      var row = {year: y};
-      areas.forEach(function (a) {
-        row[a] = d3.sum(medicines.filter(function (m) { return m.year === y && m.area === a; }), function (m) { return m.ind; });
-      });
-      return row;
-    });
-
-    var W = 500, H = 280, mL = 30, mR = 10, mT = 16, mB = 28;
-    var iW = W - mL - mR, iH = H - mT - mB;
-
-    var svgEl = document.getElementById('sg-svg');
+    var svgEl = document.getElementById('ds-svg');
     if (!svgEl) return;
-    var svg = d3.select(svgEl);
-    var g = svg.append('g').attr('transform', 'translate(' + mL + ',' + mT + ')');
-    var tip = document.getElementById('sg-tip');
 
-    var xScale = d3.scalePoint().domain(years).range([0, iW]).padding(0.1);
-    var stack = d3.stack().keys(areas).offset(d3.stackOffsetSilhouette).order(d3.stackOrderInsideOut);
-    var series = stack(tableData);
+    var DATA = {{ site.data.pharma_data_growth | jsonify }};
+    var CFG = {
+      series: {{ page.viz_series | jsonify }},
+      curve:  {{ page.viz_curve_color | jsonify }},
+      hot:    {{ page.viz_hot_color | jsonify }},
+      steps:  {{ page.viz_steps | jsonify }},
+      anno:   {{ page.viz_annotation | jsonify }}
+    };
 
-    var yExtent = [
-      d3.min(series, function (s) { return d3.min(s, function (d) { return d[0]; }); }),
-      d3.max(series, function (s) { return d3.max(s, function (d) { return d[1]; }); })
-    ];
-    var yScale = d3.scaleLinear().domain(yExtent).range([iH, 0]);
-
-    var areaGen = d3.area()
-      .x(function (d) { return xScale(d.data.year); })
-      .y0(function (d) { return yScale(d[0]); })
-      .y1(function (d) { return yScale(d[1]); })
-      .curve(d3.curveCatmullRom.alpha(0.5));
-
-    g.selectAll('.stream-path').data(series).join('path')
-      .attr('class', 'stream-path')
-      .attr('d', areaGen)
-      .attr('fill', function (d) { return COLORS[d.key]; })
-      .attr('fill-opacity', 0.82)
-      .attr('opacity', 1)
-      .on('mousemove', function (event, d) {
-        var rect = svgEl.getBoundingClientRect();
-        var closestYear = years.reduce(function (a, b) {
-          return Math.abs(xScale(b) - (event.clientX - rect.left) * (W / rect.width) + mL) <
-                 Math.abs(xScale(a) - (event.clientX - rect.left) * (W / rect.width) + mL) ? b : a;
-        });
-        var val = d3.sum(medicines.filter(function (m) { return m.year === closestYear && m.area === d.key; }), function (m) { return m.ind; });
-        var count = medicines.filter(function (m) { return m.year === closestYear && m.area === d.key; }).length;
-        tip.style.display = 'block';
-        tip.style.left = (event.clientX - rect.left + 12) + 'px';
-        tip.style.top = (event.clientY - rect.top - 10) + 'px';
-        tip.innerHTML = '<strong>' + d.key + '</strong><br>' + closestYear + ': ' + count + ' drug' + (count !== 1 ? 's' : '') + ', ' + val + ' indication' + (val !== 1 ? 's' : '');
-        svg.selectAll('.stream-path').attr('opacity', function (p) { return p.key === d.key ? 1 : 0.2; });
-      })
-      .on('mouseleave', function () {
-        tip.style.display = 'none';
-        svg.selectAll('.stream-path').attr('opacity', 1);
-      });
-
-    /* year labels along the x axis */
-    g.selectAll('.sg-xlabel').data(years.filter(function (y) { return y % 2 === 0; })).join('text')
-      .attr('class', 'sg-xlabel')
-      .attr('x', function (d) { return xScale(d); }).attr('y', iH + 16)
-      .attr('text-anchor', 'middle').attr('font-size', '10px')
-      .attr('fill', 'rgba(51,51,51,0.45)').text(function (d) { return d; });
-
-    /* embedded area labels on widest streams */
-    series.forEach(function (s) {
-      var mid = s[Math.floor(s.length / 2)];
-      var midY = (yScale(mid[0]) + yScale(mid[1])) / 2;
-      var span = Math.abs(yScale(mid[1]) - yScale(mid[0]));
-      if (span > 16) {
-        g.append('text')
-          .attr('x', xScale(years[Math.floor(years.length / 2)]))
-          .attr('y', midY)
-          .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
-          .attr('font-size', '9px').attr('font-weight', '500')
-          .attr('fill', 'white').attr('pointer-events', 'none')
-          .attr('fill-opacity', 0.9)
-          .text(s.key.length > 10 ? s.key.slice(0, 9) + '…' : s.key);
-      }
+    var startYear = DATA.startYear;
+    var series = DATA.series;
+    var keys = CFG.series.map(function (s) { return s.key; });
+    var n = series[keys[0]].length;
+    var years = d3.range(startYear, startYear + n);
+    var total = years.map(function (_, i) {
+      return keys.reduce(function (sum, k) { return sum + series[k][i]; }, 0);
     });
 
-    /* colour legend */
-    var legDiv = document.getElementById('sg-legend');
-    if (legDiv) {
-      areas.forEach(function (a) {
-        legDiv.innerHTML += '<span class="sg-legend-item">'
-          + '<span class="sg-legend-swatch" style="background:' + COLORS[a] + '"></span>' + a + '</span>';
+    var META = {};
+    CFG.series.forEach(function (s) { META[s.key] = { name: s.name, color: s.color, dash: s.dash || null }; });
+
+    // Colour the highlighted caption numbers + finale from config (keeps hex out of CSS).
+    var colorFor = function (tag) { return tag === 'hot' ? CFG.hot : (META[tag] ? META[tag].color : 'inherit'); };
+    var finaleNumEl = document.querySelector('.ds-finale-number');
+    if (finaleNumEl) finaleNumEl.style.color = CFG.hot;
+
+    var gridColor = 'rgba(15,26,20,0.10)';
+    var mutedText = 'rgba(15,26,20,0.45)';
+    var FS = '14px';
+
+    var svg = d3.select(svgEl);
+    var wrap = svgEl.parentNode;
+    var capEl = document.getElementById('ds-caption');
+    var finaleEl = document.getElementById('ds-finale');
+    var backBtn = document.getElementById('ds-back');
+    var nextBtn = document.getElementById('ds-next');
+    var mL = 16, mR = 128, mT = 16, mB = 30;
+
+    var dotsEl = d3.select('#ds-dots');
+    CFG.steps.forEach(function (_, i) { dotsEl.append('span').attr('class', 'ds-dot').attr('data-i', i); });
+
+    var step = 0, revealed = false;
+
+    function yearTicks() { return years.filter(function (yy) { return yy % 10 === 0; }); }
+    function drawYears(g, x, iH) {
+      g.selectAll('.xt').data(yearTicks()).join('text')
+        .attr('class', 'xt').attr('x', function (d) { return x(d); }).attr('y', iH + 20)
+        .attr('text-anchor', 'middle').attr('font-size', FS).attr('fill', mutedText)
+        .text(function (d) { return d; });
+    }
+    function applyCaptionColors() {
+      capEl.querySelectorAll('.ds-num[data-series]').forEach(function (el) {
+        el.style.color = colorFor(el.getAttribute('data-series'));
       });
     }
+
+    function draw(anim) {
+      var W = wrap.clientWidth || 500, H = 260, iW = W - mL - mR, iH = H - mT - mB;
+      svg.attr('viewBox', '0 0 ' + W + ' ' + H).attr('height', H);
+      svg.selectAll('*').remove();
+      var defs = svg.append('defs');
+      var g = svg.append('g').attr('transform', 'translate(' + mL + ',' + mT + ')');
+      var s = CFG.steps[step], fin = !!s.finale, intro = !!s.intro;
+      var x = d3.scaleLinear().domain([years[0], years[n - 1]]).range([0, iW]);
+      var lastAnimDur = 0;
+
+      if (intro) {
+        var yi = d3.scaleLinear().domain([0, d3.max(total) * 1.06]).range([iH, 0]);
+        g.selectAll('.grid').data(yi.ticks(5)).join('line')
+          .attr('x1', 0).attr('x2', iW).attr('y1', function (d) { return yi(d); }).attr('y2', function (d) { return yi(d); })
+          .attr('stroke', gridColor).attr('stroke-width', 1);
+        drawYears(g, x, iH);
+        var startW = anim ? 0 : iW;
+        var clip = defs.append('clipPath').attr('id', 'ds-clip')
+          .append('rect').attr('x', -2).attr('y', -mT).attr('width', startW).attr('height', H);
+        var gc = g.append('g').attr('clip-path', 'url(#ds-clip)');
+        var area = d3.area().x(function (d, i) { return x(years[i]); }).y0(iH).y1(function (d) { return yi(d); }).curve(d3.curveMonotoneX);
+        var ln = d3.line().x(function (d, i) { return x(years[i]); }).y(function (d) { return yi(d); }).curve(d3.curveMonotoneX);
+        gc.append('path').datum(total).attr('fill', CFG.curve).attr('fill-opacity', 0.16).attr('d', area);
+        gc.append('path').datum(total).attr('fill', 'none').attr('stroke', CFG.curve)
+          .attr('stroke-width', 3).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', ln);
+        var dot = g.append('circle').attr('cx', x(years[n - 1])).attr('cy', yi(total[n - 1])).attr('fill', CFG.curve)
+          .attr('r', anim ? 0 : 4.5);
+        if (anim) {
+          dot.transition().delay(1000).duration(300).attr('r', 4.5);
+          clip.transition().duration(1100).ease(d3.easeCubicOut).attr('width', iW);
+        }
+      } else {
+        var y = d3.scaleLinear().domain([0, 46000]).range([iH, 0]);
+        g.selectAll('.grid').data([0, 10000, 20000, 30000, 40000]).join('line')
+          .attr('x1', 0).attr('x2', iW).attr('y1', function (d) { return y(d); }).attr('y2', function (d) { return y(d); })
+          .attr('stroke', gridColor).attr('stroke-width', 1);
+        drawYears(g, x, iH);
+        var line = d3.line().x(function (d, i) { return x(years[i]); }).y(function (d) { return y(d); }).curve(d3.curveMonotoneX);
+        s.show.forEach(function (k) {
+          var m = META[k], isNewest = k === s.show[s.show.length - 1];
+          var p = g.append('path').datum(series[k]).attr('fill', 'none').attr('stroke', m.color)
+            .attr('stroke-width', 2.4).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round')
+            .attr('stroke-dasharray', m.dash || null).attr('opacity', fin ? 0.32 : 1).attr('d', line);
+          if (anim && (fin || isNewest)) {
+            var L = p.node().getTotalLength();
+            p.attr('stroke-dasharray', L + ' ' + L).attr('stroke-dashoffset', L)
+              .transition().duration(850).ease(d3.easeCubicOut).attr('stroke-dashoffset', 0)
+              .on('end', function () { d3.select(this).attr('stroke-dasharray', m.dash || null); });
+            lastAnimDur = 850;
+          }
+        });
+        if (!fin) {
+          var labs = s.show.map(function (k) { return { y: y(series[k][n - 1]), c: META[k].color, t: META[k].name }; });
+          labs.sort(function (a, b) { return a.y - b.y; });
+          for (var i = 1; i < labs.length; i++) { if (labs[i].y - labs[i - 1].y < 17) labs[i].y = labs[i - 1].y + 17; }
+          labs.forEach(function (l) {
+            g.append('text').attr('x', iW + 8).attr('y', l.y).attr('dy', '0.32em')
+              .attr('font-size', FS).attr('font-weight', '500').attr('fill', l.c).text(l.t);
+          });
+        }
+        if (s.anno && CFG.anno) {
+          var ai = CFG.anno.year - startYear, ak = CFG.anno.series;
+          var px = x(CFG.anno.year), py = y(series[ak][ai]);
+          var ag = g.append('g').attr('opacity', anim ? 0 : 1);
+          ag.append('line').attr('x1', px).attr('x2', px).attr('y1', py - 6).attr('y2', y(40000))
+            .attr('stroke', META[ak].color).attr('stroke-width', 1).attr('stroke-dasharray', '2 3').attr('opacity', 0.7);
+          ag.append('circle').attr('cx', px).attr('cy', py).attr('r', 3).attr('fill', META[ak].color);
+          CFG.anno.lines.forEach(function (txt, li) {
+            ag.append('text').attr('x', px + 6).attr('y', y(40000) + (li === 0 ? -6 : 12))
+              .attr('font-size', FS).attr('fill', META[ak].color)
+              .attr('font-weight', li === 0 ? '500' : '400').text(txt);
+          });
+          if (anim) ag.transition().delay(lastAnimDur + 150).duration(450).attr('opacity', 1);
+        }
+      }
+
+      if (fin) {
+        finaleEl.style.display = 'flex';
+        if (anim) {
+          finaleEl.style.transition = 'none'; finaleEl.style.opacity = '0'; finaleEl.style.transform = 'translateY(10px)';
+          requestAnimationFrame(function () {
+            finaleEl.style.transition = 'opacity .6s ease .9s, transform .6s ease .9s';
+            finaleEl.style.opacity = '1'; finaleEl.style.transform = 'none';
+          });
+        } else { finaleEl.style.transition = 'none'; finaleEl.style.opacity = '1'; finaleEl.style.transform = 'none'; }
+      } else { finaleEl.style.display = 'none'; }
+
+      capEl.innerHTML = s.caption;
+      applyCaptionColors();
+      dotsEl.selectAll('span').classed('is-active', function () { return +this.getAttribute('data-i') === step; });
+      backBtn.disabled = step === 0;
+      nextBtn.textContent = step === CFG.steps.length - 1 ? 'Replay' : 'Next';
+    }
+
+    nextBtn.onclick = function () { step = step >= CFG.steps.length - 1 ? 0 : step + 1; if (step === 0) revealed = true; draw(true); };
+    backBtn.onclick = function () { if (step > 0) { step--; draw(true); } };
+
+    draw(false);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting && step === 0 && !revealed) { revealed = true; draw(true); } });
+      }, { threshold: 0.4 });
+      io.observe(wrap);
+    } else { revealed = true; draw(true); }
+
+    window.addEventListener('resize', function () { draw(false); });
   })();
 </script>
