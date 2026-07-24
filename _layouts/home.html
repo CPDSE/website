@@ -299,7 +299,7 @@ layout: default
     var finaleEl = document.getElementById('ds-finale');
     var backBtn = document.getElementById('ds-back');
     var nextBtn = document.getElementById('ds-next');
-    var mL = 16, mR = 128, mT = 16, mB = 30;
+    var mL = 48, mR = 128, mT = 16, mB = 30;
 
     var dotsEl = d3.select('#ds-dots');
     CFG.steps.forEach(function (_, i) { dotsEl.append('span').attr('class', 'ds-dot').attr('data-i', i); });
@@ -312,6 +312,12 @@ layout: default
         .attr('class', 'xt').attr('x', function (d) { return x(d); }).attr('y', iH + 20)
         .attr('text-anchor', 'middle').attr('font-size', FS).attr('fill', mutedText)
         .text(function (d) { return d; });
+    }
+    function drawYLabels(g, scale, ticks) {
+      g.selectAll('.yt').data(ticks.filter(function (d) { return d !== 0; })).join('text')
+        .attr('class', 'yt').attr('x', -8).attr('y', function (d) { return scale(d); })
+        .attr('dy', '0.32em').attr('text-anchor', 'end').attr('font-size', FS).attr('fill', mutedText)
+        .text(function (d) { return d3.format('~s')(d); });
     }
     function applyCaptionColors() {
       capEl.querySelectorAll('.ds-num[data-series]').forEach(function (el) {
@@ -335,6 +341,7 @@ layout: default
           .attr('x1', 0).attr('x2', iW).attr('y1', function (d) { return yi(d); }).attr('y2', function (d) { return yi(d); })
           .attr('stroke', gridColor).attr('stroke-width', 1);
         drawYears(g, x, iH);
+        drawYLabels(g, yi, yi.ticks(5));
         var startW = anim ? 0 : iW;
         var clip = defs.append('clipPath').attr('id', 'ds-clip')
           .append('rect').attr('x', -2).attr('y', -mT).attr('width', startW).attr('height', H);
@@ -356,6 +363,7 @@ layout: default
           .attr('x1', 0).attr('x2', iW).attr('y1', function (d) { return y(d); }).attr('y2', function (d) { return y(d); })
           .attr('stroke', gridColor).attr('stroke-width', 1);
         drawYears(g, x, iH);
+        drawYLabels(g, y, [0, 10000, 20000, 30000, 40000]);
         var line = d3.line().x(function (d, i) { return x(years[i]); }).y(function (d) { return y(d); }).curve(d3.curveMonotoneX);
         s.show.forEach(function (k) {
           var m = META[k], isNewest = k === s.show[s.show.length - 1];
