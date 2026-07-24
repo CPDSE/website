@@ -11,15 +11,15 @@ highlight_title: Our own resources
 highlight_lede: "Free, openly published materials the center develops and maintains — for learners at every level."
 highlights:
   - title: R Documentation for learners
-    type: Documentation
     blurb: "Worked R examples across pharmacometrics, pharmacovigilance, and drug data science — documented and annotated for learners at all levels."
+    image: /assets/images/learn-preview-r-docs.svg
     url: https://cpdse-edux.github.io/R_documentation/
   - title: Cheat Sheets
-    type: Reference cards
     blurb: "Concise, printable reference cards covering essential data science and pharmaceutical concepts — Python, R, statistics, and more."
+    image: /assets/images/learn-preview-cheatsheets.svg
     url: https://github.com/CPDSE-EDUX/CheatSheets
   - title: Open-source curriculum materials
-    type: Repository
     blurb: "All data science curriculum materials — datasets, notebooks, exercises, and more — are openly published so anyone can learn, reuse, and contribute."
+    image: /assets/images/learn-preview-opensource.svg
     url: https://github.com/CPDSE-EDUX
 ---

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of a CPDSE cheat sheet">
+              <rect width="320" height="180" fill="#E7ECE3"/>
+              <rect x="10" y="8" width="300" height="164" fill="#FFFFFF" stroke="#DFE3DC"/>
+              <rect x="10" y="8" width="300" height="26" fill="#3C5E3E"/>
+              <rect x="20" y="16" width="118" height="9" rx="2" fill="#F1EEE2"/>
+              <rect x="148" y="17" width="52" height="7" rx="2" fill="#8FB08F"/>
+              <rect x="278" y="13" width="22" height="16" rx="2" fill="#D6C17C"/>
+              <!-- column 1 -->
+              <rect x="20" y="44" width="46" height="6" rx="2" fill="#5F7D61"/>
+              <rect x="20" y="56" width="84" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="64" width="72" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="74" width="84" height="16" fill="#EEF1EA"/>
+              <rect x="26" y="79" width="40" height="4" rx="1" fill="#3C5E3E"/>
+              <rect x="26" y="85" width="56" height="3" rx="1" fill="#A9BBAA"/>
+              <rect x="20" y="100" width="52" height="6" rx="2" fill="#D6C17C"/>
+              <rect x="20" y="112" width="84" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="120" width="66" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="128" width="78" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="142" width="44" height="6" rx="2" fill="#5F7D61"/>
+              <rect x="20" y="154" width="84" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="20" y="162" width="58" height="4" rx="1" fill="#D7DBD3"/>
+              <!-- column 2 -->
+              <rect x="116" y="44" width="50" height="6" rx="2" fill="#D6C17C"/>
+              <rect x="116" y="56" width="84" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="116" y="64" width="70" height="4" rx="1" fill="#D7DBD3"/>
+              <g fill="#5F7D61">
+                <rect x="116" y="86" width="10" height="8"/><rect x="130" y="80" width="10" height="14"/><rect x="144" y="74" width="10" height="20"/><rect x="158" y="82" width="10" height="12"/><rect x="172" y="70" width="10" height="24"/>
+              </g>
+              <line x1="116" y1="94" x2="200" y2="94" stroke="#C9D0C6"/>
+              <rect x="116" y="104" width="46" height="6" rx="2" fill="#5F7D61"/>
+              <rect x="116" y="116" width="84" height="16" fill="#2E3B2C"/>
+              <rect x="122" y="121" width="40" height="4" rx="1" fill="#D6C17C"/>
+              <rect x="122" y="127" width="56" height="3" rx="1" fill="#F1EEE2" opacity="0.8"/>
+              <rect x="116" y="142" width="54" height="6" rx="2" fill="#D6C17C"/>
+              <rect x="116" y="154" width="84" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="116" y="162" width="72" height="4" rx="1" fill="#D7DBD3"/>
+              <!-- column 3 -->
+              <rect x="212" y="44" width="48" height="6" rx="2" fill="#5F7D61"/>
+              <rect x="212" y="56" width="86" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="212" y="64" width="70" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="212" y="72" width="80" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="212" y="86" width="52" height="6" rx="2" fill="#D6C17C"/>
+              <rect x="212" y="98" width="86" height="34" fill="#F4F6F1" stroke="#DFE3DC"/>
+              <line x1="212" y1="110" x2="298" y2="110" stroke="#DFE3DC"/>
+              <line x1="212" y1="121" x2="298" y2="121" stroke="#DFE3DC"/>
+              <line x1="240" y1="98" x2="240" y2="132" stroke="#DFE3DC"/>
+              <line x1="268" y1="98" x2="268" y2="132" stroke="#DFE3DC"/>
+              <rect x="212" y="142" width="44" height="6" rx="2" fill="#5F7D61"/>
+              <rect x="212" y="154" width="86" height="4" rx="1" fill="#D7DBD3"/>
+              <rect x="212" y="162" width="64" height="4" rx="1" fill="#D7DBD3"/>
+            </svg>

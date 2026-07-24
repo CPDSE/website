@@ -15,23 +15,25 @@ layout: default
 <main class="page-body">
   <link rel="stylesheet" href="{{ '/assets/css/learning-resources.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-  <div id="cpdse-learn" class="cpdse-learn">
+  <div class="lr">
 
+    <!-- 1 · OUR OWN RESOURCES (top highlight, forest) -->
     {%- if page.highlights -%}
-    <!-- 0. CPDSE's own developed resources (highlight, directly below the hero) -->
-    <section class="cpdse-learn__band cpdse-learn__band--ivory">
-      <div class="cpdse-learn__inner">
-        {% if page.highlight_eyebrow %}<p class="cpdse-learn__eyebrow">{{ page.highlight_eyebrow }}</p>{% endif %}
-        {% if page.highlight_title %}<h2 class="cpdse-learn__title">{{ page.highlight_title }}</h2>{% endif %}
-        {% if page.highlight_lede %}<p class="cpdse-learn__lede">{{ page.highlight_lede }}</p>{% endif %}
-        <div class="cpdse-learn__grid">
+    <section class="lr__section lr__section--forest" id="made">
+      <div class="lr__wrap">
+        <div class="lr__head">
+          {% if page.highlight_eyebrow %}<p class="lr__eyebrow">{{ page.highlight_eyebrow }}</p>{% endif %}
+          {% if page.highlight_title %}<h2 class="lr__title">{{ page.highlight_title }}</h2>{% endif %}
+          {% if page.highlight_lede %}<p class="lr__lede">{{ page.highlight_lede }}</p>{% endif %}
+        </div>
+        <div class="grid">
           {%- for h in page.highlights -%}
-          <a class="cpdse-learn__card" href="{{ h.url | escape }}" target="_blank" rel="noopener noreferrer">
-            <h3 class="cpdse-learn__card-title">{{ h.title | escape }}</h3>
-            {%- if h.blurb %}<p class="cpdse-learn__card-blurb">{{ h.blurb | escape }}</p>{% endif -%}
-            <div class="cpdse-learn__card-foot">
-              <span>{{ h.type | default: 'CPDSE' | escape }}</span>
-              <span class="cpdse-learn__card-cta">Open ↗</span>
+          <a class="rcard rcard--img" href="{{ h.url }}" target="_blank" rel="noopener noreferrer">
+            {% if h.image %}<div class="rcard__img"><img src="{{ h.image | relative_url }}" alt="Preview of {{ h.title | escape }}" loading="lazy"></div>{% endif %}
+            <div class="rcard__body">
+              <h3>{{ h.title | escape }}</h3>
+              {% if h.blurb %}<p class="rcard__prov">{{ h.blurb | escape }}</p>{% endif %}
+              <div class="rcard__foot"><span>CPDSE</span><span class="rcard__cta">Open ↗</span></div>
             </div>
           </a>
           {%- endfor -%}
@@ -40,109 +42,158 @@ layout: default
     </section>
     {%- endif -%}
 
-    <!-- 1. Courses at KU & SDU (showcased first, KU/SDU tabs) -->
+    <!-- 2 · UNIVERSITY COURSES (sage, KU/SDU tabs) -->
     {%- assign courses = all | where: 'category', 'local-courses' -%}
     {%- assign ku = courses | where: 'uni', 'KU' -%}
     {%- assign sdu = courses | where: 'uni', 'SDU' -%}
-    <section class="cpdse-learn__band cpdse-learn__band--forest">
-      <div class="cpdse-learn__inner">
-        <p class="cpdse-learn__eyebrow">Courses at KU &amp; SDU</p>
-        <h2 class="cpdse-learn__title">Start with a course.</h2>
-        <p class="cpdse-learn__lede">
-          Instructor-led courses in pharmaceutical data science at the University of Copenhagen
-          and the University of Southern Denmark. Several are open to PhD students and external
-          participants — follow each link for level, dates and enrolment.
-        </p>
-        <div class="cpdse-learn__tabs">
-          <input type="radio" name="course-uni" id="tab-ku" class="cpdse-learn__tab-input" checked>
-          <label for="tab-ku" class="cpdse-learn__tab">University of Copenhagen <span>{{ ku | size }}</span></label>
-          <input type="radio" name="course-uni" id="tab-sdu" class="cpdse-learn__tab-input">
-          <label for="tab-sdu" class="cpdse-learn__tab">University of Southern Denmark <span>{{ sdu | size }}</span></label>
-          <div class="cpdse-learn__tabpanel cpdse-learn__tabpanel--ku">
-            <div class="cpdse-learn__grid">
-              {%- for r in ku %}{% include learn-card.html r=r %}{% endfor -%}
-            </div>
-          </div>
-          <div class="cpdse-learn__tabpanel cpdse-learn__tabpanel--sdu">
-            <div class="cpdse-learn__grid">
-              {%- for r in sdu %}{% include learn-card.html r=r %}{% endfor -%}
-            </div>
-          </div>
+    <section class="lr__section lr__section--sage" id="courses">
+      <div class="lr__wrap">
+        <div class="lr__head">
+          <p class="lr__eyebrow">Courses at KU &amp; SDU</p>
+          <h2 class="lr__title">Start with a course.</h2>
+          <p class="lr__lede">Instructor-led courses in pharmaceutical data science at the University of Copenhagen and the University of Southern Denmark. Several are open to PhD students and external participants.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- 2. Two self-study steps -->
-    <section class="cpdse-learn__band cpdse-learn__band--ivory">
-      <div class="cpdse-learn__inner">
-        <p class="cpdse-learn__eyebrow">Where to begin</p>
-        <h2 class="cpdse-learn__title">Two steps to get going.</h2>
-        <p class="cpdse-learn__lede">
-          Pick the language your group uses — Python or R — and follow two steps. Everything
-          else is in the library below, there whenever you want to go deeper.
-        </p>
-        <div class="cpdse-learn__stages">
-          {%- for st in data.stages -%}
-          <section class="cpdse-learn__stage">
-            <div class="cpdse-learn__stage-head">
-              {% if st.step %}<span class="cpdse-learn__stage-step">{{ st.step | escape }}</span>{% endif %}
-              <h3 class="cpdse-learn__stage-title">{{ st.title | escape }}</h3>
-              {% if st.blurb %}<p class="cpdse-learn__stage-blurb">{{ st.blurb | escape }}</p>{% endif %}
-            </div>
-            <div class="cpdse-learn__stage-tracks">
-              {%- for tr in st.tracks -%}
-              <div class="cpdse-learn__track">
-                <p class="cpdse-learn__track-lang">{{ tr.language | escape }}</p>
-                <div class="cpdse-learn__track-cards">
-                  {%- for ref in tr.refs -%}
-                    {%- assign r = all | where: 'id', ref | first -%}
-                    {%- if r %}{% include learn-card.html r=r %}{% endif -%}
-                  {%- endfor -%}
-                </div>
-              </div>
+        <div class="tabs">
+          <input type="radio" name="lr-uni" id="lr-tab-ku" class="tabin" checked>
+          <label for="lr-tab-ku" class="tab">University of Copenhagen <span>{{ ku | size }}</span></label>
+          <input type="radio" name="lr-uni" id="lr-tab-sdu" class="tabin">
+          <label for="lr-tab-sdu" class="tab">University of Southern Denmark <span>{{ sdu | size }}</span></label>
+          <div class="tabpanel tabpanel--ku">
+            <div class="grid">
+              {%- for c in ku -%}
+              <a class="rcard" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">
+                <div class="rcard__meta"><span class="pill pill--uni">{{ c.uni }}</span>{% if c.format %}<span class="pill">{{ c.format }}</span>{% endif %}</div>
+                <h3>{{ c.title | escape }}</h3>
+                {% if c.provider %}<p class="rcard__prov">{{ c.provider | escape }}</p>{% endif %}
+                <div class="rcard__foot"><span>University course</span><span class="rcard__cta">Details ↗</span></div>
+              </a>
               {%- endfor -%}
             </div>
-          </section>
-          {%- endfor -%}
+          </div>
+          <div class="tabpanel tabpanel--sdu">
+            <div class="grid">
+              {%- for c in sdu -%}
+              <a class="rcard" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">
+                <div class="rcard__meta"><span class="pill pill--uni">{{ c.uni }}</span>{% if c.format %}<span class="pill">{{ c.format }}</span>{% endif %}</div>
+                <h3>{{ c.title | escape }}</h3>
+                {% if c.provider %}<p class="rcard__prov">{{ c.provider | escape }}</p>{% endif %}
+                <div class="rcard__foot"><span>University course</span><span class="rcard__cta">Details ↗</span></div>
+              </a>
+              {%- endfor -%}
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. The full library: collapsed, by topic -->
-    <section class="cpdse-learn__band">
-      <div class="cpdse-learn__inner">
-        <p class="cpdse-learn__eyebrow">The full library</p>
-        <h2 class="cpdse-learn__title">Browse everything by topic.</h2>
-        <p class="cpdse-learn__lede">
-          Hand-picked resources grouped by topic — open a section to explore. Mostly free;
-          options that carry a certificate are marked.
-        </p>
-        <div class="cpdse-learn__categories">
+    <!-- 3 · GETTING STARTED (forest, per-step carousel) -->
+    <section class="lr__section lr__section--forest">
+      <div class="lr__wrap">
+        <div class="lr__head">
+          <p class="lr__eyebrow">Where to begin</p>
+          <h2 class="lr__title">New to data science? Two steps to get going.</h2>
+          <p class="lr__lede">Pick the language your group already uses — that's the only decision you need to make right now.</p>
+        </div>
+        <div class="start">
+          <div class="start__aside">
+            <div class="toggle" role="group" aria-label="Choose a language">
+              <button type="button" data-lang="Python" aria-pressed="true">Python</button>
+              <button type="button" data-lang="R" aria-pressed="false">R</button>
+            </div>
+          </div>
+          <div class="steps">
+            {%- for st in data.stages -%}
+            <div class="stepcar" data-car>
+              <div class="stepcar__head"><span class="stepcar__n">{{ st.step }} · {{ st.title }}</span></div>
+              <div class="stepcar__row">
+                <button class="carbtn carbtn--prev" type="button" aria-label="Previous resource">&lsaquo;</button>
+                <div class="stepcar__viewport">
+                  {%- for tr in st.tracks -%}
+                  <div class="stepcar__track" data-lang="{{ tr.language }}"{% unless tr.language == 'Python' %} hidden{% endunless %}>
+                    {%- for ref in tr.refs -%}
+                      {%- assign r = all | where: 'id', ref | first -%}
+                      {%- if r -%}
+                      <div class="stepcar__slide">
+                        <a class="rcard" href="{{ r.url }}" target="_blank" rel="noopener noreferrer">
+                          <div class="rcard__meta">{% if r.free %}<span class="pill pill--free">Free</span>{% else %}<span class="pill">Paid</span>{% endif %}{% if r.certificate.available %}<span class="pill pill--cert">Certificate</span>{% endif %}{% if r.level %}<span class="pill">{{ r.level }}</span>{% endif %}</div>
+                          <h3>{{ r.title | escape }}</h3>
+                          {% if r.provider %}<p class="rcard__prov">{{ r.provider | escape }}</p>{% endif %}
+                          <div class="rcard__foot"><span>{{ r.language }}</span><span class="rcard__cta">Open ↗</span></div>
+                        </a>
+                      </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                  {%- endfor -%}
+                </div>
+                <button class="carbtn carbtn--next" type="button" aria-label="Next resource">&rsaquo;</button>
+              </div>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · EXTERNAL COURSES — the filterable library (soft) -->
+    <section class="lr__section lr__section--soft" id="library">
+      <div class="lr__wrap">
+        <div class="lr__head">
+          <p class="lr__eyebrow">Find more</p>
+          <h2 class="lr__title">External Courses</h2>
+          <p class="lr__lede">Courses hand-picked by CPDSE members working in these fields. Search, or narrow by topic, language and level. Mostly free; options that carry a certificate are marked.</p>
+        </div>
+
+        <div class="filters">
+          <input class="filters__search" id="lr-q" type="search" placeholder="Search resources…" aria-label="Search resources">
+          <div class="filters__group">
+            <span class="filters__label">Topic</span>
+            <select class="filters__topic" id="lr-topic" aria-label="Filter by topic">
+              <option value="">All topics</option>
+              {%- for cat in data.categories -%}<option value="{{ cat.title | escape }}">{{ cat.title | escape }}</option>{%- endfor -%}
+            </select>
+          </div>
+          <div class="filters__group" id="lr-langChips">
+            <span class="filters__label">Lang</span>
+            <button class="chip" type="button" data-lang="" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-lang="Python" aria-pressed="false">Python</button>
+            <button class="chip" type="button" data-lang="R" aria-pressed="false">R</button>
+          </div>
+          <div class="filters__group">
+            <button class="chip chip--toggle" type="button" id="lr-freeOnly" aria-pressed="false">Free only</button>
+            <button class="chip chip--toggle" type="button" id="lr-certOnly" aria-pressed="false">Certificate</button>
+          </div>
+        </div>
+
+        {%- assign lib_count = 0 -%}
+        <p class="lib__count" id="lr-count"></p>
+        <div class="grid" id="lr-grid">
           {%- for cat in data.categories -%}
             {%- assign inCat = all | where: 'category', cat.id -%}
-            {%- if inCat.size > 0 -%}
-            <details class="cpdse-learn__cat" id="cat-{{ cat.id }}">
-              <summary class="cpdse-learn__cat-summary">
-                <span class="cpdse-learn__cat-title">{{ cat.title | escape }}</span>
-                <span class="cpdse-learn__cat-meta">
-                  <span class="cpdse-learn__cat-count">{{ inCat.size }} resource{% if inCat.size != 1 %}s{% endif %}</span>
-                  <span class="cpdse-learn__cat-icon" aria-hidden="true"></span>
-                </span>
-              </summary>
-              <div class="cpdse-learn__cat-body">
-                {% if cat.blurb %}<p class="cpdse-learn__cat-blurb">{{ cat.blurb | escape }}</p>{% endif %}
-                <div class="cpdse-learn__grid">
-                  {%- for r in inCat %}{% include learn-card.html r=r %}{% endfor -%}
-                </div>
-              </div>
-            </details>
-            {%- endif -%}
+            {%- for r in inCat -%}
+              {%- assign lib_count = lib_count | plus: 1 -%}
+              {%- assign cert = r.certificate.available | default: false -%}
+              <a class="rcard" href="{{ r.url }}" target="_blank" rel="noopener noreferrer"
+                 data-topic="{{ cat.title | escape }}" data-lang="{{ r.language }}"
+                 data-free="{{ r.free }}" data-cert="{{ cert }}"
+                 data-search="{{ r.title | append: ' ' | append: r.provider | downcase | escape }}">
+                <div class="rcard__meta">{% if r.free %}<span class="pill pill--free">Free</span>{% else %}<span class="pill">Paid</span>{% endif %}{% if r.certificate.available %}<span class="pill pill--cert">Certificate</span>{% endif %}{% if r.language %}<span class="pill">{{ r.language }}</span>{% endif %}{% if r.level %}<span class="pill">{{ r.level }}</span>{% endif %}</div>
+                <h3>{{ r.title | escape }}</h3>
+                {% if r.provider %}<p class="rcard__prov">{{ r.provider | escape }}</p>{% endif %}
+                <div class="rcard__foot"><span>{{ cat.title | escape }}</span><span class="rcard__cta">Open ↗</span></div>
+              </a>
+            {%- endfor -%}
           {%- endfor -%}
         </div>
+        <p class="lib__empty" id="lr-empty" hidden>No resources match those filters. Try clearing one.</p>
+        <div class="lib__more-wrap"><button class="lib__more" type="button" id="lr-more" hidden>Load more</button></div>
+
         {%- assign meta = data._meta -%}
-        <p class="cpdse-learn__note">Hand-curated and last reviewed {{ meta.lastReviewed | escape }}. These are starting points the centre believes in — quality is subjective. Spot a broken link or a better resource? Open an issue or pull request on the <a href="https://github.com/CPDSE/website" target="_blank" rel="noopener">website repo</a>.</p>
+        <p class="lr__note" data-total="{{ lib_count }}">Hand-curated and last reviewed {{ meta.lastReviewed | escape }}. These are starting points the centre believes in — quality is subjective. Spot a broken link or a better resource? Open an issue or pull request on the <a href="https://github.com/CPDSE/website" target="_blank" rel="noopener">website repo</a>.</p>
       </div>
     </section>
 
   </div>
 </main>
+
+<script src="{{ '/assets/js/learning-resources.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
