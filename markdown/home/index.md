@@ -57,7 +57,7 @@ viz_sources:
     url: "https://www.rcsb.org/"
 viz_steps:
   - intro: true
-    caption: "Take just three example sources: together they logged <span class='ds-num' data-series='hot'>under 20,000</span> new pharma data records in 2000 — and <span class='ds-num' data-series='hot'>over 100,000</span> in 2025. Still climbing."
+    caption: "Take just three example sources: together they logged <span class='ds-num' data-series='hot'>under 20,000</span> new pharma data records in 2000 — and <span class='ds-num' data-series='hot'>over 100,000</span> in 2025."
   - show: [ct]
     anno: true
     caption: "Where does it all come from? Start with clinical trials — about <span class='ds-num' data-series='ct'>43,000</span> registered in 2025, roughly <span class='ds-num' data-series='ct'>40×</span> the number in 2000."
