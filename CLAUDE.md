@@ -87,6 +87,13 @@ description: One line.  # soft-white paragraph
 
 ---
 
+## Buttons
+
+- All buttons and button-style links use the **capsule shape**: `border-radius: 999px` (a fully rounded pill), as used by `.btn`, `.btn-primary`, and `.btn-ghost`.
+- Any button-like control must match this — including section CTAs such as the spotlight "Read more" (`.spotlight__cta`). Do **not** introduce square or small-radius buttons, and do not use `var(--radius)` for a button corner.
+
+---
+
 ## Sections system
 
 All layout is controlled through `sections:` YAML. The seven layout types are:
