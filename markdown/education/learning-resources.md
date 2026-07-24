@@ -2,7 +2,7 @@
 layout: learning-resources
 title: Learning Resources
 eyebrow: Education
-description: Where to start with data science in pharma — two short steps in Python or R, then a full library for when you want to go deeper. Mostly free.
+description: Where to start with data science in pharma. A collection of helpful resources and courses.
 permalink: /learning-resources/
 
 # ── Highlight band: CPDSE's own resources (rendered directly below the hero) ──

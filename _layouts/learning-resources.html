@@ -26,7 +26,7 @@ layout: default
           {% if page.highlight_title %}<h2 class="lr__title">{{ page.highlight_title }}</h2>{% endif %}
           {% if page.highlight_lede %}<p class="lr__lede">{{ page.highlight_lede }}</p>{% endif %}
         </div>
-        <div class="grid">
+        <div class="grid grid--three">
           {%- for h in page.highlights -%}
           <a class="rcard rcard--img" href="{{ h.url }}" target="_blank" rel="noopener noreferrer">
             {% if h.image %}<div class="rcard__img"><img src="{{ h.image | relative_url }}" alt="Preview of {{ h.title | escape }}" loading="lazy"></div>{% endif %}
@@ -95,38 +95,38 @@ layout: default
           <p class="lr__lede">Pick the language your group already uses — that's the only decision you need to make right now.</p>
         </div>
         <div class="start">
-          <div class="start__aside">
-            <div class="toggle" role="group" aria-label="Choose a language">
-              <button type="button" data-lang="Python" aria-pressed="true">Python</button>
-              <button type="button" data-lang="R" aria-pressed="false">R</button>
-            </div>
+          <div class="toggle" role="group" aria-label="Choose a language">
+            <button type="button" data-lang="Python" aria-pressed="true">Python</button>
+            <button type="button" data-lang="R" aria-pressed="false">R</button>
           </div>
           <div class="steps">
             {%- for st in data.stages -%}
             <div class="stepcar" data-car>
-              <div class="stepcar__head"><span class="stepcar__n">{{ st.step }} · {{ st.title }}</span></div>
-              <div class="stepcar__row">
-                <button class="carbtn carbtn--prev" type="button" aria-label="Previous resource">&lsaquo;</button>
-                <div class="stepcar__viewport">
-                  {%- for tr in st.tracks -%}
-                  <div class="stepcar__track" data-lang="{{ tr.language }}"{% unless tr.language == 'Python' %} hidden{% endunless %}>
-                    {%- for ref in tr.refs -%}
-                      {%- assign r = all | where: 'id', ref | first -%}
-                      {%- if r -%}
-                      <div class="stepcar__slide">
-                        <a class="rcard" href="{{ r.url }}" target="_blank" rel="noopener noreferrer">
-                          <div class="rcard__meta">{% if r.free %}<span class="pill pill--free">Free</span>{% else %}<span class="pill">Paid</span>{% endif %}{% if r.certificate.available %}<span class="pill pill--cert">Certificate</span>{% endif %}{% if r.level %}<span class="pill">{{ r.level }}</span>{% endif %}</div>
-                          <h3>{{ r.title | escape }}</h3>
-                          {% if r.provider %}<p class="rcard__prov">{{ r.provider | escape }}</p>{% endif %}
-                          <div class="rcard__foot"><span>{{ r.language }}</span><span class="rcard__cta">Open ↗</span></div>
-                        </a>
-                      </div>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  </div>
+              <div class="stepcar__head">
+                <span class="stepcar__n">{{ st.step }} · {{ st.title }}</span>
+                <div class="stepcar__nav">
+                  <button class="carbtn carbtn--prev" type="button" aria-label="Previous resource">&lsaquo;</button>
+                  <button class="carbtn carbtn--next" type="button" aria-label="Next resource">&rsaquo;</button>
+                </div>
+              </div>
+              <div class="stepcar__viewport">
+                {%- for tr in st.tracks -%}
+                <div class="stepcar__track" data-lang="{{ tr.language }}"{% unless tr.language == 'Python' %} hidden{% endunless %}>
+                  {%- for ref in tr.refs -%}
+                    {%- assign r = all | where: 'id', ref | first -%}
+                    {%- if r -%}
+                    <div class="stepcar__slide">
+                      <a class="rcard" href="{{ r.url }}" target="_blank" rel="noopener noreferrer">
+                        <div class="rcard__meta">{% if r.free %}<span class="pill pill--free">Free</span>{% else %}<span class="pill">Paid</span>{% endif %}{% if r.certificate.available %}<span class="pill pill--cert">Certificate</span>{% endif %}{% if r.level %}<span class="pill">{{ r.level }}</span>{% endif %}</div>
+                        <h3>{{ r.title | escape }}</h3>
+                        {% if r.provider %}<p class="rcard__prov">{{ r.provider | escape }}</p>{% endif %}
+                        <div class="rcard__foot"><span>{{ r.language }}</span><span class="rcard__cta">Open ↗</span></div>
+                      </a>
+                    </div>
+                    {%- endif -%}
                   {%- endfor -%}
                 </div>
-                <button class="carbtn carbtn--next" type="button" aria-label="Next resource">&rsaquo;</button>
+                {%- endfor -%}
               </div>
             </div>
             {%- endfor -%}

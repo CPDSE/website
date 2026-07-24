@@ -5,8 +5,12 @@
 (() => {
   'use strict';
 
-  /* ── 1 · Starter-path carousels ─────────────────────────────── */
+  /* ── 1 · Starter-path carousels (auto-looping) ──────────────── */
   const stepcars = Array.from(document.querySelectorAll('.stepcar'));
+  const DURATION = 5000;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer = null;
+  let paused = false;
 
   const visibleTrack = (car) => car.querySelector('.stepcar__track:not([hidden])');
 
@@ -14,17 +18,30 @@
     if (!track) return;
     const n = track.children.length;
     if (!n) return;
-    let i = (parseInt(track.dataset.idx || '0', 10) + dir + n) % n;
+    const i = (parseInt(track.dataset.idx || '0', 10) + dir + n) % n;
     track.dataset.idx = i;
     track.style.transform = `translateX(-${i * 100}%)`;
   };
 
+  const tick = () => { if (!paused) stepcars.forEach((car) => moveTrack(visibleTrack(car), 1)); };
+  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+  const start = () => { if (reducedMotion || timer || !stepcars.length) return; timer = setInterval(tick, DURATION); };
+  const restart = () => { stop(); start(); };
+
   stepcars.forEach((car) => {
     const prev = car.querySelector('.carbtn--prev');
     const next = car.querySelector('.carbtn--next');
-    if (prev) prev.addEventListener('click', () => moveTrack(visibleTrack(car), -1));
-    if (next) next.addEventListener('click', () => moveTrack(visibleTrack(car), 1));
+    if (prev) prev.addEventListener('click', () => { moveTrack(visibleTrack(car), -1); restart(); });
+    if (next) next.addEventListener('click', () => { moveTrack(visibleTrack(car), 1); restart(); });
   });
+
+  const startEl = document.querySelector('.start');
+  if (startEl) {
+    startEl.addEventListener('mouseenter', () => { paused = true; });
+    startEl.addEventListener('mouseleave', () => { paused = false; });
+    startEl.addEventListener('focusin', () => { paused = true; });
+    startEl.addEventListener('focusout', () => { paused = false; });
+  }
 
   const langToggle = document.querySelectorAll('.toggle button[data-lang]');
   langToggle.forEach((btn) => {
@@ -38,8 +55,11 @@
           if (on) { t.dataset.idx = '0'; t.style.transform = 'translateX(0)'; }
         });
       });
+      restart();
     });
   });
+
+  start();
 
   /* ── 2 · Library filter dashboard ───────────────────────────── */
   const grid = document.getElementById('lr-grid');
