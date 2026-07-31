@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPDSE//FrAIday Bar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fraiday-bar-2026-11-13@cpdse.dk
+DTSTAMP:20260731T000000Z
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DTSTART:20261113T130000Z
+DTEND:20261113T140000Z
+SUMMARY:FrAIday Bar: LLMs for data organisation
+DESCRIPTION:Cleaning and restructuring messy data with Python or R. Comfort
+ able opening a script? That is the only prerequisite.\n\nYou leave with: A
+  script that runs on your own data.\n\nFrAIday Bar is CPDSE's hands-on AI 
+ community. One hour\, one practical skill\, no ECTS and nothing to prepare
+  - bring a laptop and a real task.\n\nProgramme and details: https://cpdse
+ .dk/people-development/
+LOCATION:Room 21-1-120\, PharmaDataHub\, Building 21\, 1st floor\, Jagtvej 
+ 160\, 2100 Copenhagen Ø
+URL:https://cpdse.dk/people-development/
+ORGANIZER;CN=Jacob Fredegaard Hansen:mailto:jacob.f.hansen@sund.ku.dk
+END:VEVENT
+END:VCALENDAR
