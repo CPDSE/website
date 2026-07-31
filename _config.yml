@@ -52,8 +52,6 @@ nav:
         external: true
   - title: Services
     children:
-      - title: Services
-        url: /services/
       - title: Curriculum Development
         url: /curriculum-development/
       - title: People Development
