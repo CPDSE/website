@@ -22,11 +22,12 @@ CPDSE nav                                                    ● = planned
 │   ├── Project Git ↗            github.com/CPDSE
 │   └── ● Digital Infrastructure  (plan) — servers, machines, git, storage
 ├── Services
+│   ├── Services (hub)            /services/
 │   ├── Curriculum Development    /curriculum-development/
+│   ├── People Development        /people-development/
 │   ├── Student Code Club         /codeclub/
 │   │   ├── SDU Pharma Code Club  /codeclub-sdu/      (hub page only)
 │   │   └── KU Coding Club        /codeclub-ku/       (hub page only)
-│   ├── ● Staff Development             (plan)
 │   ├── ● Project Consultation          (plan)
 │   └── ● Research Strategy Development (plan)
 ├── Join Us
@@ -63,7 +64,9 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
 | — Educational Git / Project Git | [`_config.yml`](_config.yml) | External GitHub links — no page file; edit the URL in the `nav:` list |
 | ***Services*** | | |
+| **Services** *(index)* | [`markdown/education/services.md`](markdown/education/services.md) | Hub page linking to the three services |
 | **Curriculum Development** | [`markdown/education/curriculum-development.md`](markdown/education/curriculum-development.md) | Competency model pillar text under `pillars:` |
+| **People Development** | [`markdown/education/people-development.md`](markdown/education/people-development.md) | Sections-based; FrAIday Bar + tailored workshops |
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
 | — SDU Code Club | [`markdown/education/codeclub-sdu.md`](markdown/education/codeclub-sdu.md) | Sections-based |
 | — KU Code Club | [`markdown/education/codeclub-ku.md`](markdown/education/codeclub-ku.md) | Raw HTML (`layout: bare`) — no sections system, no site chrome |
