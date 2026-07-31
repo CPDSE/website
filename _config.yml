@@ -52,8 +52,12 @@ nav:
         external: true
   - title: Services
     children:
+      - title: Services
+        url: /services/
       - title: Curriculum Development
         url: /curriculum-development/
+      - title: People Development
+        url: /people-development/
       - title: Student Code Club
         url: /codeclub/
   - title: Join Us
