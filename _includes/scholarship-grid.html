@@ -1,0 +1,11 @@
+{% assign scholarships = include.section.scholarships %}
+<div class="ru-phd-grid">
+  {% for scholarship in scholarships %}
+    <div class="ru-phd-card">
+      <p class="ru-phd-name">{{ scholarship.name }}</p>
+      <p class="ru-phd-supervisor">Supervisor <strong>{{ scholarship.supervisor }}</strong></p>
+      <p class="ru-phd-project">{{ scholarship.project }}</p>
+      {% if scholarship.start %}<p class="ru-phd-start">Start <strong>{{ scholarship.start }}</strong></p>{% endif %}
+    </div>
+  {% endfor %}
+</div>

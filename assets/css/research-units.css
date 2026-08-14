@@ -305,6 +305,25 @@
   margin: 0;
 }
 
+/* ══ SECTION 4 — SCHOLARSHIPS ═══════════════════════════════════
+   Reuses the PhD card grid; adds a project start line. */
+.ru-phd-start {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-charcoal, #333333);
+  opacity: 0.7;
+  margin: auto 0 0;
+  padding-top: 0.25rem;
+}
+.ru-phd-start strong {
+  font-weight: 600;
+  color: var(--color-forest-green, #3C5E3E);
+}
+
+/* Cards keep forest-green titles on the mint-gray band */
+.page-section--mint-gray .ru-phd-name { color: var(--color-forest-green, #3C5E3E); }
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .ru-dept-grid { grid-template-columns: repeat(2, 1fr); }

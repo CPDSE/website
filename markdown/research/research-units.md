@@ -57,7 +57,7 @@ sections:
         project: A Neurosymbolic Framework for Literature-Driven GPCR Interaction Modeling
 
       - name: ""
-        supervisor: Icaro Ariel Simon
+        supervisor: Icaro A. Simon
         project: "From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors"
 
       - name: ""
@@ -67,6 +67,36 @@ sections:
       - name: ""
         supervisor: Philipp Hans
         project: A Provenance-Aware, Data-Driven Framework for Pharmaceutical Amorphous Solids
+
+  - color: mint-gray
+    title: Scholarships
+    intro: The scholarships are designed to accelerate a student's development, support academic exploration, strengthen their CV, and prepare them for research-related careers in pharmaceutical data science.
+    include: scholarship-grid.html
+    scholarships:
+      - name: Julius Bjerager
+        supervisor: Karlis Berzins
+        project: 1D-CNN-assisted denoising and preprocessing of low-frequency Raman spectroscopy data for pharmaceutical analysis
+        start: 1 August 2026
+
+      - name: Mingrui Zhang
+        supervisor: Anders Ø. Madsen
+        project: Design of a high-throughput sample environment for synchrotron studies of hydration of multi-component solid-state drug systems
+        start: 1 August 2026
+
+      - name: Paraskevi Potsi
+        supervisor: Alexander S. Hauser
+        project: Clinically anchored experience-report analysis for multi-modal modelling of psychedelic pharmacology
+        start: 19 September 2026
+
+      - name: Simon Guldbrandt Kristensen
+        supervisor: Icaro A. Simon
+        project: Structure-guided discovery of GPR75 modulators as candidate anti-obesity agents
+        start: 1 September 2026
+
+      - name: Xixi Chen
+        supervisor: Albert Kooistra
+        project: Targeted Multiple Sequence Alignment (MSA) Optimization to Enhance Protein Structure Prediction
+        start: 1 September 2026
 
   - color: soft-white
     title: Group Leaders
@@ -88,7 +118,7 @@ sections:
 
       - initials: AH
         headshot: basecamp/alexander-s-hauser.jpg
-        name: Alexander Hausser
+        name: Alexander S. Hauser
         department: Drug-related Data Science
         uni: UCPH
         url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/pharmacoinformatics/
