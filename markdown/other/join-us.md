@@ -39,16 +39,18 @@ sections:
     columns:
       - content: |
           ## Browse open opportunities
-          All current internships, scholarships, and projects are posted as they open.
+          All paid jobs (including phd-scholarships) are posted on the center [LinkedIn Profile](https://www.linkedin.com/company/cpdse/).
 
-          [See open project opportunities →](/project-opportunities/)
+          All current internships, scholarships, and projects are posted as they open 
 
-          Don't see something that fits? [Get in touch](mailto:cpdse@ku.dk) — we're glad to talk it through.
+          [See also open project opportunities →](/project-opportunities/)
+
       - content: |
           ## Unsolicited applications welcome
           - **Be specific.** Tell us what you want to do, not just that you want to join.
           - **Contact the relevant supervisor** directly, rather than a general inbox. [See Research Units →](/researchers-units)
           - **Show, don't tell.** A short sample of your work says more than a generic CV.
+          - **Make direct contact** to the most relevant CPDSE Research Group Leader
 
   - color: sage-green
     eyebrow: Startups & Consultants
