@@ -45,6 +45,8 @@ sections:
 
           [See also open project opportunities →](/project-opportunities/)
 
+          You are welcome to join every Friday at 8.30 for informal ConvergenceCoffee in the PharmaDataHub@UCPH, where you can meet people working with pharma data science.
+
       - content: |
           ## Unsolicited applications welcome
           - **Be specific.** Tell us what you want to do, not just that you want to join.
