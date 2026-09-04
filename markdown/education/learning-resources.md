@@ -12,7 +12,7 @@ highlight_lede: "Free, openly published materials the center develops and mainta
 highlights:
   - title: R Documentation for learners
     blurb: "Worked R examples across pharmacometrics, pharmacovigilance, and drug data science — documented and annotated for learners at all levels."
-    image: /assets/images/learn-preview-r-docs.svg
+    image: /assets/images/learn-preview-r-docs.png
     url: https://cpdse-edux.github.io/R_documentation/
   - title: Cheat Sheets
     blurb: "Concise, printable reference cards covering essential data science and pharmaceutical concepts — Python, R, statistics, and more."
