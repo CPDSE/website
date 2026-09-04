@@ -54,6 +54,8 @@ nav:
     children:
       - title: Curriculum Development
         url: /curriculum-development/
+      - title: People Development
+        url: /people-development/
       - title: Student Code Club
         url: /codeclub/
   - title: Join Us
