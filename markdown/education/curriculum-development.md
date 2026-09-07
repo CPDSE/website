@@ -85,7 +85,7 @@ sections:
     cards:
       - title: Coding exercises
         content: |
-          - Use R or Phthon
+          - Use R or Python
           - Students analyze their own lab data
           - Simulation of processes that are not covered in the lab
       - title: Lab reports in notebooks
