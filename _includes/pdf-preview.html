@@ -1,0 +1,71 @@
+{% comment %}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CPDSE — PDF preview with enlarge-to-view
+  Used through the sections system:  include: pdf-preview.html
+
+  A thumbnail of the first page sits on the left; clicking it opens an
+  enlarged, scrollable view of every page. A download button appears
+  beside the thumbnail and inside the enlarged view, and every enlarged
+  page is itself a download link.
+
+  Section keys read by this include:
+    id:         section id — the enlarged view uses "<id>-preview" and
+                closes back to "#<id>" (required)
+    pdf:        path to the PDF, e.g. /assets/documents/file.pdf (required)
+    pdf_label:  download button label (default: "Download PDF")
+    pages:      list of page images, first one is the thumbnail (required)
+      - src:    /assets/images/File-Page-1.webp
+        alt:    Alt text for the page
+    summary:    optional markdown shown in the right-hand column
+
+  The page must load the stylesheet:  css: /assets/css/pdf-preview.css
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{% endcomment %}
+{% assign s = include.section %}
+{% assign box_id = s.id | default: 'document' | append: '-preview' %}
+{% assign close_href = s.id | default: '' | prepend: '#' %}
+{% assign label = s.pdf_label | default: 'Download PDF' %}
+{% assign first = s.pages | first %}
+
+<div class="pdf-preview">
+  <figure class="pdf-preview__figure">
+    <a class="pdf-preview__thumb" href="#{{ box_id }}" aria-label="Enlarge the preview">
+      <img src="{{ first.src | relative_url }}" alt="{{ first.alt | default: '' }}" loading="lazy">
+      <span class="pdf-preview__hint" aria-hidden="true">Click to enlarge</span>
+    </a>
+    <figcaption class="pdf-preview__caption">
+      <a class="btn btn-primary" href="{{ s.pdf | relative_url }}" download>{{ label }}</a>
+    </figcaption>
+  </figure>
+  {% if s.summary %}
+  <div class="pdf-preview__summary">{{ s.summary | markdownify }}</div>
+  {% endif %}
+</div>
+
+<div class="pdf-lightbox" id="{{ box_id }}" role="dialog" aria-modal="true" aria-label="Enlarged preview">
+  <a class="pdf-lightbox__backdrop" href="{{ close_href }}" aria-label="Close the preview"></a>
+  <div class="pdf-lightbox__panel">
+    <div class="pdf-lightbox__bar">
+      <a class="btn btn-primary" href="{{ s.pdf | relative_url }}" download>{{ label }}</a>
+      <a class="btn btn-ghost pdf-lightbox__close" href="{{ close_href }}">Close</a>
+    </div>
+    {% for page in s.pages %}
+    <a class="pdf-lightbox__page" href="{{ s.pdf | relative_url }}" download title="Download the PDF">
+      <img src="{{ page.src | relative_url }}" alt="{{ page.alt | default: '' }}" loading="lazy">
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var box = document.getElementById('{{ box_id }}');
+    if (!box) return;
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && window.location.hash === '#{{ box_id }}') {
+        var close = box.querySelector('.pdf-lightbox__close');
+        if (close) close.click();
+      }
+    });
+  })();
+</script>

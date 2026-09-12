@@ -18,6 +18,7 @@ CPDSE nav                                                    ● = planned
 │   └── Visual Identity           /visual-identity/
 ├── Resources
 │   ├── Learning Resources        /learning-resources/
+│   ├── AI Drug Design Course     /ai-drug-design-course/
 │   ├── Educational Git ↗         github.com/CPDSE-EDUX
 │   ├── Project Git ↗            github.com/CPDSE
 │   └── ● Digital Infrastructure  (plan) — servers, machines, git, storage
@@ -61,6 +62,7 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
 | ***Resources*** | | |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
+| **AI Drug Design Course** | [`markdown/education/ai-drug-design-course.md`](markdown/education/ai-drug-design-course.md) | Sections-based; industry application page for the November 2026 PhD course. Programme PDF in [`assets/documents/`](assets/documents/), page previews in `assets/images/`, enlargeable preview via [`_includes/pdf-preview.html`](_includes/pdf-preview.html) + `assets/css/pdf-preview.css`; fold-out speaker grid via [`_includes/speaker-list.html`](_includes/speaker-list.html) (styles in `page-sections.css`) |
 | — Educational Git / Project Git | [`_config.yml`](_config.yml) | External GitHub links — no page file; edit the URL in the `nav:` list |
 | ***Services*** | | |
 | **Curriculum Development** | [`markdown/education/curriculum-development.md`](markdown/education/curriculum-development.md) | Competency model pillar text under `pillars:` |

@@ -1,0 +1,101 @@
+/* CPDSE — PDF preview with enlarge-to-view (_includes/pdf-preview.html)
+ * Loaded per page through the `css:` front matter key.
+ * A thumbnail on the left, optional summary on the right; the enlarged
+ * view is a fixed overlay shown with :target, so it needs no JavaScript. */
+
+/* ── Preview grid ─────────────────────────────────────────────── */
+.pdf-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--space-md, 2rem);
+  align-items: start;
+}
+.pdf-preview__figure { margin: 0; }
+
+.pdf-preview__thumb {
+  position: relative;
+  display: block;
+  border: 1px solid var(--card-border, #D9D9D9);
+  background: var(--color-soft-white, #F9F9F9);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.pdf-preview__thumb:hover,
+.pdf-preview__thumb:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(51, 51, 51, 0.15);
+}
+.pdf-preview__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pdf-preview__hint {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--color-forest-green, #3C5E3E);
+  color: var(--color-antique-gold, #D6C17C);
+}
+.pdf-preview__caption { margin-top: 1rem; }
+
+.pdf-preview__summary p  { margin: 0 0 0.75rem; line-height: 1.7; }
+.pdf-preview__summary ul,
+.pdf-preview__summary ol { margin: 0 0 0 1.2rem; padding: 0; line-height: 1.65; }
+.pdf-preview__summary li { margin-bottom: 0.6rem; }
+
+/* ── Enlarged view ────────────────────────────────────────────── */
+.pdf-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  overflow-y: auto;
+  padding: var(--space-md, 2rem) var(--space-sm, 1rem);
+  background: rgba(51, 51, 51, 0.92);
+}
+.pdf-lightbox:target { display: block; }
+
+.pdf-lightbox__backdrop {
+  position: fixed;
+  inset: 0;
+}
+.pdf-lightbox__panel {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.pdf-lightbox__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.pdf-lightbox__page {
+  display: block;
+  background: var(--color-soft-white, #F9F9F9);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+.pdf-lightbox__page img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .pdf-preview { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pdf-preview__thumb { transition: none; }
+  .pdf-preview__thumb:hover,
+  .pdf-preview__thumb:focus-visible { transform: none; }
+}

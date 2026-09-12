@@ -44,6 +44,8 @@ nav:
     children:
       - title: Learning Resources
         url: /learning-resources/
+      - title: AI Drug Design Course
+        url: /ai-drug-design-course/
       - title: Educational Git
         url: https://github.com/CPDSE-EDUX
         external: true

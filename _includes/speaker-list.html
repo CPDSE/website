@@ -1,0 +1,50 @@
+{% comment %}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CPDSE — Speaker list
+  Used through the sections system:  include: speaker-list.html
+
+  A compact grid of people: name, optional role tag, one line of
+  title/affiliation, and a row of small capsule links (profile, group,
+  ORCID, LinkedIn …). Styles live in assets/css/page-sections.css
+  under "Speaker list".
+
+  Section keys read by this include:
+    speakers:            list of people (required)
+      - name:            Display name
+        role:            Optional short tag shown next to the name, e.g. "Course director"
+        affiliation:     One line: title, department, institution or company
+        links:           Optional list of { label, url }; external links open in a new tab
+    fold: true           Optional — hide the grid behind a fold-out toggle
+    fold_label:          Toggle text while closed (default: "Show all N speakers")
+    fold_label_open:     Toggle text while open (default: "Hide the speakers")
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{% endcomment %}
+{% assign s = include.section %}
+{% assign count = s.speakers | size %}
+{% capture default_label %}Show all {{ count }} speakers{% endcapture %}
+{% assign label_closed = s.fold_label | default: default_label %}
+{% assign label_open = s.fold_label_open | default: 'Hide the speakers' %}
+
+{% if s.fold %}
+<details class="speaker-fold">
+  <summary class="speaker-fold__toggle">
+    <span class="speaker-fold__label speaker-fold__label--closed">{{ label_closed }}</span>
+    <span class="speaker-fold__label speaker-fold__label--open">{{ label_open }}</span>
+  </summary>
+{% endif %}
+<ul class="speaker-list">
+  {% for p in s.speakers %}
+  <li class="speaker">
+    <p class="speaker__name">{{ p.name }}{% if p.role %} <span class="speaker__role">{{ p.role }}</span>{% endif %}</p>
+    {% if p.affiliation %}<p class="speaker__affiliation">{{ p.affiliation }}</p>{% endif %}
+    {% if p.links %}
+    <p class="speaker__links">
+      {% for l in p.links %}<a class="speaker__link" href="{{ l.url }}"{% if l.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>{% endfor %}
+    </p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% if s.fold %}
+</details>
+{% endif %}
