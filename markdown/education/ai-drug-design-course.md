@@ -216,7 +216,7 @@ sections:
           - label: ORCID
             url: https://orcid.org/0000-0002-2841-7284
           - label: LinkedIn
-            url: https://www.linkedin.com/in/jakob-madsen
+            url: https://www.linkedin.com/in/jsmadsen/
           - label: Scholar
             url: https://scholar.google.com/citations?user=dnSbbdAAAAAJ
       - name: "Sarah Mittenentzwei"
@@ -305,6 +305,8 @@ sections:
             url: https://researchprofiles.ku.dk/en/persons/arnault-quentin-vermillet/
           - label: ORCID
             url: https://orcid.org/0009-0003-1227-4199
+          - label: LinkedIn
+            url: https://www.linkedin.com/in/arnault-vermillet-080284381/
           - label: Scholar
             url: https://scholar.google.com/citations?user=lXIKHwMAAAAJ
 
