@@ -21,6 +21,7 @@ exclude:
   - docs/                      # internal reference screenshots
   - CLAUDE.md                  # repo-only guidance (stays in git, just not published)
   - README.md                  # repo-only guidance (stays in git, just not published)
+  - reference-models/README.md # build notes for the generated reference-models site
   - Gemfile
   - Gemfile.lock
 

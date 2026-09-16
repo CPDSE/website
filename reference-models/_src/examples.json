@@ -1,0 +1,161 @@
+{
+  "examples": [
+    {
+      "id": "fa516",
+      "kind": "curriculum-course",
+      "title": "Chemical and pharmaceutical data science",
+      "code": "FA516",
+      "short_name": "FA516 course",
+      "institution": "SDU",
+      "facts": [
+        ["Programme", "BSc Pharmacy, autumn semester, elective"],
+        ["Credits", "5 ECTS"],
+        ["Teaching", "About 10 short lectures and 15 two-hour exercise sessions, in Python with Jupyter notebooks"],
+        ["Assessment", "Group project handed in as an executable notebook, pass/fail"]
+      ],
+      "source_url": "https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=206899&lang=en",
+      "source_label": "Course description, SDU course database",
+      "summary": "Students learn how chemical and pharmaceutical data are represented and analysed: molecular descriptors, machine learning for property prediction, model evaluation and reproducible notebooks. The course ends with a group project on a real dataset.",
+      "short": {
+        "anchor": "Molecular property prediction, used to rank compounds before a candidate is chosen",
+        "deliver": "Each two-hour exercise session is planned as a 4Cs sequence. Its practice block feeds the group project."
+      },
+      "anchor": {
+        "stages": ["lead-opt-candidate-selection", "lead-identification"],
+        "why": "The course's machine-learning work predicts molecular properties. In industry that ranking happens during lead optimisation, and early screening of hits in lead identification uses the same molecular representations."
+      },
+      "targets": [
+        {
+          "subarea": "model-building",
+          "competency": "Model assessment and sensitivity analysis",
+          "today": 1,
+          "target": 3,
+          "why": "We assume students arrive able to fit a simple model but used to reporting a single accuracy number. The project should show how the conclusion changes with the data split and resampling."
+        },
+        {
+          "subarea": "workflow-repro",
+          "competency": "Reproducible Analysis",
+          "today": 2,
+          "target": 3,
+          "why": "We assume students have run notebooks written by others. The exam asks for an executable notebook, so another group should be able to re-run it from the raw data."
+        }
+      ],
+      "design": {
+        "format": "One two-hour exercise session (120 minutes), one of about 15",
+        "blocks": [
+          {
+            "c4": "connections",
+            "minutes": 15,
+            "title": "Would you trust this prediction?",
+            "activity": "In pairs, students look at one predicted solubility value and say what they would need to see before using it to drop a compound.",
+            "trumps": ["talking-trumps-listening"]
+          },
+          {
+            "c4": "concepts",
+            "minutes": 20,
+            "title": "One accuracy number hides a lot",
+            "activity": "Short input with three plots of the same model: a random split, a scaffold split and a calibration curve.",
+            "trumps": ["images-trump-words", "shorter-trumps-longer"]
+          },
+          {
+            "c4": "concrete-practice",
+            "minutes": 70,
+            "title": "Stress-test your project model",
+            "activity": "Each group re-runs its own model with a scaffold split and a bootstrap, writes down how the conclusion changes, and saves the notebook so another group can re-run it.",
+            "trumps": ["writing-trumps-reading", "different-trumps-same"]
+          },
+          {
+            "c4": "conclusions",
+            "minutes": 15,
+            "title": "One sentence for the report",
+            "activity": "Each group writes the claim its evaluation supports and one limitation, then reads both out.",
+            "trumps": ["writing-trumps-reading", "talking-trumps-listening"]
+          }
+        ]
+      },
+      "illustrative": ["targets", "design"]
+    },
+    {
+      "id": "smps20003u-teachers",
+      "kind": "people-development",
+      "title": "Workshop for the teachers of Methods and Procedures in Clinical Drug Development",
+      "code": "SMPS20003U",
+      "short_name": "SMPS20003U teachers' workshop",
+      "institution": "UCPH",
+      "facts": [
+        ["Service", "People Development, tailored workshop (imagined for this example)"],
+        ["Participants", "A hypothetical teaching team for the course"],
+        ["The course", "MSc Pharmaceutical Sciences, 7.5 ECTS; students write a clinical-trial protocol"],
+        ["Format", "Two half-days"]
+      ],
+      "source_url": "https://kurser.ku.dk/course/SMPS20003U",
+      "source_label": "Course description, kurser.ku.dk",
+      "summary": "In this real course, students write a clinical-trial protocol from a medical case. This imagined People Development workshop helps the course's teachers mark the statistics in those protocols and judge how students use AI tools.",
+      "short": {
+        "anchor": "Trial-protocol teaching, where designs are powered, analysed and reported",
+        "deliver": "Two half-day workshops. Teachers practise on the medical case they set their own students."
+      },
+      "anchor": {
+        "stages": ["phase-i-ii-iii", "regulatory"],
+        "why": "A protocol is designed for Phase I, II or III trials, and its analysis choices must hold up when a regulator reviews them."
+      },
+      "targets": [
+        {
+          "subarea": "statistics",
+          "competency": "Hypothesis testing",
+          "today": 2,
+          "target": 3,
+          "why": "We assume the teaching team can run a standard test. Judging a student's analysis plan also means choosing and interpreting tests for the trial in question, including multiplicity."
+        },
+        {
+          "subarea": "ai-in-education",
+          "competency": "What can AI be used for? What can it not be used for?",
+          "today": 1,
+          "target": 2,
+          "why": "We assume the team has no shared way yet to decide which uses of AI in protocol writing are fine, which are poor and which are unsafe."
+        }
+      ],
+      "design": {
+        "format": "First half-day of two (120 minutes)",
+        "blocks": [
+          {
+            "c4": "connections",
+            "minutes": 15,
+            "title": "The section you dread marking",
+            "activity": "Teachers stand at a wall and sort anonymised statistics sections from past reports into 'confident to mark' and 'unsure'.",
+            "trumps": ["movement-trumps-sitting", "talking-trumps-listening"]
+          },
+          {
+            "c4": "concepts",
+            "minutes": 20,
+            "title": "Three things every analysis plan must settle",
+            "activity": "Short input on the estimand, multiplicity and sample size, with one annotated protocol page on screen.",
+            "trumps": ["images-trump-words", "shorter-trumps-longer"]
+          },
+          {
+            "c4": "concrete-practice",
+            "minutes": 45,
+            "title": "Rework your own case",
+            "activity": "In pairs, teachers write the analysis section a strong student should produce for the case they set, then swap and review it against a checklist.",
+            "trumps": ["writing-trumps-reading", "talking-trumps-listening"]
+          },
+          {
+            "c4": "concrete-practice",
+            "minutes": 25,
+            "title": "AI: good fit, poor fit, unsafe",
+            "activity": "Teachers place eight example uses of AI by students on a three-zone floor map and argue over the borderline cases.",
+            "trumps": ["movement-trumps-sitting", "different-trumps-same"]
+          },
+          {
+            "c4": "conclusions",
+            "minutes": 15,
+            "title": "One change before the next course run",
+            "activity": "Each teacher writes one change to the protocol assignment, with a date, and reads it to the group.",
+            "trumps": ["writing-trumps-reading"]
+          }
+        ]
+      },
+      "illustrative": ["targets", "design"]
+    }
+  ]
+}

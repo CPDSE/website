@@ -1,0 +1,160 @@
+{
+  "landing": {
+    "title": "Where, What, How",
+    "sections": [
+      {
+        "id": "your-teaching",
+        "file": "00-your-teaching.html",
+        "step": null,
+        "c4": "connections",
+        "label": "Start from your own teaching"
+      },
+      {
+        "id": "step-1",
+        "file": "01-one-sentence.html",
+        "step": 1,
+        "c4": "concepts",
+        "label": "One sentence, three models"
+      },
+      {
+        "id": "step-2",
+        "file": "02-take-one-away.html",
+        "step": 2,
+        "c4": "concepts",
+        "label": "Take one away"
+      },
+      {
+        "id": "step-3",
+        "file": "03-two-examples.html",
+        "step": 3,
+        "c4": "concrete-practice",
+        "label": "Two examples, one order"
+      },
+      {
+        "id": "step-4",
+        "file": "04-the-map.html",
+        "step": 4,
+        "c4": "conclusions",
+        "label": "The map"
+      },
+      {
+        "id": "explore",
+        "file": "05-explore.html",
+        "step": null,
+        "c4": null,
+        "label": "Explore the models"
+      }
+    ]
+  },
+  "take_one_away": [
+    {
+      "missing": "where",
+      "result": "Good teaching, wrong context",
+      "why": "A general machine-learning module that pharmacy students can't connect to drug discovery."
+    },
+    {
+      "missing": "what",
+      "result": "Engaging, but aimless",
+      "why": "A lively staff workshop with no starting level and no target, so nobody can say what improved."
+    },
+    {
+      "missing": "how",
+      "result": "Right content, doesn't stick",
+      "why": "A well-targeted course taught as lectures and forgotten by the exam."
+    },
+    {
+      "missing": null,
+      "result": "Relevant, measurable, lasting",
+      "why": "A CPDSE course upgrade or People Development workshop."
+    }
+  ],
+  "glossary": [
+    [
+      "CPDSE-teacher",
+      "A member of CPDSE staff who designs or runs courses and workshops with partners."
+    ],
+    [
+      "PDS",
+      "Pharmaceutical Data Science, as in the PDS Competence Model."
+    ],
+    [
+      "Curriculum course",
+      "A course in a university programme, such as SDU's BSc Pharmacy or UCPH's MSc Pharmaceutical Sciences, that CPDSE helps upgrade or create."
+    ],
+    [
+      "People Development",
+      "CPDSE's learning offer for people already in post: researchers, educators and technical or administrative staff. It includes the one-hour FrAIday Bar, the informal Vibe Café and tailored workshops for a group."
+    ],
+    [
+      "Step",
+      "One of the three top-level parts of the Pharma Value Chain: Pre-clinical, Clinical development and On-market."
+    ],
+    [
+      "Substep",
+      "One of the 14 parts of the Pharma Value Chain, such as Lead Identification. Each belongs to one step."
+    ],
+    [
+      "Domain",
+      "One of the 7 top-level areas of the PDS Competence Model, such as Mathematics & Statistics."
+    ],
+    [
+      "Sub-area",
+      "A group of related competencies inside a domain of the PDS Competence Model, such as Statistics."
+    ],
+    [
+      "Competency",
+      "One specific capability inside a sub-area, such as Hypothesis testing, described at five levels."
+    ],
+    [
+      "Level",
+      "How well someone does a competency, from L1 Awareness to L5 Expertise."
+    ],
+    [
+      "Target working level",
+      "L3 Proficiency: independently delivering usable work on standard pharma problems. Nobody is expected to reach it in every competency."
+    ],
+    [
+      "Target",
+      "The level a course or workshop aims to bring people to for a chosen competency."
+    ],
+    [
+      "Crosswalk",
+      "The list that links each tool or method in the value chain to a substep and a competence sub-area."
+    ],
+    [
+      "Tool-based link",
+      "A connection between a substep and a competence sub-area that exists because both use the same tool or method in the crosswalk. It shows overlap, not a requirement."
+    ],
+    [
+      "Session",
+      "One whole teaching event, such as a two-hour class or a half-day workshop, planned as a 4Cs sequence."
+    ],
+    [
+      "Block",
+      "One timed part of a session. Each block does the job of one of the 4Cs."
+    ],
+    [
+      "4Cs",
+      "Connections, Concepts, Concrete Practice, Conclusions: Sharon Bowman's four-part plan for any session."
+    ],
+    [
+      "Six Trumps",
+      "Six brain-based rules of thumb from Sharon Bowman, such as 'talking trumps listening', used to check each block."
+    ],
+    [
+      "Illustrative",
+      "Invented for teaching purposes. The levels and designs in the examples are not assessments of real people or courses."
+    ],
+    [
+      "Draft",
+      "The source document is marked as AI-drafted and still pending review by CPDSE."
+    ]
+  ],
+  "external_allow": [
+    "https://odin.sdu.dk/",
+    "https://kurser.ku.dk/",
+    "https://www.gnu.org/licenses/",
+    "https://openfontlicense.org/",
+    "https://github.com/adobe-fonts/"
+  ]
+}

@@ -179,3 +179,15 @@ _layouts/            # page layout templates — rarely need editing
 - Do not load fonts, scripts, or other assets from external CDNs (Google Fonts, jsDelivr, …) — self-host them under `assets/fonts/` or `assets/js/vendor/` instead; third-party requests leak visitor IPs and break GDPR compliance
 - Do not commit `.env` files, credentials, or large binaries
 - Do not push directly to `main` without checking the build passes on GitHub Pages
+
+---
+
+## Exception: `reference-models/` (CPDSE-teachers onboarding site)
+
+The owner has exempted the `reference-models/` folder from the colour, typography, layout, sections-system and md-only rules above. It is a separate, generated static site (served at `/reference-models/`):
+
+- Edit only `reference-models/_src/`, `reference-models/README.md`, `scripts/build_onboarding.py` and `scripts/onboarding_lib/`. Every other file in `reference-models/` is overwritten by the build.
+- Rebuild with `python3 scripts/build_onboarding.py` (needs a local checkout of the private `CPDSE/cpdse-reference-models` repo next to this one), run `python3 scripts/build_onboarding.py --check`, and commit the generated output — Pages has no CI to build it.
+- It is intentionally **not** in `nav:` and every page is `noindex` — do not link it from the main site without the owner's say-so.
+- Say "CPDSE-teachers", never "consultants".
+- The GDPR rule still applies here: no fonts, scripts or other assets from CDNs.
