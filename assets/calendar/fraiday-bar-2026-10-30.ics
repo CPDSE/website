@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPDSE//FrAIday Bar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fraiday-bar-2026-10-30@cpdse.dk
+DTSTAMP:20260731T000000Z
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DTSTART:20261030T130000Z
+DTEND:20261030T140000Z
+SUMMARY:FrAIday Bar: Deep research and literature reviews
+DESCRIPTION:Running a real search\, and checking what comes back.\n\nYou le
+ ave with: A structured literature scan on your own question.\n\nFrAIday Ba
+ r is CPDSE's hands-on AI community. One hour\, one practical skill\, no EC
+ TS and nothing to prepare - bring a laptop and a real task.\n\nProgramme a
+ nd details: https://cpdse.dk/people-development/
+LOCATION:Room 21-1-120\, PharmaDataHub\, Building 21\, 1st floor\, Jagtvej 
+ 160\, 2100 Copenhagen Ø
+URL:https://cpdse.dk/people-development/
+ORGANIZER;CN=Jacob Fredegaard Hansen:mailto:jacob.f.hansen@sund.ku.dk
+END:VEVENT
+END:VCALENDAR
