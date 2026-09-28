@@ -3282,36 +3282,41 @@ UID:040000008200E00074C5B7101A82E008000000007044E544991DDC01000000000000000
  010000000E4C5C6CABDBFAC439EF30A3D02E8A46A
 DTSTART;TZID=Europe/Paris:20261007T103000
 DTEND;TZID=Europe/Paris:20261007T150000
-DTSTAMP:20260918T135211Z
-SEQUENCE:11
+DTSTAMP:20260928T134800Z
+SEQUENCE:12
 DESCRIPTION;LANGUAGE=en-US:Dear all\,\n\nWe are looking forward to seeing y
  ou at the episode meeting at SDU on 7 October 2026. Please note that the m
- eeting has been extended by half an hour to 15:00.\n\nAgenda\nAgenda will 
- follow soon.\n\nLocation\nSDU\, meeting room M-0.60 Dialogen\, Level 0\, B
- uilding 45.6S. You can use this map<https://clients.mapsindoors.com/sdu/57
- 3f26e4bc1f571b08094312/details/d4f198450c77452f82d80eb2> to guide you to t
- he meeting room.\n\nLanyard and name tag\nWe kindly ask that you bring you
- r CPDSE lanyard and name tag (if you got one at the last episode meeting).
- \n\nLunch\nWe will be serving lunch at the meeting\, so we kindly ask that
-  you reply to the invitation\, so we know how many people to expect. If yo
- u have any dietary restrictions/allergies\, please let Jeppe (jeppe.hartma
- nn@sund.ku.dk<mailto:jeppe.hartmann@sund.ku.dk>) know no later than 28 Sep
- tember 2026.\n\nTransportation\nIf you are going by car to the meeting\, w
- e hope that you will be able to give others a lift. We kindly ask that you
-  register on this Excel sheet [​xlsx icon]  CPDSE episode meeting Oct 7\
- , 2026 - transportation.xlsx<https://alumni.sharepoint.com/:x:/r/sites/UCP
- H_CPDSE377/Shared%20Documents/Organization%20and%20Community/Episode%20mee
- tings/Episode%20Meeting%20Oct%207%202026%20at%20SDU/CPDSE%20episode%20meet
- ing%20Oct%207\,%202026%20-%20transportation.xlsx?d=w12e1269849224ea3be5107
- 791db005db&csf=1&web=1&e=KXQkyF> if you have room in your car and for thos
- e of you who would like to get a lift to register in the same sheet.\n\nLo
- oking forward to seeing you.\n\nBest\,\nLykke\, Sarah\, Sebastian\, & Jepp
- e\n\nJeppe Hartmann\nProject Coordinator\n\nUniversity of Copenhagen\nDepa
- rtment of Drug Design and Pharmacology\n\nUniversitetsparken 2\nDK - 2100 
- Copenhagen\nDenmark\nLync/Skype +45 35323413\njeppe.hartmann@sund.ku.dk<ma
- ilto:jeppe.hartmann@sund.ku.dk>\n\n[Logo for Københavns Universitet]\n\nH
- ow we protect personal data<https://informationssikkerhed.ku.dk/english/pr
- otection-of-information-privacy/privacy-policy/>\n\n\n
+ eeting has been extended by half an hour to 15:00.\n\nAgenda\nThe agenda i
+ s attached and you can also find it [​docx icon]  here<https://alumni.sh
+ arepoint.com/:w:/r/sites/UCPH_CPDSE377/Shared%20Documents/Organization%20a
+ nd%20Community/Episode%20meetings/Episode%20Meeting%20Oct%207%202026%20at%
+ 20SDU/Agenda%20-%20CPDSE%20Episode%20Meeting%20261007.docx?d=w34eefb80d529
+ 44dda4a07928bf533706&csf=1&web=1&e=KaFBea>.\n\nLocation\nSDU\, meeting roo
+ m M-0.60 Dialogen\, Level 0\, Building 45.6S. You can use this map<https:/
+ /clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/d4f198450c77
+ 452f82d80eb2> to guide you to the meeting room.\n\nLanyard and name tag\nW
+ e kindly ask that you bring your CPDSE lanyard and name tag (if you got on
+ e at the last episode meeting).\n\nLunch\nWe will be serving lunch at the 
+ meeting\, so we kindly ask that you reply to the invitation\, so we know h
+ ow many people to expect. If you have any dietary restrictions/allergies\,
+  please let Jeppe (jeppe.hartmann@sund.ku.dk<mailto:jeppe.hartmann@sund.ku
+ .dk>) know no later than 2 October 2026.\n\nTransportation\nIf you are goi
+ ng by car to the meeting\, we hope that you will be able to give others a 
+ lift. We kindly ask that you register on this Excel sheet [​xlsx icon]  
+ CPDSE episode meeting Oct 7\, 2026 - transportation.xlsx<https://alumni.sh
+ arepoint.com/:x:/r/sites/UCPH_CPDSE377/Shared%20Documents/Organization%20a
+ nd%20Community/Episode%20meetings/Episode%20Meeting%20Oct%207%202026%20at%
+ 20SDU/CPDSE%20episode%20meeting%20Oct%207\,%202026%20-%20transportation.xl
+ sx?d=w12e1269849224ea3be5107791db005db&csf=1&web=1&e=KXQkyF> if you have r
+ oom in your car and for those of you who would like to get a lift to regis
+ ter in the same sheet.\n\nLooking forward to seeing you.\n\nBest\,\nLykke\
+ , Sarah\, Sebastian\, & Jeppe\n\nJeppe Hartmann\nProject Coordinator\n\nUn
+ iversity of Copenhagen\nDepartment of Drug Design and Pharmacology\n\nUniv
+ ersitetsparken 2\nDK - 2100 Copenhagen\nDenmark\nLync/Skype +45 35323413\n
+ jeppe.hartmann@sund.ku.dk<mailto:jeppe.hartmann@sund.ku.dk>\n\n[Logo for K
+ øbenhavns Universitet]\n\nHow we protect personal data<https://informatio
+ nssikkerhed.ku.dk/english/protection-of-information-privacy/privacy-policy
+ />\n\n\n
 SUMMARY;LANGUAGE=en-US:CPDSE Episode Meeting
 LOCATION;LANGUAGE=en-US:SDU - meeting room M-0.60 Dialogen
 STATUS:CONFIRMED
@@ -3658,6 +3663,12 @@ ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=Gabriela Diana Palkowska;X-PM-TO
 ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=Armin Andersen;X-PM-TOKEN=a0c93b
  5253ba0e586ab605ad81b8ab48f7f8a9ff;PARTSTAT=NEEDS-ACTION:mailto:armin.ande
  rsen@sund.ku.dk
+ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=Ditte Bork Iversen;X-PM-TOKEN=72
+ 7ee9633a3c85a9f376959b23bb6dfb8867b7dd;PARTSTAT=NEEDS-ACTION:mailto:dbiver
+ sen@health.sdu.dk
+ATTENDEE;ROLE=OPT-PARTICIPANT;RSVP=TRUE;CN=Cecilie Greve Jensen;X-PM-TOKEN=
+ 2b9defef428c26c70c051c72ef56bcfe0dd08229;PARTSTAT=NEEDS-ACTION:mailto:cecj
+ e@sdu.dk
 END:VEVENT
 BEGIN:VEVENT
 ORGANIZER;CN=Jeppe Hartmann:mailto:jeppe.hartmann@sund.ku.dk
