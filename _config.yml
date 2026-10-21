@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://cpdse.dk"
 
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: /news/:title/
 future: true
 
 collections:
@@ -67,6 +67,8 @@ nav:
         url: /fellow-program/
       - title: Project Opportunities
         url: /project-opportunities/
+      - title: Scholarships
+        url: /scholarships/
   - title: Contact
     url: /contact/
 
