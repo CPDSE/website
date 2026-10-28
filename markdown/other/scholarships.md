@@ -29,7 +29,7 @@ sections:
 
       At least one of the supervisors must be affiliated with CPDSE and based at one of the seven contributing departments at SDU or UCPH (for details see [Researchers & Units](/researchers-units/)). The CPDSE-affiliated supervisor is expected to relate to CPDSE and contribute to the CPDSE community.
 
-  - color: soft-white
+  - color: sage-green
     columns:
       - content: |
           ## Student engagement
@@ -41,7 +41,7 @@ sections:
 
           If the output of the scholarship results in a research publication, the Center for Pharmaceutical Data Science Education should be acknowledged for financial support.
 
-  - color: mint-gray
+  - color: soft-white
     eyebrow: Apply
     title: Submission procedure and deadline
     content: |
