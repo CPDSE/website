@@ -15,7 +15,7 @@ sections:
 
       The scholarships are intended for MSc students as well as BSc students in their final year of studies. The scholarship amounts to **DKK 10,000 per month for 5–6 months**. It is expected that the student does not take on paid work during the scholarship or receive other grants.
 
-  - color: mint-gray
+  - color: forest-green
     eyebrow: Eligibility
     title: Student and supervisor affiliation
     content: |
@@ -41,7 +41,7 @@ sections:
 
           If the output of the scholarship results in a research publication, the Center for Pharmaceutical Data Science Education should be acknowledged for financial support.
 
-  - color: forest-green
+  - color: mint-gray
     eyebrow: Apply
     title: Submission procedure and deadline
     content: |
