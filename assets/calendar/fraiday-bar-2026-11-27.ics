@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPDSE//FrAIday Bar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fraiday-bar-2026-11-27@cpdse.dk
+DTSTAMP:20260731T000000Z
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DTSTART:20261127T130000Z
+DTEND:20261127T140000Z
+SUMMARY:FrAIday Bar: Build your own research assistant
+DESCRIPTION:Configuring a persistent assistant around your own materials an
+ d your own way of working.\n\nYou leave with: An assistant that is still t
+ here on Monday.\n\nFrAIday Bar is CPDSE's hands-on AI community. One hour\
+ , one practical skill\, no ECTS and nothing to prepare - bring a laptop an
+ d a real task.\n\nProgramme and details: https://cpdse.dk/people-developme
+ nt/
+LOCATION:Room 21-1-120\, PharmaDataHub\, Building 21\, 1st floor\, Jagtvej 
+ 160\, 2100 Copenhagen Ø
+URL:https://cpdse.dk/people-development/
+ORGANIZER;CN=Jacob Fredegaard Hansen:mailto:jacob.f.hansen@sund.ku.dk
+END:VEVENT
+END:VCALENDAR

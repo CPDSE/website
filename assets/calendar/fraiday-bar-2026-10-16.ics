@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPDSE//FrAIday Bar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fraiday-bar-2026-10-16@cpdse.dk
+DTSTAMP:20260731T000000Z
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DTSTART:20261016T120000Z
+DTEND:20261016T130000Z
+SUMMARY:FrAIday Bar: Open floor
+DESCRIPTION:Efterårsferie week. No programme\, no preparation - turn up if
+  you are around and bring whatever you are stuck on.\n\nYou leave with: Wh
+ atever you came in with\, unstuck.\n\nFrAIday Bar is CPDSE's hands-on AI c
+ ommunity. One hour\, one practical skill\, no ECTS and nothing to prepare 
+ - bring a laptop and a real task.\n\nProgramme and details: https://cpdse.
+ dk/people-development/
+LOCATION:Room 21-1-120\, PharmaDataHub\, Building 21\, 1st floor\, Jagtvej 
+ 160\, 2100 Copenhagen Ø
+URL:https://cpdse.dk/people-development/
+ORGANIZER;CN=Jacob Fredegaard Hansen:mailto:jacob.f.hansen@sund.ku.dk
+END:VEVENT
+END:VCALENDAR
