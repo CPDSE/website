@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/perspectives.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+<header class="page-hero">
+  <div class="container">
+    {% if page.eyebrow %}<span class="hero-label">{{ page.eyebrow }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="hero-sub">{{ page.description }}</p>{% endif %}
+  </div>
+</header>
+
+<main class="section section-alt perspectives-main">
+  <div class="container">
+
+    {% assign pieces = site.perspectives | sort: 'date' | reverse %}
+
+    {% if pieces.size > 0 %}
+    {% assign all_tags = pieces | map: 'tags' | compact | uniq | sort_natural %}
+
+    <div class="perspectives-toolbar">
+      {% if all_tags.size > 0 %}
+      <nav class="perspectives-tags" aria-label="Filter by tag" data-perspectives-filter>
+        <a class="perspectives-tag is-active" href="{{ '/perspectives/' | relative_url }}" data-tag="">All</a>
+        {% for tag in all_tags %}
+        <a class="perspectives-tag" href="{{ '/perspectives/' | relative_url }}?tag={{ tag | slugify }}" data-tag="{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
+      <a class="perspectives-feed" href="{{ '/perspectives/feed.xml' | relative_url }}">RSS feed</a>
+    </div>
+
+    <div class="perspectives-list" data-perspectives-list>
+      {% for piece in pieces %}
+      {% assign words = piece.content | number_of_words %}
+      {% assign minutes = words | divided_by: 200 | at_least: 1 %}
+      <article class="perspective-card" data-tags="{% for tag in piece.tags %}{{ tag | slugify }} {% endfor %}">
+        <p class="perspective-card__meta">
+          <time datetime="{{ piece.date | date_to_xmlschema }}">{{ piece.date | date: "%b %-d, %Y" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ minutes }} min read</span>
+        </p>
+        <h2 class="perspective-card__title"><a href="{{ piece.url | relative_url }}">{{ piece.title }}</a></h2>
+        {% if piece.author %}<p class="perspective-card__author">{{ piece.author }}</p>{% endif %}
+        <p class="perspective-card__desc">{{ piece.description | default: piece.excerpt | strip_html | truncate: 180 }}</p>
+        {% if piece.tags and piece.tags.size > 0 %}
+        <ul class="perspective-card__tags">
+          {% for tag in piece.tags %}<li><a class="perspectives-tag perspectives-tag--small" href="{{ '/perspectives/' | relative_url }}?tag={{ tag | slugify }}" data-tag="{{ tag | slugify }}">{{ tag }}</a></li>{% endfor %}
+        </ul>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="updates-empty" data-perspectives-empty hidden>No perspectives with this tag yet.</p>
+    {% else %}
+    <p class="updates-empty">The first perspectives are on their way — check back soon.</p>
+    {% endif %}
+
+  </div>
+</main>
+
+{% for section in page.sections %}
+  {% include page-section.html section=section %}
+{% endfor %}
+
+<script src="{{ '/assets/js/perspectives.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
