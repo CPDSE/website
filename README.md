@@ -11,6 +11,7 @@ The nav bar is built from the `nav:` list in [`_config.yml`](_config.yml) — ed
 ```
 CPDSE nav                                                    ● = planned
 ├── News & Events                 /news-events/
+├── Perspectives                  /perspectives/
 ├── About
 │   ├── About CPDSE               /about/
 │   ├── People                    /people/
@@ -55,6 +56,8 @@ Files are listed in nav-bar order. Click the path to open the file.
 | — *timeline milestones* | [`_data/milestones.yml`](_data/milestones.yml) | Feeds the "Our Vision" milestone timeline; one entry per dot |
 | **News & Events** | [`markdown/news/news-events.md`](markdown/news/news-events.md) | Page intro; individual posts in [`_posts/news/`](_posts/news/) |
 | — *individual posts* | [`_posts/news/`](_posts/news/) | One `.md` file per post; date in filename |
+| **Perspectives** | [`markdown/perspectives/perspectives.md`](markdown/perspectives/perspectives.md) | Opinion pieces listing; hero text in frontmatter. Tag filter chips are built from the pieces' `tags:`; RSS at `/perspectives/feed.xml` |
+| — *individual pieces* | [`_perspectives/`](_perspectives/) | One `.md` file per piece (`YYYY-MM-DD-slug.md`), copy [`_template.md`](_perspectives/_template.md). Fields: `title`, `date`, `author`, `author_role`, `description`, `tags`; `published: false` keeps a draft unpublished |
 | ***About*** | | |
 | **About CPDSE** | [`markdown/about/about.md`](markdown/about/about.md) | Sections-based |
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |

@@ -1,0 +1,258 @@
+/* ─── Perspectives (opinion pieces) ──────────────────────────────
+   Listing: _layouts/perspectives.html   Article: _layouts/perspective.html
+   Article body reuses .post-content from main.css. */
+
+.perspectives-main {
+  padding: var(--space-lg) 0;
+}
+
+/* Toolbar — tag filter chips + RSS link */
+.perspectives-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.perspectives-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Tag chip — capsule shape, soft-white with forest-green text;
+   active state uses the forest-green / antique-gold pairing */
+.perspectives-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--color-soft-white);
+  border: 1px solid var(--card-border);
+  color: var(--color-forest-green);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.perspectives-tag:hover,
+.perspectives-tag:focus-visible {
+  border-color: var(--color-forest-green);
+}
+
+.perspectives-tag.is-active {
+  background: var(--color-forest-green);
+  border-color: var(--color-forest-green);
+  color: var(--color-antique-gold);
+}
+
+.perspectives-tag--small {
+  font-size: 0.68rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.perspectives-feed {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-forest-green);
+  padding: 0.45rem 0;
+}
+
+/* Listing cards */
+.perspectives-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-md);
+}
+
+.perspective-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: var(--color-soft-white);
+  border: 1px solid var(--card-border);
+  transition: transform 0.18s ease;
+}
+
+.perspective-card:hover {
+  transform: translateY(-2px);
+}
+
+.perspective-card[hidden] {
+  display: none;
+}
+
+.perspective-card__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  opacity: 0.65;
+}
+
+.perspective-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.perspective-card__title a {
+  color: var(--color-forest-green);
+  text-decoration: none;
+}
+
+/* Whole card is clickable via the title link */
+.perspective-card { position: relative; }
+.perspective-card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.perspective-card__author {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.perspective-card__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+}
+
+.perspective-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0.4rem 0 0;
+}
+
+/* Tag chips sit above the card-wide title link */
+.perspective-card__tags a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Article page */
+.perspective-byline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.post-content.perspective-content .perspective-content__tags {
+  margin: 0 0 var(--space-md);
+}
+
+.post-content .perspectives-tag {
+  text-decoration: none;
+}
+
+.perspective-content blockquote {
+  margin: var(--space-md) 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: var(--color-forest-green);
+}
+
+.perspective-content blockquote p {
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+.perspective-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.perspective-related {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+}
+
+.post-content .perspective-related h2 {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  color: var(--color-forest-green);
+}
+
+.perspective-related ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.perspective-related li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.9rem;
+}
+
+.perspective-related__meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.perspective-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.post-content .perspective-pager__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-forest-green);
+  text-decoration: none;
+}
+
+.perspective-pager__link span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.perspective-pager__link--next {
+  grid-column: 2;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .perspectives-list { grid-template-columns: 1fr; }
+  .perspective-pager { grid-template-columns: 1fr; }
+  .perspective-pager__link--next { grid-column: 1; text-align: left; }
+}

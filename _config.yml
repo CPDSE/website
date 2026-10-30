@@ -12,10 +12,27 @@ collections:
   projects:
     output: true
     permalink: /project-opportunities/:title/
+  perspectives:
+    output: true
+    permalink: /perspectives/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: perspectives
+    values:
+      layout: perspective
+
+# jekyll-feed: the default /feed.xml covers news posts; Perspectives gets its own feed
+feed:
+  collections:
+    perspectives:
+      path: "/perspectives/feed.xml"
 
 exclude:
   - _posts/news/_template.md   # reference template, not a real post
   - _projects/_template.md     # reference template, not a real project
+  - _perspectives/_template.md # reference template, not a real perspective
   - scripts/                   # data-refresh scripts, not site content
   - _preview/                  # local preview harness
   - docs/                      # internal reference screenshots
@@ -31,6 +48,8 @@ plugins:
 nav:
   - title: News & Events
     url: /news-events/
+  - title: Perspectives
+    url: /perspectives/
   - title: About
     children:
       - title: About CPDSE
