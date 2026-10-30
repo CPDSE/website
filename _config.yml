@@ -60,6 +60,8 @@ nav:
         url: /researchers-units/
       - title: Visual Identity
         url: /visual-identity/
+      - title: Join Us
+        url: /join-us/
   - title: Resources
     children:
       - title: Learning Resources
@@ -78,16 +80,6 @@ nav:
         url: /curriculum-development/
       - title: Student Code Club
         url: /codeclub/
-  - title: Join Us
-    children:
-      - title: Join Us
-        url: /join-us/
-      - title: Fellow Program
-        url: /fellow-program/
-      - title: Project Opportunities
-        url: /project-opportunities/
-      - title: Scholarships
-        url: /scholarships/
   - title: Contact
     url: /contact/
 

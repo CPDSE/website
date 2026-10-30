@@ -16,7 +16,11 @@ CPDSE nav                                                    ● = planned
 │   ├── About CPDSE               /about/
 │   ├── People                    /people/
 │   ├── Researchers & Units       /researchers-units/
-│   └── Visual Identity           /visual-identity/
+│   ├── Visual Identity           /visual-identity/
+│   └── Join Us                   /join-us/
+│       ├── Fellow Program        /fellow-program/         (hub page only)
+│       ├── Project Opportunities /project-opportunities/  (hub page only)
+│       └── Scholarships          /scholarships/           (hub page only)
 ├── Resources
 │   ├── Learning Resources        /learning-resources/
 │   ├── AI Drug Design Course     /ai-drug-design-course/
@@ -31,10 +35,6 @@ CPDSE nav                                                    ● = planned
 │   ├── ● Staff Development             (plan)
 │   ├── ● Project Consultation          (plan)
 │   └── ● Research Strategy Development (plan)
-├── Join Us
-│   ├── Join Us                   /join-us/
-│   ├── Fellow Program            /fellow-program/
-│   └── Project Opportunities     /project-opportunities/
 └── Contact                       /contact/
 
 Not in nav
@@ -63,6 +63,11 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **People** | [`markdown/about/people.md`](markdown/about/people.md) | `intro_left:` for the hero text; person data in `assets/data/people.json` |
 | **Researchers & Units** | [`markdown/research/research-units.md`](markdown/research/research-units.md) | Department grid, PhD students, and group leaders all in frontmatter |
 | **Visual Identity** | [`markdown/about/corporate-identity.md`](markdown/about/corporate-identity.md) | |
+| **Join Us** | [`markdown/other/join-us.md`](markdown/other/join-us.md) | Landing page; the "Open calls & programmes" cards link to the three pages below |
+| — Fellow Program | [`markdown/about/fellows.md`](markdown/about/fellows.md) | |
+| — Project Opportunities | [`markdown/education/project-opportunities.md`](markdown/education/project-opportunities.md) | Page intro; individual projects in [`_projects/`](_projects/) |
+| — *individual projects* | [`_projects/`](_projects/) | One `.md` file per project; date in filename |
+| — Scholarships | [`markdown/other/scholarships.md`](markdown/other/scholarships.md) | |
 | ***Resources*** | | |
 | **Learning Resources** | [`markdown/education/learning-resources.md`](markdown/education/learning-resources.md) | |
 | **AI Drug Design Course** | [`markdown/education/ai-drug-design-course.md`](markdown/education/ai-drug-design-course.md) | Sections-based; industry application page for the November 2026 PhD course. Programme PDF in [`assets/documents/`](assets/documents/), page previews in `assets/images/`, enlargeable preview via [`_includes/pdf-preview.html`](_includes/pdf-preview.html) + `assets/css/pdf-preview.css`; fold-out speaker grid via [`_includes/speaker-list.html`](_includes/speaker-list.html) (styles in `page-sections.css`) |
@@ -72,11 +77,6 @@ Files are listed in nav-bar order. Click the path to open the file.
 | **Student Code Club** | [`markdown/education/codeclub.md`](markdown/education/codeclub.md) | Landing/hub page |
 | — SDU Code Club | [`markdown/education/codeclub-sdu.md`](markdown/education/codeclub-sdu.md) | Sections-based |
 | — KU Code Club | [`markdown/education/codeclub-ku.md`](markdown/education/codeclub-ku.md) | Raw HTML (`layout: bare`) — no sections system, no site chrome |
-| ***Join Us*** | | |
-| **Join Us** | [`markdown/other/join-us.md`](markdown/other/join-us.md) | |
-| **Fellow Program** | [`markdown/about/fellows.md`](markdown/about/fellows.md) | |
-| **Project Opportunities** | [`markdown/education/project-opportunities.md`](markdown/education/project-opportunities.md) | Page intro; individual projects in [`_projects/`](_projects/) |
-| — *individual projects* | [`_projects/`](_projects/) | One `.md` file per project; date in filename |
 | **Contact** | [`markdown/contact/contact.md`](markdown/contact/contact.md) | |
 | Funding *(not in nav)* | [`markdown/other/funding.md`](markdown/other/funding.md) | |
 | Privacy *(not in nav)* | [`markdown/other/privacy.md`](markdown/other/privacy.md) | |
