@@ -6,6 +6,7 @@ degree_level: Master
 status: open
 university_supervisor: "Xavier Bofill De Ros, Dept. Drug Design and Pharmacology, University of Copenhagen"
 duration: "30–60 ECTS (6–12 months), start flexible"
+competencies:
   - R
   - Statistics
   - Shiny
