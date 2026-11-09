@@ -1,0 +1,61 @@
+# FrAIday Bar — autumn 2026 programme.
+# Single source of truth for the per-session calendar invitations.
+#
+# After editing this file, regenerate the .ics files:
+#   python3 scripts/generate-fraiday-ics.py
+#
+# The generated files land in assets/calendar/ and are linked from the
+# programme cards in markdown/education/people-development.md
+
+# Shared across every session. Change the room here ONCE — not in eight files.
+# NOTE: the room is also written into the closing CTA of
+# markdown/education/people-development.md. Liquid does not run inside page
+# frontmatter, so that one cannot read this value — update both if it moves.
+location: "Room 21-1-120, PharmaDataHub, Building 21, 1st floor, Jagtvej 160, 2100 Copenhagen Ø"
+start_time: "14:00"
+end_time: "15:00"
+timezone: "Europe/Copenhagen"
+page_url: "https://cpdse.dk/people-development/"
+organiser_name: "Jacob Fredegaard Hansen"
+organiser_email: "jacob.f.hansen@sund.ku.dk"
+
+sessions:
+  - date: 2026-09-04
+    title: "Choosing the right model"
+    summary: "Which tool for which job, decided on your own recurring tasks rather than in the abstract."
+    artifact: "A one-page decision card, and a working setup."
+
+  - date: 2026-09-18
+    title: "Make your academic website"
+    summary: "Build and publish a personal academic page from what you already have."
+    artifact: "A live site."
+
+  - date: 2026-10-02
+    title: "Prompt and loop engineering"
+    summary: "Getting reliable, repeatable output instead of a good result once."
+    artifact: "Your own library of prompts for the tasks you repeat."
+
+  - date: 2026-10-16
+    title: "Open floor"
+    summary: "Efterårsferie week. No programme, no preparation - turn up if you are around and bring whatever you are stuck on."
+    artifact: "Whatever you came in with, unstuck."
+
+  - date: 2026-10-30
+    title: "Deep research and literature reviews"
+    summary: "Running a real search, and checking what comes back."
+    artifact: "A structured literature scan on your own question."
+
+  - date: 2026-11-13
+    title: "LLMs for data organisation"
+    summary: "Cleaning and restructuring messy data with Python or R. Comfortable opening a script? That is the only prerequisite."
+    artifact: "A script that runs on your own data."
+
+  - date: 2026-11-27
+    title: "Build your own research assistant"
+    summary: "Configuring a persistent assistant around your own materials and your own way of working."
+    artifact: "An assistant that is still there on Monday."
+
+  - date: 2026-12-11
+    title: "Show and tell, Christmas quiz and hygge"
+    summary: "Bring something you built this term. Then we stop working."
+    artifact: "Bragging rights."
