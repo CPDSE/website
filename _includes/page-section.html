@@ -128,6 +128,7 @@
        src:      /assets/images/filename.jpg   (required)
        alt:      Descriptive alt text           (required)
        position: left | right                  (default: left)
+       size:     small                          (optional — narrow image, e.g. a portrait)
      content: |
        Text that appears beside the image (markdown).
 
@@ -293,7 +294,7 @@
     {% assign img_pos = s.image.position | default: 'left' %}
     {% assign img_src = s.image.src %}
     {% unless img_src contains '://' %}{% assign img_src = img_src | relative_url %}{% endunless %}
-    <div class="page-section__image-text page-section__image-text--{{ img_pos }}">
+    <div class="page-section__image-text page-section__image-text--{{ img_pos }}{% if s.image.size %} page-section__image-text--{{ s.image.size }}{% endif %}">
       <div class="page-section__image-wrap">
         <img src="{{ img_src }}" alt="{{ s.image.alt | default: '' }}">
       </div>

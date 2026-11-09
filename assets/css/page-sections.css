@@ -191,6 +191,10 @@
 .page-section--forest-green .page-section__cards--soft-white .page-section__card-link {
   color: var(--color-forest-green, #3C5E3E);
 }
+.page-section--sage-green   .page-section__cards--soft-white .page-section__card-num,
+.page-section--forest-green .page-section__cards--soft-white .page-section__card-num {
+  color: var(--color-forest-green, #3C5E3E);
+}
 
 /* Cards on sage-green section */
 .page-section--sage-green .page-section__card {
@@ -300,6 +304,10 @@
   align-items: center;
 }
 .page-section__image-text--right .page-section__image-wrap { order: 2; }
+
+/* size: small — a narrow image (e.g. a contact portrait) beside wider text */
+.page-section__image-text--small { grid-template-columns: 180px 1fr; }
+.page-section__image-text--small.page-section__image-text--right { grid-template-columns: 1fr 180px; }
 
 .page-section__image-wrap img {
   border-radius: 0;
@@ -455,7 +463,9 @@
   .page-section__cards--2col,
   .page-section__cards--3col  { grid-template-columns: 1fr; }
   .page-section__columns      { grid-template-columns: 1fr; }
-  .page-section__image-text   { grid-template-columns: 1fr; }
+  .page-section__image-text,
+  .page-section__image-text--small.page-section__image-text--right { grid-template-columns: 1fr; }
+  .page-section__image-text--small .page-section__image-wrap { max-width: 180px; }
   .page-section__image-text--right .page-section__image-wrap { order: 0; }
   .approach-pill { font-size: 0.72rem; padding: 0.5rem 0.9rem; }
 }
