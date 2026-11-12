@@ -8859,56 +8859,56 @@ BEGIN:VEVENT
 UID:009E3D31-E89C-4342-81BF-7D190DD96EBD
 DTSTART;TZID=Europe/Paris:20261112T100000
 DTEND;TZID=Europe/Paris:20261112T113000
-SEQUENCE:0
-DTSTAMP:20261106T164353Z
-STATUS:CONFIRMED
-SUMMARY;LANGUAGE=da-DK:Invitation to Ligtning Decision Jam 1 (an online Des
- ign Sprint using Miro) - 5-10 participants needed
-DESCRIPTION;LANGUAGE=da-DK:\nDear all\,\n\nAfter two sprints this autumn\, 
- we're trying a shorter\, online format: a Lightning Decision Jam (LDJ). Th
- e method works on Miro\, and you can watch an example of the method here:\
- nhttps://miro.com/templates/simple-lightning-decision-jam-template/\n\nThe
-  LDJ works best with 5-10 participants\, so that's what we are looking for
- .\n\nThe meeting has two goals:\n\n1. To experience the LDJ method first-h
- and\, so we can judge where it could be useful in CPDSE.\n2. To use it on 
- something that matters to us: one area of CPDSE's activities that we choos
- e together at the start.\n\nPART 1 – CHOOSE OUR FOCUS (30 min)\nWe start
-  from the CPDSE map (shown on top)\, and select what CPDSE area to focus o
- n.\n\n- Welcome and the LDJ in brief (10 min)\n- A quick tour of the CPDSE
-  map (5 min)\n- Silent dot vote: three dots each\, on the areas where a ja
- m would help us most (5 min)\n- Look at the result and settle on one area.
-  (10 min)\n\nPART 2 – THE LIGHTNING DECSION JAM (60 min)\nMost of this p
- art is silent writing on sticky notes\, followed by voting. We only discus
- s where it helps us decide. That keeps it fast and gives everyone an equal
-  voice.\n\n1. What's working in our chosen area – what we should keep (5
-  min)\n2. Challenges – what gets in the way (7 min)\n3. Vote on the chal
- lenges that matter most (3 min)\n4. Turn the top challenges into &quot\;Ho
- w might we…&quot\; questions (5 min)\n5. Ideas – as many solutions as 
- possible\, no discussion yet (7 min)\n6. Vote on the ideas (3 min)\n7. Put
-  the selected ideas on an effort/impact grid (10 min)\n8. Choose 1–3 act
- ions we can test within two weeks\, each with an owner and a date (10 min)
- \n9. Check-out: how did the method work for us\, and where else could we u
- se it? (10 min)\n\nBEFORE THE MEETING (about 15 min)\n- Watch the 10-minut
- e walkthrough (&quot\;LDJ Walkthrough&quot\;) on the Miro board\, and glan
- ce at the Kijani City example next to it.\n- Look at the map and pick the 
- one or two areas you'd most like to work on\, and why. You'll vote in the 
- meeting\, not before.\n- Check that you can open the board in your browser
-  and add a sticky note.\n\nPlease join from a laptop with your camera on 
- – sticky notes are hard to manage on a phone.\n\nBest regards\,\nFinn\n\
- n_________________________________________________________________________
- _______\nMicrosoft Teams-møde\nDeltag: https://teams.microsoft.com/meet/3
- 293531896421799?p=9NiX1dZPPC0d8AkO7H\nMøde-id: 329 353 189 642 179 9\nAdg
- angskode: vX9Hk9Dv\n\nHar du brug for hjælp?<https://aka.ms/JoinTeamsMeet
- ing?omkt=da> | Systemreference<https://teams.microsoft.com/l/meetup-join/1
- 9%3ameeting_ZDIyYTk1NWQtYmQ4OC00MmU1LTlhZjgtZDJiM2NlMzA0ZjVl%40thread.v2/0
- ?context=%7b%22Tid%22%3a%22a3927f91-cda1-4696-af89-8c9f1ceffa91%22%2c%22Oi
- d%22%3a%22a072dd50-29b8-48e6-a521-a6abca183695%22%7d>\nRing op via telefon
- \n&#43\;45 32 72 07 55\,\,887567912#<tel:+4532720755\,\,887567912> Denmark
- \, All locations\nFind et lokalt nummer<https://dialin.teams.cloud.microso
- ft/8fa1ad49-0722-4052-88ca-11fecd3ccf50?id=887567912>\nTelefonmøde-id: 88
- 7 567 912#\nFor arr…
+SEQUENCE:1
+DTSTAMP:20261111T132351Z
+STATUS:CANCELLED
+SUMMARY;LANGUAGE=da-DK:Annulleret: Invitation to Ligtning Decision Jam 1 (a
+ n online Design Sprint using Miro) - 5-10 participants needed
+DESCRIPTION;LANGUAGE=da-DK:[cid:image001.png@01DD6E0E.C0206950]\nDear all\,
+ \n\nAfter two sprints this autumn\, we're trying a shorter\, online format
+ : a Lightning Decision Jam (LDJ). The method works on Miro\, and you can w
+ atch an example of the method here:\nhttps://miro.com/templates/simple-lig
+ htning-decision-jam-template/\n\nThe LDJ works best with 5-10 participants
+ \, so that's what we are looking for.\n\nThe meeting has two goals:\n\n1. 
+ To experience the LDJ method first-hand\, so we can judge where it could b
+ e useful in CPDSE.\n2. To use it on something that matters to us: one area
+  of CPDSE's activities that we choose together at the start.\n\nPART 1 –
+  CHOOSE OUR FOCUS (30 min)\nWe start from the CPDSE map (shown on top)\, a
+ nd select what CPDSE area to focus on.\n\n- Welcome and the LDJ in brief (
+ 10 min)\n- A quick tour of the CPDSE map (5 min)\n- Silent dot vote: three
+  dots each\, on the areas where a jam would help us most (5 min)\n- Look a
+ t the result and settle on one area. (10 min)\n\nPART 2 – THE LIGHTNING 
+ DECSION JAM (60 min)\nMost of this part is silent writing on sticky notes\
+ , followed by voting. We only discuss where it helps us decide. That keeps
+  it fast and gives everyone an equal voice.\n\n1. What's working in our ch
+ osen area – what we should keep (5 min)\n2. Challenges – what gets in 
+ the way (7 min)\n3. Vote on the challenges that matter most (3 min)\n4. Tu
+ rn the top challenges into "How might we…" questions (5 min)\n5. Ideas 
+ – as many solutions as possible\, no discussion yet (7 min)\n6. Vote on 
+ the ideas (3 min)\n7. Put the selected ideas on an effort/impact grid (10 
+ min)\n8. Choose 1–3 actions we can test within two weeks\, each with an 
+ owner and a date (10 min)\n9. Check-out: how did the method work for us\, 
+ and where else could we use it? (10 min)\n\nBEFORE THE MEETING (about 15 m
+ in)\n- Watch the 10-minute walkthrough ("LDJ Walkthrough") on the Miro boa
+ rd\, and glance at the Kijani City example next to it.\n- Look at the map 
+ and pick the one or two areas you'd most like to work on\, and why. You'll
+  vote in the meeting\, not before.\n- Check that you can open the board in
+  your browser and add a sticky note.\n\nPlease join from a laptop with you
+ r camera on – sticky notes are hard to manage on a phone.\n\nBest regard
+ s\,\nFinn\n\n_____________________________________________________________
+ ___________________\nMicrosoft Teams-møde\nDeltag: https://teams.microsof
+ t.com/meet/3293531896421799?p=9NiX1dZPPC0d8AkO7H\nMøde-id: 329 353 189 64
+ 2 179 9\nAdgangskode: vX9Hk9Dv\n\nHar du brug for hjælp?<https://aka.ms/J
+ oinTeamsMeeting?omkt=da> | Systemreference<https://teams.microsoft.com/l/m
+ eetup-join/19%3ameeting_ZDIyYTk1NWQtYmQ4OC00MmU1LTlhZjgtZDJiM2NlMzA0ZjVl%4
+ 0thread.v2/0?context=%7b%22Tid%22%3a%22a3927f91-cda1-4696-af89-8c9f1ceffa9
+ 1%22%2c%22Oid%22%3a%22a072dd50-29b8-48e6-a521-a6abca183695%22%7d>\nRing op
+  via telefon\n+45 32 72 07 55\,\,887567912#<tel:+4532720755\,\,887567912> 
+ Denmark\, All locations\nFind et lokalt nummer<https://dialin.teams.cloud.
+ microsoft/8fa1ad49-0722-4052-88ca-11fecd3ccf50?id=887567912>\nTelefonmøde
+ -id: 887 567 …
 LOCATION;LANGUAGE=da-DK:Microsoft Teams-møde
-ORGANIZER;CN=Finn Kollerup:mailto:finn.kollerup@sund.ku.dk
+ORGANIZER;CN=Finn Kollerup:MAILTO:finn.kollerup@sund.ku.dk
 ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jeppe Hartmann;X-PM-TOKEN=8f3b33
  0709d4c880287e99b88beddc585c5fc70c;PARTSTAT=NEEDS-ACTION:mailto:jeppe.hart
  mann@sund.ku.dk
@@ -9241,9 +9241,6 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Nikolai Brun;X-PM-TOKEN=62f95c4f
 ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Casper Steinmann;X-PM-TOKEN=23ec
  be834e868c10cfb9ebb24c795889695b36f6;PARTSTAT=NEEDS-ACTION:mailto:steinman
  n@sdu.dk
-ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Finn Kollerup;X-PM-TOKEN=33a6c05
- 625e16d9506d5953cef4ae9a6cd5500b8;PARTSTAT=NEEDS-ACTION:mailto:finn.koller
- up@sund.ku.dk
 ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=calendar@cpdse.dk;X-PM-TOKEN=13f
  b896348b89fedc0c5f312607cf8c34513b348;PARTSTAT=NEEDS-ACTION:mailto:calenda
  r@cpdse.dk
@@ -9272,56 +9269,56 @@ BEGIN:VEVENT
 UID:8F928DDC-993E-4C3F-8E97-2C57B04F1BCD
 DTSTART;TZID=Europe/Paris:20261112T133000
 DTEND;TZID=Europe/Paris:20261112T150000
-SEQUENCE:1
-DTSTAMP:20261106T164354Z
-STATUS:CONFIRMED
-SUMMARY;LANGUAGE=da-DK:Invitation to Ligtning Decision Jam 2 (an online Des
- ign Sprint using Miro) - 5-10 participants needed
-DESCRIPTION;LANGUAGE=da-DK:\nDear all\,\n\nAfter two sprints this autumn\, 
- we're trying a shorter\, online format: a Lightning Decision Jam (LDJ). Th
- e method works on Miro\, and you can watch an example of the method here:\
- nhttps://miro.com/templates/simple-lightning-decision-jam-template/\n\nThe
-  LDJ works best with 5-10 participants\, so that's what we are looking for
- .\n\nThe meeting has two goals:\n\n1. To experience the LDJ method first-h
- and\, so we can judge where it could be useful in CPDSE.\n2. To use it on 
- something that matters to us: one area of CPDSE's activities that we choos
- e together at the start.\n\nPART 1 – CHOOSE OUR FOCUS (30 min)\nWe start
-  from the CPDSE map (shown on top)\, and select what CPDSE area to focus o
- n.\n\n- Welcome and the LDJ in brief (10 min)\n- A quick tour of the CPDSE
-  map (5 min)\n- Silent dot vote: three dots each\, on the areas where a ja
- m would help us most (5 min)\n- Look at the result and settle on one area.
-  (10 min)\n_______________________________________________________________
- _________________\nMicrosoft Teams-møde\nDeltag: https://teams.microsoft.
- com/meet/3915906584740750?p=8Fb8zGvhoh3DSL6QOb\nMøde-id: 391 590 658 474 
- 075 0\nAdgangskode: 6u9kV6Hf\n\nHar du brug for hjælp?<https://aka.ms/Joi
- nTeamsMeeting?omkt=da> | Systemreference<https://teams.microsoft.com/l/mee
- tup-join/19%3ameeting_ODNjNTlhOGUtNDlmYS00MDMwLTg1N2QtYTJiODFiYWZhZjEy%40t
- hread.v2/0?context=%7b%22Tid%22%3a%22a3927f91-cda1-4696-af89-8c9f1ceffa91%
- 22%2c%22Oid%22%3a%22a072dd50-29b8-48e6-a521-a6abca183695%22%7d>\nRing op v
- ia telefon\n&#43\;45 32 72 07 55\,\,406717902#<tel:+4532720755\,\,40671790
- 2> Denmark\, All locations\nFind et lokalt nummer<https://dialin.teams.clo
- ud.microsoft/8fa1ad49-0722-4052-88ca-11fecd3ccf50?id=406717902>\nTelefonm
- øde-id: 406 717 902#\nFor arrangører: Mødeindstillinger<https://teams.m
- icrosoft.com/meetingOptions/?organizerId=a072dd50-29b8-48e6-a521-a6abca183
- 695&tenantId=a3927f91-cda1-4696-af89-8c9f1ceffa91&threadId=19_meeting_ODNj
- NTlhOGUtNDlmYS00MDMwLTg1N2QtYTJiODFiYWZhZjEy@thread.v2&messageId=0&languag
- e=da> | Nulstil opkaldspinkode<https://dialin.teams.cloud.microsoft/usp/ps
- tnconferencing>\n_________________________________________________________
- _______________________\n\nPART 2 – THE LIGHTNING DECSION JAM (60 min)\n
- Most of this part is silent writing on sticky notes\, followed by voting. 
- We only discuss where it helps us decide. That keeps it fast and gives eve
- ryone an equal voice.\n\n1. What's working in our chosen area – what we 
- should keep (5 min)\n2. Challenges – what gets in the way (7 min)\n3. Vo
- te on the challenges that matter most (3 min)\n4. Turn the top challenges 
- into &quot\;How might we…&quot\; questions (5 min)\n5. Ideas – as many
-  solutions as possible\, no discussion yet (7 min)\n6. Vote on the ideas (
- 3 min)\n7. Put the selected ideas on an effort/impact grid (10 min)\n8. Ch
- oose 1–3 actions we can test within two weeks\, each with an owner and a
-  date (10 min)\n9. Check-out: how did the method work for us\, and where e
- lse could we use it? (10 min)\n\nBEFORE THE MEETING (about 15 min)\n- Watc
- h the …
+SEQUENCE:2
+DTSTAMP:20261111T132351Z
+STATUS:CANCELLED
+SUMMARY;LANGUAGE=da-DK:Annulleret: Invitation to Ligtning Decision Jam 2 (a
+ n online Design Sprint using Miro) - 5-10 participants needed
+DESCRIPTION;LANGUAGE=da-DK:[cid:image001.png@01DD6E0E.7DDAED40]\nDear all\,
+ \n\nAfter two sprints this autumn\, we're trying a shorter\, online format
+ : a Lightning Decision Jam (LDJ). The method works on Miro\, and you can w
+ atch an example of the method here:\nhttps://miro.com/templates/simple-lig
+ htning-decision-jam-template/\n\nThe LDJ works best with 5-10 participants
+ \, so that's what we are looking for.\n\nThe meeting has two goals:\n\n1. 
+ To experience the LDJ method first-hand\, so we can judge where it could b
+ e useful in CPDSE.\n2. To use it on something that matters to us: one area
+  of CPDSE's activities that we choose together at the start.\n\nPART 1 –
+  CHOOSE OUR FOCUS (30 min)\nWe start from the CPDSE map (shown on top)\, a
+ nd select what CPDSE area to focus on.\n\n- Welcome and the LDJ in brief (
+ 10 min)\n- A quick tour of the CPDSE map (5 min)\n- Silent dot vote: three
+  dots each\, on the areas where a jam would help us most (5 min)\n- Look a
+ t the result and settle on one area. (10 min)\n___________________________
+ _____________________________________________________\nMicrosoft Teams-mø
+ de\nDeltag: https://teams.microsoft.com/meet/3915906584740750?p=8Fb8zGvhoh
+ 3DSL6QOb\nMøde-id: 391 590 658 474 075 0\nAdgangskode: 6u9kV6Hf\n\nHar du
+  brug for hjælp?<https://aka.ms/JoinTeamsMeeting?omkt=da> | Systemreferen
+ ce<https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODNjNTlhOGUtNDlm
+ YS00MDMwLTg1N2QtYTJiODFiYWZhZjEy%40thread.v2/0?context=%7b%22Tid%22%3a%22a
+ 3927f91-cda1-4696-af89-8c9f1ceffa91%22%2c%22Oid%22%3a%22a072dd50-29b8-48e6
+ -a521-a6abca183695%22%7d>\nRing op via telefon\n+45 32 72 07 55\,\,4067179
+ 02#<tel:+4532720755\,\,406717902> Denmark\, All locations\nFind et lokalt 
+ nummer<https://dialin.teams.cloud.microsoft/8fa1ad49-0722-4052-88ca-11fecd
+ 3ccf50?id=406717902>\nTelefonmøde-id: 406 717 902#\nFor arrangører: Mød
+ eindstillinger<https://teams.microsoft.com/meetingOptions/?organizerId=a07
+ 2dd50-29b8-48e6-a521-a6abca183695&tenantId=a3927f91-cda1-4696-af89-8c9f1ce
+ ffa91&threadId=19_meeting_ODNjNTlhOGUtNDlmYS00MDMwLTg1N2QtYTJiODFiYWZhZjEy
+ @thread.v2&messageId=0&language=da> | Nulstil opkaldspinkode<https://diali
+ n.teams.cloud.microsoft/usp/pstnconferencing>\n___________________________
+ _____________________________________________________\n\n\nPART 2 – THE 
+ LIGHTNING DECSION JAM (60 min)\nMost of this part is silent writing on sti
+ cky notes\, followed by voting. We only discuss where it helps us decide. 
+ That keeps it fast and gives everyone an equal voice.\n\n1. What's working
+  in our chosen area – what we should keep (5 min)\n2. Challenges – wha
+ t gets in the way (7 min)\n3. Vote on the challenges that matter most (3 m
+ in)\n4. Turn the top challenges into "How might we…" questions (5 min)\n
+ 5. Ideas – as many solutions as possible\, no discussion yet (7 min)\n6.
+  Vote on the ideas (3 min)\n7. Put the selected ideas on an effort/impact 
+ grid (10 min)\n8. Choose 1–3 actions we can test within two weeks\, each
+  with an owner and a date (10 min)\n9. Check-out: how did the method work 
+ for us\, and where else could we use it? (10 min)\n\nBEFORE THE MEETING (a
+ bo…
 LOCATION;LANGUAGE=da-DK:Microsoft Teams-møde
-ORGANIZER;CN=Finn Kollerup:mailto:finn.kollerup@sund.ku.dk
+ORGANIZER;CN=Finn Kollerup:MAILTO:finn.kollerup@sund.ku.dk
 ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jeppe Hartmann;X-PM-TOKEN=da8cd4
  e43e750e7361342f83a852f084f8f65fa3;PARTSTAT=NEEDS-ACTION:mailto:jeppe.hart
  mann@sund.ku.dk
