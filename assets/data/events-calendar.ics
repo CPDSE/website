@@ -8430,24 +8430,354 @@ UID:040000008200E00074C5B7101A82E0080000000070E88A93DE66DD01000000000000000
  010000000E25B51B10A950E4D85590CCB953ADBC3
 DTSTART;TZID=Europe/Paris:20261208T143000
 DTEND;TZID=Europe/Paris:20261208T160000
-SEQUENCE:1
-DTSTAMP:20261028T141120Z
-STATUS:CONFIRMED
-SUMMARY;LANGUAGE=en-US:CPDSE season 4 finale
-DESCRIPTION;LANGUAGE=en-US:Dear all\,\n\nWe invite you to join us for the C
- PDSE season 4 finale. We will wrap up this season\, highlight what we have
-  been working on\, and have time to hygge.\n\n[cid:image002.png@01DD66E0.3
- A9873C0]\n\nWe will also be serving some Christmas snacks.\n\nLooking forw
- ard to seeing you.\n\nBest\,\nJeppe\n\nJeppe Hartmann\nProject Coordinator
- \n\nUniversity of Copenhagen\nDepartment of Drug Design and Pharmacology\n
- \nUniversitetsparken 2\nDK - 2100 Copenhagen\nDenmark\nPhone +45 35323413\
- njeppe.hartmann@sund.ku.dk<mailto:jeppe.hartmann@sund.ku.dk>\n\n[Logo for
- Københavns Universitet]\n\nHow we protect personal data<https://informati
- onssikkerhed.ku.dk/english/protection-of-information-privacy/privacy-polic
- y/>\n\n\n
+SEQUENCE:2
+DTSTAMP:20261123T101624Z
+STATUS:CANCELLED
+SUMMARY;LANGUAGE=en-US:Canceled: CPDSE season 4 finale
+DESCRIPTION;LANGUAGE=en-US:Dear all\,\n\nOur season finale 4 will be at our
+  retreat in January so we will cancel this meeting.\n\nJust FYI. We have a
+ n informal Christmas hygge event on 1 December 2026 from 15:00-17:00 at UC
+ PH. You are very welcome to join – there will be snacks and a possibilit
+ y to let your creativity loose in making Christmas decorations.\n\nBest\,\
+ nJeppe\n\nJeppe Hartmann\nProject Coordinator\n\nUniversity of Copenhagen\
+ nDepartment of Drug Design and Pharmacology\n\nUniversitetsparken 2\nDK -
+ 2100 Copenhagen\nDenmark\nPhone +45 35323413\njeppe.hartmann@sund.ku.dk<ma
+ ilto:jeppe.hartmann@sund.ku.dk>\n\n[Logo for Københavns Universitet]\n\nH
+ ow we protect personal data<https://informationssikkerhed.ku.dk/english/pr
+ otection-of-information-privacy/privacy-policy/>\n\n\n
 LOCATION;LANGUAGE=en-US:PharmaDataHub@UCPH\, Jagtvej 160\, 1st floor\, comm
  on area
-ORGANIZER;CN=Jeppe Hartmann:mailto:jeppe.hartmann@sund.ku.dk
+ORGANIZER;CN=Jeppe Hartmann:MAILTO:jeppe.hartmann@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Aditya Govind Shiddapur;X-PM-TOK
+ EN=ea390c8fab975b4b88f6af50fdcaf901f67ca23b;PARTSTAT=NEEDS-ACTION:mailto:a
+ ditya.shiddapur@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Adrienne Lorelei Traxler;X-PM-TO
+ KEN=32d19df208e33744c792540b5bc660adc578e948;PARTSTAT=NEEDS-ACTION:mailto:
+ atraxler@ind.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Aidan Flynn;X-PM-TOKEN=8c881189e
+ e029087ad7ebef3bd6b049dd1b170ce;PARTSTAT=NEEDS-ACTION:mailto:aidan.flynn@s
+ und.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Albert Jelke Kooistra;X-PM-TOKEN
+ =2350194e62e75bfbef82f8dda04bba2c026d2bab;PARTSTAT=NEEDS-ACTION:mailto:alb
+ ert.kooistra@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Alexander Peder Smiszek Pedersen
+ ;X-PM-TOKEN=227603e4a635da57c4438cf938ab0b8003ccfa6c;PARTSTAT=NEEDS-ACTION
+ :mailto:alexander.pedersen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Alexander Sebastian Hauser;X-PM-
+ TOKEN=3dd2ca06032043529704b9f1c47ce8d41ffbd9ca;PARTSTAT=NEEDS-ACTION:mailt
+ o:alexander.hauser@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Anders Krogh;X-PM-TOKEN=28f7320a
+ a0b1e41a6e9e1c2b663153b2a3564d97;PARTSTAT=NEEDS-ACTION:mailto:akrogh@di.ku
+ .dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Anders Støttrup Larsen;X-PM-TOK
+ EN=914d430b24e05a706ba53403b0fa80a94a2151c5;PARTSTAT=NEEDS-ACTION:mailto:a
+ nders.larsen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Anders Østergaard Madsen;X-PM-T
+ OKEN=aa3862f28c573546e4f1d5d87c6726cfec292f42;PARTSTAT=NEEDS-ACTION:mailto
+ :a.madsen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Anna Kirstine Jørgensen;X-PM-TO
+ KEN=421c2a7cd7575c0ed394d945d4a1ccb7fe3bab63;PARTSTAT=NEEDS-ACTION:mailto:
+ anna.kirstine@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=apottegaard@health.sdu.dk;X-PM-T
+ OKEN=8528339997b769ff4f1ffe8d76f47cdf959ea107;PARTSTAT=NEEDS-ACTION:mailto
+ :apottegaard@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Armin Andersen;X-PM-TOKEN=7be371
+ 0191ca211a8fd16e7e76c19d473e2dfa53;PARTSTAT=NEEDS-ACTION:mailto:armin.ande
+ rsen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Arnault-Quentin Vermillet;X-PM-T
+ OKEN=636eda01b9b367feef14192c79489bac491abc13;PARTSTAT=NEEDS-ACTION:mailto
+ :arnault@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Boris Düdder;X-PM-TOKEN=87d2048
+ dff54b7ed5265e3fe9206252d5458bc63;PARTSTAT=NEEDS-ACTION:mailto:boris.d@di.
+ ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=cecje@sdu.dk;X-PM-TOKEN=b3c1e32a
+ c254baa5346e012cf4f2900008fd856d;PARTSTAT=NEEDS-ACTION:mailto:cecje@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Christian Janfelt;X-PM-TOKEN=96c
+ e1cbbc3cc5244fbedbe413c9fde955d43de8f;PARTSTAT=NEEDS-ACTION:mailto:christi
+ an.janfelt@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Christian Schönbeck;X-PM-TOKEN=
+ 1e4d57e142e7fe413109136390f7805d9cd0681c;PARTSTAT=NEEDS-ACTION:mailto:chri
+ stian.schonbeck@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Christine Erikstrup Hallgreen;X-
+ PM-TOKEN=e17c4298dfc5acd272360114a0f26ccd50bcfc39;PARTSTAT=NEEDS-ACTION:ma
+ ilto:christine.hallgreen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=cun@sdu.dk;X-PM-TOKEN=8c68c7ba29
+ 21046cecbf567b4b68fc9ecf8f083f;PARTSTAT=NEEDS-ACTION:mailto:cun@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=David E. Gloriam;X-PM-TOKEN=6377
+ e98f6de75094168d294eebf018c8799a099b;PARTSTAT=NEEDS-ACTION:mailto:david.gl
+ oriam@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=dbiversen@health.sdu.dk;X-PM-TOK
+ EN=0d3e8d8b7d6e05bb1a282ad19ee6a7813da37604;PARTSTAT=NEEDS-ACTION:mailto:d
+ biversen@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Débora Dalmas Gräf;X-PM-TOKEN=
+ e02cc28109bb110e2b92281a961d296368df1027;PARTSTAT=NEEDS-ACTION:mailto:debo
+ ra.graf@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Despoina Georgia Papoutsi;X-PM-T
+ OKEN=8a449a7e289fec4f7af7cfc718806e4123161604;PARTSTAT=NEEDS-ACTION:mailto
+ :gxw430@alumni.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Dilsad Simay Peker;X-PM-TOKEN=7f
+ 839c6762a6bba0331cafe176649eef32033946;PARTSTAT=NEEDS-ACTION:mailto:simay.
+ peker@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Emma Bjørk (ebjoerk@health.sdu.
+ dk);X-PM-TOKEN=7fb415cd9bc8fe83610cefb2de913763731de6e0;PARTSTAT=NEEDS-ACT
+ ION:mailto:ebjoerk@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Fatemehsadat Ghanadi Ladani;X-PM
+ -TOKEN=32391d0f123d510e20b27fe62f340e0228802c34;PARTSTAT=NEEDS-ACTION:mail
+ to:fladani@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Finn Kollerup;X-PM-TOKEN=22b13d2
+ a9acfebf06f27e11eb60f70374518c81f;PARTSTAT=NEEDS-ACTION:mailto:finn.koller
+ up@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Frederik Voetmann Christiansen;X
+ -PM-TOKEN=1dc2758d083dd410947036dd2102f27c33223a17;PARTSTAT=NEEDS-ACTION:m
+ ailto:fchristiansen@ind.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=gapal@sdu.dk;X-PM-TOKEN=1a9f16d2
+ ce5050e867ba1cceb182e83266ca94e9;PARTSTAT=NEEDS-ACTION:mailto:gapal@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Gáspár Pándy-Szekeres;X-PM-TO
+ KEN=55ccf27ffe849dcb12e2d298c84622c41f00419d;PARTSTAT=NEEDS-ACTION:mailto:
+ gaspar@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Gerard Ompad;X-PM-TOKEN=311df061
+ 27cceabe39b656622d669bb20a3abbb2;PARTSTAT=NEEDS-ACTION:mailto:ztd256@sund.
+ ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Haoxin Le;X-PM-TOKEN=c558e87dbf3
+ 5514ce84cb9e246abb388d4359075;PARTSTAT=NEEDS-ACTION:mailto:wjp715@alumni.k
+ u.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=hckildegaard@health.sdu.dk;X-PM-
+ TOKEN=65ec5cb57f23b5c6b40ffcc035da597c6f840722;PARTSTAT=NEEDS-ACTION:mailt
+ o:hckildegaard@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Hendra Yusup Agustian;X-PM-TOKEN
+ =ff169db7d83b1fb52f0680e69a58defca724ce31;PARTSTAT=NEEDS-ACTION:mailto:hen
+ dra.agustian@ind.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Icaro Ariel Simon;X-PM-TOKEN=cbc
+ 712c120a0716b78e5a20d9592d26a0d7e7b15;PARTSTAT=NEEDS-ACTION:mailto:icaro.s
+ imon@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Ida Klitzing Storgaard;X-PM-TOKE
+ N=8fac9a5d1fed856d36d7c2ba98e89deb3e1f809f;PARTSTAT=NEEDS-ACTION:mailto:id
+ a.storgaard@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Inês Catarina Batista Martins;X
+ -PM-TOKEN=d57e8c05bd432612dee42503483474945b6aa3d7;PARTSTAT=NEEDS-ACTION:m
+ ailto:ines.martins@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jacob Fredegaard Hansen;X-PM-TOK
+ EN=af4a4a9a25f6f798cefbc89fb7b62971b3233a9e;PARTSTAT=NEEDS-ACTION:mailto:j
+ acob.f.hansen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jacob Kongsted (kongsted@sdu.dk)
+ ;X-PM-TOKEN=f3ccc74ed5141390a1090327f5000dd4a1a4d66e;PARTSTAT=NEEDS-ACTION
+ :mailto:kongsted@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jake Jackson;X-PM-TOKEN=6ecc24a6
+ 4c44f7f6bfc904a03a348fda4a09c4af;PARTSTAT=NEEDS-ACTION:mailto:jake.jackson
+ @sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jakob Sture Madsen;X-PM-TOKEN=06
+ 2862b8a828bc6ee2408f42986e6554325dc392;PARTSTAT=NEEDS-ACTION:mailto:jsmads
+ en@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jane Knöchel;X-PM-TOKEN=53fba45
+ eb514607fee533eb07009319639b16018;PARTSTAT=NEEDS-ACTION:mailto:jane.knoech
+ el@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jascha Henseler;X-PM-TOKEN=c1f7f
+ f1433276c2599732ab3631a949568139529;PARTSTAT=NEEDS-ACTION:mailto:jascha.he
+ nseler@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Javier Sánchez Lorente;X-PM-TOK
+ EN=9d2b5d33082a023bbeb277bab2328f98f78c6cf1;PARTSTAT=NEEDS-ACTION:mailto:j
+ avier.sanchez.lorente@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jesper Østergaard;X-PM-TOKEN=56
+ 55f497f64728bab2d0779042e54d1e4bebd58c;PARTSTAT=NEEDS-ACTION:mailto:jesper
+ .ostergaard@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=jhallas@health.sdu.dk;X-PM-TOKEN
+ =5a7ec29b6b6d1174cec63a2f6b565b14a7f5114e;PARTSTAT=NEEDS-ACTION:mailto:jha
+ llas@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=jhandersen@health.sdu.dk;X-PM-TO
+ KEN=0794e0f33b76d16cd20171999dd024700978d69e;PARTSTAT=NEEDS-ACTION:mailto:
+ jhandersen@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jody Sullivan Pacalon;X-PM-TOKEN
+ =9a18e32e763638cb04d576cfd1f9b3e88fd7df71;PARTSTAT=NEEDS-ACTION:mailto:jod
+ y.pacalon@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jonas Verhellen;X-PM-TOKEN=ca835
+ 36e909c747d98a5fb5a4494861b04aeb9d5;PARTSTAT=NEEDS-ACTION:mailto:jonas.ver
+ hellen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=jtryggedsson@health.sdu.dk;X-PM-
+ TOKEN=fe62170f07e1c77b0ae583669d2f3fbc845d08fd;PARTSTAT=NEEDS-ACTION:mailt
+ o:jtryggedsson@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Jukka Rantanen;X-PM-TOKEN=749b61
+ 98604ca3884a6b690ffccf8afbcfc3f5ec;PARTSTAT=NEEDS-ACTION:mailto:jukka.rant
+ anen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=juliekrumborg@health.sdu.dk;X-PM
+ -TOKEN=41409c1444ccdb76a278f23b2d0ed0232eeabc29;PARTSTAT=NEEDS-ACTION:mail
+ to:juliekrumborg@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Karlis Berzins;X-PM-TOKEN=589ef9
+ 17de10c2584a70e44a022f346df03fb670;PARTSTAT=NEEDS-ACTION:mailto:karlis.ber
+ zins@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Kasper Harpsøe;X-PM-TOKEN=102a7
+ 0bb7c576b452ecf8f19bd8599381e9cda24;PARTSTAT=NEEDS-ACTION:mailto:kasper.ha
+ rpsoe@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=kpakula@sdu.dk;X-PM-TOKEN=df7aef
+ 7de4bf7bcf9863c2b5ab493fc496530025;PARTSTAT=NEEDS-ACTION:mailto:kpakula@sd
+ u.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=kuntsche@sdu.dk;X-PM-TOKEN=3f768
+ 0bfd057acc0d25396990d575692a86f93fc;PARTSTAT=NEEDS-ACTION:mailto:kuntsche@
+ sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lampros Spiliopoulos;X-PM-TOKEN=
+ cfd211bb9f3449b0a1bd0d7b1263c0365ca3be9f;PARTSTAT=NEEDS-ACTION:mailto:kxt1
+ 05@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lasse Skjoldborg Krog;X-PM-TOKEN
+ =a8a7368e7eb3c292bce1b92ffdbcd3a7ff4af067;PARTSTAT=NEEDS-ACTION:mailto:las
+ se.krog@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lene Jørgensen;X-PM-TOKEN=6bd9b
+ fd31cfae96828c554a52449b0f624f806bd;PARTSTAT=NEEDS-ACTION:mailto:lene.jorg
+ ensen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=ljtr@hst.aau.dk;X-PM-TOKEN=132ae
+ 0501b1fc7b5eba7594930cb45b7dd25cd1c;PARTSTAT=NEEDS-ACTION:mailto:ljtr@hst.
+ aau.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lotte Stig Nørgaard;X-PM-TOKEN=
+ fe90594eadcacd82ca410316179bd304263651e0;PARTSTAT=NEEDS-ACTION:mailto:lott
+ e.norgaard@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lucia Sanchez Schneider;X-PM-TOK
+ EN=3cdcb73c4303e51180d683bbef048cd129037675;PARTSTAT=NEEDS-ACTION:mailto:t
+ hx990@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lukas Frederic Westphal-Ostrowsk
+ i;X-PM-TOKEN=922e570cf085cc77574102c900fe545399546730;PARTSTAT=NEEDS-ACTIO
+ N:mailto:lukas.westphal@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Lykke Pedersen;X-PM-TOKEN=b43af7
+ 671428722bf7454e393640c8b2c88ec129;PARTSTAT=NEEDS-ACTION:mailto:lykke.p@su
+ nd.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Marco Polimeni;X-PM-TOKEN=f49955
+ 299e9bb17232d476c526bf684f86241170;PARTSTAT=NEEDS-ACTION:mailto:marco.poli
+ meni@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Mariena van der Plas;X-PM-TOKEN=
+ 4de5268027ceef93f06ce3f0dfb7626d1fb4a2d3;PARTSTAT=NEEDS-ACTION:mailto:mari
+ ena.van_der_plas@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Marin Matic;X-PM-TOKEN=fe5c38d90
+ 63f5ca1637d7d21abf4649ccb7abd39;PARTSTAT=NEEDS-ACTION:mailto:marin.matic@s
+ und.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Martina Pipoli;X-PM-TOKEN=a86ce7
+ 140ec68e63de9fed42b96474a6763feef8;PARTSTAT=NEEDS-ACTION:mailto:smv410@sun
+ d.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Mathias Møllebæk;X-PM-TOKEN=54
+ b26a1a141e387f6f06559f147786f73aa1549e;PARTSTAT=NEEDS-ACTION:mailto:mathia
+ s.moellebaek@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Maurizio Sessa;X-PM-TOKEN=ed0870
+ c26a5a3ddc3dcf7481f223d96cc4057fc3;PARTSTAT=NEEDS-ACTION:mailto:maurizio.s
+ essa@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Melika Keshavarzmirzamohammadi;X
+ -PM-TOKEN=7656c0bbc36e69dc9314f26a697fba402578aba8;PARTSTAT=NEEDS-ACTION:m
+ ailto:melika.kesh@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Mette Syberg Jespersen;X-PM-TOKE
+ N=08ab16ce37f19ddd64e53d747c756f0447b3df03;PARTSTAT=NEEDS-ACTION:mailto:wh
+ q938@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=mittenentzwei@health.sdu.dk;X-PM
+ -TOKEN=254c6c523177aa379f63c3eaf280406ce5490d5c;PARTSTAT=NEEDS-ACTION:mail
+ to:mittenentzwei@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=moesgaard@sdu.dk;X-PM-TOKEN=a9a5
+ 3e6d4543c4f78565b909abc56be4b0fa42b3;PARTSTAT=NEEDS-ACTION:mailto:moesgaar
+ d@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=moolesen@health.sdu.dk;X-PM-TOKE
+ N=f4f30346f8ed9a19aa0b6e2c0b3ce1bc6cc9f98f;PARTSTAT=NEEDS-ACTION:mailto:mo
+ olesen@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Morten Andersen;X-PM-TOKEN=957ab
+ 62c0204221d38b11e848eb293fe314d25ae;PARTSTAT=NEEDS-ACTION:mailto:morten.an
+ dersen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Morten Lindow;X-PM-TOKEN=3078111
+ 92cf67b5076c1b3410deded1382a25a87;PARTSTAT=NEEDS-ACTION:mailto:morten.lind
+ ow@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Morten Misfeldt;X-PM-TOKEN=de738
+ aa8eda35b315c317a2e54441091ef7e63ab;PARTSTAT=NEEDS-ACTION:mailto:misfeldt@
+ ind.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=mternst@health.sdu.dk;X-PM-TOKEN
+ =cdef77768ee2495b59de1978f0bc191f898b44bf;PARTSTAT=NEEDS-ACTION:mailto:mte
+ rnst@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=mtthomsen@health.sdu.dk;X-PM-TOK
+ EN=4e0c96842183c332307007ed540b4dbd6e2fb437;PARTSTAT=NEEDS-ACTION:mailto:m
+ tthomsen@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=ngb@sdu.dk;X-PM-TOKEN=781245c290
+ 3103db6ce7f4336265a8eb5318656c;PARTSTAT=NEEDS-ACTION:mailto:ngb@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Niels Skotte;X-PM-TOKEN=373c08fe
+ 12efc025a067882260817dbde71a2fcd;PARTSTAT=NEEDS-ACTION:mailto:niels.skotte
+ @sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Nikolai Brun;X-PM-TOKEN=41f8aa5b
+ fa2ed1c47d792138914c7ddaa775f13f;PARTSTAT=NEEDS-ACTION:mailto:nikolai.brun
+ @sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=noerol@health.sdu.dk;X-PM-TOKEN=
+ b8c08816f1308a66c2806955a3d25ed5562afeee;PARTSTAT=NEEDS-ACTION:mailto:noer
+ ol@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Olav Larsen;X-PM-TOKEN=f0a953a8a
+ a97b6f44316a6be1e623de0e66aa3be;PARTSTAT=NEEDS-ACTION:mailto:olavl@sund.ku
+ .dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Pablo Baceiredo Macho;X-PM-TOKEN
+ =10c0fd387cae71df1197b338b54c4f2a2e620e7f;PARTSTAT=NEEDS-ACTION:mailto:pab
+ lo.baceiredo@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Peidi Xu;X-PM-TOKEN=2b533f2c13bd
+ 2a0f890e8c82f4db702d20c2c0b1;PARTSTAT=NEEDS-ACTION:mailto:peidi.xu@sund.ku
+ .dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=petjensen@health.sdu.dk;X-PM-TOK
+ EN=8a58aeba48d7cc813a9ffe345c438ff3a3d26a32;PARTSTAT=NEEDS-ACTION:mailto:p
+ etjensen@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Philipp Hans;X-PM-TOKEN=e8d1a90e
+ e6fdb5bf5aab16e96e6c67f483cf6799;PARTSTAT=NEEDS-ACTION:mailto:philipp.hans
+ @sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Qinwen Lu;X-PM-TOKEN=c71150d9338
+ 4e5175bc6ee5826cdc648a7d71d7d;PARTSTAT=NEEDS-ACTION:mailto:lqs985@sund.ku.
+ dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Raghavendra Selvan;X-PM-TOKEN=96
+ 5d3978d240899944697a96e1d024e9ed1a9caf;PARTSTAT=NEEDS-ACTION:mailto:raghav
+ @di.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Ramune Jacobsen;X-PM-TOKEN=a83b8
+ 0b4426bf9935ea69f715cdd0943e0e972d6;PARTSTAT=NEEDS-ACTION:mailto:ramune.ja
+ cobsen@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=René Holm;X-PM-TOKEN=9e9ed25846
+ 5b6e8f301465a6d56e81e06bafc137;PARTSTAT=NEEDS-ACTION:mailto:reho@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Riddhish Harshal Thakare;X-PM-TO
+ KEN=4fcdf9c85216541bedc0b0bc5dcc84937ac2b1d6;PARTSTAT=NEEDS-ACTION:mailto:
+ riddhish.thakare@di.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=roettger@imada.sdu.dk;X-PM-TOKEN
+ =7dea424f2a3210951ab34097b87d62b443b4b108;PARTSTAT=NEEDS-ACTION:mailto:roe
+ ttger@imada.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Samuel John Lenton;X-PM-TOKEN=15
+ b7cc79a9d35d47249faf7c87ad9bdf095f2664;PARTSTAT=NEEDS-ACTION:mailto:samuel
+ .lenton@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=seja@sdu.dk;X-PM-TOKEN=ce7df8f8c
+ 7a230faede1cf6edac699991cdc8cc8;PARTSTAT=NEEDS-ACTION:mailto:seja@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Srishti Nagaraj;X-PM-TOKEN=d8e61
+ 033337da53f1dcd53c111f02e0f25dc0bf1;PARTSTAT=NEEDS-ACTION:mailto:qcd174@su
+ nd.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Stefan Stürup;X-PM-TOKEN=741354
+ 2ae2f54b11aa89a7083c0f81172e81a386;PARTSTAT=NEEDS-ACTION:mailto:stefan.stu
+ rup@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=steinmann@sdu.dk;X-PM-TOKEN=13eb
+ 6b663ee7e43a26eac353c0fec8abca8bf08f;PARTSTAT=NEEDS-ACTION:mailto:steinman
+ n@sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Stine Marie Høgh Jensen;X-PM-TO
+ KEN=aea73855b89f1db2869991ade8072ce003824b94;PARTSTAT=NEEDS-ACTION:mailto:
+ stine.m.jensen@ind.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Stine Rønholt;X-PM-TOKEN=9b3bc2
+ 0bcb2723f358ef9d0f66ec3683b181a7e4;PARTSTAT=NEEDS-ACTION:mailto:stine.roen
+ holt@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Susanne Kaae;X-PM-TOKEN=52f89776
+ ec43ed14e6b83dea8e1766588b50bc0c;PARTSTAT=NEEDS-ACTION:mailto:susanne.kaae
+ @sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Søren Norge Andreassen;X-PM-TOK
+ EN=d5c72bb027d39b617256a849bca5c3d95b9a78fd;PARTSTAT=NEEDS-ACTION:mailto:s
+ norge@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Teemu Kalle Eemeli Rönkkö;X-PM
+ -TOKEN=a6ccc199eeed0083e9a312403a851e55e9f60304;PARTSTAT=NEEDS-ACTION:mail
+ to:teemu.ronkko@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Tommy Nørskov Johansen;X-PM-TOK
+ EN=f0621dbdc957089dfdf3c0888dc7917ebb41e60b;PARTSTAT=NEEDS-ACTION:mailto:t
+ nj@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Trine Meldgaard Lund;X-PM-TOKEN=
+ ae84354e8a8f91eb092346242f184f374618c05f;PARTSTAT=NEEDS-ACTION:mailto:trin
+ e.lund@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Trinh Trung Duong Nguyen;X-PM-TO
+ KEN=d0b126bc915070f2e0259fcdb0f37c654862b023;PARTSTAT=NEEDS-ACTION:mailto:
+ trung.trinh@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=tstage@health.sdu.dk;X-PM-TOKEN=
+ f06c887a5ad7801e19e2e01dacd402b4a1b14215;PARTSTAT=NEEDS-ACTION:mailto:tsta
+ ge@health.sdu.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Valeria Pari Hadi;X-PM-TOKEN=136
+ ed7c09542996d9cf0f3d47d2b9dba3d30844e;PARTSTAT=NEEDS-ACTION:mailto:valeria
+ .hadi@sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Vito Foderà;X-PM-TOKEN=9070efe3
+ a071e1f28b73b295750a62881c522b4b;PARTSTAT=NEEDS-ACTION:mailto:vito.fodera@
+ sund.ku.dk
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=Wouter Boomsma;X-PM-TOKEN=de7096
+ bf6661fad46eaa07aa1ee06d355192f78f;PARTSTAT=NEEDS-ACTION:mailto:wb@di.ku.d
+ k
 ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;CN=calendar@cpdse.dk;X-PM-TOKEN=29f
  b0c41acdaab53ceb1b3b5046a72602d2d0438;PARTSTAT=NEEDS-ACTION:mailto:calenda
  r@cpdse.dk
