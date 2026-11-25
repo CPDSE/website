@@ -124,9 +124,11 @@ sections:
         url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/pharmacoinformatics/
         url_label: Hauser Group
         quote: >-
-          Focuses on drug-related data science and pharmacogenomics.
-          He integrates large-scale biomedical data — from genomics to clinical biobanks —
-          to understand how genetic variability influences drug responses and personalized medicine.
+          Focuses on data-driven drug discovery, peptide therapeutics, and pharmacogenomics. He
+          integrates large-scale biomedical data, from genomics and structural biology to
+          clinical biobanks, to discover novel bioactive peptides, understand drug–target
+          interactions, and investigate how genetic variability influences drug responses
+          and personalized medicine.
 
       - initials: AM
         headshot: basecamp/anders-o-madsen.jpg
@@ -136,10 +138,9 @@ sections:
         url: https://researchprofiles.ku.dk/en/persons/anders-%C3%B8stergaard-madsen/
         url_label: Research Profile
         quote: >-
-          A leader in crystallography and structural chemistry.
-          He applies deep learning and advanced algorithms to solve the phase problem in
-          X-ray and electron diffraction, focusing on polymorphism and crystal stability
-          in pharmaceuticals.
+          Works in crystallography and structural chemistry. He applies deep learning and advanced
+          algorithms to solve the phase problem in X-ray and electron diffraction,
+          focusing on polymorphism and crystal stability in pharmaceuticals.
 
       - initials: AP
         headshot: basecamp/anton-pottegard.jpg
@@ -154,16 +155,31 @@ sections:
           and unknown effects of pharmaceutical treatments with a focus on rational drug use
           and deprescribing.
 
+      - initials: CS
+        headshot: portraits/CasperSteinmann.jpg
+        name: Casper Steinmann Svendsen
+        department: Computational Drug Discovery and Formulation
+        uni: SDU
+        url: https://www.steinmanngroup.github.io
+        url_label: Group Website
+        quote: >-
+          His group works where quantum chemistry, molecular simulation, and
+          data-driven science meet. They develop and apply computational methods to
+          understand molecular binding and to predict whether proposed molecules can
+          actually be synthesized, with a particular interest in cyclodextrin host–guest
+          systems for formulation and drug delivery.
+
       - initials: DG
+        headshot: portraits/David Gloriam.png
         name: David Gloriam
         department: Computational Receptor Biology
         uni: UCPH
         url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/gloriam-group/
         url_label: Gloriam Group
         quote: >-
-          A powerhouse in Computational Receptor Biology and GPCR research.
-          He leads the development of world-renowned databases like GPCRdb and applies big
-          data science to uncover new drug targets and receptor signaling mechanisms.
+          David Gloriam's group identifies mechanisms and ligands of G protein-coupled
+          receptors (GPCRs) – the main mediators of human signaling and drug responses –
+          and develops the field's main online database, GPCRdb.
 
       - initials: HA
         name: Hendra Augustian
@@ -192,15 +208,17 @@ sections:
       - initials: JK
         headshot: basecamp/jane-knochel.jpg
         name: Jane Knöchel
-        department: Pharmaceutical Informatics
+        department: Mechanistic & AI-Enhanced Pharmacometrics
         uni: UCPH
         url: https://drug.ku.dk/research-sections/pharmaceutical-informatics/integrated-mechanistic-data-driven-modeling-group/
         url_label: Knöchel Group
         quote: >-
-          Works in Pharmaceutical Informatics. She utilizes
-          mathematical modeling and Quantitative Systems Pharmacology (QSP) to bridge
-          biological mechanisms with clinical outcomes, particularly for metabolic and
-          cardiovascular diseases.
+          Leads the Integrated Mechanistic
+          & Data-Driven Modeling Group, focusing on pharmacometrics, mechanistic
+          modelling and AI-enhanced drug development. She integrates biological
+          knowledge, biomarkers and clinical data to understand how diseases progress and
+          patients respond to treatment, advancing more effective drug development and
+          personalized therapies.
 
       - initials: JKu
         name: Judith Kuntsche
@@ -219,7 +237,7 @@ sections:
         name: Karlis Berzins
         department: Pharmaceutical Solid Materials Science
         uni: UCPH
-        url: https://pharmacy.ku.dk/employees/?pure=en/persons/karlis-berzins(1e8f01c2-d929-4de4-87b0-231f61133fb2).html
+        url: https://www.berzinslab.dk
         url_label: Staff Profile
         quote: >-
           Specialist in the materials science of pharmaceutical solids. He uses advanced
