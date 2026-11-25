@@ -99,7 +99,7 @@ sections:
         start: 1 September 2026
 
   - color: soft-white
-    title: Group Leaders
+    title: CPDSE affiliated group leaders
     intro: CPDSE's group leaders anchor the research agenda — spanning computational pharmacology, solid-state science, pharmacovigilance, and science education.
     include: people-table.html
     group_leaders:

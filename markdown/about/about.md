@@ -72,7 +72,7 @@ sections:
       <div class="section-header" style="margin-bottom:var(--space-md);">
         <span class="section-label">CPDSE Circles</span>
         <h2>Curious about the circles and the people who run them?</h2>
-        <p>CPDSE is organised into six interlocking circles. Each owns a slice of the work and reports out into the wider center.</p>
+        <p>CPDSE is organised into five interlocking circles. Each owns a slice of the work and reports out into the wider center.</p>
         <a href="{{ '/people/' | relative_url }}" class="btn btn-primary" style="margin-top:1.25rem; display:inline-block;">View People</a>
       </div>
 
@@ -81,24 +81,20 @@ sections:
           <span class="circle-title">Mission</span>
           <span class="circle-desc">Overall cohesion and center development, so funders and the board support the center.</span>
         </div>
-        <div class="circle-bubble circle-bubble--2" tabindex="0" role="group" aria-label="Education circle">
-          <span class="circle-title">Education</span>
-          <span class="circle-desc">Strategy for educational deliverables so stakeholders are satisfied.</span>
+        <div class="circle-bubble circle-bubble--2" tabindex="0" role="group" aria-label="Fundamental circle">
+          <span class="circle-title">Fundamental</span>
+          <span class="circle-desc">Strategy for educational deliverables and operations across the center.</span>
         </div>
-        <div class="circle-bubble circle-bubble--3" tabindex="0" role="group" aria-label="Communication circle">
-          <span class="circle-title">Communication</span>
-          <span class="circle-desc">Promote a strong external center identity to relevant stakeholders.</span>
-        </div>
-        <div class="circle-bubble circle-bubble--4" tabindex="0" role="group" aria-label="Research circle">
+        <div class="circle-bubble circle-bubble--3" tabindex="0" role="group" aria-label="Research circle">
           <span class="circle-title">Research</span>
           <span class="circle-desc">Transparency and methodology sharing so members can do research together.</span>
         </div>
-        <div class="circle-bubble circle-bubble--5" tabindex="0" role="group" aria-label="Data Science Facility circle">
-          <span class="circle-title">Data Science Facility</span>
-          <span class="circle-desc">Data science infrastructure and tools for data literacy and education.</span>
+        <div class="circle-bubble circle-bubble--4" tabindex="0" role="group" aria-label="Services circle">
+          <span class="circle-title">Services</span>
+          <span class="circle-desc">Delivery of data science services and consulting to researchers and groups.</span>
         </div>
-        <div class="circle-bubble circle-bubble--6" tabindex="0" role="group" aria-label="Community &amp; Organization circle">
-          <span class="circle-title">Community &amp; Organization</span>
+        <div class="circle-bubble circle-bubble--5" tabindex="0" role="group" aria-label="Nucleus circle">
+          <span class="circle-title">Nucleus</span>
           <span class="circle-desc">Practices and contexts so members are connected and jointly productive.</span>
         </div>
 
@@ -113,45 +109,48 @@ sections:
           <span class="circle-ghost circle-ghost--8"></span>
           <span class="circle-ghost circle-ghost--9"></span>
           <span class="circle-ghost circle-ghost--10"></span>
-          <span class="circle-ghost circle-ghost--11"></span>
-          <span class="circle-ghost circle-ghost--12"></span>
         </div>
       </div>
     </div>
 
-    <div class="circle-links fade-in" aria-label="Circle links — Season 3">
-      <h3 class="circle-links__heading">Circle Links — Season 3</h3>
+    <div class="circle-links fade-in" aria-label="Circle leads — Season 4">
+      <h3 class="circle-links__heading">Circle Leads — Season 4</h3>
       <div class="circle-links__list">
         <a class="circle-link circle-link--mission" href="{{ '/people/?circle=Mission' | relative_url }}" title="See all members of the Mission circle">
           <img class="circle-link__photo" src="{{ '/assets/images/portraits/morten-lindow.jpg' | relative_url }}" alt="Morten Lindow" loading="lazy">
           <span class="circle-link__circle">Mission</span>
           <span class="circle-link__name">Morten Lindow</span>
         </a>
-        <a class="circle-link circle-link--education" href="{{ '/people/?circle=Education' | relative_url }}" title="See all members of the Education circle">
+        <a class="circle-link circle-link--education" href="{{ '/people/?circle=Fundamental' | relative_url }}" title="See all members of the Fundamental circle">
           <img class="circle-link__photo" src="{{ '/assets/images/portraits/lykke-pedersen.jpg' | relative_url }}" alt="Lykke Pedersen" loading="lazy">
-          <span class="circle-link__circle">Education</span>
+          <span class="circle-link__circle">Fundamental</span>
           <span class="circle-link__name">Lykke Pedersen</span>
         </a>
-        <a class="circle-link circle-link--communication" href="{{ '/people/?circle=Outreach+%26+Communication' | relative_url }}" title="See all members of the Outreach & Communication circle">
-          <img class="circle-link__photo" src="{{ '/assets/images/portraits/jacob-fredegaard-hansen.jpg' | relative_url }}" alt="Jacob Fredegaard Hansen" loading="lazy">
-          <span class="circle-link__circle">Communication</span>
-          <span class="circle-link__name">Jacob F. Hansen</span>
-        </a>
         <a class="circle-link circle-link--research" href="{{ '/people/?circle=Research' | relative_url }}" title="See all members of the Research circle">
-          <img class="circle-link__photo" src="{{ '/assets/images/portraits/philipp-hans.jpg' | relative_url }}" alt="Philipp Hans" loading="lazy">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/CasperSteinmann.jpg' | relative_url }}" alt="Casper Steinmann Svendsen" loading="lazy">
           <span class="circle-link__circle">Research</span>
-          <span class="circle-link__name">Philipp Hans</span>
+          <span class="circle-link__name">Casper Steinmann Svendsen</span>
         </a>
-        <a class="circle-link circle-link--facility" href="{{ '/people/?circle=Data+Science+Facility' | relative_url }}" title="See all members of the Data Science Facility circle">
-          <img class="circle-link__photo" src="{{ '/assets/images/portraits/kasper-harpsoe.jpg' | relative_url }}" alt="Kasper Harpsøe" loading="lazy">
-          <span class="circle-link__circle">Data Facility</span>
-          <span class="circle-link__name">Kasper Harpsøe</span>
+      </div>
+
+      <h3 class="circle-links__heading" style="margin-top: 2rem;">Service Work Stream Leads</h3>
+      <div class="circle-links__list">
+        <a class="circle-link circle-link--services" href="{{ '/people/?role=People+Development' | relative_url }}" title="See all members of People Development">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/jacob-fredegaard-hansen.jpg' | relative_url }}" alt="Jacob Fredegaard Hansen" loading="lazy">
+          <span class="circle-link__circle">People Development</span>
+          <span class="circle-link__name">Jacob Fredegaard Hansen</span>
         </a>
-        <a class="circle-link circle-link--community" href="{{ '/people/?circle=Community+%26+Org' | relative_url }}" title="See all members of the Community &amp; Org circle">
-          <img class="circle-link__photo" src="{{ '/assets/images/portraits/jeppe-hartmann.jpg' | relative_url }}" alt="Jeppe Hartmann" loading="lazy">
-          <span class="circle-link__circle">Community &amp; Org</span>
-          <span class="circle-link__name">Jeppe Hartmann</span>
+        <a class="circle-link circle-link--services" href="{{ '/people/?role=Research+Project+Consulting' | relative_url }}" title="See all members of Research Project Consulting">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/arnault-quentin-vermillet.jpg' | relative_url }}" alt="Arnault Vermillet" loading="lazy">
+          <span class="circle-link__circle">Research Project Consulting</span>
+          <span class="circle-link__name">Arnault Vermillet</span>
         </a>
+      </div>
+
+      <div class="circle-links__text" style="margin-top: 2rem; font-size: 0.95rem; color: #666;">
+        <p><strong>Additional Service Leads:</strong></p>
+        <p>Research Group Strategy Consulting — Morten Lindow</p>
+        <p>Curriculum Upgrade — Lykke Pedersen (UCPH) & Sebastian Jakobsen (SDU)</p>
       </div>
     </div>
   </div>

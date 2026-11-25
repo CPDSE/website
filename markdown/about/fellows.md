@@ -41,5 +41,5 @@ sections:
   - color: soft-white
     title: "Get in touch"
     content: |
-      Interested in becoming a CPDSE Fellow? Reach out to us at [cpdse@ku.dk](mailto:cpdse@ku.dk) to start the conversation.
+      Interested in becoming a CPDSE Fellow? Reach out to us at [contact@cpdse.dk](mailto:contact@cpdse.dk) to start the conversation.
 ---

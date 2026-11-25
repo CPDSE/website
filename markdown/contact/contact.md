@@ -13,7 +13,7 @@ sections:
     cards:
       - title: E-Mail
         content: |
-          [cpdse@ku.dk](mailto:cpdse@ku.dk)
+          [contact@cpdse.dk](mailto:contact@cpdse.dk)
       - title: "Delivery address (post and packages)"
         content: |
           NBB BA1  
