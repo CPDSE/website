@@ -126,6 +126,8 @@ Each section may also have `eyebrow:`, `title:`, and `intro:` header fields.
 - `layout: people` — People page (custom two-column hero with radial viz)
 - `layout: news-events` — News & Events page (post feed + FullCalendar)
 - `layout: post` — individual news posts in `_posts/news/`
+- `layout: perspectives` — Perspectives listing (opinion pieces, tag filter)
+- `layout: perspective` — individual pieces in `_perspectives/` (applied automatically via `defaults:` in `_config.yml`)
 - `layout: learning-resources` — Learning Resources page
 - `layout: publications` — publications listing
 - `layout: page` — simple generic page
@@ -146,6 +148,7 @@ markdown/          # all editable page content
   home/
   other/           # Funding, Privacy (not in nav)
 _posts/news/       # individual news posts (YYYY-MM-DD-slug.md)
+_perspectives/     # opinion pieces (YYYY-MM-DD-slug.md) — copy _template.md
 _data/             # milestones.yml, convergence_talks.yml, learning_resources.json
 assets/
   css/

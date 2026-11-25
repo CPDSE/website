@@ -7,6 +7,31 @@ permalink: /join-us/
 
 sections:
 
+  - color: soft-white
+    eyebrow: Ways in
+    title: Open calls & programmes
+    card_columns: 3
+    card_color: soft-white
+    cards:
+      - icon: networks
+        num: "01"
+        title: Fellow Program
+        content: An individual affiliation for experienced professionals from industry and institutions who want to shape the future of pharmaceutical data science education.
+        link_text: About the Fellow Program →
+        link_url: /fellow-program/
+      - icon: curriculum
+        num: "02"
+        title: Project Opportunities
+        content: Projects proposed by CPDSE-affiliated supervisors and partners, from bachelor and master theses to PhD projects.
+        link_text: Browse open projects →
+        link_url: /project-opportunities/
+      - icon: book
+        num: "03"
+        title: Scholarships
+        content: Funded scholarships in pharmaceutical data science. See the current call, eligibility and how to apply.
+        link_text: See the call for scholarships →
+        link_url: /scholarships/
+
   - color: forest-green
     eyebrow: Students
     title: Internships, Projects & Scholarships

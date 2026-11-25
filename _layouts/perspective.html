@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/perspectives.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 200 | at_least: 1 %}
+
+<header class="page-hero post-hero">
+  <div class="container">
+    <span class="hero-label">Perspective</span>
+    <h1>{{ page.title }}</h1>
+    <p class="hero-sub perspective-byline">
+      {% if page.author %}<span>{{ page.author }}{% if page.author_role %}, {{ page.author_role }}{% endif %}</span>
+      <span aria-hidden="true">·</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ minutes }} min read</span>
+    </p>
+  </div>
+</header>
+
+<article class="post-content perspective-content">
+
+  {% if page.tags and page.tags.size > 0 %}
+  <ul class="perspective-card__tags perspective-content__tags">
+    {% for tag in page.tags %}<li><a class="perspectives-tag perspectives-tag--small" href="{{ '/perspectives/' | relative_url }}?tag={{ tag | slugify }}">{{ tag }}</a></li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {{ content }}
+
+  {% comment %} Related: other pieces sharing at least one tag, newest first {% endcomment %}
+  {% assign related_urls = "" %}
+  {% assign others = site.perspectives | sort: 'date' | reverse %}
+  {% for doc in others %}
+    {% if doc.url == page.url %}{% continue %}{% endif %}
+    {% for tag in doc.tags %}
+      {% if page.tags contains tag %}
+        {% assign related_urls = related_urls | append: doc.url | append: "|" %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  {% assign related_urls = related_urls | split: "|" %}
+
+  {% if related_urls.size > 0 %}
+  <aside class="perspective-related" aria-labelledby="perspective-related-title">
+    <h2 id="perspective-related-title">Related perspectives</h2>
+    <ul>
+      {% for url in related_urls limit: 3 %}
+      {% assign doc = site.perspectives | where: 'url', url | first %}
+      <li>
+        <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+        <span class="perspective-related__meta">{% if doc.author %}{{ doc.author }} · {% endif %}{{ doc.date | date: "%b %-d, %Y" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+
+  {% if page.previous or page.next %}
+  <nav class="perspective-pager" aria-label="More perspectives">
+    {% if page.previous %}<a class="perspective-pager__link" href="{{ page.previous.url | relative_url }}"><span>← Older</span>{{ page.previous.title }}</a>{% endif %}
+    {% if page.next %}<a class="perspective-pager__link perspective-pager__link--next" href="{{ page.next.url | relative_url }}"><span>Newer →</span>{{ page.next.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+
+  <div class="post-back">
+    <a href="{{ '/perspectives/' | relative_url }}">← Back to all perspectives</a>
+  </div>
+</article>
