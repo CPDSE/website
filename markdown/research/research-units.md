@@ -56,7 +56,7 @@ sections:
         supervisor: Wouter Boomsma
         project: A Neurosymbolic Framework for Literature-Driven GPCR Interaction Modeling
 
-      - name: TBA
+      - name: Pablo Baceiredo Macho
         supervisor: Icaro A. Simon
         project: "From mechanism to prediction: forecasting ligand-specific outcomes across GPCR variants with MD-derived biophysical descriptors"
 
