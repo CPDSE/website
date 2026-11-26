@@ -145,12 +145,16 @@ sections:
           <span class="circle-link__circle">Research Project Consulting</span>
           <span class="circle-link__name">Arnault Vermillet</span>
         </a>
-      </div>
-
-      <div class="circle-links__text" style="margin-top: 2rem; font-size: 0.95rem; color: #666;">
-        <p><strong>Additional Service Leads:</strong></p>
-        <p>Research Group Strategy Consulting — Morten Lindow</p>
-        <p>Curriculum Upgrade — Lykke Pedersen (UCPH) & Sebastian Jakobsen (SDU)</p>
+        <a class="circle-link circle-link--services" href="{{ '/people/?role=Curriculum+Upgrade' | relative_url }}" title="See all members of Curriculum Upgrade">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/lykke-pedersen.jpg' | relative_url }}" alt="Lykke Pedersen" loading="lazy">
+          <span class="circle-link__circle">Curriculum Upgrade</span>
+          <span class="circle-link__name">Lykke Pedersen</span>
+        </a>
+        <a class="circle-link circle-link--services" href="{{ '/people/?role=Curriculum+Upgrade' | relative_url }}" title="See all members of Curriculum Upgrade">
+          <img class="circle-link__photo" src="{{ '/assets/images/portraits/sebastian-jakobsen.jpg' | relative_url }}" alt="Sebastian Jakobsen" loading="lazy">
+          <span class="circle-link__circle">Curriculum Upgrade</span>
+          <span class="circle-link__name">Sebastian Jakobsen</span>
+        </a>
       </div>
     </div>
   </div>
